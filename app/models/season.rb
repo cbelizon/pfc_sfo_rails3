@@ -67,7 +67,7 @@ class Season < ActiveRecord::Base
 
   #Returns all current seasons
   def self.current_seasons
-    Season.where(:date => Season.maximum('date'))
+    where(:date => Season.maximum('date'))
   end
 
   #returns true if round actual is not nil
