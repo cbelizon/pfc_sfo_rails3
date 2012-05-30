@@ -1,0 +1,15 @@
+<h3><%= t('.header')  %></h3>
+<table>
+  <tr>
+    <th><%= t('.maintenance')  %></th>
+    <th><%= t('.players')  %></th>
+    <th><%= t('.transfers')  %></th>
+    <th><%= t('.total')  %></th>
+  </tr>
+  <tr>
+    <td><%= number_to_currency(finances.pays_maintenance) %></td>
+    <td><%= number_to_currency(finances.pays_players) %></td>
+    <td><%= number_to_currency(finances.pays_transfers) %> </td>
+    <td><%= number_to_currency(finances.all_pays) %></td>
+  </tr>
+</table>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><%= t('defaults.sitename') %></title>
+  <!--[if lt IE 9]>
+  <%= javascript_include_tag 'html5shiv-printshiv' %>
+  <![endif]-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to_home %>
+        <%  if current_user and current_user.club? %>
+        <div class="nav-collapse">
+          <ul class="nav nav-user">
+            <%= link_to_team_club(current_user.club) %>
+            <%= link_to_finances_club(current_user.club)%>
+            <%= link_to_received_offers_club(current_user.club) %>
+            <%= link_to_sent_offers_club(current_user.club) %>
+            <%= link_to_trainings_club(current_user.club) %>
+          </ul>
+        </div>
+        <%  end %>
+        <% if current_user and current_user.admin? %>
+        <div class="nav-collapse">
+          <ul class="nav nav-admin">
+            <%= link_to_admin_leagues %>
+            <%= link_to_admin_no_club_users %>
+            <%= link_to_admin_all_users %>
+            <%= link_to_admin_messages %>
+          </ul>
+        </div>
+        <% end %>
+        <div class="nav-collapse">
+          <ul class="nav nav-sign-in pull-right">
+            <%= sign_in %>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container content <%= "#{params[:controller]}-#{params[:action]}" %>">
+    <%= yield %>
+  </div>
+  <%= javascript_include_tag "application" %>
+</body>
+<!-- TODO: ADD bottom-bar -->
+</html>

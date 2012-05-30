@@ -1,0 +1,24 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+    <span style="float: right;"><%= cash(@club.cash) %></span>
+  </div>
+</div>
+<div class="main">
+<div class="main_box_white received_offers">
+<h1><%= t('clubs.offers.pending') %></h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :seller} %>
+</div>
+<div class="main_box_white received_offers">
+<h1><%= t('clubs.offers.transfered') %></h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.transfered, :user => :seller} %>
+</div>
+<div class="main_box_white received_offers">
+<h1><%= t('clubs.offers.accepted') %></h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.accepted, :user => :seller} %>
+</div>
+<div class="main_box_white received_offers">
+<h1><%= t('clubs.offers.rejected') %></h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.rejected, :user => :seller} %>
+</div>
+</div>

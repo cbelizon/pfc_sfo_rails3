@@ -1,0 +1,22 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header').pluralize %>
+    <span style="float: right;"><%= cash(@club.cash) %></span>
+  </div>
+</div>
+<div class="main">
+<div class="main_box_white finances">
+<% if @last_finances %>
+<%= render :partial => 'finances', :locals => {:finances => @last_finances} %>
+<% end  %>
+</div>
+<div class="main_box_white finances">
+<h2><%= t('.tickets_price') %></h2>
+<%= form_for @club, :url => ticket_price_club_path(@club),
+  :html => {:method => :put} do |f| %>
+    <%= f.label(:ticket_price, t('.ticket_price')) %>
+    <%= f.text_field(:ticket_price) %>
+  <%= f.submit t('.set_price') %>
+<% end %>
+</div>
+</div>

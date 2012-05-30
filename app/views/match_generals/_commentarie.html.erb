@@ -1,0 +1,13 @@
+<% if commentarie.minute  <= commentarie.match.minute %>
+<tr>
+  <td>
+    <%= commentarie.minute %>
+  </td>
+  <td>
+    <%= commentarie.player.complete_name %>
+    <%= t('action.from') %>
+    <%= commentarie.club.name %>
+    <%= t(commentarie.action) %>
+  </td>
+</tr>
+<% end %>

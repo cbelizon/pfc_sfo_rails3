@@ -1,0 +1,359 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+es:
+  register: "Regístrate"
+  login: "Inicia sesión"
+  logout: "Cerrar sesión"
+  form_error: "Se han encontrado los siguientes errores"
+  user: "Usuario"
+  rows_per_page: "Filas por página"
+  date:
+    formats:
+      default: "%d %m %Y"
+  time:
+    formats:
+      default: "%d %m %Y %I : %M %p"
+    pm: "pm"
+    am: "am"
+  "yes": "Sí"
+  "no": "No"
+  club: "Club"
+  search: "Buscar"
+  searching: "Buscando"
+  mail:
+    welcome_subject: "Bienvenido a Simulator Football Online"
+    welcome: "Te has inscrito correctamente en Simulator Football Online. Para conectarte pulsa en el siguiente enlace: "
+    thanks: "¡Gracias por haberte unido!"
+    username: "Tu nombre de usuario es: "
+  activerecord:
+    models:
+      user: usuario
+    attributes:
+      user:
+        password: "Contraseña"
+        login: "Nombre de usuario"
+        password_confirmation: "Confirmación de contraseña"
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      template:
+        header: "Error de inicio de sesión"
+        body: "Se han encontrado los siguientes errores al procesar su solicitud"
+      models:
+        user:
+          attributes:
+            password:
+              confirmation: "no coinciden."
+              too_short: "demasiado corta."
+            login:
+              taken: "ya registrado."
+              too_short: "demasiado corto."
+            password_confirmation:
+              too_short: "demasiado corta."
+            email:
+              taken: "ya registrado."
+  authlogic:
+    error_messages:
+      login_blank: "no puede estar en blanco"
+      login_not_found: "no es válido"
+      login_invalid: "debe contener sólamente letras, números, espacios y .-_@. por favor"
+      consecutive_failed_logins_limit_exceeded: "límite de inicios de sesión consecutivos excedidos. Cuenta deshabilitada"
+      email_invalid: "debe contener un email válido"
+      password_blank: "no puede estar vacía"
+      password_invalid: "no válida"
+      not_active: "Tu cuenta no está activa"
+      not_confirmed: "Tu cuenta no está confirmada"
+      not_approved: "Tu cuenta no está aprobada"
+      no_authentication_details: "No has proporcionado datos de autenticación"
+    models:
+      user_session: "UserSession"
+      user: "User"
+    attributes:
+      user_session:
+        login: "Nombre de inicio de sesión"
+        email: "Correo electrónico"
+        password: "Contraseña"
+        remember_me: "Recordar contraseña"
+  defaults:
+    sitename: "SFO"
+    or: "O"
+    of: "de"
+    yes: "Sí"
+    no: "No"
+    no_user: "Sin usuario"
+    to_end_the : "para terminar el"
+    accept: "aceptar"
+    reject: "rechazar"
+    cancel: "cancelar"
+    show: "mostrar"
+    edit: "editar"
+    destroy: "destruir"
+    new: "nuevo"
+    season: "temporada"
+    division: "división"
+    require_user: "Debes haber iniciado sesión para acceder a esta página"
+    require_admin: "Debes ser un administrador para acceder a esta página"
+    replace_success: "¡Sustitucion hecha!"
+    replace_fail: "¡Debes seleccionar a dos jugadores!"
+    ticke_price_success: "Precio del ticket: "
+    make_offer_success: "¡Hiciste una oferta!"
+    accept_offer_success: "¡Has aceptado la oferta!"
+    reject_offer_success: "¡Has rechazado la oferta!"
+    reject_offer_fail: "¡No puedes rechazar la oferta!"
+    cancel_offer_success: "¡Has cancelado la oferta!"
+    cancel_offer_fail: "¡No puedes cancelar la oferta!"
+    train_ability_success: "¡Jugador puesto a entrenar!"
+    not_propietary: "¡No eres el propietario de este club!"
+    propietary: "¡Eres el propietario de este club!"
+    closed_teams: "¡Equipos cerrados!"
+    opened_teams: "¡Equipos abiertos!"
+    simulate_rounds_success: "¡Jornadas simuladas!"
+    start_rounds_success: "¡Jornadas iniciadas!"
+    next_rounds_success: "¡Actualizado a la siguiente jornada todas las ligas!"
+    start_seasons_success: "¡Calendario creado!"
+    new_leagues_success: " ligas nuevas creadas"
+    new_leagues_fail: '¡Problemas creando las nuevas ligas!'
+    promotion_success: "¡Nuevas temporadas creadas!"
+    promotion_fail: "Problemas ascendiendo y descendiendo los equipos"
+    promotion_fail2: "¡No puedes ascender y descender los equipos!"
+    login_success: "¡Sesión iniciada!"
+    logout_success: "¡Desconectado!"
+    not_assigned_club: "¡No tienes un club asignado!"
+    message_created: "¡Mensaje creado!"
+    message_not_created: "¡Mensaje no creado!"
+    message_modified: "¡Mensaje modificado!"
+    message_not_modified: "¡Mensaje no modificado!"
+    message_destroyed: "¡Mensaje destruido!"
+    message_not_destroyed: "¡No se ha podido destruir el mensaje!"
+    english: "Inglés"
+    spanish: "Español"
+    in_game: "¡En Juego!"
+    in_game_title_bar: "¡Los partidos están en juego!"
+    wait_to_play: "Eres un usuario sin club asignado. Te asignaremos un club lo más rápido posible."
+    ticket_price_success: "¡Has cambiado el precio de la entrada!"
+    tactic_changed: "¡Has cambiado tu táctica!"
+    previous: "Previa"
+    next: "Siguiente"
+  number:
+    # Used in number_with_delimiter()
+    # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
+    format:
+      # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
+      separator: ","
+      # Delimets thousands (e.g. 1,000,000 is a million) (always in groups of three)
+      delimiter: "."
+      # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
+      precision: 3
+
+    # Used in number_to_currency()
+    currency:
+      format:
+        # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
+        format: "%n %u"
+        unit: "€"
+        # These three are to override number.format and are optional
+        separator: ","
+        delimiter: "."
+        precision: 2
+  admin:
+    link: "Administración"
+    leagues: "Ligas"
+    no_club_users: "Usuarios sin club"
+    messages: "Mensajes de Administración"
+    all_users: "Listado de Usuarios"
+  clubs:
+    matchs:
+      last_match: "Último partido"
+      next_match: "Siguiente partido"
+    trainings:
+      header: "Entrenamientos"
+      training: "Entrenar"
+    offers:
+      header: "Oferta"
+      pending: "Pendiente"
+      transfered: "Transferida"
+      accepted: "Aceptada"
+      rejected: "Rechazada"
+      seller: "Vendedor"
+      buyer: "Comprador"
+      player: "Jugador"
+      make_offer: "Hacer oferta"
+    sent_offers:
+      header: "Ofertas emitidas"
+    received_offers:
+      header: "Ofertas recibidas"
+    finances:
+      header: "Finanza"
+      total: "Total"
+      cash: "Caja"
+      tickets_price: "Precio de los tickets"
+      ticket_price: "Precio del ticket"
+      set_price: "Fijar precio"
+      last_round: "Último balance"
+      pays:
+        header: "Pagos"
+        maintenance: "Mantenimiento del estadio"
+        players: "Pagos de los jugadores"
+        transfers: "Transferencias de jugadores"
+        total: "Total"
+      benefits:
+       header: "Ingresos"
+       tickets: "Tickets"
+       trademarks: "Merchandasing"
+       transfers: "Transferencias de jugadores"
+       total: "Total"
+    team:
+      replace: "Reemplazar"
+      header: "Plantilla"
+  players:
+    name: "Nombre"
+    surname: "Apellidos"
+    speed: "Velocidad"
+    resistance: "Resistencia"
+    dribbling: "Regateo"
+    kick: "Tiro"
+    pass: "Pase"
+    recovery: "Robo"
+    goalkeeper: "Portero"
+    quality: "Calidad Media"
+    age: "Edad"
+    clause: "Claúsula"
+    pay: "Sueldo"
+    starters: "Titulares"
+    suppliers: "Suplentes"
+    no_convocateds: "No convocados"
+    position: "Posición"
+    tactic: "Táctica"
+    goals: "Goles"
+    average: "Media:"
+  home:
+    index:
+      leagues: "Ligas"
+      header: "Inicio"
+  layouts:
+    application:
+      home: "Inicio"
+      user: "Usuario"
+      logout: "Desconectar"
+      sure: "¿Estás seguro?"
+      not_logged: "No estás conectado, prueba a"
+      login: "Conectarte"
+      register: "Registrarte"
+      my_team: "Mi equipo"
+      training: "Entrenamientos"
+  round:
+    header: "Jornada"
+    no_round: "Sin Jornada"
+    state:
+      simulated: "Simulada"
+      not_simulated: "No simulada"
+      not_started: "No comenzada"
+      in_play: "En juego"
+      finished: "Finalizada"
+  leagues:
+    index:
+      header: "Listado de Ligas"
+      division: "División"
+      season: "Temporada"
+      num_clubs: "Nº Clubs"
+      stage: "Etapa de la temporada"
+      current_round: "Jornada actual"
+      simulation_state: "Estado de la simulación"
+      round_state: "Estado de la jornada"
+      simulate_rounds: "Simular Jornadas"
+      open_teams: "Abrir equipos"
+      start_rounds: "Empezar Jornadas"
+      next_rounds: "Siguientes Jornadas"
+      start_season: "Empezar Temporada"
+      close_teams: "Cerrar Equipos"
+      promotion: "Promocionar"
+      create_new_leagues: "Crear Nuevas Ligas"
+      start_leagues: "Crear calendario"
+      show_more: "Mostrar Más"
+      show_less: "Mostrar Menos"
+    messages:
+      header: "Mensajes"
+      message: "Mensaje del administrador"
+    message_new:
+      header: "Nuevo Mensaje"
+      message_english: "Mensaje en inglés"
+      message_spanish: "Mensaje en español"
+      save_message: "Guardar mensaje"
+    message_edit:
+      header: "Editar Mensaje"
+      message_english: "Mensaje en inglés"
+      message_spanish: "Mensaje en español"
+      save_message: "Modificar mensaje"
+  season:
+    state:
+      started: "Iniciada"
+      not_started: "No Iniciada"
+      finished: "Terminada"
+      in_progress: "En progreso"
+  seasons:
+    position: "Pos"
+    club: "Club"
+    match_playeds: "PJ"
+    wons: "PG"
+    dealed: "PE"
+    lost: "PP"
+    goals_favor: "GF"
+    goals_against: "GC"
+    points: "Ptos."
+    user: "Usuario"
+    classification: "Clasificación"
+  match_generals:
+    show:
+      match: "Partido"
+      minute: "Minuto"
+      commentarie: "Comentario"
+      club: "Club"
+      player: "Jugador"
+      local: "Local"
+      guest: "Visitante"
+  rounds:
+    round: "Jornada"
+    number: "Nº"
+    local: "Local"
+    guest: "Visitante"
+    versus: "vs"
+    show:
+      header: "Jornada"
+  user_sessions:
+    new:
+      header: "Iniciar sesión"
+      login: "Usuario"
+      password: "Contraseña"
+      remember_me: "Recuérdarme"
+      log_in: "Iniciar Sesión"
+  users:
+    new:
+      header: "Registro"
+      login: "Usuario"
+      password: "Contraseña"
+      password_confirmation: "Repetir contraseña"
+      register: "Registrar"
+      email: "email"
+      prefer_lang: "Selecciona tu lenguaje preferido para los emails"
+    users:
+      user: "Cuenta de usuario"
+      id: "Identificador"
+      email: "Correo electrónico"
+      login_count: "Numero de conexiones"
+      last_login: "Última conexión"
+      last_login_ip: "Última IP conocida"
+      created_at: "Fecha de registro"
+      admin: "Rol administrador"
+      language: "Lenguaje preferido"
+      no_club: "Sin club"
+      never: "Nunca"
+
+    no_club:
+      header: "Usarios sin club asignado"
+
+    all:
+      header: "Listado de Usuarios"
+  will_paginate:
+    previous_label: "Anterior"
+    next_label: "Siguiente"

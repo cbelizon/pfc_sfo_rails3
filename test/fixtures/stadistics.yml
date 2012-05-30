@@ -1,0 +1,38 @@
+# == Schema Information
+# Schema version: 20090506144518
+#
+# Table name: stadistics
+#
+#  id            :integer         not null, primary key
+#  club_id       :integer         not null
+#  round_id      :integer         not null
+#  played        :integer         default(0), not null
+#  wins          :integer         default(0), not null
+#  deals         :integer         default(0), not null
+#  lost          :integer         default(0), not null
+#  goals_favor   :integer         default(0), not null
+#  goals_against :integer         default(0), not null
+#  points        :integer         default(0), not null
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  played: 1
+  wins: 1
+  deals: 1
+  lost: 1
+  goals_favor: 1
+  goals_against: 1
+  points: 1
+
+two:
+  played: 1
+  wins: 1
+  deals: 1
+  lost: 1
+  goals_favor: 1
+  goals_against: 1
+  points: 1

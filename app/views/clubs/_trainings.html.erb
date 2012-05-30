@@ -1,0 +1,19 @@
+<div class="expander-header">
+    <h1><span class="symbol">-</span>
+    <span class="title"><%= t('players.starters') %></span>
+    </h1>
+</div>
+<div class="expander-content">
+    <%= render :partial => 'team_training',
+    :locals => {:players =>club.players.starter} %>
+</div>
+<div class="expander-header">
+    <h1><span class="symbol">-</span>
+    <span class="title"><%= t('players.suppliers') %></span>
+    </h1>
+</div>
+<div class="expander-content">
+    <%= render :partial => 'team_training', :locals =>
+    {:players => club.players.supplier} %>
+
+</div>

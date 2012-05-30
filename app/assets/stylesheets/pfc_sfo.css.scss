@@ -1,0 +1,40 @@
+$tableMarginBottom: 18px; //For AJAX Requests
+$standardBorderRadius: 5px;
+$h1Margin: 25px;
+
+body {
+    background: image-url('grass_tile_bg.png') fixed;
+ }
+
+.content {
+	background: $white;
+	padding: 40px;
+	@include border-radius($standardBorderRadius);
+	@include box-shadow(0 0 1px 1px $grayLighter);
+}
+
+.ajax-loader {
+	background: image-url('ajax-loader.gif') no-repeat transparent center center;
+	margin-bottom: $tableMarginBottom;
+}
+
+h1 {
+	margin-top: $h1Margin;
+	margin-bottom: $h1Margin;
+}
+
+.table {
+	th, .stat{
+		text-align: center;
+	}
+}
+
+fieldset {
+	legend {
+		text-align: center;
+	}
+}
+
+.users-new, .users-create, .user_sessions-new, .user_sessions-create {
+	@include reset_background;
+}

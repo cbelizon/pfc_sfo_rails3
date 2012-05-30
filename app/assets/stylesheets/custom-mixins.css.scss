@@ -1,0 +1,4 @@
+@mixin reset_background {
+	background: none;
+	@include box-shadow(0 0 0 0 transparent);
+}

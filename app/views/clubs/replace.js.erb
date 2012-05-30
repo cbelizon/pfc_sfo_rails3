@@ -1,0 +1,34 @@
+content = '<%= escape_javascript(flash[:notice] || flash[:error]) %>';
+$.jGrowl(content, {life: 5000});
+$(".team").html('<%= escape_javascript(render :partial => 'team_replace', :locals => {:team => @club})%>');
+
+function replacement()
+{
+    var player1;
+    $(".team input").hide();
+    $(".clickable").click(function(){
+       if(player1 === null)
+       {
+         player1 = true;
+         $(this).find(".player1").attr('checked', true);
+         $(this).addClass("clicked");
+       }
+       else
+       {
+          player1 = null;
+          var submitted_prev = false;
+          $(this).find(".player2").attr('checked', true);
+          $(this).addClass("clicked");
+          $(".clicked").fadeOut("slow").fadeIn("slow").fadeOut("slow").fadeIn("slow", function(){
+            if(!submitted_prev)
+            {
+                submitted_prev = true;
+                $("#replace_submit").click();
+            }
+          });
+
+        }
+    });
+}
+
+$(replacement);

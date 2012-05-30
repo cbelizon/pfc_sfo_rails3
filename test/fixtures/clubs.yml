@@ -1,0 +1,69 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Real_Madrid:
+  name: Real Madrid
+  stadium_name: Santiago Bernabéu
+  stadium_capacity: 90000
+
+Barcelona:
+  name: Barcelona F.C.
+  stadium_name: Camp Nou
+  stadium_capacity: 100000
+
+Sevilla:
+  name: Sevilla F.C.
+  stadium_name: Sánchez Pizjuan
+  stadium_capacity: 60000
+
+Valencia:
+  name: Valencia C.F.
+  stadium_name: Mestalla
+  stadium_capacity: 45000
+
+Atletico:
+  name: Atlético de Madrid
+  stadium_name: Vicente Calderón
+  stadium_capacity: 76000
+
+Villareal:
+  name: Villareal C.F.
+  stadium_name: El Madrigal
+  stadium_capacity: 25000
+
+Malaga:
+  name: Málaga C.F.
+  stadium_name: La Rosaleda
+  stadium_capacity: 28963
+
+Deportivo:
+  name: R.C. Deportivo
+  stadium_name: Riazor
+  stadium_capacity: 33597
+
+Valladolid:
+  name: R. Valladolid C.F. S.A.D.
+  stadium_name: José Zorrilla
+  stadium_capacity: 26512
+
+Betis:
+  name: Real Betis Balompié S.A.D.
+  stadium_name: Manuel Ruiz de Lopera
+  stadium_capacity: 51309
+
+
+# == Schema Information
+#
+# Table name: clubs
+#
+#  id               :integer         not null, primary key
+#  name             :string(30)      not null
+#  stadium_name     :string(40)      not null
+#  stadium_capacity :integer         not null
+#  created_at       :datetime
+#  updated_at       :datetime
+#  user_id          :integer
+#  cash             :decimal(16, 2)  default(0.0)
+#  ticket_price     :decimal(4, 2)   default(0.0)
+#  tactic           :string(255)     default("4-4-2"), not null
+#
+

@@ -1,0 +1,28 @@
+content = '<%= escape_javascript(flash[:notice] || flash[:error]) %>';
+$.jGrowl(content, {life: 5000});
+$(".trains").html('<%= escape_javascript(render :partial => 'trainings', :locals => {:club => @club})%>')
+
+//Show the training with JqueryUI
+$(function(){
+    $(".training-content").hide(); //If we have JS activate hide the standard
+    var content = $(".training-content").html();//flash-messages
+    $(".trained").each(function(){
+        var name = $(this).children(".name").html();
+        var surname = $(this).children(".surname").html();
+        var dlg = $(this).children(".training-content").dialog(
+          {
+            autoOpen: false,
+            modal: true,
+            title: name + " " + surname,
+            draggable: false,
+            resizable: false,
+            show: 'explode',
+            hide: 'explode'
+          });
+        $(this).click(function(){
+           dlg.dialog("open");
+           return false;
+        });
+    });
+
+});

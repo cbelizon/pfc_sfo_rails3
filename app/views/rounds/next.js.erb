@@ -1,0 +1,3 @@
+$('.round-id-<%= @actual_round %> .ajax-loader').fadeOut('fast', function(){
+	$('.round-id-<%= @actual_round %>').replaceWith('<%= j(render :partial =>'rounds/round', :locals => {:round => @next_round} )%>').hide().fadeIn('slow');
+});

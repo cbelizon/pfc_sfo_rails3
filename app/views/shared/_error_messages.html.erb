@@ -1,0 +1,11 @@
+<% if target.errors.any? %>
+<div class="alert alert-error fade in">
+	<button class="close" data-dismiss="alert">x</button>
+	<h3><%= t('form_error') %></h3>
+	<ul>
+		<% target.errors.full_messages.each do |msg| %>
+		<li><%= msg %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>

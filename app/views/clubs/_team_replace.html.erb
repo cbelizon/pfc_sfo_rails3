@@ -1,0 +1,33 @@
+<h1><%= t('players.average') %> <%= @club.starters_average %></h1>
+<div class="expander-header">
+  <h1><span class="symbol">-</span>
+    <span class="title"><%= t('players.tactic') %></span>
+  </h1>
+</div>
+<div class="expander-content">
+  <%= render :partial => '/clubs/tactics_change', :locals => {:tactic => team.tactic}  %>
+</div>
+<%= form_for :replace, :url => replace_club_path(team), :html =>
+{:method => :put, "data-remote" => true} do |f| %>
+<div class="expander-header">
+  <h1>
+    <span class="symbol">-</span>
+    <span class="title"><%= t('players.starters') %></span>
+  </h1>
+</div>
+<div class="expander-content">
+  <%= render :partial => '/clubs/team/players_replace',
+  :locals => {:players => team.starters} %>
+</div>
+<div class="expander-header">
+  <h1>
+    <span class="symbol">-</span>
+    <span class="title"><%= t('players.suppliers') %></span>
+  </h1>
+</div>
+<div class="expander-content">
+  <%= render :partial => '/clubs/team/players_replace', :locals =>
+  {:players => team.suppliers} %>
+</div>
+<%= f.submit t('clubs.team.replace') %>
+<% end %>

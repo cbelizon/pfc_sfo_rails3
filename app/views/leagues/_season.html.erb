@@ -1,0 +1,17 @@
+<tr>
+  <td><%= h(season.date) %></td>
+  <td><%= h(season.clubs.count) %></td>
+  <td><%= t(season.stage) %></td>
+  <% if season.round_actual? %>
+    <td><%= h(season.round_actual.number) %></td>
+  <% else %>
+    <td><%= t('round.no_round') %></td>
+  <% end %>
+  <% if season.in_progress? %>
+    <td><%= t(season.round_actual.state_simulation_str) %></td>
+    <td><%= t(season.round_actual.state_round_str) %></td>
+  <% else %>
+    <td><%= t('.none') %></td>
+    <td><%= t('.none') %></td>
+  <%  end %>
+</tr>

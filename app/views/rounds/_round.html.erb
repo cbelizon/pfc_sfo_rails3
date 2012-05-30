@@ -1,0 +1,45 @@
+<div class="pagination-container round round-id-<%= round.id %>">
+  <div class="table-content">
+    <table class="table table-condensed table-bordered table-striped">
+      <thead>
+        <tr>
+          <th colspan="3"><%= t('rounds.round') %>: <%= h(round.number)%></th>
+        </tr>
+        <tr>
+          <th><%= t('rounds.local') %></th>
+          <th><%= t('rounds.versus') %></th>
+          <th><%= t('rounds.guest') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% num = 1 %>
+        <% round.match_generals.each do |m| %>
+        <tr>
+          <td><%= link_to h(m.local.name), team_club_path(m.local)  %></td>
+          <% if m.finished? || m.in_play? %>
+          <td class="stat"><%= "#{m.local_goals_live} - #{m.guest_goals_live}"%></td>
+          <% else %>
+          <td class="stat">&nbsp; - &nbsp;</td>
+          <% end %>
+          <td><%= link_to h(m.guest.name), team_club_path(m.guest) %></td>
+        </tr>
+        <% num += 1 %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="pagination-pages">
+    <ul class="pager pager-round-id-<%= round.id %>">
+      <% if !round.first? %>
+      <li class="previous">
+        <%= link_to(t('defaults.previous'), previous_rounds_path(:id => round.id)) %>
+      </li>
+      <% end %>
+      <% if !round.last? %>
+      <li class="next">
+        <%= link_to(t('defaults.next'), next_rounds_path(:id => round.id)) %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

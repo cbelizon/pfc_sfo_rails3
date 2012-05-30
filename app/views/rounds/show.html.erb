@@ -1,0 +1,19 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+  </div>
+</div>
+<div class="main">
+    <div class="home">
+        <div class="main_box_white home">
+            <h1> <%= number_to_ordinal(@season.league.category) %>
+                <%=t('defaults.division').capitalize %>
+                <% if @season.in_play_round? %>
+                    <span class="blink"><%= t('defaults.in_game') %></span>
+                <% end %>
+            </h1>
+            <%= render :partial => "rounds/round", :locals =>
+            {:round => @round} %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<table>
+  <tr>
+    <th><%= t('players.position') %></th>
+    <th><%=  t('players.name') %></th>
+    <th><%=  t('players.surname') %></th>
+    <th><%=  t('players.speed') %></th>
+    <th><%=  t('players.resistance') %></th>
+    <th><%=  t('players.dribbling') %></th>
+    <th><%=  t('players.kick') %></th>
+    <th><%=  t('players.pass') %></th>
+    <th><%=  t('players.recovery') %></th>
+    <th><%=  t('players.goalkeeper') %></th>
+    <th><%=  t('players.quality') %></th>
+  </tr>
+
+  <% players.each do |player| %>
+    <tr id="player-<%= player.id %>"<% if player.training? %>
+            class="trained"
+        <% end %>>
+      <td><%=h player.tactic_position %></td>
+      <td class="name"><%=h player.name %></td>
+      <td class="surname"><%=h player.surname %></td>
+      <td><%=h player.speed %></td>
+      <td><%=h player.resistance %></td>
+      <td><%=h player.dribbling %></td>
+      <td><%=h player.kick %></td>
+      <td><%=h player.pass %></td>
+      <td><%=h player.recovery %></td>
+      <td><%=h player.goalkeeper %></td>
+      <td><%=h player.quality %></td>
+      <% if player.training? %>
+        <td class="training-content"><%= rounds_training(player.actual_training) %></td>
+      <% end %>
+    </tr>
+    <% unless  player.training? or League.closed_teams? %>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td><%= link_to(t('clubs.trainings.training') ,train_ability_club_path(:player_id => player,
+          :ability => :speed),
+          "remote" => :true,
+          "method" => :post) %></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :resistance),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :dribbling),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :kick),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :pass),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :recovery),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td><%= link_to t('clubs.trainings.training'), train_ability_club_path(:player_id => player,
+          :ability => :goalkeeper),
+          "remote" => :true,
+          "method" => :post%></td>
+      <td></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

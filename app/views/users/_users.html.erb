@@ -1,0 +1,77 @@
+<div class="pagination-container">
+	<div class="row pagination-search">
+		<div class="offset3 span6">
+			<%= form_tag({:controller => params[:controller], :action => params[:action]}, :method => :get) do %>
+			<fieldset>
+				<div class="control-group span5">
+					<%= text_field_tag :search, params[:search], :class => 'search-query span5' %>
+					<%= hidden_field_tag :per_page, params[:per_page] %>
+				</div>
+				<div class="control-group span1 offset2">
+					<%= submit_tag t("search"), :name =>'nil', :class => 'btn btn-primary', 'data-loading-text' => t("searching...")  %>
+				</div>
+			</fieldset>
+			<% end %>
+		</div>
+	</div>
+	<div class="row table-content">
+		<div class="span12">
+				<table class="table table-condensed table-bordered table-striped">
+					<thead>
+						<tr>
+							<th><%= t('.id') %></th>
+							<th><%= t('.user') %></th>
+							<th><%= t('.email') %></th>
+							<th><%= t('.login_count') %></th>
+							<th><%= t('.last_login') %></th>
+							<th><%= t('.last_login_ip') %></th>
+							<th><%= t('.created_at') %></th>
+							<th><%= t('.admin') %></th>
+							<th><%= t('.language') %></th>
+							<th><%= t('club') %></th>
+						</tr>
+					</thead>
+					<tbody>
+						<% users.each do |user| %>
+						<tr>
+							<td><%= user.id  %></td>
+							<td><%= h(user.login) %></td>
+							<td><%= h(user.email) %></td>
+							<% if user.login_count %>
+							<td><%= user.login_count %></td>
+							<% else %>
+							<%= 0 %>
+							<% end %>
+							<% if user.last_login_at %>
+							<td><%= l user.last_login_at %></td>
+							<% else %>
+							<td><%= t('.never') %></td>
+							<% end %>
+							<% if user.last_login_ip %>
+							<td><%= user.last_login_ip %></td>
+							<% else %>
+							<td><%= t('.never') %></td>
+							<% end %>
+							<td><%= user.created_at %></td>
+							<% if user.admin %>
+							<td><%= t('yes')%></td>
+							<% else %>
+							<td><%= t('no') %></td>
+							<% end %>
+							<td><%= user.prefer_lang %></td>
+							<% if user.club %>
+							<td><%= link_to(h(user.club.name), team_club_path(user.club) ) %></td>
+							<% else %>
+							<td><%= t('.no_club') %></td>
+							<% end %>
+						</tr>
+						<% end %>
+					</tbody>
+				</table>
+		</div>
+	</div>
+	<div class="row pagination-pages">
+			<%= will_paginate_rows_per_page(params, :param => :per_page, :rows => [5,10,15,20], :class => 'btn btn-primary pull-right', :title => t('rows_per_page')) %>
+			<%= will_paginate users, :class => 'span12 pagination pagination-centered' %>
+	</div>
+</div>

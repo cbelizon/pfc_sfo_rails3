@@ -1,0 +1,37 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+  </div>
+</div>
+<div class="main">
+  <div class="messages">
+    <div class="main_box_white">
+        <table>
+            <tr>
+                <th><%=  t('.header') %></th>
+            </tr>
+            <tr>
+              <th><%= t('defaults.english') %></th>
+              <th><%= t('defaults.spanish') %></th>
+            </tr>
+            <% @msgs.each  do |msg| %>
+            <tr>
+                <td>
+                    <%= msg.text_msg_en %>
+                </td>
+                <td>
+                  <%= msg.text_msg_es %>
+                </td>
+                <td>
+                    <%= link_to t('defaults.edit').capitalize, message_edit_leagues_path(:msg => msg) %>
+                </td>
+                <td>
+                    <%= link_to t('defaults.destroy').capitalize, message_destroy_leagues_path(:msg => msg), :method => :post %>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>
+    <%= link_to t('defaults.new').capitalize, message_new_leagues_path %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<% @seasons.each do |season| %>
+  <div class="row">
+    <div class="span12">
+      <h1> <%= number_to_ordinal(season.league.category) + " #{ t('defaults.division').capitalize}" %></h1>
+    </div>
+  </div>
+  <div class="row season-<%= season.id %>">
+    <div class="span8">
+      <%= render :partial => "/seasons/season", :locals => {:season => season} %>
+    </div>
+    <% if season.round_actual? %>
+      <div class="span4">
+        <%= render :partial => "rounds/round", :locals => {:round => season.round_actual} %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

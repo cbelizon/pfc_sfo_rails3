@@ -1,0 +1,10 @@
+<h2>Stadium: <%= finances.club.stadium_capacity %></h2>
+<h2><%= t('clubs.finances.last_round') %></h2>
+<% unless finances.nil? %>
+  <%= render :partial => '/clubs/finances/benefits',
+    :locals => {:finances => finances} %>
+  <%= render :partial => '/clubs/finances/pays',
+    :locals => {:finances => finances} %>
+  <%= render :partial => '/clubs/finances/balance',
+    :locals => {:finances => finances} %>
+<% end %>

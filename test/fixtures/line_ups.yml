@@ -1,0 +1,26 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  club_id: 1
+  match_general_id: 1
+  player_id: 1
+
+two:
+  club_id: 1
+  match_general_id: 1
+  player_id: 1
+
+
+# == Schema Information
+#
+# Table name: line_ups
+#
+#  id               :integer         not null, primary key
+#  club_id          :integer         not null
+#  match_general_id :integer         not null
+#  player_id        :integer         not null
+#  position         :integer         not null
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+

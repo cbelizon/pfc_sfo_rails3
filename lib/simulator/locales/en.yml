@@ -1,0 +1,29 @@
+en:
+  action:
+    start_match: "The match start!"
+    half_time: "Half time"
+    end_match: "End of the match!"
+    pass: "make a good pass"
+    error: "make a mistake and lose the ball"
+    to_clear: "clear the ball when they put pressure on him"
+    out: "throw it out causing the most of fans boo"
+    kick: "commit a foul"
+    dribbling: "make a great dribble and the adversary remains seated"
+    spectacular_pass: "make a great dribble without looking, what a spectacle!"
+    spectacular_dribbling: "make a great dribble, the defensive remains seated and cause a standing ovation"
+    shoot: "shoot at goal but the goalkeeper catchs the ball"
+    from: "from"
+    goal: "make GOAL"
+  symbol:
+    GK: Goalkeeper
+    LL: Left Lateral
+    LC: Left Central
+    RC: Right Central
+    RL: Right Lateral
+    CM: Center Medium
+    ML: Middle Left
+    MR: Middle Right
+    MP: Middle Point
+    FL: Forward Left
+    FR: Forward Right
+    RE: Supplier

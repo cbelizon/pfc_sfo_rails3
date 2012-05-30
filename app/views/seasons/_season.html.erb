@@ -1,0 +1,36 @@
+<div class="season-id-<%= season.id %>">
+  <table class="table table-condensed table-bordered table-striped">
+    <thead>
+      <tr>
+        <th><%=t('seasons.position') %></th>
+        <th><%=t('seasons.club') %></th>
+        <th><%=t('seasons.match_playeds') %></th>
+        <th><%=t('seasons.wons') %></th>
+        <th><%=t('seasons.dealed') %></th>
+        <th><%=t('seasons.lost') %></th>
+        <th><%=t('seasons.goals_favor') %></th>
+        <th><%=t('seasons.goals_against') %></th>
+        <th><%=t('seasons.points') %></th>
+        <th><%=t('seasons.user') %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% pos = 1 %>
+      <% season.classification.each do |position| %>
+        <tr>
+          <td class="stat"><%= pos %></td>
+          <td><%= link_to h(position.club.name), team_club_path(position.club) %></td>
+          <td class="stat"><%= position.played %></td>
+          <td class="stat"><%= position.win %> </td>
+          <td class="stat"><%= position.deals %></td>
+          <td class="stat"><%= position.lost %></td>
+          <td class="stat"><%= position.goals_favor %> </td>
+          <td class="stat"><%= position.goals_against %></td>
+          <td class="stat"><%= position.points %> </td>
+          <td class="stat"><%= h(position.user.login) %></td>
+        </tr>
+        <% pos += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

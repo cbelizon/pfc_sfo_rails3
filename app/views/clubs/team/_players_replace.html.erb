@@ -1,0 +1,39 @@
+<table>
+  <tr>
+      <th><%= t('players.position') %></th>
+      <th><%= t('players.name') %></th>
+      <th><%= t('players.surname') %></th>
+      <th><%= t('players.speed') %></th>
+      <th><%= t('players.resistance') %></th>
+      <th><%= t('players.dribbling') %></th>
+      <th><%= t('players.kick') %></th>
+      <th><%= t('players.pass') %></th>
+      <th><%= t('players.recovery') %></th>
+      <th><%= t('players.goalkeeper') %></th>
+      <th><%= t('players.quality') %></th>
+      <th><%= t('players.goals')%></th>
+      <th><%= t('players.pay') %></th>
+      <th><%= t('players.clause') %></th>
+    </tr>
+  <% players.each do |player| %>
+    <tr id="player-<%= player.id %>" class="clickable">
+      <td><%=h player.tactic_position %></td>
+      <td><%=h player.name %></td>
+      <td><%=h player.surname %></td>
+      <td><%=h player.speed %></td>
+      <td><%=h player.resistance %></td>
+      <td><%=h player.dribbling %> </td>
+      <td><%=h player.kick %> </td>
+      <td><%=h player.pass %></td>
+      <td><%=h player.recovery %></td>
+      <td><%=h player.goalkeeper %> </td>
+      <td><%=h player.quality %> </td>
+      <td><%=h player.goals %></td>
+      <td><%=h number_to_currency(player.pay) %></td>
+      <td><%=h number_to_currency(player.clause) %>
+          <%= radio_button("replacement", "player1", player.id, :class => 'player1') %>
+          <%= radio_button("replacement", "player2", player.id, :class => 'player2') %>
+      </td>
+    </tr>
+  <% end %>
+</table>

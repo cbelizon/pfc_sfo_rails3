@@ -1,0 +1,25 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+    <span style="float: right;"><%= cash(@club.cash) %></span>
+    
+  </div>
+</div>
+<div class="main">
+<div class="main_box_white sent_offers">
+<h1><%= t('clubs.offers.pending').pluralize %> </h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :buyer} %>
+</div>
+<div class="main_box_white sent_offers">
+<h1><%= t('clubs.offers.transfered').pluralize %></h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.transfered, :user => :buyer} %>
+</div>
+<div class="main_box_white sent_offers">
+<h1><%= t('clubs.offers.accepted').pluralize %> </h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.accepted, :user => :buyer} %>
+</div>
+<div class="main_box_white sent_offers">
+<h1><%= t('clubs.offers.rejected').pluralize %> </h1>
+<%= render :partial => 'offers', :locals => {:offers => @offers.rejected, :user => :buyer} %>
+</div>
+</div>

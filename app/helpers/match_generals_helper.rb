@@ -1,0 +1,2 @@
+module MatchGeneralsHelper
+end

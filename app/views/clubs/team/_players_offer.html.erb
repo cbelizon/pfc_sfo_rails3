@@ -1,0 +1,43 @@
+<table>
+  <tr>
+    <th><%= t('players.position') %></th>
+    <th><%= t('players.name') %></th>
+    <th><%= t('players.surname') %></th>
+    <th><%= t('players.speed') %></th>
+    <th><%= t('players.resistance') %></th>
+    <th><%= t('players.dribbling') %></th>
+    <th><%= t('players.kick') %></th>
+    <th><%= t('players.pass') %></th>
+    <th><%= t('players.recovery') %></th>
+    <th><%= t('players.goalkeeper') %></th>
+    <th><%= t('players.quality') %></th>
+    <th><%= t('players.goals')%></th>
+    <th><%= t('players.pay') %></th>
+    <th><%= t('players.clause') %></th>
+  </tr>
+
+  <% players.each do |player| %>
+    <tr>
+      <td><%=h player.tactic_position %></td>
+      <td><%=h player.name %></td>
+      <td><%=h player.surname %></td>
+      <td><%=h player.speed %></td>
+      <td><%=h player.resistance %></td>
+      <td><%=h player.dribbling %> </td>
+      <td><%=h player.kick %> </td>
+      <td><%=h player.pass %></td>
+      <td><%=h player.recovery %></td>
+      <td><%=h player.goalkeeper %> </td>
+      <td><%=h player.quality %> </td>
+      <td><%=h player.goals %></td>
+      <td><%=h number_to_currency(player.pay) %></td>
+      <td><%=h number_to_currency(player.clause) %></td>
+      <% unless current_user.nil? or current_user.admin? or
+           @club_user == @club or @club_user.nil? %>
+      <td><%= link_to t('clubs.offers.make_offer'),
+        make_offer_club_path(:club_id => player.club.id, :player_id => player.id),
+      :method => :post %>
+      <% end %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,304 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  "yes": "Yes"
+  "no": "No"
+  register: "Register"
+  logout: "Logout"
+  login: "Login"
+  club: "Club"
+  form_error: "The follow errors has been encountered"
+  user: "User"
+  rows_per_page: "Rows per page"
+  activerecord:
+    errors:
+      template:
+        header: "Login Error"
+        body: "We have found the following errors on your petition"
+      full_messages:
+        format: "%{attribute} %{message}"
+  search: "Search"
+  searching: "Searching"
+  mail:
+    welcome_subject: "Welcome to Simulator Football Online"
+    welcome: "You have successfully signed up to Simulator Football Online. To login to the site, just follow this link:"
+    thanks: "Thanks for joining and have a great day!"
+    username: "Your user name is: "
+  defaults:
+    sitename: "SFO"
+    of: "Of"
+    or: "Or"
+    yes: "Yes"
+    no: "No"
+    no_user: "No user"
+    to_end_the : "To end the"
+    accept: "accept"
+    reject: "reject"
+    cancel: "cancel"
+    show: "show"
+    edit: "edit"
+    destroy: "destroy"
+    new: "new"
+    season: "season"
+    division: "division"
+    require_user: "You must be logged in to access this page"
+    require_admin: "You must be an admin to access this page"
+    replace_success: "Replace success!"
+    replace_fail: "You must select two players!"
+    ticke_price_success: "Ticket price set to: "
+    make_offer_success: "You make a offer!"
+    accept_offer_success: "You have accepted the offer!"
+    reject_offer_success: "You have rejected the offer!"
+    reject_offer_fail: "Tou can't reject de offer!"
+    cancel_offer_success: "You have cancel the offer!"
+    cancel_offer_fail: "You can't cancel the offer!"
+    train_ability_success: "Player set trained!"
+    not_propietary: "You're not the propietary of this club!"
+    propietary: "You're the propietary of this club!"
+    closed_teams: "Teams are closed!"
+    opened_teams: "Teams are opened!"
+    simulate_rounds_success: "All rounds simulated!"
+    start_rounds_success: "All rounds started!"
+    next_rounds_success: "Set to next rounds all leagues!"
+    start_seasons_success: "Calendar created!"
+    new_leagues_success: " New leagues created!"
+    new_leagues_fail: 'Problems creating the new leagues!'
+    promotion_success: "New seasons created"
+    promotion_fail: "Problems creating the new seasons with promotions"
+    promotion_fail2: "You can't promotion the leagues!"
+    login_success: "Login successful!"
+    logout_success: "Logout successful!"
+    not_assigned_club: "You haven't an assigned club"
+    message_created: "¡Message created!"
+    message_not_created: "¡Message not created!"
+    message_destroyed: "Message destroyed!"
+    message_not_destroyed: "Message not destroyed!"
+    message_modified: "¡Message modified!"
+    message_not_modified: "¡Message not modified!"
+    spanish: "Spanish"
+    english: "English"
+    in_game: "In game!"
+    in_game_title_bar: "Matchs are in game!"
+    wait_to_play: "You are an user without assigned club. We will assign a club as fast as we can."
+    ticket_price_success: "You're changed the ticket price!"
+    tactic_changed: "You're changed the tactic!"
+    previous: "Previous"
+    next: "Next"
+  number:
+    # Used in number_with_delimiter()
+    # These are also the defaults for 'currency', 'percentage', 'precision', and 'human'
+    format:
+      # Sets the separator between the units, for more precision (e.g. 1.0 / 2.0 == 0.5)
+      separator: "."
+      # Delimets thousands (e.g. 1,000,000 is a million) (always in groups of three)
+      delimiter: ","
+      # Number of decimals, behind the separator (the number 1 with a precision of 2 gives: 1.00)
+      precision: 3
+
+    # Used in number_to_currency()
+    currency:
+      format:
+        # Where is the currency sign? %u is the currency unit, %n the number (default: $5.00)
+        format: "%u %n"
+        unit: "$"
+        # These three are to override number.format and are optional
+        separator: "."
+        delimiter: ","
+        precision: 2
+  admin:
+    link: "Admin"
+    leagues: "Leagues"
+    no_club_users: "No clubs users"
+    messages: "Admin messages"
+    all_users: "Users List"
+  clubs:
+    matchs:
+      last_match: "Last Match"
+      next_match: "Next Match"
+    trainings:
+      header: "Trainings"
+      training: "Training ability"
+    offers:
+      header: "Offer"
+      pending: "Pending"
+      transfered: "Transferred"
+      accepted: "Accepted"
+      rejected: "Rejected"
+      seller: "Seller"
+      buyer: "Buyer"
+      player: "Player"
+      make_offer: "Make Offer"
+    sent_offers:
+      header: "Sent Offers"
+    received_offers:
+      header: "Received Offers"
+    finances:
+      header: "Finance"
+      total: "Total"
+      cash: "Cash"
+      tickets_price: "Tickets price"
+      ticket_price: "Ticket price"
+      set_price: "Set price"
+      last_round: "Last balance"
+      pays:
+        header: "Pays"
+        maintenance: "Stadium maintenance"
+        players: "Players pays"
+        transfers: "Players transfers"
+        total: "Total"
+      benefits:
+       header: "Income"
+       tickets: "Tickets"
+       trademarks: "Trademarks"
+       transfers: "Players transfers"
+       total: "Total"
+    team:
+      replace: "Replace"
+      header: "Team"
+  players:
+    name: "Name"
+    surname: "Surname"
+    speed: "Speed"
+    resistance: "Resistance"
+    dribbling: "Dribbling"
+    kick: "Shoot"
+    pass: "Pass"
+    recovery: "Recovery"
+    goalkeeper: "Goalkeeper"
+    quality: "Average Quality"
+    clause: "Clause"
+    pay: "Pay"
+    age: "Age"
+    starters: "Starters"
+    suppliers: "Suppliers"
+    no_convocateds: "No convocateds"
+    position: "Position"
+    tactic: "Tactic"
+    goals: "Goals"
+    average: "Average:"
+  home:
+    index:
+      leagues: "Leagues"
+      header: "Home"
+  layouts:
+    application:
+      home: "Home"
+      user: "User"
+      logout: "Logout"
+      sure: "Are you sure?"
+      not_logged: "You're not logged in, try to"
+      login: "Log in"
+      register: "Register"
+      my_team: "My team"
+      training: "Trainings"
+  round:
+    header: "Round"
+    no_round: "No Round"
+    state:
+      simulated: "Simulated"
+      not_simulated: "Not simulated"
+      not_started: "Not started"
+      in_play: "In Play"
+      finished: "Finished"
+  leagues:
+    index:
+      header: "Listing Leagues"
+      division: "Division"
+      season: "Season"
+      num_clubs: "Nº Clubs"
+      stage: "Season Stage"
+      current_round: "Current Round"
+      simulation_state: "State Simulation"
+      round_state: "State Round"
+      simulate_rounds: "Simulate Rounds"
+      open_teams: "Open Teams"
+      start_rounds: "Start Rounds"
+      next_rounds: "Next Rounds"
+      start_season: "Start Season"
+      close_teams: "Close Teams"
+      promotion: "Promotion"
+      create_new_leagues: "Create New Leagues"
+      start_leagues: "Create calendar"
+      show_more: "Show More"
+      show_less: "Show Less"
+    messages:
+      header: "Admin messages"
+    message_new:
+      header: "New Message"
+      message_english: "Message in english"
+      message_spanish: "Message in Spanish"
+      save_message: "Save message"
+    message_edit:
+      header: "Edit Message"
+      message_english: "Message in english"
+      message_spanish: "Message in Spanish"
+      save_message: "Modify message"
+  season:
+    state:
+      started: "Started"
+      not_started: "Not Started"
+      finished: "Finished"
+      in_progress: "In Progress"
+  seasons:
+    position: "Pos"
+    club: "Club"
+    match_playeds: "P"
+    wons: "W"
+    dealed: "D"
+    lost: "L"
+    goals_favor: "F"
+    goals_against: "A"
+    points: "Points"
+    user: "User"
+    classification: "Classification"
+  match_generals:
+    show:
+      match: "Match"
+      minute: "Minute"
+      commentarie: "Comment"
+      club: "Club"
+      player: "Player"
+      local: "Local"
+      guest: "Guest"
+  rounds:
+    round: "Round"
+    number: "Nº"
+    local: "Local"
+    guest: "Guest"
+    versus: "vs"
+    show:
+      header: "Round"
+  user_sessions:
+    new:
+      header: "Log in"
+      login: "Login"
+      password: "Password"
+      remember_me: "Remember me"
+      log_in: "Log in"
+  users:
+    new:
+      header: "Register"
+      login: "User"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      register: "Register"
+      email: "email"
+      prefer_lang: "Select prefer language (emails)"
+    users:
+      user: "Login"
+      id: "Id"
+      email: "E-mail"
+      login_count: "Number of connections"
+      last_login: "Last login"
+      last_login_ip: "Last IP address"
+      created_at: "Register date"
+      admin: "Administer Role"
+      language: "Favourite language"
+      no_club: "No club"
+      never: "Never"
+    no_club:
+      header: "No club users"
+
+    all:
+      header: "Users List"

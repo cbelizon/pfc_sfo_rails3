@@ -1,0 +1,15 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+    <span style="float: right;"><%= cash(@club.cash) %></span>
+  </div>
+</div>
+<div class="main">
+  <div class="trainings">
+        <div class="main_box_white">
+          <div class="trains">
+            <%= render :partial => 'trainings', :locals => {:club => @club}%>
+          </div>
+        </div>
+  </div>
+</div>

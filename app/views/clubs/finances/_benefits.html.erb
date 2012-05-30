@@ -1,0 +1,15 @@
+<h3><%= t('.header') %></h3>
+<table>
+  <tr>
+    <th><%= t('.tickets') %></th>
+    <th><%= t('.trademarks') %></th>
+    <th><%= t('.transfers') %></th>
+    <th><%= t('.total') %></th>
+  </tr>
+  <tr>
+    <td><%= number_to_currency(finances.benefits_ticket)%></td>
+    <td><%= number_to_currency(finances.benefits_trademark)%></td>
+    <td><%= number_to_currency(finances.benefits_transfers) %></td>
+    <td><%= number_to_currency(finances.all_benefits) %></td>
+  </tr>
+</table>

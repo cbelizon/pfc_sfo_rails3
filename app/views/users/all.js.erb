@@ -1,0 +1,6 @@
+$('.ajax-loader').fadeOut('fast', function(){
+	$('.all-users').html("<%= j(render :partial => "users", :locals => {:users => @users, :search_path => all_users_path }) %>");
+});
+
+
+

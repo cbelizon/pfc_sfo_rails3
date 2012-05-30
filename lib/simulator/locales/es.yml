@@ -1,0 +1,29 @@
+es:
+  action:
+    start_match: "¡Comienza el partido!"
+    half_time: "Descanso."
+    end_match: "¡Fin del partido!"
+    pass: "hace un buen pase."
+    error: "comete un error y pierde la pelota."
+    to_clear: "despeja el balón al sentirse presionado."
+    out: "la manda fuera provocando los silbidos de una buena parte de su aficción."
+    kick: "comete una falta."
+    dribbling: "hace un buen regate que deja sentado al adversario."
+    spectacular_pass: "hace un espectacular pase sin mirar ¡Qué espectáculo!"
+    spectacular_dribbling: "hace un regate que deja sentado a varios defensas y provoca la ovación de una buena parte del público."
+    shoot: "tira a puerta pero el portero para el disparo."
+    from: "del"
+    goal: "mete GOL"
+  symbol:
+    GK: Portero
+    LL: Lateral Izquierdo
+    LC: Central Izquierdo
+    RC: Central Derecho
+    RL: Lateral Derecho
+    CM: Medio Centro
+    ML: Volante Izquierdo
+    MR: Volante Derecho
+    MP: Media Punta
+    FL: Delantero Izquierdo
+    FR: Delantero Derecho
+    RE: Reserva

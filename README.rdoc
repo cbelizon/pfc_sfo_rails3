@@ -1,0 +1,3 @@
+== Welcome to Rails
+
+This is an academic project. My final degree project.

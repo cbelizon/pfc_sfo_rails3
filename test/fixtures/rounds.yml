@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<% for i in 1...18 %>
+Jornada_<%= i %>_2009:
+  season: Primera2009
+  round_number: i
+<% end %>
+
+
+# == Schema Information
+#
+# Table name: rounds
+#
+#  id               :integer         not null, primary key
+#  season_id        :integer         not null
+#  number           :integer         not null
+#  created_at       :datetime
+#  updated_at       :datetime
+#  state_simulation :boolean         default(FALSE)
+#  start_time       :datetime
+#
+

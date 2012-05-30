@@ -1,0 +1,5 @@
+<h1><%= t('seasons.classification') %>
+  <%= number_to_ordinal(h(@season.category))%>
+<%= t('defaults.division').capitalize %>, <%= t('defaults.season').capitalize%>
+<%= h(@season.date)%></h1>
+<%= render :partial => "season", :locals => {:season => @season} %>

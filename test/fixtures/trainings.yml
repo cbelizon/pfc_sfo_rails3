@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  player_id: 1
+  ability: MyString
+  improvement: 1
+  round_count: 1
+
+two:
+  player_id: 1
+  ability: MyString
+  improvement: 1
+  round_count: 1
+
+
+# == Schema Information
+#
+# Table name: trainings
+#
+#  id          :integer         not null, primary key
+#  player_id   :integer         not null
+#  ability     :string(255)     not null
+#  improvement :integer
+#  round_count :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

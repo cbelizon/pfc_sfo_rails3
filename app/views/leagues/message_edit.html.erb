@@ -1,0 +1,18 @@
+<div id="separator_container">
+  <div class="separator">
+    <%= t('.header') %>
+  </div>
+</div>
+<div class="main">
+    <div class="main_box_white edit_message">
+        <%= form_for @message, :url => message_modify_leagues_path(:msg => @message.id), :html => {:method => :put} do |f| %>
+            <h1><%= f.label t('.message_english')%></h1>
+            <%= f.text_field :text_msg_en  %>
+            <h1><%= f.label t('.message_spanish')%></h1>
+            <%= f.text_field :text_msg_es %>
+            <div class="button">
+            <%= f.submit t('.save_message') %>
+            </div>
+        <% end %>
+    </div>
+  </div>
