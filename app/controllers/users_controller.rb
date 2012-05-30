@@ -24,6 +24,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        UserMailer.welcome_email(@user).deliver
         flash[:notice] = "Account #{@user.login} registered!"
         format.html { redirect_to :root}
       else

@@ -8,6 +8,7 @@ es:
   form_error: "Se han encontrado los siguientes errores"
   user: "Usuario"
   rows_per_page: "Filas por página"
+  welcome_email: "Bienvenido a SFO"
   date:
     formats:
       default: "%d %m %Y"
