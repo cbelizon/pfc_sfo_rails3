@@ -50,9 +50,11 @@ class ClubsController < ApplicationController
       player1 = @club.players.find(params[:replacement][:player1])
       player2 = @club.players.find(params[:replacement][:player2])
       @club.replace(player1, player2)
-      flash[:notice] = t('defaults.replace_success')
       respond_to do |format|
-        format.html {redirect_to team_club_path}
+        format.html do
+          flash[:notice] = t('defaults.replace_success')
+          redirect_to team_club_path
+        end
         format.js
       end
     rescue
