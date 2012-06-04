@@ -1,85 +1,55 @@
-<div id="separator_container">
-  <div class="separator">
-    <%= t('.header') %>
-  </div>
+<div class="header-section">
+  <h1><%= t('.header') %></h1>
 </div>
-<div class="main">
-
-<% @leagues.each do |league| %>
-  <div class="main_box_white leagues">
-  <div class="expander-header">
-   <h1><span class="symbol">
-      -
-    </span>
-    <span><%=  number_to_ordinal(league.category) %> <%=  t('.division') %></span>
-       </h1>
-  </div>
-  <div class="expander-content">
-    <table>
-      <tr>
-        <th><%=  t('.season') %></th>
-        <th><%=  t('.num_clubs') %></th>
-        <th><%=  t('.stage') %></th>
-        <th><%=  t('.current_round') %></th>
-        <th><%= t('.simulation_state') %> </th>
-        <th><%= t('.round_state') %></th>
-      </tr>
-      <% if @show %>
-        <% league.seasons.reverse.each do |season| %>
-          <% @count = 1 %>
-          <%= render :partial => "season", :locals => {:season => season} %>
-          <% @count = @count + 1 %>
-        <% end %>
-      <% else %>
-        <% league.seasons.recent(5).each do |season| %>
-          <%= render :partial => "season", :locals => {:season => season} %>
-        <% end %>
-      <% end %>
+<div class="row">
+  <div class="span12">
+    <table class="table table-striped league-control">
+      <thead>
+        <tr>
+          <th><%=  t('.season') %></th>
+          <th><%=  t('.num_clubs') %></th>
+          <th><%=  t('.stage') %></th>
+          <th><%=  t('.current_round') %></th>
+          <th><%= t('.simulation_state') %> </th>
+          <th><%= t('.round_state') %></th>
+        </tr>
+      </thead>
+      <%= render :partial => "season", :locals => {:season => @last_season} %>
     </table>
-    <% unless @show %>
-      <%=  link_to t('.show_more'), leagues_path(:show => :all) %>
+    <br />
+    <% if League.finished_seasons? and League.all.length >= 1 %>
+    <%= link_to t('.promotion'), promotion_leagues_path, :method => :post, :class => 'btn btn-primary' %>
+    <% end %>
+    <% if League.not_started_seasons? and User.no_club.length >= League::NUM_CLUBS %>
+    <%= link_to t('.create_new_leagues'),
+    new_leagues_leagues_path, :method => :post, :class => 'btn btn-primary' %>
+    <% end %>
+    <% if League.not_started_seasons? and League.count > 0 %>
+    <%= link_to t('.start_leagues'), create_calendar_leagues_path, :method => :post, :class => 'btn btn-primary' %>
     <% else %>
-      <span class="show-less">
-        <%= link_to t('.show_less'), leagues_path %>
-      </span>
+      <% if !League.finished_seasons? %>
+        <% if League.open_teams? %>
+          <%= for_admin{link_to t('.close_teams'),  close_teams_leagues_path, :method => :put, :class => 'btn btn-primary'} %>
+        <% end %>
+        <% if League.closed_teams? %>
+          <% if League.not_started_rounds? and !League.simulated_rounds? %>
+            <%= for_admin{link_to t('.open_teams'),
+            open_teams_leagues_path, :method => :put, :class => 'btn-primary btn'} %>
+          <% end %>
+          <% if !League.simulated_rounds? %>
+            <%= for_admin{link_to t('.simulate_rounds'),
+            simulate_rounds_leagues_path, :method => :post, :class => 'btn btn-primary'} %>
+          <% end %>
+          <% if League.simulated_rounds? and League.not_started_rounds? %>
+            <%= for_admin{link_to t('.start_rounds'),
+            start_rounds_leagues_path, :method => :put, :class => 'btn btn-primary'} %>
+          <% end %>
+          <% if League.simulated_rounds? and League.finished_rounds? %>
+            <%= for_admin{link_to t('.next_rounds'),
+              next_rounds_leagues_path, :method => :put, :class => 'btn btn-primary'} %>
+          <% end %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
-  </div>
-<% end %>
-<br />
-<% if League.finished_seasons? and League.all.length >= 1 %>
-  <%= link_to t('.promotion'), promotion_leagues_path, :method => :post %>
-<% end %>
-<% if League.not_started_seasons? and User.no_club.length >= League::NUM_CLUBS %>
-  <%= link_to t('.create_new_leagues'),
-    new_leagues_leagues_path, :method => :post %>
-<% end %>
-<% if League.not_started_seasons? and League.count > 0 %>
-  <%= link_to t('.start_leagues'), create_calendar_leagues_path, :method => :post %>
-<% else %>
-  <% if !League.finished_seasons? %>
-    <% if League.open_teams? %>
-      <%= for_admin{link_to t('.close_teams'),
-        close_teams_leagues_path, :method => :put} %>
-    <% end %>
-    <% if League.closed_teams? %>
-      <% if League.not_started_rounds? and !League.simulated_rounds? %>
-        <%= for_admin{link_to t('.open_teams'),
-          open_teams_leagues_path, :method => :put} %>
-     <% end %>
-      <% if !League.simulated_rounds? %>
-        <%= for_admin{link_to t('.simulate_rounds'),
-          simulate_rounds_leagues_path, :method => :post} %>
-      <% end %>
-      <% if League.simulated_rounds? and League.not_started_rounds? %>
-        <%= for_admin{link_to t('.start_rounds'),
-          start_rounds_leagues_path, :method => :put} %>
-      <% end %>
-      <% if League.simulated_rounds? and League.finished_rounds? %>
-        <%= for_admin{link_to t('.next_rounds'),
-          next_rounds_leagues_path, :method => :put} %>
-      <% end %>
-    <% end %>
-  <% end %>
-<% end %>
 </div>
