@@ -1,5 +1,6 @@
-<table>
-  <tr>
+<table class="table table-striped table-condensed table-bordered">
+  <thead>
+    <tr>
       <th><%= t('players.position') %></th>
       <th><%= t('players.name') %></th>
       <th><%= t('players.surname') %></th>
@@ -15,25 +16,28 @@
       <th><%= t('players.pay') %></th>
       <th><%= t('players.clause') %></th>
     </tr>
-  <% players.each do |player| %>
-    <tr id="player-<%= player.id %>" class="clickable">
-      <td><%=h player.tactic_position %></td>
-      <td><%=h player.name %></td>
-      <td><%=h player.surname %></td>
-      <td><%=h player.speed %></td>
-      <td><%=h player.resistance %></td>
-      <td><%=h player.dribbling %> </td>
-      <td><%=h player.kick %> </td>
-      <td><%=h player.pass %></td>
-      <td><%=h player.recovery %></td>
-      <td><%=h player.goalkeeper %> </td>
-      <td><%=h player.quality %> </td>
-      <td><%=h player.goals %></td>
-      <td><%=h number_to_currency(player.pay) %></td>
-      <td><%=h number_to_currency(player.clause) %>
-          <%= radio_button("replacement", "player1", player.id, :class => 'player1') %>
-          <%= radio_button("replacement", "player2", player.id, :class => 'player2') %>
+  </thead>
+  <tbody>
+    <% players.each do |player| %>
+    <tr id="player-<%= player.id %>">
+      <td><span class="badge badge-info"><%=h player.tactic_position %></span></td>
+      <td><span class="badge badge-important"><%=h player.name %></span></td>
+      <td><span class="badge badge-important"><%=h player.surname %></span></td>
+      <td><span class="badge badge-success"><%=h player.speed %></span></td>
+      <td><span class="badge badge-success"><%=h player.resistance %></span></td>
+      <td><span class="badge badge-success"><%=h player.dribbling %></span></td>
+      <td><span class="badge badge-success"><%=h player.kick %></span> </td>
+      <td><span class="badge badge-success"><%=h player.pass %></span></td>
+      <td><span class="badge badge-success"><%=h player.recovery %></span></td>
+      <td><span class="badge badge-success"><%=h player.goalkeeper %></span></td>
+      <td><span class="badge badge-success"><%=h player.quality %></span></td>
+      <td><span class="badge badge-success"><%=h player.goals %></span></td>
+      <td><span class="badge badge-success"><%=h number_to_currency(player.pay) %></span></td>
+      <td><span class="badge badge-success"><%=h number_to_currency(player.clause) %>
+          <%= radio_button("replacement", "player1", player.id, :class => 'substitution substitution-player1') %>
+          <%= radio_button("replacement", "player2", player.id, :class => 'substitution substitution-player2') %></span>
       </td>
     </tr>
-  <% end %>
+    <% end %>
+  </tbody>
 </table>

@@ -1,21 +1,10 @@
-<div id="separator_container">
-  <div class="separator">
-    <%= t('.header') + " #{@club.name}" %>
-    <span style="float: right;"><%= cash(@club.cash) %></span>
-  </div>
-</div>
-<div class="main">
-    <div class="club">
-        <div class="main_box_white">
-          <div class="team">
-            <% if League.open_teams? and @club == @club_user %>
-                <%= render :partial => 'team_replace', :locals => {:team => @club} %>
-            <% end %>
-
-            <% if League.closed_teams? or @club != @club_user%>
-                <%= render :partial => 'team', :locals => {:team => @club} %>
-            <% end %>
-          </div>
-        </div>
-    </div>
+<h1><%= @club.name %></h1>
+<%= cash(@club.cash) %>
+<div class="team">
+  <% if League.open_teams? and @club == @club_user %>
+  <%= render :partial => 'team_replace', :locals => {:team => @club} %>
+  <% end %>
+  <% if League.closed_teams? or @club != @club_user%>
+  <%= render :partial => 'team', :locals => {:team => @club} %>
+  <% end %>
 </div>

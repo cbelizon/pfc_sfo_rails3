@@ -1,7 +1,3 @@
-<div class="tactic">
-  <% TACTICS['available'].each  do |tactic_available| %>
-  <h2><%= link_to tactic_available,
-                   tactic_club_path(:tactic => tactic_available), :method => :put %></h2>
-  <% end %>
-  <img src="<%= TACTICS[tactic]["image"] %>" alt="<%= tactic %>"/>
-</div>
+<% TACTICS['available'].each  do |tactic_available| %>
+	<%= link_to tactic_available, tactic_club_path(:tactic => tactic_available), :method => :put %>
+<% end %>
