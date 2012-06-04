@@ -254,7 +254,7 @@ es:
       finished: "Finalizada"
   leagues:
     index:
-      header: "Listado de Ligas"
+      header: "Control de ligas"
       division: "División"
       season: "Temporada"
       num_clubs: "Nº Clubs"

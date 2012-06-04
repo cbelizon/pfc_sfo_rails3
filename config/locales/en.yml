@@ -204,7 +204,7 @@ en:
       finished: "Finished"
   leagues:
     index:
-      header: "Listing Leagues"
+      header: "Leagues Control"
       division: "Division"
       season: "Season"
       num_clubs: "Nº Clubs"
