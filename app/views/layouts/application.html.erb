@@ -50,6 +50,8 @@
       </div>
     </div>
   </div>
+  <%= render "shared/flash_errors", :errors => flash[:error] %>
+  <%= render "shared/flash_notice", :notice => flash[:notice] %>
   <div class="container content <%= "#{params[:controller]}-#{params[:action]}" %>">
     <%= yield %>
   </div>
