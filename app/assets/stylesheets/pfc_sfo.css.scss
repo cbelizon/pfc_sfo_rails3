@@ -29,6 +29,14 @@ h1 {
 	}
 }
 
+table.league-control td, .team table td {
+	text-align: center;
+
+	&.selected {
+		background-color: $green !important;
+	}
+}
+
 fieldset {
 	legend {
 		text-align: center;
