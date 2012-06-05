@@ -9,6 +9,8 @@ es:
   user: "Usuario"
   rows_per_page: "Filas por página"
   welcome_email: "Bienvenido a SFO"
+  select_tactic: "Seleccionar táctica"
+
   date:
     formats:
       default: "%d %m %Y"

@@ -3,8 +3,8 @@ $standardBorderRadius: 5px;
 $h1Margin: 25px;
 
 body {
-    background: image-url('grass_tile_bg.png') fixed;
- }
+	background: image-url('grass_tile_bg.png') fixed;
+}
 
 .content {
 	background: $white;
@@ -43,6 +43,15 @@ fieldset {
 	}
 }
 
+.cash {
+	text-align: right;
+}
 .users-new, .users-create, .user_sessions-new, .user_sessions-create {
 	@include reset_background;
+}
+
+.team .team-open {
+	.tactic-selector {
+		margin-top: 10px;
+	}
 }

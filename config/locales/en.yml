@@ -12,6 +12,7 @@ en:
   user: "User"
   rows_per_page: "Rows per page"
   welcome_email: "Welcome to SFO"
+  select_tactic: "Select Tactic"
   activerecord:
     errors:
       template:

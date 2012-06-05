@@ -84,4 +84,18 @@ module ClubsHelper
     end
     text
   end
+
+  def select_tactics
+    bootstrap_button_dropdown(:html_options => {:class => 'btn-center'}) do |b|
+      b.bootstrap_button t('select_tactic'), '#', :type => 'btn btn-success'
+      TACTICS['available'].each do |tactic|
+        b.link_to(tactic, tactic_club_path(:tactic => tactic), :method => :put)
+      end
+    end
+  end
+
+  def tactic(team)
+    tactic = team.tactic
+    image_tag(TACTICS[tactic]['image'])
+  end
 end

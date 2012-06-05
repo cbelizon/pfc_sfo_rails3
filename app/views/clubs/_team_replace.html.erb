@@ -1,13 +1,40 @@
 <div class="team-open">
-  <%= t('players.average') %> <%= @club.starters_average %>
-  <%= t('players.tactic') %>
-  <%= render :partial => '/clubs/tactics_change', :locals => {:tactic => team.tactic}  %>
+  <div class="row">
+    <div class="span12">
+      <h2><%= t('players.tactic') %></h2>
+    </div>
+  </div>
+  <div class="row tactic-image">
+    <div class="span12">
+      <%= tactic(team) %>
+    </div>
+  </div>
+  <div class="row tactic-title">
+    <h3 class="span12">
+      <%= team.tactic %>
+    </h3>
+  </div>
+  <div class="row tactic-selector">
+    <div class="span12">
+    <%= select_tactics %>
+    </div>
+  </div>
   <%= form_for :replace, :url => replace_club_path(team), :html =>
   {:method => :put} do |f| %>
-  <%= t('players.starters') %>
+  <div class="row">
+    <div class="span12">
+      <h2>
+        <%= t('players.starters') %>
+      </h2>
+    </div>
+  </div>
   <%= render :partial => '/clubs/team/players_replace',
   :locals => {:players => team.starters} %>
-  <%= t('players.suppliers') %>
+  <div class="row">
+    <div class="span12">
+      <h2><%= t('players.suppliers') %></h2>
+    </div>
+  </div>
   <%= render :partial => '/clubs/team/players_replace', :locals =>
   {:players => team.suppliers} %>
   <%= f.submit t('clubs.team.replace'), :class => 'btn btn-primary' %>

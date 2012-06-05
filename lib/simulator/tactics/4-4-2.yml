@@ -2,7 +2,7 @@ name: 4-4-2
 defense: 4
 possesion: 4
 attack: 2
-image: /images/tactics/4-4-2.png
+image: tactics/4-4-2.png
 players:
   pos1:
     sym: GK

@@ -1,5 +1,7 @@
-<h1><%= @club.name %></h1>
-<%= cash(@club.cash) %>
+<div class="row">
+	<div class="span8"><h1><%= @club.name %></h1></div>
+	<div class="span4 pull-right cash"><h1><%= cash(@club.cash) %></h1></div>
+</div>
 <div class="team">
   <% if League.open_teams? and @club == @club_user %>
   <%= render :partial => 'team_replace', :locals => {:team => @club} %>

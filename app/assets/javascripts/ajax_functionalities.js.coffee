@@ -49,9 +49,9 @@ $ ->
 			substitution2 = clicked
 			$(this).find('.substitution-player2').attr('checked', true)
 			$(this).find('td').addClass('selected')
-			$(".selected").fadeOut(1000, 0).fadeIn 1000, ->
-				action = $(this).parents('form').attr('action')
-				params = $(this).parents('form').serialize()
+			$.when($(".selected").fadeOut(1000, 0).fadeIn(1000)).then ->
+				action = $('.team .team-open form').attr('action')
+				params = $('.team .team-open form').serialize()
 				$.post action, params, ->
 					$('.team .team-open .substitution').hide()
 					$('.team .team-open .substitution').attr('checked', false)
