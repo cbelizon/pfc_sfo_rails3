@@ -1,45 +1,49 @@
-<table>
-  <tr>
-    <% if user == :seller %>
-      <th>
-        <%= t('clubs.offers.buyer') %>
-      </th>
-    <% end  %>
-    <% if user == :buyer %>
-      <th>
-        <%= t('clubs.offers.seller') %>
-      </th>
-    <% end %>
-    <th>
-      <%= t('clubs.offers.player') %>
-    </th>
-    <th>
-      <%= t('players.clause') %>
-    </th>
-  </tr>
-  <% offers.each do |offer| %>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
     <tr>
       <% if user == :seller %>
-        <td><%= h(offer.buyer.name) %></td>
-      <% end %>
+        <th>
+        <%= t('clubs.offers.buyer') %>
+        </th>
+      <% end  %>
       <% if user == :buyer %>
-        <td><%= h(offer.seller.name) %></td>
+        <th>
+          <%= t('clubs.offers.seller') %>
+        </th>
       <% end %>
-      <td><%= h(offer.player.complete_name) %> </td>
-      <td><%= h(offer.player.clause) %></td>
-      <% if offer.pending? and user == :seller %>
-        <td><%= link_to t('defaults.accept').capitalize, accept_offer_club_path(:id => offer.seller,
-            :offer => offer),
-            :method => :put %></td>
-        <td><%= link_to t('defaults.reject').capitalize, reject_offer_club_path(:id => offer.seller,
-            :offer => offer),
-            :method => :put %></td>
-        <% end %>
-        <% if offer.pending? and user == :buyer %>
-        <td><%= link_to t('defaults.cancel').capitalize, cancel_offer_club_path(:id => offer.seller,
-            :offer => offer),
-            :method => :put %></td>
-      <% end %>
+      <th>
+        <%= t('clubs.offers.player') %>
+      </th>
+      <th>
+        <%= t('players.clause') %>
+      </th>
     </tr>
+  </thead>
+  <tbody>
+  <% offers.each do |offer| %>
+  <tr>
+    <% if user == :seller %>
+      <td><%= h(offer.buyer.name) %></td>
+    <% end %>
+    <% if user == :buyer %>
+      <td><%= h(offer.seller.name) %></td>
+    <% end %>
+    <td><%= h(offer.player.complete_name) %> </td>
+    <td><%= h(offer.player.clause) %></td>
+    <% if offer.pending? and user == :seller %>
+      <td><%= link_to t('defaults.accept').capitalize, accept_offer_club_path(:id => offer.seller,
+          :offer => offer),
+          :method => :put %></td>
+      <td><%= link_to t('defaults.reject').capitalize, reject_offer_club_path(:id => offer.seller,
+        :offer => offer),
+        :method => :put %></td>
+    <% end %>
+    <% if offer.pending? and user == :buyer %>
+      <td><%= link_to t('defaults.cancel').capitalize, cancel_offer_club_path(:id => offer.seller,
+        :offer => offer),
+        :method => :put %></td>
+    <% end %>
+  </tr>
   <% end %>
+  </tbody>
 </table>

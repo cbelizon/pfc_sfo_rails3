@@ -10,7 +10,7 @@ es:
   rows_per_page: "Filas por página"
   welcome_email: "Bienvenido a SFO"
   select_tactic: "Seleccionar táctica"
-
+  none: "Ninguna"
   date:
     formats:
       default: "%d %m %Y"
@@ -360,3 +360,5 @@ es:
   will_paginate:
     previous_label: "Anterior"
     next_label: "Siguiente"
+  offer:
+    error_previous_offer: "Ya hiciste una oferta por este jugador"

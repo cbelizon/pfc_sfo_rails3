@@ -11,7 +11,7 @@ class Offer < ActiveRecord::Base
   validates_presence_of :pay
   validates_numericality_of :pay
   validates_uniqueness_of  :state, :scope => [:player_id, :buyer_id],
-    :if => :pending?, :message => "You have already made an offer"
+    :if => :pending?, :message => I18n.translate("offer.error_previous_offer")
   belongs_to :seller, :class_name => 'Club', :foreign_key => :club_id
   belongs_to :buyer, :class_name => 'Club'
   belongs_to :player

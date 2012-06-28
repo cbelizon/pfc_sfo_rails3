@@ -1,10 +1,12 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file, 
-# please use the migrations feature of Active Record to incrementally modify your database, and
-# then regenerate this schema definition.
+# encoding: UTF-8
+# This file is auto-generated from the current state of the database. Instead
+# of editing this file, please use the migrations feature of Active Record to
+# incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your database schema. If you need
-# to create the application database on another system, you should be using db:schema:load, not running
-# all the migrations from scratch. The latter is a flawed and unsustainable approach (the more migrations
+# Note that this schema.rb definition is the authoritative source for your
+# database schema. If you need to create the application database on another
+# system, you should be using db:schema:load, not running all the migrations
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
@@ -14,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
   create_table "admin_messages", :force => true do |t|
     t.string   "text_msg_es", :null => false
     t.string   "text_msg_en", :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "club_finances_rounds", :force => true do |t|
@@ -28,16 +30,16 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.decimal  "benefits_ticket",    :precision => 16, :scale => 2, :default => 0.0
     t.decimal  "benefits_trademark", :precision => 16, :scale => 2, :default => 0.0
     t.decimal  "benefits_transfers", :precision => 18, :scale => 2, :default => 0.0
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                         :null => false
+    t.datetime "updated_at",                                                         :null => false
   end
 
   create_table "clubs", :force => true do |t|
     t.string   "name",             :limit => 30,                                                     :null => false
     t.string   "stadium_name",     :limit => 40,                                                     :null => false
     t.integer  "stadium_capacity",                                                                   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                                         :null => false
+    t.datetime "updated_at",                                                                         :null => false
     t.integer  "user_id"
     t.decimal  "cash",                           :precision => 16, :scale => 2, :default => 0.0
     t.decimal  "ticket_price",                   :precision => 4,  :scale => 2, :default => 0.0
@@ -51,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
 
   create_table "leagues", :force => true do |t|
     t.integer  "category",    :default => 1, :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
     t.integer  "state_teams", :default => 0
   end
 
@@ -61,8 +63,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "match_general_id", :null => false
     t.integer  "player_id",        :null => false
     t.integer  "position",         :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "match_details", :force => true do |t|
@@ -71,8 +73,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "match_general_id", :null => false
     t.string   "action",           :null => false
     t.integer  "minute",           :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "match_generals", :force => true do |t|
@@ -81,8 +83,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "local_goals"
     t.integer  "guest_goals"
     t.integer  "round_id",                                                    :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
     t.integer  "spectators",                                 :default => 0
     t.decimal  "ticket_price", :precision => 4, :scale => 2, :default => 0.0
   end
@@ -92,8 +94,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "player_id",                                                  :null => false
     t.integer  "buyer_id",                                                   :null => false
     t.integer  "state",                                     :default => 0,   :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
     t.decimal  "pay",        :precision => 16, :scale => 2, :default => 0.0
   end
 
@@ -102,8 +104,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.string   "surname",    :limit => 30,                                              :null => false
     t.integer  "quality",                                                               :null => false
     t.integer  "club_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                                            :null => false
+    t.datetime "updated_at",                                                            :null => false
     t.decimal  "pay",                      :precision => 8, :scale => 2
     t.decimal  "clause",                   :precision => 8, :scale => 2
     t.integer  "speed",                                                  :default => 0, :null => false
@@ -119,8 +121,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
   create_table "rounds", :force => true do |t|
     t.integer  "season_id",                           :null => false
     t.integer  "number",                              :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.boolean  "state_simulation", :default => false
     t.datetime "start_time"
   end
@@ -129,8 +131,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "league_id",                   :null => false
     t.integer  "date",                        :null => false
     t.integer  "actual_round"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "season_state", :default => 0, :null => false
   end
 
@@ -139,8 +141,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.string   "ability",     :null => false
     t.integer  "improvement"
     t.integer  "round_count"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -154,11 +156,11 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.datetime "current_login_at"
     t.string   "last_login_ip"
     t.string   "current_login_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.boolean  "admin"
-    t.string   "email",             :default => "",            :null => false
-    t.string   "prefer_lang",       :default => "'--- :en\n'"
+    t.string   "email",             :default => "",   :null => false
+    t.string   "prefer_lang",       :default => "en"
   end
 
 end

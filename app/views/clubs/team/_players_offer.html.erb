@@ -19,21 +19,21 @@
   </thead>
   <tbody>
     <% players.each do |player| %>
-    <tr>
-      <td><%=h player.tactic_position %></td>
-      <td><%=h player.name %></td>
-      <td><%=h player.surname %></td>
-      <td><%=h player.speed %></td>
-      <td><%=h player.resistance %></td>
-      <td><%=h player.dribbling %> </td>
-      <td><%=h player.kick %> </td>
-      <td><%=h player.pass %></td>
-      <td><%=h player.recovery %></td>
-      <td><%=h player.goalkeeper %> </td>
-      <td><%=h player.quality %> </td>
-      <td><%=h player.goals %></td>
-      <td><%=h number_to_currency(player.pay) %></td>
-      <td><%=h number_to_currency(player.clause) %></td>
+    <tr id="player-<%= player.id %>">
+      <td><span class="badge badge-info"><%=h player.tactic_position %></span></td>
+      <td><span class="badge badge-important"><%=h player.name %></span></td>
+      <td><span class="badge badge-important"><%=h player.surname %></span></td>
+      <td><span class="badge badge-success"><%=h player.speed %></span></td>
+      <td><span class="badge badge-success"><%=h player.resistance %></span></td>
+      <td><span class="badge badge-success"><%=h player.dribbling %></span> </td>
+      <td><span class="badge badge-success"><%=h player.kick %></span></td>
+      <td><span class="badge badge-success"><%=h player.pass %></span></td>
+      <td><span class="badge badge-success"><%=h player.recovery %></span></td>
+      <td><span class="badge badge-success"><%=h player.goalkeeper %></span></td>
+      <td><span class="badge badge-success"><%=h player.quality %></span></td>
+      <td><span class="badge badge-success"><%=h player.goals %></span></td>
+      <td><span class="badge badge-success"><%=h number_to_currency(player.pay) %></span></td>
+      <td><span class="badge badge-success"><%=h number_to_currency(player.clause) %></span></td>
       <% unless current_user.nil? or current_user.admin? or
        @club_user == @club or @club_user.nil? %>
        <td><%= link_to t('clubs.offers.make_offer'),
