@@ -1,0 +1,132 @@
+\select@language {spanish}
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objetivos}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Alcance}{1}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Identificaci\IeC {\'o}n del producto mediante un nombre}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Funcionalidades del producto}{2}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Aplicaciones del software: beneficios, objetivos y metas}{2}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Definiciones, acr\IeC {\'o}nimos y abreviaturas}{2}{section.1.3}
+\contentsline {section}{\numberline {1.4}Visi\IeC {\'o}n General}{4}{section.1.4}
+\contentsline {chapter}{\numberline {2}Planificaci\IeC {\'o}n Temporal}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Planificaci\IeC {\'o}n}{5}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Introducci\IeC {\'o}n}{5}{subsection.2.1.1}
+\contentsline {chapter}{\numberline {3}Descripci\IeC {\'o}n General del proyecto}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Perspectiva del Producto}{7}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Dependencias del producto}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Interfaces de usuario}{7}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Interfaces software}{7}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Operaciones}{8}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}Requisitos de adaptaci\IeC {\'o}n a la ubicaci\IeC {\'o}n}{8}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Funciones del producto}{8}{subsection.3.1.6}
+\contentsline {section}{\numberline {3.2}Caracter\IeC {\'\i }sticas de los usuarios}{9}{section.3.2}
+\contentsline {section}{\numberline {3.3}Restricciones generales}{9}{section.3.3}
+\contentsline {section}{\numberline {3.4}Requisitos no funcionales del sistema}{10}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Requisitos Generales}{10}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Requisitos espec\IeC {\'\i }ficos}{10}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}Requisitos para futuras versiones}{11}{section.3.5}
+\contentsline {chapter}{\numberline {4}An\IeC {\'a}lisis}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Metodolog\IeC {\'\i }a de desarrollo}{13}{section.4.1}
+\contentsline {section}{\numberline {4.2}Descripci\IeC {\'o}n General}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Prop\IeC {\'o}sito}{14}{section.4.3}
+\contentsline {section}{\numberline {4.4}\IeC {\'A}mbito}{14}{section.4.4}
+\contentsline {section}{\numberline {4.5}Perspectiva del Producto}{15}{section.4.5}
+\contentsline {section}{\numberline {4.6}Caracter\IeC {\'\i }sticas del usuario}{15}{section.4.6}
+\contentsline {section}{\numberline {4.7}Obligaciones generales}{15}{section.4.7}
+\contentsline {section}{\numberline {4.8}Asunciones y Dependencias}{15}{section.4.8}
+\contentsline {section}{\numberline {4.9}Especificaci\IeC {\'o}n de los requisitos del sistema}{16}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Requisitos de interfaces externas}{16}{subsection.4.9.1}
+\contentsline {subsubsection}{Requisitos de interfaces de usuario}{16}{section*.6}
+\contentsline {subsection}{\numberline {4.9.2}Requisitos de rendimiento}{16}{subsection.4.9.2}
+\contentsline {subsection}{\numberline {4.9.3}Requisitos de la base de datos}{16}{subsection.4.9.3}
+\contentsline {subsection}{\numberline {4.9.4}Restricciones de dise\IeC {\~n}o}{17}{subsection.4.9.4}
+\contentsline {subsection}{\numberline {4.9.5}Atributos del sistema software}{17}{subsection.4.9.5}
+\contentsline {section}{\numberline {4.10}Descripci\IeC {\'o}n de Requisitos Funcionales}{18}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Configurar el sitio}{18}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Crear una cuenta de usuario}{18}{subsection.4.10.2}
+\contentsline {subsection}{\numberline {4.10.3}Acceder a la cuenta de usuario}{19}{subsection.4.10.3}
+\contentsline {subsection}{\numberline {4.10.4}Abandonar la cuenta de usuario}{19}{subsection.4.10.4}
+\contentsline {subsection}{\numberline {4.10.5}Abrir equipos}{19}{subsection.4.10.5}
+\contentsline {subsection}{\numberline {4.10.6}Cerrar equipos}{19}{subsection.4.10.6}
+\contentsline {subsection}{\numberline {4.10.7}Listar ofertas}{19}{subsection.4.10.7}
+\contentsline {subsection}{\numberline {4.10.8}Emitir oferta por futbolista}{19}{subsection.4.10.8}
+\contentsline {subsection}{\numberline {4.10.9}Aceptar oferta por futbolista}{19}{subsection.4.10.9}
+\contentsline {subsection}{\numberline {4.10.10}Rechazar oferta por futbolista}{20}{subsection.4.10.10}
+\contentsline {subsection}{\numberline {4.10.11}Cancelar oferta por futbolista}{20}{subsection.4.10.11}
+\contentsline {subsection}{\numberline {4.10.12}Renovaci\IeC {\'o}n de futbolistas}{20}{subsection.4.10.12}
+\contentsline {subsection}{\numberline {4.10.13}Venta de entradas}{20}{subsection.4.10.13}
+\contentsline {subsection}{\numberline {4.10.14}Planificaci\IeC {\'o}n de alineaciones}{20}{subsection.4.10.14}
+\contentsline {subsection}{\numberline {4.10.15}Planificaci\IeC {\'o}n de t\IeC {\'a}cticas}{20}{subsection.4.10.15}
+\contentsline {subsection}{\numberline {4.10.16}Planificaci\IeC {\'o}n de entrenamientos}{20}{subsection.4.10.16}
+\contentsline {subsection}{\numberline {4.10.17}Asignar club}{21}{subsection.4.10.17}
+\contentsline {subsection}{\numberline {4.10.18}Simular jornadas}{21}{subsection.4.10.18}
+\contentsline {subsection}{\numberline {4.10.19}Comenzar jornadas}{21}{subsection.4.10.19}
+\contentsline {subsection}{\numberline {4.10.20}Pasar a siguiente jornada}{21}{subsection.4.10.20}
+\contentsline {subsection}{\numberline {4.10.21}Promoci\IeC {\'o}n y descenso de clubes}{21}{subsection.4.10.21}
+\contentsline {subsection}{\numberline {4.10.22}Composici\IeC {\'o}n de calendarios}{21}{subsection.4.10.22}
+\contentsline {subsection}{\numberline {4.10.23}Gestiones de lesiones y sanciones}{21}{subsection.4.10.23}
+\contentsline {section}{\numberline {4.11}Especificaci\IeC {\'o}n de los Casos de Uso}{22}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Caso de uso crear cuenta de usuario}{22}{subsection.4.11.1}
+\contentsline {subsection}{\numberline {4.11.2}Caso de uso acceder a la cuenta de usuario}{22}{subsection.4.11.2}
+\contentsline {subsection}{\numberline {4.11.3}Caso de uso abandonar la cuenta de usuario}{23}{subsection.4.11.3}
+\contentsline {subsection}{\numberline {4.11.4}Caso de uso abrir equipos}{23}{subsection.4.11.4}
+\contentsline {subsection}{\numberline {4.11.5}Caso de uso cerrar equipos}{23}{subsection.4.11.5}
+\contentsline {subsection}{\numberline {4.11.6}Caso de uso de notificaci\IeC {\'o}n de registro por e-mail}{23}{subsection.4.11.6}
+\contentsline {subsection}{\numberline {4.11.7}Caso de uso de listar ofertas emitidas}{24}{subsection.4.11.7}
+\contentsline {subsection}{\numberline {4.11.8}Caso de uso de listar ofertas recibidas}{24}{subsection.4.11.8}
+\contentsline {subsection}{\numberline {4.11.9}Caso de uso de emitir oferta por futbolista}{24}{subsection.4.11.9}
+\contentsline {subsection}{\numberline {4.11.10}Caso de uso de cancelar oferta emitida por futbolista}{24}{subsection.4.11.10}
+\contentsline {subsection}{\numberline {4.11.11}Caso de uso de rechazar oferta por futbolista}{25}{subsection.4.11.11}
+\contentsline {subsection}{\numberline {4.11.12}Caso de uso de aceptar oferta por futbolista}{25}{subsection.4.11.12}
+\contentsline {subsection}{\numberline {4.11.13}Caso de uso de renovaci\IeC {\'o}n de futbolistas}{25}{subsection.4.11.13}
+\contentsline {subsection}{\numberline {4.11.14}Caso de uso de fijar precio de venta de entradas}{26}{subsection.4.11.14}
+\contentsline {subsection}{\numberline {4.11.15}Caso de uso de planificaci\IeC {\'o}n de alineaciones}{26}{subsection.4.11.15}
+\contentsline {subsection}{\numberline {4.11.16}Caso de uso de planificaci\IeC {\'o}n de t\IeC {\'a}cticas}{26}{subsection.4.11.16}
+\contentsline {subsection}{\numberline {4.11.17}Caso de uso de planificaci\IeC {\'o}n de entrenamientos}{27}{subsection.4.11.17}
+\contentsline {subsection}{\numberline {4.11.18}Caso de uso asignar club}{27}{subsection.4.11.18}
+\contentsline {subsection}{\numberline {4.11.19}Caso de uso de simular jornadas}{27}{subsection.4.11.19}
+\contentsline {subsection}{\numberline {4.11.20}Caso de uso de comenzar jornadas}{28}{subsection.4.11.20}
+\contentsline {subsection}{\numberline {4.11.21}Caso de uso de pasar a siguiente jornada}{28}{subsection.4.11.21}
+\contentsline {subsection}{\numberline {4.11.22}Caso de uso de promoci\IeC {\'o}n y descenso de clubes}{28}{subsection.4.11.22}
+\contentsline {subsection}{\numberline {4.11.23}Caso de uso de composici\IeC {\'o}n de calendarios}{29}{subsection.4.11.23}
+\contentsline {section}{\numberline {4.12}Diagramas de Casos de Uso}{29}{section.4.12}
+\contentsline {section}{\numberline {4.13}Diagrama de clases conceptuales}{32}{section.4.13}
+\contentsline {section}{\numberline {4.14}Diagramas de secuencia de sistemas}{32}{section.4.14}
+\contentsline {subsection}{\numberline {4.14.1}Diagrama de secuencia de crear cuenta de usuario}{32}{subsection.4.14.1}
+\contentsline {subsection}{\numberline {4.14.2}Diagrama de secuencia de acceder a cuenta de usuario}{33}{subsection.4.14.2}
+\contentsline {subsection}{\numberline {4.14.3}Diagrama de secuencia de abandonar cuenta de usuario}{33}{subsection.4.14.3}
+\contentsline {subsection}{\numberline {4.14.4}Diagrama de secuencia de abrir equipos}{33}{subsection.4.14.4}
+\contentsline {subsection}{\numberline {4.14.5}Diagrama de secuencia de cerrar equipos}{34}{subsection.4.14.5}
+\contentsline {subsection}{\numberline {4.14.6}Diagrama de secuencia de notificaci\IeC {\'o}n de registro por e-mail}{34}{subsection.4.14.6}
+\contentsline {subsection}{\numberline {4.14.7}Diagrama de secuencia de listar ofertas emitidas}{34}{subsection.4.14.7}
+\contentsline {subsection}{\numberline {4.14.8}Diagrama de secuencia de listar ofertas recibidas}{34}{subsection.4.14.8}
+\contentsline {subsection}{\numberline {4.14.9}Diagrama de secuencia de emitir oferta por futbolista}{35}{subsection.4.14.9}
+\contentsline {subsection}{\numberline {4.14.10}Diagrama de secuencia de cancelar oferta emitida por futbolista}{35}{subsection.4.14.10}
+\contentsline {subsection}{\numberline {4.14.11}Diagrama de secuencia de rechazar oferta recibida por futbolista}{35}{subsection.4.14.11}
+\contentsline {subsection}{\numberline {4.14.12}Diagrama de secuencia de aceptar oferta recibida por futbolista}{36}{subsection.4.14.12}
+\contentsline {subsection}{\numberline {4.14.13}Diagrama de secuencia de renovaci\IeC {\'o}n de futbolistas}{36}{subsection.4.14.13}
+\contentsline {subsection}{\numberline {4.14.14}Diagrama de secuencia de fijar precio de venta de entradas}{36}{subsection.4.14.14}
+\contentsline {subsection}{\numberline {4.14.15}Diagrama de secuencia de planificaci\IeC {\'o}n de alineaciones}{37}{subsection.4.14.15}
+\contentsline {subsection}{\numberline {4.14.16}Diagrama de secuencia de planificaci\IeC {\'o}n de t\IeC {\'a}cticas}{37}{subsection.4.14.16}
+\contentsline {subsection}{\numberline {4.14.17}Diagrama de secuencia de planificaci\IeC {\'o}n de entrenamientos}{37}{subsection.4.14.17}
+\contentsline {subsection}{\numberline {4.14.18}Diagrama de secuencia de asignar club}{38}{subsection.4.14.18}
+\contentsline {subsection}{\numberline {4.14.19}Diagrama de secuencia de simular jornadas}{39}{subsection.4.14.19}
+\contentsline {subsection}{\numberline {4.14.20}Diagrama de secuencia de comenzar jornadas}{40}{subsection.4.14.20}
+\contentsline {subsection}{\numberline {4.14.21}Diagrama de secuencia de pasar a siguiente jornada}{41}{subsection.4.14.21}
+\contentsline {subsection}{\numberline {4.14.22}Diagrama de secuencia de promoci\IeC {\'o}n y descenso de clubes}{42}{subsection.4.14.22}
+\contentsline {subsection}{\numberline {4.14.23}Diagrama de secuencia de composici\IeC {\'o}n de calendarios}{43}{subsection.4.14.23}
+\contentsline {chapter}{Bibliografia y referencias}{45}{figure.caption.33}
+\contentsline {chapter}{Software usado}{45}{chapter*.34}
+\contentsline {chapter}{Instalaci\IeC {\'o}n de \textlatin {\LaTeX }}{48}{figure.caption.41}
+\contentsline {chapter}{GNU Free Documentation License}{53}{section*.44}
+\contentsline {section}{1. APPLICABILITY AND DEFINITIONS}{53}{section*.45}
+\contentsline {section}{2. VERBATIM COPYING}{54}{section*.46}
+\contentsline {section}{3. COPYING IN QUANTITY}{54}{section*.47}
+\contentsline {section}{4. MODIFICATIONS}{55}{section*.48}
+\contentsline {section}{5. COMBINING DOCUMENTS}{56}{section*.49}
+\contentsline {section}{6. COLLECTIONS OF DOCUMENTS}{57}{section*.50}
+\contentsline {section}{7. AGGREGATION WITH INDEPENDENT WORKS}{57}{section*.51}
+\contentsline {section}{8. TRANSLATION}{57}{section*.52}
+\contentsline {section}{9. TERMINATION}{57}{section*.53}
+\contentsline {section}{10. FUTURE REVISIONS OF THIS LICENSE}{58}{section*.54}
+\contentsline {section}{11. RELICENSING}{58}{section*.55}
+\contentsline {section}{ADDENDUM: How to use this License for your documents}{58}{section*.56}

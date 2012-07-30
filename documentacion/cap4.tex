@@ -1,0 +1,1164 @@
+% -*-cap4.tex-*-
+% Este fichero es parte de la plantilla LaTeX para
+% la realización de Proyectos Final de Carrera, protejido
+% bajo los términos de la licencia GFDL.
+% Para más información, la licencia completa viene incluida en el
+% fichero fdl-1.3.tex
+% Copyright (C) 2009 Pablo Recio Quijano 
+\section{Metodología de desarrollo}
+Hemos decidido seguir una metodología de desarrollo que se adapte lo
+suficientemente bien al framework en torno al cual desarrollaremos
+nuestra aplicación.\\
+
+Hemos decidido usar la metodología de desarrollo \cursiva{Xtreme
+  Programming (XP)}
+
+La metodología será seguida dentro de unos límites y adaptada a
+nuestra necesidades, debido entre otras cosas a que somos nosotros
+mismos los que hemos decidido qué funcionalidades y qué problemas
+queremos resolver con nuestra aplicación; además, no hay que olvidar
+que no tenemos ningún equipo que coordinar ya que sólo será una
+persona quién se encargue de realizar todas y cada una de las
+funcionalidades.
+
+La programación extrema, o \cursiva{Xtreme Programming} es una de las
+llamadas \cursiva{Metodologías Ágiles} de desarrollo de software más
+populares hoy en día. Inicialmente fue descrita por \cursiva{Kent
+  Beck} cuando trabajaba en la \cursiva{Chrysler Corporation}. En la
+\cursiva{XP} se da por supuesto que no se debe prever todo antes de
+empezar a codificar, que es imposible capturar todos los requisitos
+del sistema, ni saber qué es todo lo que debe hacer y por tanto es
+imposible hacer un diseño correcto desde el principio.
+
+La idea principal de esta metodología consiste en trabajar
+estrechamente con el cliente, diseñando pequeñas versiones
+frecuentemente. El objetivo de estas versiones no es otro que
+conseguir que la aplicación funcione de la forma más simple y
+eficiente posible con el mínimo código. Cuando el cliente le transmite
+al programador lo que necesita, éste puede hacer una estimación
+aproximada del tiempo que le llevará codificarlo, aunque lógicamente
+dicha planificación deberá revisarse y modificarse continuamente a lo
+largo del desarrollo del proyecto, es decir, se va iterando. Cada vez
+que el desarrollador consigue una versión funcional de lo que el
+cliente ha solicitado, ésta se le muestra al cliente para que la
+testee y haga peticiones de las modificaciones que crea
+convenientes. De esta manera se evita perder tiempo desarrollando una
+aplicación que no sea la que el cliente esperaba. Este ciclo se
+repetirá tantas veces como el cliente necesite para sentirse
+satisfecho con la aplicación.
+
+La \cursiva{Xtreme Programming} agrupa trece prácticas básicas que se
+deben cumplir para asegurar el éxito del proyecto, ellas son:
+
+\begin{itemize}
+  \item Equipo completo.
+  \item Planificación continua.
+  \item Test del cliente.
+  \item Versiones pequeñas.
+  \item Diseño simple.
+  \item Programación por parejas.
+  \item Desarrollo guiado por pruebas automáticas.
+  \item Mejora continua del diseño.
+  \item Integración continua.
+  \item Código en multipropiedad.
+  \item Normas de codificación comunes.
+  \item Utilización de metáforas.
+  \item Mantener un ritmo sostenible.
+\end{itemize}
+
+La \cursiva{Xtreme Programming} consta de unos valores, unos
+principios fundamentales y unas prácticas. Los principios
+fundamentales en los que se basa son:
+
+\begin{itemize}
+  \item Feedback: Retroalimentación veloz.
+  \item Modificaciones incrementales.
+  \item Refactorización
+  \item Asunción de simplicidad.
+  \item Respeto: Comunicación entre desarrolladores.
+\end{itemize}
+
+
+
+\section{Descripción General}
+A continuación vamos a ver los factores que afectan al producto y sus
+requerimentos
+
+\section{Propósito}
+El propósito del siguiente apartado es definir cuáles son los
+requisitos que debe tener nuestro portal web que simula la gestión de
+un club de fútbol en un entorno multijugador y simular partidos.\\
+
+Esta especificación de requisitos está destinada a ser leída por los
+usuarios o cualquier sujeto que tenga interés en saber cómo funciona
+el producto.
+
+\section{Ámbito}
+El producto que vamos a describir puede clasificarse como un
+videojuego multijugador online integrado en un servidor web en la cual
+los usuarios del portal se dedicarán a gestionar un club de fútbol en
+la parcela económica y deportiva, y dispondrá de un simulador de los
+partidos entre clubes.\\
+
+El producto ha de ofrecer una interfaz lo bastante sencilla para que
+cualquier usuario pueda gestionar las distintas facetas en escasos
+minutos. Dado que la aplicación es de tipo web, deberemos de tener
+especial cuidado en respetar los estándares para que la aplicación sea
+visible en cualquier navegador del mercado obteniendo así un
+videojuego que sea totalmente multiplataforma. La tecnología que
+usaremos en el lado del servidor web será el framework Ruby On Rails.
+
+\section{Perspectiva del Producto}
+El presente producto ha de correr en un servidor que sea compatible
+con \programa{Ruby on Rails}. Antes que nada \programa{Ruby On Rails} es un framework que
+hace mas fácil desarrollar, implementar y mantener aplicaciones
+web. Esto es debido entre otras razones a que:
+
+\begin{itemize}
+\item Toda aplicación web implementada usa el esquema \sigla{MVC}
+  (Modelo Vista Controlador).
+  
+\item Toda pieza de código tiene su lugar y todas ellas interactúan
+  según un camino estándar, es lo que ha venido a llamarse
+  \sigla{COC} (Convención sobre Configuración).
+  
+\item Las aplicaciones en Rails están escritas en Ruby, un lenguaje de
+script moderno y orientado a objetos que ayuda a que se potencie otro
+de los pilares de la filosofía de desarrollo que viene abreviado en la
+siguiente nomenclatura: \sigla{DRY} (No te repitas).
+\end{itemize}
+
+En cuanto a la máquina necesaria para ejecutar el servidor, valdrá
+cualquier sistema que sea compatible con \programa{Windows}, \programa{Linux} o \programa{MacOS X}
+recomendándose que se use un hardware acorde con las peticiones que el
+portal reciba. Los usuarios deberán de acceder al portal mediante
+cualquier navegador web disponible en el mercado que sea compatible
+con los estándares web \sigla{XHTML 1.1 Strict} y \sigla{CSS 2.0.}
+
+\section{Características del usuario}
+A continuación vamos a ver a qué tipo de usuarios está dirigido el
+producto y cómo afectan éstos a las funciones que debe realizar
+nuestro producto.\\
+
+El producto está dirigido a todo usuario que sepa manejar un navegador
+web y que esté interesado en la simulación de la gestión de un club de
+fútbol, así como conocer las reglas y premisas básicas de negocio del
+deporte.
+\section{Obligaciones generales}
+Uno de los aspectos que influirá determinantemente en el éxito del
+producto será la eficiencia en las peticiones y el diseño de una
+intertaz amigable y sencilla para poder gestionar los diferentes
+parámetros del club de una forma rápida y precisa.\\
+
+De cara al diseño de la interfaz web, uno de los mayores desafíos con
+los que nos encontraremos será el conseguir que el diseño de la
+interfaz sea operativa en cualquiera de los navegadores del mercado,
+ya que los dos navegadores más populares no soportan actualmente con
+suficiente solvencia los estándares \sigla{CSS 2.0} (\programa{Internet Explorer 8} y
+\programa{Firefox 3.5}).
+\section{Asunciones y Dependencias}
+El presente producto depende enteramente de que el usuario disponga de
+una conexión red al servidor a través de un navegador web
+(probablemente \sigla{internet}), por tanto es importante respetar los
+estándares pertinente que estipula la \sigla{w3c}.\\
+
+\section{Especificación de los requisitos del sistema}
+\subsection{Requisitos de interfaces externas}
+\subsubsection{Requisitos de interfaces de usuario}
+Podemos dividir los requisitos de interfaz de usuario según tres roles:
+
+\begin{itemize}
+  \item \negrita{Usuario Jugador y Usuario Administrador: }
+    \begin{itemize}
+      \item Interfaz atractiva para los usuarios: Es fundamental para
+        la buena aceptación de nuestra aplicación el crear una
+        interfaz lo suficientemente clara, dinámica y estética para
+        que el usuario sienta una inmersión en la experiencia de
+        juego. Una interfaz no atractiva sólo traerá problemas de
+        rechazo y disconformidad por parte del usuario.\\\\
+        Para que la interfaz sea sencilla de modificar y tratándose de
+        una aplicación web usaremos \cursiva{hojas de estilo CSS}, así
+        todo el apartado de diseño gráfico podrá ser modificado
+        posteriormente sin que por ello afecte al contenido ni la
+        estructura del documento \cursiva{HTML}.
+      \item Una característica de nuestra aplicación es que el sistema
+        de avisos está embebido dentro de la página web y es muy
+        parecido al sistema de notificación de los sistemas operativos
+        \cursiva{Mac OS X} y de la  \cursiva {distribución Linux Ubuntu}.
+    \end{itemize}
+  \item \negrita{Superusuario: }
+    En este caso la interfaz corresponderá a la que tenga el propio
+    sistema operativo dónde esté instalado la aplicación.
+\end{itemize}
+
+\subsection{Requisitos de rendimiento}
+Este aspecto es fundamental en el análisis del sistema, se ha de tener
+en cuenta que la aplicación es de tipo servidor y que a ella estarán
+conectados concurrentemente un número de usuarios elevado.\\
+
+Se ha considerado también el rendimiento que nos ofrece el diseño web
+realizado. Para que nuestra página web sea compatible con la mayoría
+de dispositivos y se ejecute lo suficientemente fluida hemos decidido
+no usar la tecnología propietaria \cursiva{Flash}, usando para la
+renderización de efectos la librería \cursiva{JQuery} en combinación
+con hojas de estilo \cursiva{CSS}.\\
+
+El rendimiento de la aplicación podrá ser menor en la primera
+instanciación de la aplicación debido a que no se habrá cacheado
+ningún contenido.
+
+\subsection{Requisitos de la base de datos}
+La \cursiva{base de datos} es uno de los componentes fundamentales de
+la aplicación. En ella se van a almacenar todos los datos registrados
+por la aplicación.\\
+
+La aplicación sólo hará uso de una conexión al \cursiva{SGBD} escogido
+por el \cursiva{superusuario} en la configuración de instalación de la
+aplicación, cuyo nombre también podrá ser escogido por el citado
+\cursiva{superusuario}.\\
+
+Dicha \cursiva{BD} estará formada por las siguientes tablas:
+
+\begin{itemize}
+  \item [User] Tabla donde se almacenan los datos de cada uno de los
+    usuarios que interactúan con la aplicación.
+  \item [Club] Tabla donde se almacenan los datos de los clubes que
+    participan en las ligas.
+  \item [League] Tabla donde se almacenan los datos de las ligas que
+    existen en el sistema.
+  \item  [Season] Tabla donde se almacenan los datos de las temporadas
+    correspondientes a cada liga del sistema.
+  \item [Round] Tabla donde se almacenan los datos de las jornadas de
+    cada temporada.
+  \item [MatchGeneral] Tabla dónde se almacenan los partidos que se
+    han de jugar cada jornada.
+  \item [MatchDetail] Tabla dónde se almacenan las acciones que tienen
+    lugar en cada partido.
+  \item [LineUp] Tabla dónde se almacenan las alineaciones de cada
+    equipo y partido.
+  \item [ClubFinancesRound] Tabla donde se almacenan los datos de
+    finanzas correspondientes a cada jornada y club.
+  \item [Player] Tabla donde se almacenan los datos de los jugadores
+    de fútbol de los clubes.
+  \item [Offer] Tabla donde se almacenan los datos de las ofertas que
+    se realizan los usuarios de la aplicación sobre los jugadores de
+    fútbol.
+  \item [Training] Tabla donde se almacenan los datos de los
+    entrenamientos de los jugadores de fútbol.
+  \item [AdminMessages] Tabla donde se almacenan los mensajes de
+    administración hacia los usuarios.
+\end{itemize}
+
+Toda la información sobre la \cursiva{base de datos} será ampliada en
+su sección correspondiente.\\
+
+La tabla \cursiva{User} contiene los datos de los usuarios que
+interactúan con la aplicación, en ella se almacenará la contraseña de
+cada uno de ellos; es por ello que será necesario un
+\cursiva{algoritmo criptográfico} denominado \cursiva{MD5}. De esta
+forma conseguimos proteger la contraseña de los usuarios frente a un
+posible ataque al servidor dónde esté la \cursiva{base de datos}.\\
+
+Es necesario que el \cursiva{superusuario} conozca el \cursiva{SGBD}
+que será utilizado con nuestra aplicación, además de disponer de un
+usuario y contraseña para la correcta creación de las tablas.
+
+\subsection{Restricciones de diseño}
+
+No existe ninguna restricción considerable en el diseño del sistema.\\
+
+Todo el diseño del sistema se debe de regir con la especificación
+realizada.\\
+
+Es importante estimar cuál va ser el tráfico que nuestra aplicación va
+sufrir para disponer de un \cursiva{servidor} y una conexión lo
+suficientemente potentes para dar servicio a todos los usuarios que se
+conecten a la aplicación.
+
+\subsection{Atributos del sistema software}
+El sistema ha de cumplir las siguientes propiedades:
+
+\begin{itemize}
+  \item \negrita{Fiabilidad}: Este sistema, como todo software de
+    calidad, debe ser fiable. Al estar tratando de una aplicación web
+    que ha de tener un elevado acceso concurrente a los datos, hemos
+    de cerciorarnos que las operaciones no dejen el sistema en un
+    estado inconsistente por una posible caída del servidor.\\
+
+    Por ello el sistema se encarga de generar un \cursiva{log} con
+    todas las operaciones que ocurren en nuestra aplicación.
+
+    Hemos de tener en cuenta que el usuario de nuestra aplicación no
+    ha de conocer nada sobre la estructura interna de nuestra
+    aplicación, por ello los mensajes de error serán lo más simples
+    posibles para evitar posibles ataques al servidor dónde es
+    alojada.
+
+    \item \negrita{Disponibilidad}: La disponibilidad de este producto
+      debe ser plena. La aplicación ha de estar disponible en
+      cualquier momento y ser accesible desde cualquier lugar. Para
+      llevar a cabo este precepto será necesario alojar la aplicación
+      en un lugar web que tenga la suficiente capacidad para dar
+      servicio a un elevado número de usuarios.
+
+   \item \negrita{Seguridad}: La seguridad de este tipo de
+     aplicaciones ha de ser bastante elevada para conseguir cumplir
+     leyes de protección de datos y asegurar un correcto
+     funcionamiento.
+
+     Para la seguridad y confidencialidad de los datos se debe seguir
+     un protocolo dirigido a asegurar la confidencialidad de los datos
+     almacenados en la \cursiva{base de datos}.
+
+     Será necesario que el superusuario de la aplicación disponga de
+     un nombre de usuario y contraseña lo suficientemente seguros para
+     trabajar con el \cursiva{SGBD} escogido.
+
+     Los usuarios de la aplicación tendrán un nombre usuario y una
+     contraseña asociada que encriptada con el algoritmo
+     \cursiva{MD5}.
+
+     Es posible que cualquier persona acceda a la página web para
+     estar informado de los que ocurre en las diferentes ligas que
+     componen el juego. Este tipo de usuarios no necesitan disponer de
+     nombre de usuario y contraseña asociada.
+
+     \item \negrita{Mantenibilidad}: La mantenibilidad de la
+       aplicación es un aspecto clave del desarrollo de aplicaciones
+       web debido al constante avance que sufre este tipo de
+       tecnologías. Gracias a desarrollar la aplicación en base a un
+       \cursiva{framework de desarrollo rápido de aplicaciones}
+       conseguimos una alta mantenibilidad y legibilidad del
+       \cursiva{código fuente} de la aplicación.
+
+     \item \negrita{Portabilidad}: La aplicación web, al estar
+       desarrollada bajo \cursiva{Ruby On Rails} tiene una amplia
+       portabilidad en cuánto al lado servidor ya que éste es
+       compatible con los principales sistemas operativos del mercado.
+
+       En cuanto al lado cliente tenemos la portabilidad asegurada
+       ya que sólo será necesario que el usuario disponga de una
+       conexión a \cursiva{internet} y un navegador web compatible con
+       los estándares.
+\end{itemize}
+
+\section{Descripción de Requisitos Funcionales}
+
+\subsection{Configurar el sitio}
+El administrador podrá navegar por la página de configuración web y la
+usará para cambiar el comportamiento de la misma.\\
+
+Esta función se realizará raras veces.
+\subsection{Crear una cuenta de usuario}
+Para que un usuario cualquiera sea capaz de poder usar nuestro
+producto ha de tener una cuenta registrada en el servidor que lo
+distinga unívocamente de cualquier otro usuario; para ello se le
+pedirá introducir un nombre de usuario, y una dirección de e-mail. Una
+vez registrado el sistema enviará un e-mail de confirmación de
+registro dando la bienvenida a nuestro sistema.\\
+
+Esta función es condición necesaria para que puedan realizarse todos y
+cada uno de los requisitos que se expresan en los apartados siguientes
+y se realizará una única vez por usuario.
+
+\subsection{Acceder a la cuenta de usuario}
+Para que cualquier usuario registrado sea capaz de usar nuestro
+producto deberemos de proporcionarle un método de acceso e
+identificación mediante el nombre de cuenta y contraseña que han sido
+albergados en nuestro servidor.\\
+
+Esta operación se realizará muy a menudo y tantas veces como el
+usuario desee.
+\subsection{Abandonar la cuenta de usuario}
+Cualquier usuario que haya iniciado sesión en nuestra aplicación
+deberá ser capaz de abandonar de forma segura la misma.\\
+
+Esta operación se realizará muy a menudo y tantas veces como un
+usuario que haya iniciado sesión desee.
+
+\subsection{Abrir equipos}
+El administrador será capaz de decidir cuándo los usuarios del sistema
+podrán modificar sus alineaciones o tácticas, así como la posibilidad
+de interactuar con los sistemas de finanzas y ofertas de jugadores.
+
+Esta función será realizada muy a menudo.
+
+\subsection{Cerrar equipos}
+El administrador será capaz de decidir cuándo los usuarios del sistema
+no podrán modificar sus alineaciones o tácticas, así como la
+posibilidad de interactuar con los sistemas de finanzas y ofertas de jugadores.
+
+Esta función será realizada muy a menudo.
+
+\subsection{Listar ofertas}
+El usuario podrá en cualquier momento visionar el listado de ofertas
+pendientes, aceptadas o rechazadas que tenga en su historial.
+
+Esta operación podrá ser realizada en cualquier momento.
+
+\subsection{Emitir oferta por futbolista}
+El usuario podrá en cualquier momento hacer una oferta por un
+futbolista en el que esté interesado, interactuando de este modo con
+otros usuarios a través de acuerdos económicos. Para evitar que dos
+usuarios puedan realizar acuerdos económicos para hacer trampas y
+beneficiarse deportiva y económicamente, éstos no podrán tasar a sus
+propios jugadores haciendo de la oferta una especie de pujo, sino que
+será el propio sistema el que estipulará el precio del futbolista en
+base a la calidad que éste disponga.
+
+Esta operación podrá ser realizada en cualquier momento en el que
+los equipos estén abiertos.
+
+\subsection{Aceptar oferta por futbolista}
+El usuario podrá en cualquier momento aceptar una oferta de un
+futbolista de su propiedad emitida por otro usuario.
+
+Esta operación podrá ser realizada en cualquier momento en el que los
+equipos estén abiertos.
+
+\subsection{Rechazar oferta por futbolista}
+El usuario podrá en cualquier momento rechazar una oferta de un
+futbolista de su propiedad emitida por otro usuario.
+
+Esta operación podrá ser realizada en cualquier momento en el que los
+equipos estén abiertos.
+
+\subsection{Cancelar oferta por futbolista}
+Un usuario que esté arrepentido de una oferta realizada por un
+futbolista podrá cancelarla en cualquier momento.
+
+Esta operación podrá ser realizada en cualquier momento en el que los
+equipos estén abiertos.
+
+\subsection{Renovación de futbolistas}
+El sistema actualizará los sueldos que reciben los futbolistas al
+término de cada temporada, según la ponderación de los atributos
+cualitativos que tengan.\\
+
+Esta operación se realizará una vez por temporada y afectará a todos
+los futbolistas del sistema.
+\subsection{Venta de entradas}
+El usuario podrá estipular el precio de venta de las entradas en los
+partidos que se disputen en su estadio siendo ésta la forma principal
+de obtención de ingresos para la gestión económica del club.\\
+
+Esta función será realizada tantas veces como desee el usuario.
+
+\subsection{Planificación de alineaciones}
+El usuario podrá escoger cuál será la alineación que presentará para
+el próximo partido que vaya a disputar su equipo, pasando ésta a ser
+la alineación por defecto hasta que el usuario decida volver a
+cambiarla.\\
+
+Esta operación se realizará a menudo.
+\subsection{Planificación de tácticas}
+El usuario podrá escoger entre diversas tácticas de juego para
+afrontar los distintos partidos. Esta acción repercutirá directamente
+en el estilo de juego y por tanto en la simulación resultado del
+partido que dispute.\\
+
+Esta operación se realizará tantas veces como el usuario desee.
+\subsection{Planificación de entrenamientos}
+El usuario podrá personalizar los atributos a entrenar de los
+futbolistas integrantes de su equipo. De esta forma el club adquirirá
+valor deportivo y económico.\\
+
+Esta función se realizará a menudo.
+
+\subsection{Asignar club}
+Una vez que un usuario haya sido registrado en el servidor mediante
+una cuenta de usuario el sistema le asignará un nuevo club cuando
+todas las ligas hayan concluido y el administrador así desee.\\
+
+Esta operación se realizará una vez por temporada y por cada nuevo
+usuario registrado en el sistema.
+
+\subsection{Simular jornadas}
+El sistema debe emitir comentarios durante el transcurso del partido para que
+cualquier usuario sea capaz de conocer la evolución del mismo.\\
+
+Esta función se realizará a menudo, una vez por jornada.
+
+\subsection{Comenzar jornadas}
+El sistema debe simular la disputa de un partido en base a la
+ponderación de los atributos cualitativos de los futbolistas
+alineados, tácticas empleadas y variables aleatorias confrontadas con las del equipo
+rival.\\
+
+Esta función se realizará a menudo, una vez por jornada.
+
+\subsection{Pasar a siguiente jornada}
+El sistema debe ser capaz de gestionar el calendario creado de cada
+competición. Para ello se le da la oportunidad al administrador de
+avanzar en la línea temporal del calendario para hacer discurrir las
+jornadas del calendario.
+
+Además, en esta acción se actualizarán los entrenamientos y traspasos
+aceptados por futbolistas entre usuarios, así como restar los gastos
+de la plantilla y mantenimiento del estadio.
+
+Esta función se realizará a menudo a lo largo de la competición.
+
+\subsection{Promoción y descenso de clubes}
+El sistema debe ser capaz de gestionar varias ligas organizadas de
+forma jerárquica según el número de usuarios que estén registrados en
+nuestro servidor. De esta forma conseguiremos que el usuario desee
+mejorar la posición de su club, lo que repercutirá directamente en la
+capacidad deportiva y económica del mismo.\\
+
+Esta función se realizará una vez por temporada y una vez por jornada.
+
+\subsection{Composición de calendarios}
+El sistema deberá de crear un calendario de partidos por cada liga que
+está albergada en el servidor. Los calendarios se crearán una vez por
+temporada y será accesible a todos los usuarios.\\
+
+Esta función se realizará una vez por creación de liga.
+\subsection{Gestiones de lesiones y sanciones}
+El sistema debe ser capaz de llevar a cabo una política realista de
+imposición de sanciones a los futbolistas, así como simular lesiones
+más o menos duraderas.\\
+
+Esta función se realizará a menudo.
+
+\section{Especificación de los Casos de Uso}
+\subsection{Caso de uso crear cuenta de usuario}
+\negrita{Descripción: } Crea una cuenta de usuario para poder 
+participar y acceder a las acciones provistas por nuestra aplicación.\\
+\negrita{Actores: } Usuario no registrado, usuario registrado,
+sistema. \\
+\negrita{Precondición: } Ninguna. \\
+\negrita{Postcondición: } Se da de alta un nuevo usuario en el
+sistema. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item Un usuario no registrado desea registrarse.
+  \item El usuario introduce el nombre de usuario, la contraseña
+    asociada al mismo, una cuenta de correo electrónico además de repetir la contraseña para evitar un
+    error humano al ingresarla y también el idioma en el que desea ver
+    por defecto la web y recibir los correos electrónicos.
+  \item El sistema registra al usuario.
+  \item El sistema avisa al usuario registrado mediante un correo
+    electrónico y la propia interfaz web que ha completado su registro con éxito.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item Si el usuario introduce un nombre de cuenta de usuario o e-mail
+    existente o dos contraseñas no coincidentes se le avisará de los errores cometidos
+    para que pueda realizar un registro exitoso.
+\end{enumerate}
+
+\subsection{Caso de uso acceder a la cuenta de usuario}
+\negrita{Descripción: } El usuario provee un sistema para poder
+identificar a los usuarios registrados en el mismo y dejarlos acceder
+a la funciones principales de nuestro sistema.\\
+\negrita{Actores: } Usuario registrado, usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar registrado en nuestro sistema. \\
+\negrita{Postcondición: } Se identifica al usuario en el sistema y se
+le permite acceder a las funciones principales del mismo. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item Un usuario registrado desea iniciar sesión.
+  \item El usuario introduce el nombre de usuario y la contraseña
+    asociada al mismo, además de repetir la contraseña para evitar un
+    error humano al ingresarla.
+  \item El sistema registra al usuario.
+  \item El sistema avisa al usuario registrado mediante un correo
+    electrónico y la propia interfaz web que ha completado su registro con éxito.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item Si el usuario introduce un nombre de cuenta de usuario o dos
+    contraseñas no coincidentes se le avisará de los errores cometidos
+    para que pueda realizar un registro exitoso.
+\end{enumerate}
+
+\subsection{Caso de uso abandonar la cuenta de usuario}
+\negrita{Descripción: } El sistema provee un sistema para que un
+usuario logueado pueda desconectarse de forma segura de nuestro sistema.\\
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de haber iniciado sesión en
+nuestro sistema. \\
+\negrita{Postcondición: } Se cierra la sesión del usuario con nuestro sistema. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario logueado desea abandonar su sesión.
+  \item Se le pregunta al usuario si está seguro de realizar la
+    acción.
+  \item El sistema avisa al usuario que acaba de finalizar la sesión a
+    través de la interfaz web de nuestra aplicación.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item Si el usuario decide que no está seguro de abandonar la sesión
+    no se hace nada.
+\end{enumerate}
+
+\subsection{Caso de uso abrir equipos}
+\negrita{Descripción: } El sistema provee un sistema para que el
+usuario administrador pueda permitir cambios de jugadores, tácticas o
+cualquier tipo de acción que modifique el estado de los equipos.\\
+\negrita{Actores: } Usuario administrador. \\
+\negrita{Precondición: } Ninguna. \\
+\negrita{Postcondición: } Los equipos quedarán abiertos. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El administrador cierra los equipos.
+  \item El sistema avisa al administrador que acaba de abrir los
+    equipos a través de la interfaz web de nuestra aplicación.
+\end{enumerate}
+
+\subsection{Caso de uso cerrar equipos}
+\negrita{Descripción: } El sistema provee un sistema para que el
+usuario administrador pueda evitar cambios de jugadores, tácticas o
+cualquier tipo de acción que modifique el estado de los equipos.\\
+\negrita{Actores: } Usuario administrador. \\
+\negrita{Precondición: } Ninguna. \\
+\negrita{Postcondición: } Los equipos quedarán cerrados. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El administrador cierra los equipos.
+  \item El sistema avisa al administrador que acaba de cerrar los
+    equipos a través de la interfaz web de nuestra aplicación.
+\end{enumerate}
+
+\subsection{Caso de uso de notificación de registro por e-mail}
+\negrita{Descripción: } El sistema notificará por correo electrónico
+que un registro asociado al e-mail proporcionado se ha efectuado correctamente.\\
+\negrita{Actores: } Sistema y usuario registrado \\
+\negrita{Precondición: } El usuario ha de haber realizado un registro exitoso. \\
+\negrita{Postcondición: } El sistema remite un correo electrónico en
+el idioma que seleccionó en el registro nuestro usuario. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El sistema detecta que un nuevo usuario ha sido creado.
+  \item Remite un correo electrónico de bienvenida a la aplicación a
+    la cuenta de correo asociada al usuario registrado.
+\end{enumerate}
+
+\subsection{Caso de uso de listar ofertas emitidas}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder listar el historial de ofertas emitidas del club asociado.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación.
+\negrita{Postcondición: } Se muestra un listado del historial de
+ofertas emitidas del club.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item Se muestra un listado del historial de ofertas emitidas del club.
+\end{enumerate}
+
+\subsection{Caso de uso de listar ofertas recibidas}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder listar el historial de ofertas recibidas del club asociado.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación.
+\negrita{Postcondición: } Se muestra un listado del historial de
+ofertas recibidas del club.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item Se muestra un listado del historial de ofertas recibidas del club.
+\end{enumerate}
+
+\subsection{Caso de uso de emitir oferta por futbolista}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder realizar una oferta por un futbolista ajeno al club del que
+el usuario es propietario.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación, el comprador ha de tener la suficiencia económica
+para acometer el fichaje, además los equipos han de estar abiertos. \\
+\negrita{Postcondición: } El usuario emite una oferta por un
+futbolista ajeno a su club y el propietario del mismo recibe la misma.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item Un usuario emite una oferta por un futbolista que posee
+    otro usuario.
+  \item El usuario propietario del futbolista recibe la oferta.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item El usuario comprador no puede efectuar la oferta.
+  \item El sistema emitirá un aviso a través de la interfaz web para
+    informar que es imposible emitir la oferta.
+\end{enumerate}
+
+\subsection{Caso de uso de cancelar oferta emitida por futbolista}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder cancelar una oferta emitida por un futbolista.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación, la oferta ha de existir y los equipos han de estar
+abiertos. \\
+\negrita{Postcondición: } El usuario cancela una oferta por un
+futbolista de un equipo ajeno al suyo.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario cancela la oferta previamente realizada.
+\end{enumerate}
+
+\subsection{Caso de uso de rechazar oferta por futbolista}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder rechazar una oferta realizada por un futbolista que
+provenga de otro usuario.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación, la oferta ha de existir y los equipos han de estar
+abiertos. \\
+\negrita{Postcondición: } El usuario rechaza una oferta por un
+futbolista de un equipo ajeno al suyo.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario rechaza la oferta previamente realizada.
+\end{enumerate}
+
+\subsection{Caso de uso de aceptar oferta por futbolista}
+\negrita{Descripción: } El sistema ha de proporcionará una interfaz
+para poder aceptar una oferta realizada por un futbolista que
+provenga de otro usuario.
+\negrita{Actores: } Usuario logueado. \\
+\negrita{Precondición: } El usuario ha de estar logueado en
+nuestra aplicación, la oferta ha de existir, los equipos han de estar
+abiertos, la venta del jugador no debe suponer rebasar el límite
+mínimo de jugadores en plantilla. \\
+\negrita{Postcondición: } El usuario acepta la oferta, el montante
+económico de la clausula del jugador es transferido a las arcas del
+club y el jugador ya no es perteneciente a la plantilla.
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario acepta la oferta.
+  \item El futbolista es transferido a la plantilla del usuario emisor
+    de la oferta.
+  \item Se incrementa la caja del club en el montante económico de la
+    clausula del jugador transferido.
+\end{enumerate}
+\negrita{Primer Escenario alternativo: }
+\begin{enumerate}
+  \item El usuario emisor no tiene recursos económicos suficientes
+    para acometer el fichaje.
+  \item El sistema informará al usuario que no puede aceptar la oferta
+    y ésta será automáticamente rechazada.
+\end{enumerate}
+\negrita{Segundo Escenario alternativo: }
+\begin{enumerate}
+  \item El usuario receptor de la oferta está en el número mínimo de
+    jugadores en plantilla.
+  \item El sistema informará al usuario que no puede aceptar la oferta
+    y la misma será automáticamente rechazada.
+\end{enumerate}
+\subsection{Caso de uso de renovación de futbolistas}
+\negrita{Descripción: } El sistema renovará cada final de temporada a
+los jugadores de nuestro equipo actualizando el sueldo que reciben y
+su clausula de rescisión.\\
+\negrita{Actores: } Sistema.\\
+\negrita{Precondición: } Las temporadas han de haber concluido y los
+equipos bloqueados. \\
+\negrita{Postcondición: } Los jugadores serán renovados en función de
+la nueva ponderación de sus atributos así como su clausula de rescisión.\\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El sistema realizará una ponderación de los atributos de los
+    futbolistas.
+  \item Se asigna una clausula de rescisión en función de la
+    ponderación.
+  \item Se asigna un sueldo anual en función de la ponderación.
+\end{enumerate}
+
+\subsection{Caso de uso de fijar precio de venta de entradas}
+\negrita{Descripción: } El usuario podrá modificar el precio de las
+entradas de su equipo de fútbol. Este hecho repercutirá directamente
+en la afluencia al estadio por parte de nuestros aficionados y a las
+arcas del club.\\
+\negrita{Actores: } Usuario logueado.\\
+\negrita{Precondición: } Los equipos deben estar desbloqueados\\
+\negrita{Postcondición: } El precio del ticket de entrada es
+modificado.\\
+\negrita{Escenario principal:} 
+\begin{enumerate}
+  \item El usuario desea cambiar el precio del ticket de entrada.
+  \item El ticket de entrada es cambiado al precio estipulado por el usuario.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item El usuario introduce un precio menor de cero.
+  \item El sistema informará al usuario que no puede asignar un precio
+    negativo a través de la interfaz web.
+\end{enumerate}
+
+\subsection{Caso de uso de planificación de alineaciones}
+\negrita{Descripción: } El usuario podrá modificar quiénes serán los
+futbolistas que jueguen el siguiente partido.\\
+\negrita{Actores: } Usuario logueado\\
+\negrita{Precondición: } Los equipos deben estar desbloqueados.\\
+\negrita{Postcondición: } El usuario dejará formada la alineación que
+usará en el siguiente partido.\\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario desea cambiar la posición entre dos jugadores.
+  \item El usuario seleccionará dos jugadores.
+  \item Efectuará el cambio de posición.
+  \item El usuario repetirá este proceso todas las veces que necesite hasta dejar
+    la alineación como desee.
+\end{enumerate}
+\negrita{Escenario alternativo:}
+\begin{enumerate}
+  \item El usuario selecciona un sólo jugador.
+  \item Efectúa el cambio de posición.
+  \item El sistema emitirá un aviso para informar que la operación que
+    intenta hacer es imposible.
+\end{enumerate}
+
+\subsection{Caso de uso de planificación de tácticas}
+\negrita{Descripción: } El usuario podrá seleccionar una táctica
+distinta para afrontar el próximo partido.\\
+\negrita{Actores: } Usuario logueado.\\
+\negrita{Precondición: } Los equipos han de estar desbloqueados.\\
+\negrita{Postcondición: } Se cambia la táctica por la seleccionada por
+el usuario.\\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario desea cambiar la táctica usada en el partido.
+  \item El usuario selecciona la táctica que desea usar y la fija como
+    táctica por defecto para los siguientes partidos.
+\end{enumerate}
+
+\subsection{Caso de uso de planificación de entrenamientos}
+\negrita{Descripción: } El usuario podrá mejorar una de las
+habilidades que integran un jugador cada vez que lo mande a entrenar.\\
+\negrita{Actores: } Usuario logueado.\\
+\negrita{Precondición: } Los equipos han de estar desbloqueados y el
+jugador no puede estar entrenando otra habilidad previa.\\
+\negrita{Postcondición: } El jugador entrenará la habilidad
+seleccionada por el usuario las jornadas que el sistema estipule.\\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El usuario desea que un jugador de su plantilla entrene cierta habilidad.
+  \item El sistema informará de cuántas jornadas serán necesarias para
+    terminar el entrenamiento.
+\end{enumerate}
+\negrita{Escenario alternativo: }
+\begin{enumerate}
+  \item Si el usuario intenta poner a entrenar la habilidad de un
+    jugador que haya llegado al máximo posible para el atributo el
+    sistema le informará a través de la interfaz web de que no es
+    necesario realizar dicha acción.
+\end{enumerate}
+
+\subsection{Caso de uso asignar club}
+\negrita{Descripción: } El sistema proporciona una forma de asignar
+nuevos club de fútbol a los nuevos usuarios registrados cuando el administrador lo desee entre
+temporada y temporada.\\
+\negrita{Actores: } Sistema, usuario registrado y administrador \\
+\negrita{Precondición: } Las temporadas han de haber finalizado, debe
+haber un mínimo de nuevos usuarios registrados para poder formar la
+nueva liga y los equipos han de estar bloqueados. \\
+\negrita{Postcondición: } Se les asigna a cada usuario un nuevo club
+con varios jugadores y un monto inicial de dinero para poder comenzar
+con las transacciones. \\
+\negrita{Escenario principal:}
+\begin{enumerate}
+  \item El administrador desea crear una nueva liga.
+  \item El sistema verifica que haya los suficientes nuevos usuarios
+    sin clubes asignados para crearla.
+  \item El sistema genera una plantilla de futbolistas nuevos a cada
+    nuevo club creado.
+  \item Se asigna cada club a cada usuario nuevo que formará la nueva
+    liga.
+\end{enumerate}
+
+\subsection{Caso de uso de simular jornadas}
+\negrita{Descripción: } El sistema simulará cada partido de cada
+jornada de cada temporada según las alineaciones y tácticas de los
+equipos que se enfrenten.\\
+\negrita{Actores: } Administrador y Sistema. \\
+\negrita{Precondición: } Los equipos deben estar bloqueados.\\
+\negrita{Postcondición: } Se generará un conjunto de comentarios
+ordenados por cada acción que tenga lugar en el partido.\\
+\negrita{Escenario principal: }
+\begin{enumerate}
+  \item El administrador decidirá simular los partidos de la jornada
+    en la que se encuentre el sistema.
+  \item El sistema generará una ristra de comentarios por cada acción
+    generada en el encuentro usando la ponderación de los equipos
+    alineados y las tácticas utilizadas.
+\end{enumerate}
+
+\subsection{Caso de uso de comenzar jornadas}
+\negrita{Descripción: } El sistema emulará la retransmisión de los
+partidos englobados en las jornadas en tiempo real.\\
+\negrita{Actores: } Administrador y Sistema. \\
+\negrita{Precondición: } Los equipos deben estar bloqueados.\\
+\negrita{Postcondición: } Se emitirá a través de la interfaz web el
+conjunto de comentarios generados previamente en la simulación de los partidos.\\
+\negrita{Escenario principal: }
+\begin{enumerate}
+  \item El administrador decide que se comiencen a emitir los
+    comentarios de los partidos.
+  \item El sistema empieza a mostrar los comentarios de cada partido
+    de forma ordenada y actualizándose cada minuto.
+\end{enumerate}
+
+\subsection{Caso de uso de pasar a siguiente jornada}
+\negrita{Descripción: } El sistema proveerá una forma de avanzar a lo
+largo del calendario de partidos y actualizar traspasos, finanzas y entrenamientos.\\
+\negrita{Actores: } Administrador y Sistema.\\
+\negrita{Precondición: } Los equipos deben estar bloqueados\\
+\negrita{Postcondición: }Se pasará de jornada en el calendario de las
+ligas, se actualizarán los entrenamientos, traspasos y finanzas de los
+clubes registrados en el sistema.\\
+\negrita{Escenario principal: }
+\begin{enumerate}
+  \item El administrador decide pasar a la siguiente jornada.
+  \item El sistema actualiza los resultados y las clasificaciones de
+    cada liga y hace de la jornada siguiente la actual.
+  \item Se actualizan las finanzas de los clubes.
+  \item Se actualizan los traspasos aceptados.
+  \item Se actualizan los entrenamientos de los jugadores.
+\end{enumerate}
+\negrita{Escenario alternativo: }
+\begin{enumerate}
+  \item Si la jornada es la última se dará por concluidas las
+    temporadas que tenían lugar en cada liga.
+\end{enumerate}
+
+
+\subsection{Caso de uso de promoción y descenso de clubes}
+\negrita{Descripción: } El sistema proveerá una forma de organizar las
+ligas de forma jerárquica.\\
+\negrita{Actores: } Administrador y Sistema.\\
+\negrita{Precondición: } Los equipos deben estar bloqueados\\
+\negrita{Postcondición: } Se ascenderán y descenderán los clubes que
+estén en posiciones de descenso y ascenso según la organización
+jerárquica de las ligas.\\
+\negrita{Escenario principal: }
+\begin{enumerate}
+  \item El sistema reorganizará las ligas para reflejar los cambios en
+    las ligas debida a las posiciones que obtengan en la tabla de
+    clasificación los equipos de nuestro sistema.
+\end{enumerate}
+
+\subsection{Caso de uso de composición de calendarios}
+\negrita{Descripción: } El sistema proveerá una forma de componer los
+calendarios de las ligas que se estén jugando en nuestra aplicación.\\
+\negrita{Actores: } Administrador y Sistema.\\
+\negrita{Precondición: } Los equipos deben estar bloqueados y las
+temporadas finalizadas.\\
+\negrita{Postcondición: } Se generará un calendario de jornadas
+siguiendo un algoritmo round-robin de creación de calendarios por cada
+liga albergada en nuestro sistema.\\
+\negrita{Escenario principal: }
+\begin{enumerate}
+  \item El sistema creará un calendario por liga de las nuevas
+    temporadas que van a jugarse en nuestro sistema.
+\end{enumerate}
+
+\section{Diagramas de Casos de Uso}
+
+\figura{casos_uso/funciones_principales.png}{scale=0.35}{Diagrama de
+  casos de uso de las funciones principales}{casos-uso-funciones-generales}{H}
+
+\negrita{Descripción:} 
+\begin{enumerate}
+  \item{Gestión de usuarios}
+    \begin{itemize}
+      \item Configurar el sitio
+      \item Crear una cuenta de usuario
+      \item Acceder a la cuenta de usuario
+      \item Abandonar la cuenta de usuario
+      \item Notificación de registro por e-mail
+      \figura{casos_uso/gestion_usuarios.png}{scale=0.35}{Diagrama de
+        casos de uso para la gestión de usuarios}{casos-uso-gestion-usuarios}{H}
+    \end{itemize}
+  \item{Gestión económica}
+    \begin{itemize}
+      \item Listar ofertas emitidas
+      \item Listar ofertas recibidas
+      \item Emitir oferta por futbolista
+      \item Aceptar oferta por futbolista
+      \item Rechazar oferta por futbolista
+      \item Cancelar oferta emitida por futbolista
+      \item Renovación de futbolistas
+      \item Fijar precio de venta de entradas
+        \figura{casos_uso/gestion_economica.png}{scale=0.35}{Diagrama
+          de casos de uso para la gestión económica}{casos-uso-gestion-economica}{H}
+    \end{itemize}
+  \item{Gestión deportiva}
+    \begin{itemize}
+      \item Planificación de alineaciones
+      \item Planificación de tácticas
+      \item Planificación de entrenamientos
+      \figura{casos_uso/gestion_deportiva.png}{scale=0.35}{Diagrama de
+      casos de uso para la gestión deportiva}{casos-uso-gestion-deportiva}{H}
+    \end{itemize}
+  \item{Gestión de campeonatos}
+    \begin{itemize}
+      \item Asignar club
+      \item Simular jornadas
+      \item Comenzar jornadas
+      \item Pasar a siguiente jornada
+      \item Promoción y descenso de clubes
+      \item Composición de calendarios
+      \figura{casos_uso/gestion_campeonatos.png}{scale=0.35}{Diagrama
+        de casos de uso para la gestión de campeonatos}{casos-uso-gestion-campeonatos}{H}
+     \end{itemize}
+\end{enumerate}
+
+\section{Diagrama de clases conceptuales}
+En la figura \ref{diagrama-clases-uml} podemos observar el diagrama de clases de
+nuestra aplicación según la recolección de requisitos que hemos
+obtenido.
+
+\figura{uml.png}{scale=0.30}{Diagrama de Clases
+  UML}{diagrama-clases-uml}{H}
+
+\section{Diagramas de secuencia de sistemas}
+
+\subsection{Diagrama de secuencia de crear cuenta de usuario}
+
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de crear cuenta de usuario}{diagrama-secuencia-crear-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de acceder a cuenta de usuario}
+
+\figura{diagramas_secuencia/acceder_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de acceder a cuenta de
+  usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de abandonar cuenta de usuario}
+
+\figura{diagramas_secuencia/abandona_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de abandonar cuenta de
+  usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de abrir equipos}
+
+\figura{diagramas_secuencia/abrir_equipos.png}{scale=0.35}{Diagrama de
+  secuencia de abrir equipos}{diagrama-secuencia-abrir-equipos}{H}
+
+\subsection{Diagrama de secuencia de cerrar equipos}
+
+Este diagrama es igual al \ref{diagrama-secuencia-abrir-equipos} pero
+con la ruta \cursiva{/leagues/close\_teams} y la llamada al modelo con
+el método \cursiva{close}.
+
+
+\subsection{Diagrama de secuencia de notificación de registro por
+  e-mail}
+
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de notificación de registro por e-mail}{diagrama-secuencia-notificacion-registro}{H}
+
+
+\subsection{Diagrama de secuencia de listar ofertas emitidas}
+
+\figura{diagramas_secuencia/listar_ofertas_emitidas.png}{scale=0.35}{Diagrama de
+  secuencia de listar ofertas emitidas}{diagrama-secuencia-listar-ofertas-emitidas}{H}
+
+\subsection{Diagrama de secuencia de listar ofertas recibidas}
+
+Este diagrama es igual al
+\ref{diagrama-secuencia-listar-ofertas-emitidas} pero con la ruta
+\cursiva{/clubs/*/received\_offers} y la llamada al modelo club con el
+método \cursiva{offers\_as\_seller}.
+
+\subsection{Diagrama de secuencia de emitir oferta por futbolista}
+
+\figura{diagramas_secuencia/emitir_oferta_futbolista.png}{scale=0.35}{Diagrama de
+  secuencia de emitir oferta por
+  futbolista}{diagrama-secuencia-emitir-oferta-futbolista}{H}
+
+\subsection{Diagrama de secuencia de cancelar oferta emitida por
+  futbolista}
+
+\figura{diagramas_secuencia/cancelar_oferta_emitida_futbolista.png}{scale=0.35}{Diagrama de
+  secuencia de cancelar oferta emitida por
+  futbolista}{diagrama-secuencia-cancelar-oferta-emitida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de rechazar oferta recibida por
+  futbolista}
+
+\figura{diagramas_secuencia/rechazar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama de
+  secuencia de rechazar oferta recibida por
+  futbolista}{diagrama-secuencia-rechazar-oferta-recibida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de aceptar oferta recibida por
+  futbolista}
+
+\figura{diagramas_secuencia/aceptar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama de
+  secuencia de aceptar oferta recibida por
+  futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de renovación de futbolistas}
+
+\figura{diagramas_secuencia/renovacion_futbolistas.png}{scale=0.35}{Diagrama de
+  secuencia de renovación de
+  futbolistas}{diagrama-secuencia-renovacion-futbolistas}{H}
+
+El proceso de renovación está integrado en start.
+
+\subsection{Diagrama de secuencia de fijar precio de venta de
+  entradas}
+
+\figura{diagramas_secuencia/fijar_precio_venta_entradas.png}{scale=0.35}{Diagrama de
+  secuencia de fijar precio de venta de
+  entradas}{diagrama-secuencia-fijar-precio-venta-entradas}{H}
+
+\subsection{Diagrama de secuencia de planificación de alineaciones}
+
+\figura{diagramas_secuencia/planificacion_alineaciones.png}{scale=0.35}{Diagrama de
+  secuencia de emitir planificación de
+  alineaciones}{diagrama-secuencia-planificacion-alineaciones}{H}
+
+\subsection{Diagrama de secuencia de planificación de tácticas}
+
+\figura{diagramas_secuencia/planificacion_tacticas.png}{scale=0.35}{Diagrama de
+  secuencia de planificación de tácticas
+}{diagrama-secuencia-planificacion-tacticas}{H}
+
+\subsection{Diagrama de secuencia de planificación de entrenamientos}
+
+\figura{diagramas_secuencia/planificacion_entrenamientos.png}{scale=0.35}{Diagrama de
+  secuencia de planificación de entrenamientos
+}{diagrama-secuencia-planificacion-entrenamientos}{H}
+
+\subsection{Diagrama de secuencia de asignar club}
+
+\figura{diagramas_secuencia/asignar_club.png}{scale=0.35}{Diagrama de
+  secuencia de secuencia de asignar club
+}{diagrama-secuencia-asignar-club}{H}
+
+\clearpage
+
+\subsection{Diagrama de secuencia de simular jornadas}
+
+\figura{diagramas_secuencia/simular_jornadas.png}{scale=0.32, angle=270}{Diagrama de
+  secuencia de simular
+  jornadas}{diagrama-secuencia-simular-jornadas}{H}
+
+\subsection{Diagrama de secuencia de comenzar jornadas}
+
+\figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.43, angle=270}{Diagrama de
+  secuencia de comenzar
+  jornadas}{diagrama-secuencia-comenzar-jornadas}{H}
+
+
+\subsection{Diagrama de secuencia de pasar a siguiente jornada}
+
+\figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.27, angle=270}{Diagrama
+ de secuencia de pasar a siguiente
+  jornada}{diagrama-secuencia-pasar-siguiente-jornada}{H}
+
+\subsection{Diagrama de secuencia de promoción y descenso de clubes}
+
+\figura{diagramas_secuencia/promocion_descenso_clubes.png}{scale=0.35}{Diagrama
+ de secuencia de promocion y descenso de
+ clubes}{diagrama-secuencia-promocion-descenso-clubes}{H}
+
+\clearpage
+
+\subsection{Diagrama de secuencia de composición de calendarios}
+
+\figura{diagramas_secuencia/crear_calendario.png}{scale=0.32, angle=270}{Diagrama
+ de secuencia de composición de calendarios}{diagrama-secuencia-composicion-calendarios}{H}

@@ -1,0 +1,19 @@
+\begin{thebibliography}{1}
+
+\bibitem{website:doxygen}
+{Dimitri Van Heesch}.
+\newblock {Pagina oficial de Doxygen}.
+\newblock \url{http://www.doxygen.org}.
+
+\bibitem{pdf:make}
+{Gerardo Aburruzaga García}.
+\newblock {Make. Un programa para controlar la recompilación}.
+\newblock \url{http://www.uca.es/softwarelibre/publicaciones/make.pdf}.
+
+\bibitem{pdf:auctex}
+Joaquín~Ataz López.
+\newblock {Creación de ficheros \LaTeX{} con GNU Emacs}.
+\newblock
+  \url{ftp://ftp.dante.de/tex-archive/info/spanish/guia-atx/guia-atx.pdf}.
+
+\end{thebibliography}

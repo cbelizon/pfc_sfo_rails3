@@ -1,0 +1,130 @@
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}
+\BOOKMARK [1][-]{section.1.1}{Objetivos}{chapter.1}
+\BOOKMARK [1][-]{section.1.2}{Alcance}{chapter.1}
+\BOOKMARK [2][-]{subsection.1.2.1}{Identificaci\363n del producto mediante un nombre}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.2}{Funcionalidades del producto}{section.1.2}
+\BOOKMARK [2][-]{subsection.1.2.3}{Aplicaciones del software: beneficios, objetivos y metas}{section.1.2}
+\BOOKMARK [1][-]{section.1.3}{Definiciones, acr\363nimos y abreviaturas}{chapter.1}
+\BOOKMARK [1][-]{section.1.4}{Visi\363n General}{chapter.1}
+\BOOKMARK [0][-]{chapter.2}{Planificaci\363n Temporal}{}
+\BOOKMARK [1][-]{section.2.1}{Planificaci\363n}{chapter.2}
+\BOOKMARK [2][-]{subsection.2.1.1}{Introducci\363n}{section.2.1}
+\BOOKMARK [0][-]{chapter.3}{Descripci\363n General del proyecto}{}
+\BOOKMARK [1][-]{section.3.1}{Perspectiva del Producto}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.1.1}{Dependencias del producto}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.2}{Interfaces de usuario}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.3}{Interfaces software}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.4}{Operaciones}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.5}{Requisitos de adaptaci\363n a la ubicaci\363n}{section.3.1}
+\BOOKMARK [2][-]{subsection.3.1.6}{Funciones del producto}{section.3.1}
+\BOOKMARK [1][-]{section.3.2}{Caracter\355sticas de los usuarios}{chapter.3}
+\BOOKMARK [1][-]{section.3.3}{Restricciones generales}{chapter.3}
+\BOOKMARK [1][-]{section.3.4}{Requisitos no funcionales del sistema}{chapter.3}
+\BOOKMARK [2][-]{subsection.3.4.1}{Requisitos Generales}{section.3.4}
+\BOOKMARK [2][-]{subsection.3.4.2}{Requisitos espec\355ficos}{section.3.4}
+\BOOKMARK [1][-]{section.3.5}{Requisitos para futuras versiones}{chapter.3}
+\BOOKMARK [0][-]{chapter.4}{An\341lisis}{}
+\BOOKMARK [1][-]{section.4.1}{Metodolog\355a de desarrollo}{chapter.4}
+\BOOKMARK [1][-]{section.4.2}{Descripci\363n General}{chapter.4}
+\BOOKMARK [1][-]{section.4.3}{Prop\363sito}{chapter.4}
+\BOOKMARK [1][-]{section.4.4}{\301mbito}{chapter.4}
+\BOOKMARK [1][-]{section.4.5}{Perspectiva del Producto}{chapter.4}
+\BOOKMARK [1][-]{section.4.6}{Caracter\355sticas del usuario}{chapter.4}
+\BOOKMARK [1][-]{section.4.7}{Obligaciones generales}{chapter.4}
+\BOOKMARK [1][-]{section.4.8}{Asunciones y Dependencias}{chapter.4}
+\BOOKMARK [1][-]{section.4.9}{Especificaci\363n de los requisitos del sistema}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.9.1}{Requisitos de interfaces externas}{section.4.9}
+\BOOKMARK [2][-]{subsection.4.9.2}{Requisitos de rendimiento}{section.4.9}
+\BOOKMARK [2][-]{subsection.4.9.3}{Requisitos de la base de datos}{section.4.9}
+\BOOKMARK [2][-]{subsection.4.9.4}{Restricciones de dise\361o}{section.4.9}
+\BOOKMARK [2][-]{subsection.4.9.5}{Atributos del sistema software}{section.4.9}
+\BOOKMARK [1][-]{section.4.10}{Descripci\363n de Requisitos Funcionales}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.10.1}{Configurar el sitio}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.2}{Crear una cuenta de usuario}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.3}{Acceder a la cuenta de usuario}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.4}{Abandonar la cuenta de usuario}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.5}{Abrir equipos}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.6}{Cerrar equipos}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.7}{Listar ofertas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.8}{Emitir oferta por futbolista}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.9}{Aceptar oferta por futbolista}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.10}{Rechazar oferta por futbolista}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.11}{Cancelar oferta por futbolista}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.12}{Renovaci\363n de futbolistas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.13}{Venta de entradas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.14}{Planificaci\363n de alineaciones}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.15}{Planificaci\363n de t\341cticas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.16}{Planificaci\363n de entrenamientos}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.17}{Asignar club}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.18}{Simular jornadas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.19}{Comenzar jornadas}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.20}{Pasar a siguiente jornada}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.21}{Promoci\363n y descenso de clubes}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.22}{Composici\363n de calendarios}{section.4.10}
+\BOOKMARK [2][-]{subsection.4.10.23}{Gestiones de lesiones y sanciones}{section.4.10}
+\BOOKMARK [1][-]{section.4.11}{Especificaci\363n de los Casos de Uso}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.11.1}{Caso de uso crear cuenta de usuario}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.2}{Caso de uso acceder a la cuenta de usuario}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.3}{Caso de uso abandonar la cuenta de usuario}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.4}{Caso de uso abrir equipos}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.5}{Caso de uso cerrar equipos}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.6}{Caso de uso de notificaci\363n de registro por e-mail}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.7}{Caso de uso de listar ofertas emitidas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.8}{Caso de uso de listar ofertas recibidas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.9}{Caso de uso de emitir oferta por futbolista}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.10}{Caso de uso de cancelar oferta emitida por futbolista}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.11}{Caso de uso de rechazar oferta por futbolista}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.12}{Caso de uso de aceptar oferta por futbolista}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.13}{Caso de uso de renovaci\363n de futbolistas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.14}{Caso de uso de fijar precio de venta de entradas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.15}{Caso de uso de planificaci\363n de alineaciones}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.16}{Caso de uso de planificaci\363n de t\341cticas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.17}{Caso de uso de planificaci\363n de entrenamientos}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.18}{Caso de uso asignar club}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.19}{Caso de uso de simular jornadas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.20}{Caso de uso de comenzar jornadas}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.21}{Caso de uso de pasar a siguiente jornada}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.22}{Caso de uso de promoci\363n y descenso de clubes}{section.4.11}
+\BOOKMARK [2][-]{subsection.4.11.23}{Caso de uso de composici\363n de calendarios}{section.4.11}
+\BOOKMARK [1][-]{section.4.12}{Diagramas de Casos de Uso}{chapter.4}
+\BOOKMARK [1][-]{section.4.13}{Diagrama de clases conceptuales}{chapter.4}
+\BOOKMARK [1][-]{section.4.14}{Diagramas de secuencia de sistemas}{chapter.4}
+\BOOKMARK [2][-]{subsection.4.14.1}{Diagrama de secuencia de crear cuenta de usuario}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.2}{Diagrama de secuencia de acceder a cuenta de usuario}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.3}{Diagrama de secuencia de abandonar cuenta de usuario}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.4}{Diagrama de secuencia de abrir equipos}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.5}{Diagrama de secuencia de cerrar equipos}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.6}{Diagrama de secuencia de notificaci\363n de registro por e-mail}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.7}{Diagrama de secuencia de listar ofertas emitidas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.8}{Diagrama de secuencia de listar ofertas recibidas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.9}{Diagrama de secuencia de emitir oferta por futbolista}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.10}{Diagrama de secuencia de cancelar oferta emitida por futbolista}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.11}{Diagrama de secuencia de rechazar oferta recibida por futbolista}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.12}{Diagrama de secuencia de aceptar oferta recibida por futbolista}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.13}{Diagrama de secuencia de renovaci\363n de futbolistas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.14}{Diagrama de secuencia de fijar precio de venta de entradas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.15}{Diagrama de secuencia de planificaci\363n de alineaciones}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.16}{Diagrama de secuencia de planificaci\363n de t\341cticas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.17}{Diagrama de secuencia de planificaci\363n de entrenamientos}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.18}{Diagrama de secuencia de asignar club}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.19}{Diagrama de secuencia de simular jornadas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.20}{Diagrama de secuencia de comenzar jornadas}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.21}{Diagrama de secuencia de pasar a siguiente jornada}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.22}{Diagrama de secuencia de promoci\363n y descenso de clubes}{section.4.14}
+\BOOKMARK [2][-]{subsection.4.14.23}{Diagrama de secuencia de composici\363n de calendarios}{section.4.14}
+\BOOKMARK [0][-]{figure.caption.33}{Bibliografia y referencias}{}
+\BOOKMARK [0][-]{chapter*.34}{Software usado}{}
+\BOOKMARK [0][-]{figure.caption.41}{Instalaci\363n de LaTeX}{}
+\BOOKMARK [0][-]{section*.44}{GNU Free Documentation License}{}
+\BOOKMARK [1][-]{section*.45}{1. APPLICABILITY AND DEFINITIONS}{section*.44}
+\BOOKMARK [1][-]{section*.46}{2. VERBATIM COPYING}{section*.44}
+\BOOKMARK [1][-]{section*.47}{3. COPYING IN QUANTITY}{section*.44}
+\BOOKMARK [1][-]{section*.48}{4. MODIFICATIONS}{section*.44}
+\BOOKMARK [1][-]{section*.49}{5. COMBINING DOCUMENTS}{section*.44}
+\BOOKMARK [1][-]{section*.50}{6. COLLECTIONS OF DOCUMENTS}{section*.44}
+\BOOKMARK [1][-]{section*.51}{7. AGGREGATION WITH INDEPENDENT WORKS}{section*.44}
+\BOOKMARK [1][-]{section*.52}{8. TRANSLATION}{section*.44}
+\BOOKMARK [1][-]{section*.53}{9. TERMINATION}{section*.44}
+\BOOKMARK [1][-]{section*.54}{10. FUTURE REVISIONS OF THIS LICENSE}{section*.44}
+\BOOKMARK [1][-]{section*.55}{11. RELICENSING}{section*.44}
+\BOOKMARK [1][-]{section*.56}{ADDENDUM: How to use this License for your documents}{section*.44}
