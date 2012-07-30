@@ -1,39 +1,131 @@
-% -*-cap2.tex-*-
-% Este fichero es parte de la plantilla LaTeX para
-% la realización de Proyectos Final de Carrera, protejido
-% bajo los términos de la licencia GFDL.
-% Para más información, la licencia completa viene incluida en el
-% fichero fdl-1.3.tex
+% -*-cap2.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex
 
-% Copyright (C) 2009 Pablo Recio Quijano 
+% Copyright (C) 2009 Pablo Recio Quijano
 
-\section{Planificación}
-\subsection{Introducción}
+\section{Metodología de desarrollo}
 La distribución temporal seguida en líneas generales es la descrita a
-continuación, de la cual se harán revisiones constantes al tratarse de
-una aplicación en la que se desea aprender a desarrollar bajo una
-metodología ágil.
+continuación, de la cual se harán revisiones constantes al tratarse de una
+aplicación en la que se desea aprender a desarrollar bajo una metodología ágil.
 \begin{itemize}
-  \item Análisis: En esta fase llevaremos a cabo la recogida de todos
-    los requisitos funcionales de nuestra aplicación. Al utilizar una
-    metodología ágil la recogida de requisitos podrá ser más laxa que
-    si hubiéramos seguido un modelo lineal.
-  \item Diseño: En esta fase recrearemos diseños conceptuales de cómo
-    serán nuestras vistas, y a partir de ellas podremos obtener
-    nuestros modelos de datos.
-  \item Programación: En esta fase nos dedicaremos a codificar de
-    forma sinérgica las diferentes secciones en las que se compone un
-    desarrollo basado en el patrón Modelo Vista Controlador
-  \item Pruebas: Las pruebas que realizaremos serán:
-    \begin{enumerate}
-      \item Test de usabilidad
-      \item Pruebas de caja negra.
-      \item Estudio y resolución de los resultados de las pruebas.
-    \end{enumerate}
-  \item Documentación: Para la documentación del código usaremos la
-    herramienta propia del lenguaje Ruby, Ruby-doc, gracias a esta
-    aplicación podremos generar un documento web fácilmente extensible
-    y manipulable. En esta fase también desarrollaremos la memoria de
-    la aplicación, el manual de usuario y la presentación multimedia
-    para difundir nuestra aplicación.
+\item Análisis: En esta fase llevaremos a cabo la recogida de todos los
+  requisitos funcionales de nuestra aplicación. Al utilizar una metodología ágil
+  la recogida de requisitos podrá ser más laxa que si hubiéramos seguido un
+  modelo lineal.
+\item Diseño: En esta fase recrearemos diseños conceptuales de cómo serán
+  nuestras vistas, y a partir de ellas podremos obtener nuestros modelos de
+  datos.
+\item Programación: En esta fase nos dedicaremos a codificar de forma sinérgica
+  las diferentes secciones en las que se compone un desarrollo basado en el
+  patrón Modelo Vista Controlador
+\item Pruebas: Las pruebas que realizaremos serán:
+  \begin{enumerate}
+  \item Test de usabilidad
+  \item Pruebas de caja negra.
+  \item Estudio y resolución de los resultados de las pruebas.
+  \end{enumerate}
+\item Documentación: Para la documentación del código usaremos la herramienta
+  propia del lenguaje Ruby, Ruby-doc, gracias a esta aplicación podremos generar
+  un documento web fácilmente extensible y manipulable. En esta fase también
+  desarrollaremos la memoria de la aplicación, el manual de usuario y la
+  presentación multimedia para difundir nuestra aplicación.
 \end{itemize}
+
+\section{Calendario}
+
+En la figura .... se puede ver un diagrama de Gantt con la división y el tiempo
+tomado para realizar cada una de las tareas en las que hemos dividido el
+proyecto. La unidad de tiempo básica está expresada en días laborables de 8
+horas.
+
+Aunque la etapa de Memoria se ha realizado de forma solidaria con las demás,
+para simplificar se ha extraído en un sólo bloque.
+
+\begin{itemize}
+\item Entrevistas: Nos reunimos con nuestros tutores de proyecto para recopilar
+  los requisitos que deberá tener nuestro proyecto de fin de carrera para que
+  sea lo suficientemente completo para pasar la aprobación del tribunal y
+  aprender de forma exhausta el framework \cursiva{Ruby On Rails} (5 días).
+\item Análisis: Una vez recopilada toda la información en las entrevistas con
+  nuestros tutores, extraemos la información importante y la esquematizamos (7
+  días).
+\item Especificación de Requisitos: Definimos, organizamos, cada uno de los
+  requisitos que hayamos extraído y los desarrollamos de forma exhausta. En esta
+  fase también describiremos los casos de uso, evitando en la medida de lo
+  posible la redundancia de los mismos y maximizando la posibilidad de
+  reutilizarlos (10 días).
+\item Diseño: En esta fase estudiaremos la mejor forma para incorporar la
+  funcionalidad del sistema teniendo en cuenta que usaremos el framework de
+  desarrollo rápido de aplicaciones \cursiva{Ruby On Rails}, con especial
+  atención a que haremos uso del patrón Modelo-Vista-Controlador (25 días).
+\item Implementación: En esta fase codificaremos la aplicación para que sea
+  funcional según hemos especificado en la fase de diseño; además, será
+  necesario aprender la forma de utilizar de forma correcta el framework
+  \cursiva{Ruby On Rails)}. En esta fase va incluida la creación de la
+  estructuras necesarias para la interacción con el Sistema de Gestión de Bases
+  de Datos (\cursiva{SGBD}) a través de un sistema \cursiva{ORM} (90 días).
+\item Pruebas: En este paso comprobaremos que la corrección del sistema que
+  hemos desarrollado. En caso de encontrar algún fallo es el momento de
+  solucionarlo y repetir las pruebas (5 días).
+\item Memoria: Toda la documentación que conforma esta memoria es el resultado
+  de detallar cada uno de los documentos que hemos ido generando a través de la
+  realización de la misma (40 días).
+\item Presentación: Creación y preparación de la presentación que mostraremos en
+  la etapa de defensa ante el tribunal (10 días).
+\end{itemize}
+
+\section{Presupuesto}
+
+Para realizar una estimación del montante económico del proyecto realizado será
+necesario calcular y dirimir todos los recursos que han sido necesarios para
+llevarlo a cabo. En dicho presupuesto no se incluirán los materiales de oficina
+como serían escritorio, folios, ordenador, impresora, y demás recursos
+ofimáticos. Sabiendo que excluiremos todos los gastos que podríamos considerar
+como indirectos, sólo tendremos que fijarnos en el gasto que supondría el coste
+de mantener a un \cursiva{Analista-programador y Diseñador de página Web} en la
+empresa. Para ello consultaremos las tablas salariales de dicha categoría
+profesional en el \cursiva{XVI CONVENIO COLECTIVO ESTATAL DE EMPRESAS
+  CONSULTORAS, DE PLANIFICACIÓN, ORGANIZACIÓN DE EMPRESA Y CONTABLE, EMPRESAS DE
+  SERVICIOS DE INFORMÁTICA Y DE ESTUDIOS DE MERCADO Y DE LA OPINIÓN PÚBLICA} tal
+y como vemos en la tabla \ref{tab:salario}. Para el cálculo del pago de la
+Seguridad Social aplicaremos un 33\% del coste del salario bruto del trabajador.
+
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+    Nombre & Coste mensual & Coste anual & Coste jornada (25 días por mes)\\ \hline
+    Analista-programador y Diseñador Web & 1.468,54 \euro & 20.559,56
+    & 58,75 \euro\\ \hline
+    Seguridad Social & 484,82 \euro & 6.784,65 \euro & No aplica \\
+    \hline
+  \end{tabular}
+\end{center}
+\caption{Salario según último convenio de las TIC}
+\label{tab:salario}
+\end{table}
+
+
+Teniendo en cuenta que el proyecto lo hemos realizado en solitario y nos ha
+llevado un total de 192 jornadas laborales, lo que equivaldría a 7 meses y 3
+semanas naturales, tendremos que el coste total del proyecto es el referido en
+la tabla \ref{tab:coste}
+
+\begin{table}[H]
+  \begin{center}
+  \begin{tabular}{| c | c | c | c |}
+    \hline
+    Cantidad & Descripción & Coste unitario & Coste Total\\ \hline
+    192 & Jornada Analista-Programador y Diseñador Web & 58,75 \euro &
+    11.280 \euro\\ \hline
+    8 & Seguridad Social Analista-Programador y Diseñador Web & 484,82
+    \euro & 3.878,56 \euro \\ \hline
+    \multicolumn{3}{|r|}{Total} &  15.158,56 \euro\\
+    \hline
+  \end{tabular}
+\end{center}
+\caption{Coste total del proyecto realizado}
+\label{tab:coste}
+\end{table}
