@@ -24,7 +24,6 @@
 \usepackage{./estilos/colores}  % Algunos colores ya generados, para
                                 % los algunos estilos más avanzados.
 \usepackage{./estilos/comandos} % Algunos comandos personalizados
-\usepackage{eurosym}
 
 \graphicspath{{./imagenes/}} % Indicamos la ruta donde se encuentran
                              % las imagenes, para ahorrarnos la ruta
@@ -59,16 +58,25 @@
 \mainmatter % Contenido en si ...
 
 \chapter{Introducción}
+\label{cap:introduccion}
 \input{cap1.tex}
 
-\chapter{Planificación Temporal}
+
+\chapter{Planificación}
+\label{cap:planificacion}
 \input{cap2.tex}
 
 \chapter{Descripción General del proyecto}
+\label{cap:descripcion}
 \input{cap3.tex}
 
 \chapter{Análisis}
+\label{cap:analisis}
 \input{cap4.tex}
+
+\chapter{Diseño}
+\label{cap:diseño}
+\input{cap5.tex}
 
 \backmatter % Apéndices, bibliografia ...
 

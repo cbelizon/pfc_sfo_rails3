@@ -1,0 +1,453 @@
+% -*-cap5.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex Copyright (C) 2009 Pablo Recio Quijano
+
+Para la implementación de toda la funcionalidad descrita en el capítulo anterior
+seguiremos las convenciones que el framework \cursiva{Ruby on Rails} nos
+proporciona para una mayor velocidad y corrección en el desarrollo.
+
+\section{Arquitectura}
+
+\label{pattern:mvc}
+Debido a \cursiva{Ruby on Rails} es un framework que hace un uso intensivo del
+patrón \cursiva{Modelo-Vista-Controlador} (MVC). \\
+
+El patrón \cursiva{Modelo-Vista-Controlador} divide el software en tres capas
+bien diferenciadas que se adaptan muy bien a la tecnología
+Cliente-Servidor. Dichas capas son:
+
+\begin{itemize}
+\item \negrita{Modelo}: Esta capa es la relativa a la representación de la
+  información con la que el proyecto interactuará. Está compuesto por las clases
+  necesarias para el acceso, modificación, búsqueda y demás operaciones con los
+  datos.
+\item \negrita{Vista}: En esta capa agruparemos todas las clases necesarias para
+  la representación de la interfaz con la que nuestros usuarios interactuarán.
+\item \negrita{Controlador}: Será la capa que nos permita gestionar las
+  peticiones que lleguen a nuestro servidor.
+\end{itemize}
+
+\subsection{Capa Modelo}
+
+Para la capa de modelo y la consecuente persistencia de datos vamos a usar el
+\cursiva{ORM} (mapeo objeto-relacional) que nos proporciona por defecto
+\cursiva{Ruby On Rails}, la clase \cursiva{ActiveRecord} que implementa el
+patrón \cursiva{Active Record} pudiéndonos abstraer del \cursiva{SGBD}
+relacional que usemos y las especificaciones únicas del lenguaje \cursiva{SQL}
+que implemente el mismo.
+
+\subsection{Capa Vista}
+
+Para esta capa vamos a utilizar la clase \cursiva{ActionView}. Dicha clase es
+una forma poderosa, sencilla y elegante, de embeber código \cursiva{Ruby} dentro
+de cualquier tipo de fichero de la capa de presentación de nuestra página web
+(\cursiva{JavaScript}, \cursiva{CSS}).\\
+
+Además, haremos uso de los frameworks \cursiva{CoffeScript}
+\cite{lang:coffescript} y \cursiva{SASS} \cite{lang:sass} para el desarrollo de
+los ficheros \cursiva{JavaScript} y \cursiva{CSS} respectivamente.
+
+\subsection{Capa Controlador}
+En esta capa haremos uso de la clase \cursiva{ApplicationController}. Esta clase
+nos ayudará a modelar de forma sencilla y fácil el enrutador de nuestra
+aplicación y las respuestas que se hagan a través del cliente en la petición
+web.\\
+
+Además, nos ayudará a establecer un flujo sencillo entre nuestras capas Vista y
+Modelo consiguiendo un menor acoplamiento y una mayor cohesión de nuestro
+sistema.
+
+\subsection{Active Record}
+Se basa en el patrón de mismo nombre el cual es un patrón de arquitectura que
+podemos encontrar en software que almacene información en bases de datos
+relacionales. Conforme a este patrón, un objeto que lo use habrá de integrar
+funciones para insertar, actualizar, eliminar y otras que correspondan en mayor
+o menor medida a las operaciones con columnas de la tabla de una base de datos.\\
+
+Este patrón crea una interfaz que envuelve una tabla de una base de datos o una
+vista en una clase. En base a ello, un objeto de la clase corresponde a una fila
+en la tabla. La clase que envuelve a la tabla o vista implementa métodos o
+propiedades para acceder a cada columna.\\
+
+Este patrón es normalmente usado para dar persistencia a los datos en un
+proyecto software, haciendo de \cursiva{ORM} para la aplicación. Normalmente,
+las relaciones de clave foránea entre clases son implementadas como una
+propiedad del objeto \cite{pattern:activerecord}.\\
+
+Las funcionalidades que implementa la clase \cursiva{Active Record} en
+\cursiva{Rails} son:
+
+\begin{itemize}
+\item \negrita{Creación}: Permite la creación de nuevas líneas en la base de
+  datos.
+\item \negrita{Condiciones}: Permite consultar datos en la base de datos usando
+  para ello cadenas de texto o \cursiva{hashes} que representen la parte
+  \cursiva{WHERE} en una sentencia SQL.
+\item \negrita{Sobrescribir métodos de accesibilidad por defecto}: Se pueden
+  sobrescribir los métodos de accesibilidad para modificar el comportamiento en
+  las operaciones de escritura, creación, lectura, y demás operaciones de
+  lectura/escritura.
+\item \negrita{Métodos de consulta como atributos}: Se pueden crear nuevos
+  métodos que se comporten como atributos para conocer si un atributo dentro de
+  la tabla está inicializado.
+\item \negrita{Posibilidad de acceder a los atributos antes de que hayan pasado
+    el casting de tipo}: Es una funcionalidad orientada sobre todo en las
+  situaciones de validación.
+\item \negrita{Buscadores dinámicos en base al atributo}: Métodos estándar
+  creados en base al nombre de los atributos correspondientes al nombre de la
+  columna dentro de la tabla.
+\item \negrita{Serializar vectores, hashes y otros objetos en columnas de
+    texto}: Es posible guardar este tipo de objetos en formato texto usando el
+  lenguaje \cursiva{YAML}.
+\item \negrita{Herencia simple de tabla}: Es posible el uso de la herencia
+  simple entre tablas.
+\item \negrita{Conexión a múltiples bases de datos en diferentes modelos}: Es
+  posible establecer diferentes conexiones a diferentes \cursiva{SGBD} para
+  diferentes clases.
+\end{itemize}
+
+\subsection{Action View}
+\cursiva{Action View} hace uso del sistema de plantillas \cursiva{eRuby} para
+embeber código \cursiva{Ruby} dentro de un documento de texto. Es ampliamente
+utilizado para dentro de documentos \cursiva{HTML} y \cursiva{JavaScript}.
+
+\subsection{Action Controller}
+Es el núcleo de una petición web en \cursiva{Ruby on Rails}. Está formado por
+una o más acciones que son ejecutadas cuando se produzca una petición, justo
+después se puede redireccionar a otra acción o renderizar una plantilla. Una
+acción se define como un método público dentro del controlador, el cuál es
+automáticamente accesible al servidor web a través del enrutador de
+\cursiva{Rails}.\\
+
+Por defecto, sólo la clase \cursiva{ApplicationController} dentro de una
+aplicación \cursiva{Rails} hereda de la clase
+\cursiva{ActionController:Base}. Los demás controladores heredarán de la clase
+\cursiva{ApplicationController}. Este tipo de estructura nos proporciona una
+clase para configurar varias cosas que sean comunes a cualquier petición web.\\
+
+Esta clase nos proporciona además las siguientes funcionalidades:
+
+\begin{itemize}
+\item \negrita{Peticiones}: El objeto de petición es totalmente accesible y se
+  usa principalmente para conocer la cabecera de la petición \cursiva{HTTP}.
+\item \negrita{Parámetros}: Todos los parámetros que lleva la petición, ya sean
+  desde \cursiva{GET} o \cursiva{POST} o de la \cursiva{URL}, son accesibles a
+  través del \cursiva{método} \negrita{params} que devolverá un \cursiva{hash}
+  uni o multidimensional con todos los parámetros asociados a la petición.
+\item \negrita{Sesiones}: Las sesiones permiten almacenar objetos entre petición
+  y petición. Son bastante útiles para objetos que no estén aún preparados para
+  pasar a ser almacenados en la base de datos. Para acceder a las sesiones
+  bastará con llamar al método \negrita{session} y este devolverá un
+  \cursiva{hash} uni o multidimensional con las sesiones almacenadas.
+\item \negrita{Respuestas}: Toda acción lleva asociada una respuesta, la cual
+  alberga las cabeceras y el documento para ser mandado al navegador del
+  usuario. El objeto respuesta es generado automáticamente a través del uso de
+  \cursiva{renders} y redirecciones, con lo que no necesita la interacción del
+  usuario.
+\item \negrita{Renderizaciones}: La clase \cursiva{ActionController} manda
+  contenido al usuario a través del uso de métodos de renderización. El más
+  común es el uso de una plantilla para la renderización del contenido, a través
+  de plantillas \cursiva{ERB}.
+\item \negrita{Redirecciones}: Son usadas para moverse de una acción a otra.
+\item \negrita{Redirecciones y renderizaciones múltiples}: Es posible renderizar
+  y redireccionar varias veces en la misma petición.
+\end{itemize}
+
+\subsection{Diagrama de componentes y estructura}
+
+Podemos ver el diagrama de componentes en la figura \ref{diag:componentes}.
+
+\figura{mvc-rails.png}{scale=0.50}{Diagrama de componentes}{diag:componentes}{H}
+
+El framework \cursiva{Ruby on Rails} hace especial hincapié en tres conceptos
+muy básicos que caracterizan toda su estructura, que son:
+
+\begin{itemize}
+\item \negrita{Convention over Configuration (COC)}: Convención frente a
+  configuración.
+\item \negrita{Don't Repeat Yourself (DRY)}: No te repitas
+\item \negrita{Keep It Simple (KIS)}: Mantenlo simple.
+\end{itemize}
+
+Gracias a ello seguiremos la estructura de directorios en árbol para nuestro
+código fuente que genera \cursiva{Rails} para una aplicación vacía.
+
+\begin{itemize}
+\item \negrita{/pfc\_sfo/} raíz del proyecto \cursiva{Rails}.
+\item \negrita{/pfc\_sfo/app/} ficheros fuente principales.
+\item \negrita{/pfc\_sfo/app/controllers/} ficheros fuente para los
+  controladores.
+\item \negrita{/pfc\_sfo/app/helpers/} ficheros fuente para los métodos de ayuda
+  para refactorización de códigos en las vistas.
+\item \negrita{/pfc\_sfo/app/mailers/} ficheros fuente para el código fuente de
+  los correos que se envían desde el servidor.
+\item \negrita{/pfc\_sfo/app/models/} ficheros fuente correspondientes a los
+  modelos de datos.
+\item \negrita{/pfc\_sfo/app/views/} ficheros fuente para las vistas de la
+  aplicación, incluyendo como parte de las mismas las de los correos.
+\item \negrita{/pfc\_sfo/app/assets/} ficheros fuente que han de ejecutarse en
+  el navegador, archivos \cursiva{CSS}, \cursiva{JavasScript}, imágenes, etc...
+\item \negrita{/pfc\_sfo/config/}, ficheros fuente de configuración de la
+  aplicación web.
+\item \negrita{/pfc\_sfo/config/environments/} ficheros fuente de configuración
+  de los distintos entornos, desarrollo, test y producción.
+\item \negrita{/pfc\_sfo/config/initializers/} ficheros de inicialización del
+  servidor.
+\item \negrita{/pfc\_sfo/config/locales/} ficheros \cursiva{YAML} para los
+  textos de traducción en diferentes idiomas.
+\item \negrita{/pfc\_sfo/db/} ficheros autogenerados dónde se albergan la
+  configuración de la Base de Datos.
+\item \negrita{/pfc\_sfo/db/migrate/} ficheros para la manipulación de las
+  tablas de la base de datos.
+\item \negrita{/pfc\_sfo/lib/} ficheros para la extensión de la aplicación con
+  otros subsistemas software.
+\item \negrita{/pfc\_sfo/log/} ficheros log del servidor.
+\item \negrita{/pfc\_sfo/public/} ficheros de acceso público a través del
+  enrutador.
+\item \negrita{/pfc\_sfo/script/} scripts para la generación automática de
+  código y la automatización de procesos.
+\item \negrita{/pfc\_sfo/test/} ficheros para almacenar test automáticos.
+\end{itemize}
+
+\subsection{Entorno de ejecución}
+En la figura \ref{fig:entornoejecucion} podemos ver el diagrama de despliegue de
+la aplicación puesta en marcha en cualquiera de los entornos, ya sea este de
+desarrollo, test o
+producción.\\
+
+El sistema (servidor) interactuará con uno o más clientes web (navegadores). El
+servidor, a su vez estará formado por un servidor de aplicaciones web, en
+nuestro caso \cursiva{Webrick}, y el sistema de gestión de base de datos será
+\cursiva{SQLite3}.\\
+
+Gracias a esta sencilla configuración no tendremos que configurar ninguna cuenta
+ni servicio en nuestro servidor web.
+
+\clearpage
+\section{Diagrama de clases conceptuales}
+En la figura \ref{diagrama-clases-uml} podemos observar el diagrama de clases de
+nuestra aplicación según la recolección de requisitos que hemos obtenido en el
+Capítulo \ref{cap:analisis} de esta memoria.
+
+\figura{uml.png}{scale=0.38,angle=270}{Diagrama de Clases UML}{diagrama-clases-uml}{H}
+
+\clearpage
+
+\section{Diagramas de secuencia de sistemas}
+
+En las siguientes secciones podremos observar los diagramas de secuencias del
+sistema software que hemos desarrollado.
+
+\subsection{Diagrama de secuencia de crear cuenta de usuario}
+
+En la figura \ref{diagrama-secuencia-crear-cuenta-usuario} podemos observar como
+se construye un nuevo usuario dentro del sistema con los datos proporcionados
+por el usuario web.
+
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de crear cuenta de
+  usuario}{diagrama-secuencia-crear-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de acceder a cuenta de usuario}
+
+En la figura \ref{diagrama-secuencia-acceder-cuenta-usuario} podemos observar
+como se consigue acreditar las credenciales (usuario y contraseña) para iniciar
+sesión.
+
+\figura{diagramas_secuencia/acceder_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de acceder a cuenta de
+  usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de abandonar cuenta de usuario}
+
+En la figura \ref{diagrama-secuencia-abandonar-cuenta-usuario} podemos observar
+cómo se destruye la sesión iniciada por un usuario.
+
+\figura{diagramas_secuencia/abandona_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de abandonar cuenta de
+  usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H}
+
+\subsection{Diagrama de secuencia de abrir equipos}
+
+En la figura \ref{diagrama-secuencia-abrir-equipos} cómo se establece el estado
+de las temporadas para permitir operaciones por parte de los usuarios en los
+equipos que poseen.
+
+\figura{diagramas_secuencia/abrir_equipos.png}{scale=0.35}{Diagrama de secuencia
+  de abrir equipos}{diagrama-secuencia-abrir-equipos}{H}
+
+\subsection{Diagrama de secuencia de cerrar equipos}
+En la figura \ref{diagrama-secuencia-abrir-equipos} podemos observar cómo se
+establece el estado de las temporadas para impedir que los usuarios puedan
+realizar operaciones con sus equipos.
+
+Este diagrama es igual al \ref{diagrama-secuencia-abrir-equipos} pero con la
+ruta \cursiva{/leagues/close\_teams} y la llamada al modelo con el método
+\cursiva{close}.
+
+
+\subsection{Diagrama de secuencia de notificación de registro por e-mail}
+En la figura \ref{diagrama-secuencia-notificacion-registro} se observa cómo se
+envía un correo al usuario una vez se ha registrado en la aplicación web.
+
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+  secuencia de notificación de registro por
+  e-mail}{diagrama-secuencia-notificacion-registro}{H}
+
+
+\subsection{Diagrama de secuencia de listar ofertas emitidas}
+En la figura \ref{diagrama-secuencia-listar-ofertas-emitidas} observamos cómo se
+establece el filtro de búsqueda para mostrar el listado de ofertas emitidas.
+
+\figura{diagramas_secuencia/listar_ofertas_emitidas.png}{scale=0.35}{Diagrama de
+  secuencia de listar ofertas
+  emitidas}{diagrama-secuencia-listar-ofertas-emitidas}{H}
+
+\subsection{Diagrama de secuencia de listar ofertas recibidas}
+En la figura \ref{diagrama-secuencia-listar-ofertas-emitidas} observamos cómo se
+establece el filtro de búsqueda para mostrar el listado de ofertas recibidas.
+
+Este diagrama es igual al \ref{diagrama-secuencia-listar-ofertas-emitidas} pero
+con la ruta \cursiva{/clubs/*/received\_offers} y la llamada al modelo club con
+el método \cursiva{offers\_as\_seller}.
+
+\subsection{Diagrama de secuencia de emitir oferta por futbolista}
+En la figura \ref{diagrama-secuencia-emitir-oferta-futbolista} se observa cómo
+se crea una nueva instancia de oferta y se relaciona con los usuarios y el
+futbolista involucrado en la misma.
+
+\figura{diagramas_secuencia/emitir_oferta_futbolista.png}{scale=0.35}{Diagrama
+  de secuencia de emitir oferta por
+  futbolista}{diagrama-secuencia-emitir-oferta-futbolista}{H}
+
+\subsection{Diagrama de secuencia de cancelar oferta emitida por futbolista}
+En la figura \ref{diagrama-secuencia-cancelar-oferta-emitida-futbolista} se observa cómo
+se recupera la instancia de la oferta emitida y se modifica su estado para
+cancelarla.
+
+\figura{diagramas_secuencia/cancelar_oferta_emitida_futbolista.png}{scale=0.35}{Diagrama
+  de secuencia de cancelar oferta emitida por
+  futbolista}{diagrama-secuencia-cancelar-oferta-emitida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de rechazar oferta recibida por futbolista}
+En la figura \ref{diagrama-secuencia-rechazar-oferta-recibida-futbolista} se
+observa cómo se recupera la instancia de la oferta recibida y se modifica su
+estado para rechazar la misma.
+
+\figura{diagramas_secuencia/rechazar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama
+  de secuencia de rechazar oferta recibida por
+  futbolista}{diagrama-secuencia-rechazar-oferta-recibida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de aceptar oferta recibida por futbolista}
+En la figura \ref{diagrama-secuencia-aceptar-oferta-recibida-futbolista} se
+observa cómo se recupera la instancia de la oferta recibida y se actualizan los
+modelos de datos involucrados (futbolista, club y usuarios) para llevar a cabo
+la transferencia del futbolista entre los clubes.
+
+\figura{diagramas_secuencia/aceptar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama
+  de secuencia de aceptar oferta recibida por
+  futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H}
+
+\subsection{Diagrama de secuencia de renovación de futbolistas}
+En la figura \ref{diagrama-secuencia-renovacion-futbolistas} se describe cómo se
+renuevan automáticamente los futbolistas para las siguientes temporadas
+actualizando sus atributos.
+
+\figura{diagramas_secuencia/renovacion_futbolistas.png}{scale=0.35}{Diagrama de
+  secuencia de renovación de
+  futbolistas}{diagrama-secuencia-renovacion-futbolistas}{H}
+
+El proceso de renovación está integrado en start.
+
+\subsection{Diagrama de secuencia de fijar precio de venta de entradas}
+En la figura \ref{diagrama-secuencia-fijar-precio-venta-entradas} se describe
+cómo se modifica el atributo del precio de venta de entradas.
+
+\figura{diagramas_secuencia/fijar_precio_venta_entradas.png}{scale=0.35}{Diagrama
+  de secuencia de fijar precio de venta de
+  entradas}{diagrama-secuencia-fijar-precio-venta-entradas}{H}
+
+\subsection{Diagrama de secuencia de planificación de alineaciones}
+En la figura \ref{diagrama-secuencia-planificacion-alineaciones} se describe
+cómo se cambian las alineaciones para el próximo partido a través de la
+modificación del atributo de posición.
+
+\figura{diagramas_secuencia/planificacion_alineaciones.png}{scale=0.35}{Diagrama
+  de secuencia de emitir planificación de
+  alineaciones}{diagrama-secuencia-planificacion-alineaciones}{H}
+
+\subsection{Diagrama de secuencia de planificación de tácticas}
+En la figura \ref{diagrama-secuencia-planificacion-tacticas} se muestra cómo se
+cambia la táctica usada para el próximo partido a través de la modificación del
+atributo de táctica del club.
+
+\figura{diagramas_secuencia/planificacion_tacticas.png}{scale=0.35}{Diagrama de
+  secuencia de planificación de tácticas
+}{diagrama-secuencia-planificacion-tacticas}{H}
+
+\subsection{Diagrama de secuencia de planificación de entrenamientos}
+En la figura \ref{diagrama-secuencia-planificacion-entrenamientos} se muestra
+cómo se crean nuevas instancias para la planificación de los entrenamientos de
+los futbolistas asociados a un club.
+
+\figura{diagramas_secuencia/planificacion_entrenamientos.png}{scale=0.35}{Diagrama
+  de secuencia de planificación de entrenamientos
+}{diagrama-secuencia-planificacion-entrenamientos}{H}
+
+\subsection{Diagrama de secuencia de asignar club}
+En la figura \ref{diagrama-secuencia-asignar-club} se observa cómo se crea una
+nueva instancia de un club para todo usuario que no tenga club asignado.
+
+\figura{diagramas_secuencia/asignar_club.png}{scale=0.35}{Diagrama de secuencia
+  de secuencia de asignar club }{diagrama-secuencia-asignar-club}{H}
+
+\subsection{Diagrama de secuencia de simular jornadas}
+En la figura \ref{diagrama-secuencia-simular-jornadas} se observa cómo se crean
+nuevas instancias de detalles de partidos por cada uno de los partidos no
+jugados y pertenecientes a la jornada actual del sistema.
+
+\figura{diagramas_secuencia/simular_jornadas.png}{scale=0.32,
+  angle=270}{Diagrama de secuencia de simular
+  jornadas}{diagrama-secuencia-simular-jornadas}{H}
+
+\subsection{Diagrama de secuencia de comenzar jornadas}
+En la figura \ref{diagrama-secuencia-comenzar-jornadas} se observa cómo se
+actualiza el atributo correspondiente de todos los partidos actuales para
+estipular que el partido ha comenzado a la fecha actual del sistema.
+
+\figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.43,
+  angle=270}{Diagrama de secuencia de comenzar
+  jornadas}{diagrama-secuencia-comenzar-jornadas}{H}
+
+
+\subsection{Diagrama de secuencia de pasar a siguiente jornada}
+En la figura \ref{diagrama-secuencia-pasar-siguiente-jornada} se detalla cómo se
+actualizan los modelos de datos de temporada, jornada, jugador, entrenamiento,
+finanzas y club para avanzar en la competición.
+\clearpage
+ 
+\figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.27,
+  angle=270}{Diagrama de secuencia de pasar a siguiente
+  jornada}{diagrama-secuencia-pasar-siguiente-jornada}{H}
+
+\subsection{Diagrama de secuencia de promoción y descenso de clubes}
+En la figura \ref{diagrama-secuencia-promocion-descenso-clubes} se observa cómo
+se crean nuevas instancias de nuevas temporadas y se modifican los estados de
+las temporadas actuales para simular el avance en la competición y el progreso y
+descenso jerárquico en las divisiones del juego.
+
+\figura{diagramas_secuencia/promocion_descenso_clubes.png}{scale=0.35}{Diagrama
+  de secuencia de promocion y descenso de
+  clubes}{diagrama-secuencia-promocion-descenso-clubes}{H}
+
+\clearpage
+
+\subsection{Diagrama de secuencia de composición de calendarios}
+En la figura \ref{diagrama-secuencia-composicion-calendarios} se observa cómo se
+crean nuevas instancias de las jornadas que estarán relacionadas con los clubes
+en los que se coincida en las mismas divisiones.
+
+\figura{diagramas_secuencia/crear_calendario.png}{scale=0.32,
+  angle=270}{Diagrama de secuencia de composición de
+  calendarios}{diagrama-secuencia-composicion-calendarios}{H}

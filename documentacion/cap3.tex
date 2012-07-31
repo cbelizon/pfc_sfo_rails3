@@ -1,120 +1,117 @@
 \section{Perspectiva del Producto}
+En este capítulo explicaremos qué pretendemos conseguir con la realización de
+este proyecto y qué características generales ha de cumplir.
+
 \subsection{Dependencias del producto}
-El proyecto es independiente, no es un subsistema de un proyecto de
-mayor envergadura, tampoco es continuación de ningún otro proyecto,
-pero al estar liberado con una licencia de \cursiva{software libre}
-podría ser continuado, mejorado y actualizado por su propio creador o
-terceras personas ajenas a éste.
+El proyecto es independiente, no es un subsistema de un proyecto de mayor
+envergadura, tampoco es continuación de ningún otro proyecto, pero al estar
+liberado con una licencia de \cursiva{software libre} podría ser continuado,
+mejorado y actualizado por su propio creador o terceras personas ajenas a éste.
 
 \subsection{Interfaces de usuario}
-La interfaz de usuario se basa en una página web dinámica que lleva
-asociada varias opciones para poder usar las herramientas
+La interfaz de usuario se basa en una página web dinámica que lleva asociada
+varias opciones para poder usar las herramientas
 proporcionadas.\\
 
-Para el uso de la aplicación, la página principal dispone de varios
-menús, entre ellos la de selección de idiomas y un \cursiva{hipervínculo} al
+Para el uso de la aplicación, la página principal dispone de varios menús, entre
+ellos la de selección de idiomas y un \cursiva{hipervínculo} al
 subsistema de registro e inicio de sesión.\\
 
-Todo el diseño de la aplicación respeta los estándares \cursiva{HTML
-  4.0} y \cursiva{CSS 2.0 } así como el uso de la librería de
-\cursiva{JavaScript JQuery} lo que nos proporciona una gran
+Todo el diseño de la aplicación respeta los estándares \cursiva{HTML 4.0} y
+\cursiva{CSS 2.0 } así como el uso de la librería de \cursiva{JavaScript JQuery}
+lo que nos proporciona una gran
 compatibilidad con cualquier navegador web del mercado.\\
 
-Al usar \cursiva{hojas de estilo CSS} la apariencia de nuestra
-aplicación puede ser fácilmente modificada para adaptarla a nuevas
+Al usar \cursiva{hojas de estilo CSS} la apariencia de nuestra aplicación puede
+ser fácilmente modificada para adaptarla a nuevas
 tendencias de diseño de forma sencilla y eficiente.\\
 
-Siempre que se termine cualquier operación, ya sea exitosa o no, el
-sistema nos informará a través de un sistema de notificación embebido
-dentro del navegador muy parecido al sistema usado en \cursiva{Mac OS
+Siempre que se termine cualquier operación, ya sea exitosa o no, el sistema nos
+informará a través de un sistema de notificación embebido dentro del navegador
+muy parecido al sistema usado en \cursiva{Mac OS
   X } y últimas versiones de la \cursiva{distribución Linux Ubuntu}.\\
 
-Como mejora para un uso mucho más cómodo y rápido por parte de
-cualquier usuario, la aplicación dispone de un menú estático para
-acceder a cualquier tipo de herramienta o funcionalidad según el
-usuario sea un jugador de la aplicación o sea el administrador.
+Como mejora para un uso mucho más cómodo y rápido por parte de cualquier
+usuario, la aplicación dispone de un menú estático para acceder a cualquier tipo
+de herramienta o funcionalidad según el usuario sea un jugador de la aplicación
+o sea el administrador.
 
 \subsection{Interfaces software}
-El producto interactúa con el sistema operativo en el lado del
-servidor en dónde está instalado y con el navegador usado en el lado
+El producto interactúa con el sistema operativo en el lado del servidor en dónde
+está instalado y con el navegador usado en el lado
 del cliente.\\
 
-De hecho, el producto es totalmente multiplataforma tanto en el lado
-servidor como en el lado cliente, gracias a que el \cursiva{framework
-  RoR} está diseñado para ser instalado en entornos \cursiva{Windows,
-  Linux y Mac OS X}; mientras que en el lado cliente disponemos de varios
-navegadores web cualquiera que sea el sistema operativo en el que se
+De hecho, el producto es totalmente multiplataforma tanto en el lado servidor
+como en el lado cliente, gracias a que el \cursiva{framework RoR} está diseñado
+para ser instalado en entornos \cursiva{Windows, Linux y Mac OS X}; mientras que
+en el lado cliente disponemos de varios navegadores web cualquiera que sea el
+sistema operativo en el que se
 ejecute.\\
 
-Debemos destacar que el mencionado \cursiva{framework} tiene una gran
-comunidad que lo sustenta, que da como resultado la  disponibilidad
-de una gran cantidad de documentación y un buen soporte de la plataforma,
+Debemos destacar que el mencionado \cursiva{framework} tiene una gran comunidad
+que lo sustenta, que da como resultado la disponibilidad de una gran cantidad de
+documentación y un buen soporte de la plataforma,
 repercutiendo directamente en la calidad del software que desarrollemos.\\
 
-Hemos de indicar que \cursiva{RoR} es agnóstico en cuanto al
-\cursiva{SGBD} que utilicemos, con lo que el producto podrá ser
-desplegado con  cualquiera de los \cursiva{SGBD} más comunes como son
-\cursiva{Oracle, MySQL, SQLite2, SQLite3 y Postgre}, a través de una
-\cursiva{gema} específica y una simple modificación en uno de los
-archivos de configuración.
+Hemos de indicar que \cursiva{RoR} es agnóstico en cuanto al \cursiva{SGBD} que
+utilicemos, con lo que el producto podrá ser desplegado con cualquiera de los
+\cursiva{SGBD} más comunes como son \cursiva{Oracle, MySQL, SQLite2, SQLite3 y
+  Postgre}, a través de una \cursiva{gema} específica y una simple modificación
+en uno de los archivos de configuración.
 
 \subsection{Operaciones}
 Existen dos tipos de usuarios dentro de la aplicación:
 
 \begin{itemize}
-  \item \negrita{Superusuario: } Es el responsable de instalar,
-    mantener, interconectar con la \cursiva{base de datos} y optimizar
-    el servidor dónde se encuentra la aplicación.
-  \item \negrita{Administrador: } Es el responsable de toda la gestión
-   de campeonatos, así como de dar de alta a los nuevos usuarios
-   para que puedan empezar a interactuar con las funcionalidades de la
-   aplicación.
-  \item \negrita{Usuario: } Conforma el resto de usuarios del sistema
-    que participan en la simulación del entorno de gestión de equipos
-    de fútbol, a excepción de las funcionalidades exclusivas del administrador.
+\item \negrita{Superusuario: } Es el responsable de instalar, mantener,
+  interconectar con la \cursiva{base de datos} y optimizar el servidor dónde se
+  encuentra la aplicación.
+\item \negrita{Administrador: } Es el responsable de toda la gestión de
+  campeonatos, así como de dar de alta a los nuevos usuarios para que puedan
+  empezar a interactuar con las funcionalidades de la aplicación.
+\item \negrita{Usuario: } Conforma el resto de usuarios del sistema que
+  participan en la simulación del entorno de gestión de equipos de fútbol, a
+  excepción de las funcionalidades exclusivas del administrador.
 \end{itemize}
 
 \subsection{Requisitos de adaptación a la ubicación}
-Para poder adaptar la aplicación al entorno dónde se instalará será
-necesario disponer de un \cursiva{SGBD} compatible con \cursiva{RoR}
-además de modificar el fichero de configuración para conectarlo con
-nuestro sistema.
+Para poder adaptar la aplicación al entorno dónde se instalará será necesario
+disponer de un \cursiva{SGBD} compatible con \cursiva{RoR} además de modificar
+el fichero de configuración para conectarlo con nuestro sistema.
 
 \subsection{Funciones del producto}
-La función principal del producto que estamos presentando es la de
-desarrollar un videojuego multijugador dónde diversos usuarios puedan
-interactuar en un entorno que simule ser real a través de \cursiva{Internet}.
-Para ello ha sido necesario crear una aplicación informática encargada
-de poder registrar a cualquier usuario que acceda a nuestra web y
-proporcionarles las herramientas necesarias para gestionar su propio
-club; además de simular los partidos que en una competición de fútbol
+La función principal del producto que estamos presentando es la de desarrollar
+un videojuego multijugador dónde diversos usuarios puedan interactuar en un
+entorno que simule ser real a través de \cursiva{Internet}.  Para ello ha sido
+necesario crear una aplicación informática encargada de poder registrar a
+cualquier usuario que acceda a nuestra web y proporcionarles las herramientas
+necesarias para gestionar su propio club; además de simular los partidos que en
+una competición de fútbol
 se desarrollan.\\
 
 Las características más importantes de esta aplicación se describen a
 continuación:
 
 \begin{itemize}
-  \item Posibilidad de registro y control de acceso a una cuenta de
-    usuario personal e intransferible que distinga al usuario
-    unívocamente de los demás a través de una simple interfaz web.
-  \item Capacidad para la gestión de todos los aspectos económicos de
-    los clubes de los usuarios registrados.
-  \item Capacidad para la visualización del calendario y clasificación
-    de todos los clubes y usuarios registrados en el sistema.
-  \item Capacidad para modificar la estructura deportiva y técnica de
-    los clubes de los usuarios registrados.
-  \item Capacidad para simular un partido de forma realista y
-    mostrarlo a los usuarios como si se estuviera desarrollando en
-    directo.
-  \item Capacidad para gestionar el estado de la competición.
-  \item Capacidad para escoger el idioma en el que se mostrará la
-    información de nuestra aplicación.
+\item Posibilidad de registro y control de acceso a una cuenta de usuario
+  personal e intransferible que distinga al usuario unívocamente de los demás a
+  través de una simple interfaz web.
+\item Capacidad para la gestión de todos los aspectos económicos de los clubes
+  de los usuarios registrados.
+\item Capacidad para la visualización del calendario y clasificación de todos
+  los clubes y usuarios registrados en el sistema.
+\item Capacidad para modificar la estructura deportiva y técnica de los clubes
+  de los usuarios registrados.
+\item Capacidad para simular un partido de forma realista y mostrarlo a los
+  usuarios como si se estuviera desarrollando en directo.
+\item Capacidad para gestionar el estado de la competición.
+\item Capacidad para escoger el idioma en el que se mostrará la información de
+  nuestra aplicación.
 \end{itemize}
 
 Aquí sólo se han descrito las características generales que realiza la
-aplicación, se podrá comprobar toda la funcionalidad en los puntos
-siguientes de esta memoria, en especial en el \cursiva{Manual de
-  usuario}.
+aplicación, se podrá comprobar toda la funcionalidad en los puntos siguientes de
+esta memoria, en especial en el \cursiva{Manual de usuario}.
 
 \section{Características de los usuarios}
 
@@ -124,153 +121,146 @@ Para el correcto manejo de la aplicación \cursiva{Simulador de fútbol
 Podríamos dividir los perfiles en:
 
 \begin{itemize}
-  \item \negrita{Usuario (Jugador):} Necesitan unos conocimientos
-    básicos de informática para su manejo, sobre todo orientado al
-    manejo de aplicaciones web. También será necesario un conocimiento
-    meramente básico de cuáles son las reglas de negocio y deportivas
-    de un entorno de gestión de clubes deportivos de fútbol 11.
-  \item \negrita{Usuario (Administrador): } Necesitará unos
-    conocimientos básicos en informático para su manejo, sobre todo
-    orientado al manejo de aplicaciones web. También será necesario
-    conocer cómo es el discurrir de las competiciones en el diseño de
-    nuestra aplicación.
-  \item \negrita{Superusuario (Administrador): } Serán necesarios unos
-    conocimientos avanzados de informática, incidiendo en
-    conocimientos de despliegue de aplicaciones web. 
+\item \negrita{Usuario (Jugador):} Necesitan unos conocimientos básicos de
+  informática para su manejo, sobre todo orientado al manejo de aplicaciones
+  web. También será necesario un conocimiento meramente básico de cuáles son las
+  reglas de negocio y deportivas de un entorno de gestión de clubes deportivos
+  de fútbol 11.
+\item \negrita{Usuario (Administrador): } Necesitará unos conocimientos básicos
+  en informático para su manejo, sobre todo orientado al manejo de aplicaciones
+  web. También será necesario conocer cómo es el discurrir de las competiciones
+  en el diseño de nuestra aplicación.
+\item \negrita{Superusuario (Administrador): } Serán necesarios unos
+  conocimientos avanzados de informática, incidiendo en conocimientos de
+  despliegue de aplicaciones web.
 \end{itemize}
 
 \section{Restricciones generales}
 El proyecto se ha desarrollado bajo la metodología \cursiva{Rational Unified
-Process (RUP)}, proceso de desarrollo orientado a objetos, al estar
-basado todo el proyecto en un entorno de desarrollo bajo el paradigma
+  Process (RUP)}, proceso de desarrollo orientado a objetos, al estar basado
+todo el proyecto en un entorno de desarrollo bajo el paradigma
 de programación orientada a objetos.\\
 
-El lenguaje de programación que usaremos será \cursiva{Ruby}, que es
-libre así como el \cursiva{framework} sobre el que apoyaremos nuestra
+El lenguaje de programación que usaremos será \cursiva{Ruby}, que es libre así
+como el \cursiva{framework} sobre el que apoyaremos nuestra
 aplicación web \cursiva{RoR}.\\
 
-No se deben tener en cuenta restricciones en el uso de memoria
-principal por parte de la aplicación tanto en el lado servidor como en
+No se deben tener en cuenta restricciones en el uso de memoria principal por
+parte de la aplicación tanto en el lado servidor como en
 el cliente.\\
 
-Se deben tener en cuenta restricciones a la hora de crear las vistas
-de nuestra aplicación web para que éstas sean lo mas livianas posibles
+Se deben tener en cuenta restricciones a la hora de crear las vistas de nuestra
+aplicación web para que éstas sean lo mas livianas posibles
 para ahorrar el mayor ancho de banda posible.\\
 
 Para el desarrollo de todo el proyecto deberemos usar un \cursiva{IDE} que se
 base en la filosofía de \cursiva{software libre}, en este caso
 \cursiva{NetBeans}.\\
 
-El producto habrá de funcionar en cualquier sistema operativo que
-tenga disponibilidad para tener instalado un intérprete de
-\cursiva{Ruby} en el lado servidor y en cualquier navegador del
-mercado compatible con los estándares web para \cursiva{HTML 4.0},
-\cursiva{CSS 2.0}, y la librería \cursiva{JQuery}. Esto hará que
+El producto habrá de funcionar en cualquier sistema operativo que tenga
+disponibilidad para tener instalado un intérprete de \cursiva{Ruby} en el lado
+servidor y en cualquier navegador del mercado compatible con los estándares web
+para \cursiva{HTML 4.0}, \cursiva{CSS 2.0}, y la librería \cursiva{JQuery}. Esto
+hará que
 nuestro software tenga un mayor público objetivo de desarrolladores.\\
 
-Como sistema gestor de bases de datos se podrá utilizar cualquiera que
-tenga una \cursiva{gema} que sea capaz de conectar \cursiva{RoR} con
+Como sistema gestor de bases de datos se podrá utilizar cualquiera que tenga una
+\cursiva{gema} que sea capaz de conectar \cursiva{RoR} con
 el \cursiva{SGBD} escogido.\\
 
-Es necesario tener en cuenta que nuestra aplicación puede correr en
-cualquier \cursiva{pc} pero es conveniente que éste tenga la capacidad
-suficiente para atender varias peticiones a la vez, además de tener la
-configuración necesaria para que peticiones que lleguen desde
+Es necesario tener en cuenta que nuestra aplicación puede correr en cualquier
+\cursiva{pc} pero es conveniente que éste tenga la capacidad suficiente para
+atender varias peticiones a la vez, además de tener la configuración necesaria
+para que peticiones que lleguen desde
 \cursiva{internet} puedan ser atendidas.\\
 
 Para toda la creación y generación de la documentación presente hemos
 utilizado LaTeX\\
 
-Como controlador de la configuración hemos optado por usar
-\cursiva{GIT}, un sistema de control de versiones distribuido que es
-el usado oficialmente por el proyecto \cursiva{RoR} y que se integra
-de forma plena con \cursiva{NetBeans}.
+Como controlador de la configuración hemos optado por usar \cursiva{GIT}, un
+sistema de control de versiones distribuido que es el usado oficialmente por el
+proyecto \cursiva{RoR} y que se integra de forma plena con \cursiva{NetBeans}.
 
 \section{Requisitos no funcionales del sistema}
 \subsection{Requisitos Generales}
-La solución debe cumplir como mínimo con las siguientes
-características basadas en las especificaciones funcionales y los
-requisitos no funcionales:
+La solución debe cumplir como mínimo con las siguientes características basadas
+en las especificaciones funcionales y los requisitos no funcionales:
 
 \begin{itemize}
 \item Basada en la web.
-\item La aplicación debe esta diseñada y desarrollada sobre la
-  plataforma \cursiva{Ruby On Rails}.
-\item La aplicación debe ser escalable bajo estrategia vertical (Añadir
-  más recursos al servidor) y horizontal (Añadir más servidores),
-  según las necesidades de procesamiento.
-\item La aplicación debe tener bajo nivel de acoplamiento y la
-  posibilidad de editar fácilmente los parámetros que se consideren
-  dinámicos y requieran cambios frecuentes.
+\item La aplicación debe esta diseñada y desarrollada sobre la plataforma
+  \cursiva{Ruby On Rails}.
+\item La aplicación debe ser escalable bajo estrategia vertical (Añadir más
+  recursos al servidor) y horizontal (Añadir más servidores), según las
+  necesidades de procesamiento.
+\item La aplicación debe tener bajo nivel de acoplamiento y la posibilidad de
+  editar fácilmente los parámetros que se consideren dinámicos y requieran
+  cambios frecuentes.
 \item Orientada a objetos.
-\item De fácil mantenimiento en cuanto a cumplimiento de estándares,
-  uso de guías y patrones con especial énfasis en el patrón
-  \cursiva{MVC}, documentación y de fácil ubicación de componentes.
+\item De fácil mantenimiento en cuanto a cumplimiento de estándares, uso de
+  guías y patrones con especial énfasis en el patrón \cursiva{MVC},
+  documentación y de fácil ubicación de componentes.
 \item Que permita y utilice la reutilización de código.
 \item Basada en la arquitectura cliente-servidor.
-\item La aplicación debe permitir generar avisos a través de correo
-  electrónico.
+\item La aplicación debe permitir generar avisos a través de correo electrónico.
 \end{itemize}
 
 \subsection{Requisitos específicos}
-Los requisitos no funcionales generales estarán enmarcados en los
-siguientes aspectos:
+Los requisitos no funcionales generales estarán enmarcados en los siguientes
+aspectos:
 \begin{itemize}
-  \item Escalabilidad:
-    \begin{itemize}
-      \item El diseño debe contemplar el uso óptimo de recursos como
-        las conexiones con la base de datos.
-      \item El diseño debe contemplar la clara división entre datos,
-        recursos, y aplicaciones para optimizar la escalabilidad del
-        sistema.
-      \item Debe contemplar requisitos de crecimiento para usuarios
-        internos al sistema.
-    \end{itemize}
-  \item Disponibilidad:
-     \begin{itemize}
-       \item La disponibilidad del sistema ha de ser continua con un
-         nivel de servicio para los usuarios de siete días y 24
-         horas.
-       \item En caso de fallos de algún subsistema no debe haber
-         pérdida de información
-       \item Debe contemplar requisitos de consistencia transaccional.
-     \end{itemize}
-  \item Seguridad:
-    \begin{itemize}
-      \item La aplicación debe reflejar patrones de seguridad teniendo
-        para cumplir con la ley orgánica de protección de datos.
-    \end{itemize}
-  \item Mantenibilidad:
-    \begin{itemize}
-      \item Se debe estructura el código de manera consistente y
-        predecible.
-      \item Aprovechar al máximo las facilidades que nos aporta el
-        \cursiva{framework Ruby On Rails}, con especial énfasis en el
-        patrón \cursiva{MVC}.
-    \end{itemize}
-  \item Rendimiento: La aplicación debe ofrecer una buena respuesta
-    ante alta demanda de usuarios.
+\item Escalabilidad:
+  \begin{itemize}
+  \item El diseño debe contemplar el uso óptimo de recursos como las conexiones
+    con la base de datos.
+  \item El diseño debe contemplar la clara división entre datos, recursos, y
+    aplicaciones para optimizar la escalabilidad del sistema.
+  \item Debe contemplar requisitos de crecimiento para usuarios internos al
+    sistema.
+  \end{itemize}
+\item Disponibilidad:
+  \begin{itemize}
+  \item La disponibilidad del sistema ha de ser continua con un nivel de
+    servicio para los usuarios de siete días y 24 horas.
+  \item En caso de fallos de algún subsistema no debe haber pérdida de
+    información
+  \item Debe contemplar requisitos de consistencia transaccional.
+  \end{itemize}
+\item Seguridad:
+  \begin{itemize}
+  \item La aplicación debe reflejar patrones de seguridad teniendo para cumplir
+    con la ley orgánica de protección de datos.
+  \end{itemize}
+\item Mantenibilidad:
+  \begin{itemize}
+  \item Se debe estructura el código de manera consistente y predecible.
+  \item Aprovechar al máximo las facilidades que nos aporta el
+    \cursiva{framework Ruby On Rails}, con especial énfasis en el patrón
+    \cursiva{MVC}.
+  \end{itemize}
+\item Rendimiento: La aplicación debe ofrecer una buena respuesta ante alta
+  demanda de usuarios.
 \end{itemize}
 \section{Requisitos para futuras versiones}
-Para futuras versiones del producto, podrían introducirse funciones
-avanzadas para los usuarios como selección de escudo del equipo,
-personalización de dorsales, avisos por sms, mercados de agentes
+Para futuras versiones del producto, podrían introducirse funciones avanzadas
+para los usuarios como selección de escudo del equipo, personalización de
+dorsales, avisos por sms, mercados de agentes
 libres, cantera y ojeadores.\\
 
-Podría introducirse nuevas plantillas de diseño para personalizar la
-vista de diversas formas para que el usuario escoja la que más le
+Podría introducirse nuevas plantillas de diseño para personalizar la vista de
+diversas formas para que el usuario escoja la que más le
 guste.\\
 
-También sería interesante establecer un apartado de estadísticas para
-poder llevar un seguimiento del historial en tiempo de la evolución de
-los equipos tanto en el plano técnico como en el económico, este
-apartado también sería aplicable a los futbolistas que integran los
+También sería interesante establecer un apartado de estadísticas para poder
+llevar un seguimiento del historial en tiempo de la evolución de los equipos
+tanto en el plano técnico como en el económico, este apartado también sería
+aplicable a los futbolistas que integran los
 clubes.\\
 
-Podría añadirse un sistema de foros y chat para una interacción entre
-usuarios que no se limite en exclusiva a las funcionalidades
+Podría añadirse un sistema de foros y chat para una interacción entre usuarios
+que no se limite en exclusiva a las funcionalidades
 específicas de nuestro sistema.\\
 
-Como restricción a futuras versiones o proyectos que estén basados en
-nuestra aplicación se aplicarán las referentes a las propias
-especificadas en el apartado de licencia de este documento.
+Como restricción a futuras versiones o proyectos que estén basados en nuestra
+aplicación se aplicarán las referentes a las propias especificadas en el
+apartado de licencia de este documento.
