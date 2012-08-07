@@ -12,6 +12,7 @@
 
 %-------- Estilos definidos ----------------------
 \newcommand{\programa}[1]{\textit{#1}}
+\newcommand{\cursiva}[1]{\textit{#1}}
 \newcommand{\comando}[1]{\texttt{#1}}
 \newcommand{\negrita}[1]{\textbf{#1}}
 \newcommand{\subrayado}[1]{\underline{#1}}

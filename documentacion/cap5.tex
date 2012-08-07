@@ -11,7 +11,7 @@ proporciona para una mayor velocidad y corrección en el desarrollo.
 
 \label{pattern:mvc}
 Debido a \cursiva{Ruby on Rails} es un framework que hace un uso intensivo del
-patrón \cursiva{Modelo-Vista-Controlador} (MVC). \\
+patrón \cursiva{Modelo-Vista-Controlador} (MVC).
 
 El patrón \cursiva{Modelo-Vista-Controlador} divide el software en tres capas
 bien diferenciadas que se adaptan muy bien a la tecnología
@@ -42,7 +42,7 @@ que implemente el mismo.
 Para esta capa vamos a utilizar la clase \cursiva{ActionView}. Dicha clase es
 una forma poderosa, sencilla y elegante, de embeber código \cursiva{Ruby} dentro
 de cualquier tipo de fichero de la capa de presentación de nuestra página web
-(\cursiva{JavaScript}, \cursiva{CSS}).\\
+(\cursiva{JavaScript}, \cursiva{CSS}).
 
 Además, haremos uso de los frameworks \cursiva{CoffeScript}
 \cite{lang:coffescript} y \cursiva{SASS} \cite{lang:sass} para el desarrollo de
@@ -52,7 +52,7 @@ los ficheros \cursiva{JavaScript} y \cursiva{CSS} respectivamente.
 En esta capa haremos uso de la clase \cursiva{ApplicationController}. Esta clase
 nos ayudará a modelar de forma sencilla y fácil el enrutador de nuestra
 aplicación y las respuestas que se hagan a través del cliente en la petición
-web.\\
+web.
 
 Además, nos ayudará a establecer un flujo sencillo entre nuestras capas Vista y
 Modelo consiguiendo un menor acoplamiento y una mayor cohesión de nuestro
@@ -63,17 +63,17 @@ Se basa en el patrón de mismo nombre el cual es un patrón de arquitectura que
 podemos encontrar en software que almacene información en bases de datos
 relacionales. Conforme a este patrón, un objeto que lo use habrá de integrar
 funciones para insertar, actualizar, eliminar y otras que correspondan en mayor
-o menor medida a las operaciones con columnas de la tabla de una base de datos.\\
+o menor medida a las operaciones con columnas de la tabla de una base de datos.
 
 Este patrón crea una interfaz que envuelve una tabla de una base de datos o una
 vista en una clase. En base a ello, un objeto de la clase corresponde a una fila
 en la tabla. La clase que envuelve a la tabla o vista implementa métodos o
-propiedades para acceder a cada columna.\\
+propiedades para acceder a cada columna.
 
 Este patrón es normalmente usado para dar persistencia a los datos en un
 proyecto software, haciendo de \cursiva{ORM} para la aplicación. Normalmente,
 las relaciones de clave foránea entre clases son implementadas como una
-propiedad del objeto \cite{pattern:activerecord}.\\
+propiedad del objeto \cite{pattern:activerecord}.
 
 Las funcionalidades que implementa la clase \cursiva{Active Record} en
 \cursiva{Rails} son:
@@ -118,13 +118,13 @@ una o más acciones que son ejecutadas cuando se produzca una petición, justo
 después se puede redireccionar a otra acción o renderizar una plantilla. Una
 acción se define como un método público dentro del controlador, el cuál es
 automáticamente accesible al servidor web a través del enrutador de
-\cursiva{Rails}.\\
+\cursiva{Rails}.
 
 Por defecto, sólo la clase \cursiva{ApplicationController} dentro de una
 aplicación \cursiva{Rails} hereda de la clase
 \cursiva{ActionController:Base}. Los demás controladores heredarán de la clase
 \cursiva{ApplicationController}. Este tipo de estructura nos proporciona una
-clase para configurar varias cosas que sean comunes a cualquier petición web.\\
+clase para configurar varias cosas que sean comunes a cualquier petición web.
 
 Esta clase nos proporciona además las siguientes funcionalidades:
 
@@ -213,26 +213,33 @@ código fuente que genera \cursiva{Rails} para una aplicación vacía.
 \subsection{Entorno de ejecución}
 En la figura \ref{fig:entornoejecucion} podemos ver el diagrama de despliegue de
 la aplicación puesta en marcha en cualquiera de los entornos, ya sea este de
-desarrollo, test o
-producción.\\
+desarrollo, test o producción.
 
 El sistema (servidor) interactuará con uno o más clientes web (navegadores). El
 servidor, a su vez estará formado por un servidor de aplicaciones web, en
 nuestro caso \cursiva{Webrick}, y el sistema de gestión de base de datos será
-\cursiva{SQLite3}.\\
+\cursiva{SQLite3}.
 
 Gracias a esta sencilla configuración no tendremos que configurar ninguna cuenta
 ni servicio en nuestro servidor web.
 
 \clearpage
-\section{Diagrama de clases conceptuales}
-En la figura \ref{diagrama-clases-uml} podemos observar el diagrama de clases de
-nuestra aplicación según la recolección de requisitos que hemos obtenido en el
-Capítulo \ref{cap:analisis} de esta memoria.
+\section{Diagramas de clases conceptuales}
+En la figura \ref{diag:clases_modelo} podemos observar el diagrama de clases de
+la capa modelo de nuestra aplicación según la recolección de requisitos que
+hemos obtenido en el Capítulo \ref{cap:analisis} de esta memoria.
 
-\figura{uml.png}{scale=0.38,angle=270}{Diagrama de Clases UML}{diagrama-clases-uml}{H}
+\figura{models_complete.png}{scale=0.25}{Diagrama de Clases UML de la capa
+  modelo}{diag:clases_modelo}{H}
 
 \clearpage
+
+En la figura \ref{diag:clases_controlador} podemos observar el diagramas de
+clases de la capa controlador de nuestra aplicación según la recolección de
+requisitos que hemos obtenido en el Capítulo \ref{cap:analisis}.
+
+\figura{controllers_complete.png}{scale=0.22,angle=270}{Diagrama de Clases UML
+  de la capa controlador}{diag:clases_controlador}{H}
 
 \section{Diagramas de secuencia de sistemas}
 
@@ -322,9 +329,9 @@ futbolista involucrado en la misma.
   futbolista}{diagrama-secuencia-emitir-oferta-futbolista}{H}
 
 \subsection{Diagrama de secuencia de cancelar oferta emitida por futbolista}
-En la figura \ref{diagrama-secuencia-cancelar-oferta-emitida-futbolista} se observa cómo
-se recupera la instancia de la oferta emitida y se modifica su estado para
-cancelarla.
+En la figura \ref{diagrama-secuencia-cancelar-oferta-emitida-futbolista} se
+observa cómo se recupera la instancia de la oferta emitida y se modifica su
+estado para cancelarla.
 
 \figura{diagramas_secuencia/cancelar_oferta_emitida_futbolista.png}{scale=0.35}{Diagrama
   de secuencia de cancelar oferta emitida por
@@ -406,6 +413,7 @@ nueva instancia de un club para todo usuario que no tenga club asignado.
 En la figura \ref{diagrama-secuencia-simular-jornadas} se observa cómo se crean
 nuevas instancias de detalles de partidos por cada uno de los partidos no
 jugados y pertenecientes a la jornada actual del sistema.
+\clearpage
 
 \figura{diagramas_secuencia/simular_jornadas.png}{scale=0.32,
   angle=270}{Diagrama de secuencia de simular
@@ -415,6 +423,7 @@ jugados y pertenecientes a la jornada actual del sistema.
 En la figura \ref{diagrama-secuencia-comenzar-jornadas} se observa cómo se
 actualiza el atributo correspondiente de todos los partidos actuales para
 estipular que el partido ha comenzado a la fecha actual del sistema.
+\clearpage
 
 \figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.43,
   angle=270}{Diagrama de secuencia de comenzar
@@ -424,8 +433,7 @@ estipular que el partido ha comenzado a la fecha actual del sistema.
 \subsection{Diagrama de secuencia de pasar a siguiente jornada}
 En la figura \ref{diagrama-secuencia-pasar-siguiente-jornada} se detalla cómo se
 actualizan los modelos de datos de temporada, jornada, jugador, entrenamiento,
-finanzas y club para avanzar en la competición.
-\clearpage
+finanzas y club para avanzar en la competición.  \clearpage
  
 \figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.27,
   angle=270}{Diagrama de secuencia de pasar a siguiente
@@ -447,6 +455,7 @@ descenso jerárquico en las divisiones del juego.
 En la figura \ref{diagrama-secuencia-composicion-calendarios} se observa cómo se
 crean nuevas instancias de las jornadas que estarán relacionadas con los clubes
 en los que se coincida en las mismas divisiones.
+\clearpage
 
 \figura{diagramas_secuencia/crear_calendario.png}{scale=0.32,
   angle=270}{Diagrama de secuencia de composición de
