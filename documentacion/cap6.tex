@@ -1,0 +1,137 @@
+% -*-cap6.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex Copyright (C) 2009 Pablo Recio Quijano
+
+En este capítulo vamos a describir y explicar los detalles de implementación del
+sistema software; además de comentar los problemas y contingencias surgidas
+durante el proceso de desarrollo del mismo.
+
+Para situar mejor al lector pasaremos a descargar e instalar el código fuente
+base de la aplicación desarrollada que será descargable desde
+\cite{cod:pfc_sfo}.
+
+El código fuente está albergado en un repositorio de tipo \cursiva{GIT}, aunque
+también será descargable como un \cursiva{tarball} a través de la interfaz web.
+
+Para que la aplicación sea totalmente funcional habrá que añadir los siguientes
+directorios al árbol base de la aplicación:
+
+\begin{itemize}
+\item \texttt{/tmp/}
+\item \texttt{/log/}
+\end{itemize}
+
+Para que el sistema pueda ser ejecutado, además se habrán de cumplir los
+requisitos especificados en \ref{sec:restricciones_generales}. También será
+importante tener configurado un SGBD relacional a escoger entre:
+
+\begin{itemize}
+\item MySQL
+\item Postgres
+\item SQLite3
+\item Oracle
+\end{itemize}
+
+Una vez que tengamos el código fuente aislado en un directorio habremos de
+ejecutar los siguientes comandos en orden:
+
+\begin{enumerate}
+\item \texttt{gem install}
+\item \texttt{rake db:create}
+\item \texttt{rake db:migrate}
+\item \texttt{rails s}
+\end{enumerate}
+
+Con todos estos pasos dados ya podremos acceder a nuestra aplicación web a
+través del navegador y de la dirección \url{http://localhost:3000/}.
+
+\section{Modelo de datos}
+Al usar como gestor \cursiva{ORM}, la clase incorporada en \cursiva{Rails},
+\cursiva{ActiveRecord}, habrá que especificar los denominados ficheros de
+migración para ir creando las tablas a través de código ruby. Vemos aquí un
+ejemplo de uno de los archivos de migración extraídos de nuestro proyecto de fin
+de carrera:
+
+\lstinputlisting[style=Ruby]{codigo/20090401160020_create_players.rb}
+
+Como podemos observar, a través de los bloques de Ruby creamos comandos para
+inicializar y revertir los cambios que traen la migración consigo. Los cambios
+que podemos realizar entre otras son:
+
+\begin{itemize}
+\item Crear tablas.
+\item Eliminar tablas.
+\item Crear columnas.
+\item Eliminar columnas.
+\item Modificar nombres de tablas.
+\item Modificar nombres de columnas.
+\item Insertar nuevos datos.
+\item Eliminar datos.
+\item Migrar datos.
+\end{itemize}
+
+El conjunto de ficheros de migración crearán el archivo \texttt{schema.rb} que
+tiene una definición completa de las tablas que albergan nuestra base de datos:
+
+\lstinputlisting[style=Ruby]{codigo/schema.rb}
+
+\section{Controlador de versiones}
+Para controlar los diversos cambios que realizamos sobre el producto o la
+configuración del mismo hemos decidido usar \cursiva{GIT} el cuál se integra a
+la perfección con nuestro entorno de desarrollo \cursiva{Linux} y además es uno
+de los controladores de la versión más en boga del actual panorama software.
+
+El sistema de versiones \cursiva{GIT} nos proporciona las siguientes
+funcionalidades \cite{wiki:GIT}:
+
+\begin{itemize}
+\item Fuerte apoyo al desarrollo no-lineal, por ende rapidez en la gestión de
+  ramas y mezclado de diferentes versiones. \cursiva{Git} incluye herramientas específicas
+  para navegar y visualizar un historial de desarrollo no-lineal. Una presunción
+  fundamental en \cursiva{Git} es que un cambio será fusionado mucho más frecuentemente de
+  lo que se escribe originalmente, conforme se pasa entre varios programadores
+  que lo revisan.
+\item Gestión distribuida. Al igual que \cursiva{Darcs}, \cursiva{BitKeeper},
+  \cursiva{Mercurial}, \cursiva{SVK}, \cursiva{Bazaar} y \cursiva{Monotone},
+  \cursiva{Git} le da a cada programador una copia local del historial del
+  desarrollo entero, y los cambios se propagan entre los repositorios
+  locales. Los cambios se importan como ramas adicionales y pueden ser
+  fusionados en la misma manera que se hace con la rama local.
+\item Los almacenes de información pueden publicarse por \cursiva{HTTP}, \cursiva{FTP}, \cursiva{rsync} o
+  mediante un protocolo nativo, ya sea a través de una conexión \cursiva{TCP/IP} simple o
+  a través de cifrado \cursiva{SSH}. \cursiva{Git} también puede emular servidores \cursiva{CVS}, lo que
+  habilita el uso de clientes \cursiva{CVS} pre-existentes y modulos \cursiva{IDE} para \cursiva{CVS}
+  pre-existentes en el acceso de repositorios \cursiva{Git}.
+\item Los repositorios \cursiva{Subversion} y \cursiva{svk} se pueden usar directamente con \cursiva{git-svn}.
+\item Gestión eficiente de proyectos grandes, dada la rapidez de gestión de
+  diferencias entre archivos, entre otras mejoras de optimización de velocidad
+  de ejecución.
+\item Todas las versiones previas a un cambio determinado, implican la
+  notificación de un cambio posterior en cualquiera de ellas a ese cambio
+  (denominado autenticación criptográfica de historial). Esto existía en
+  \cursiva{Monotone}.
+\item Resulta algo más caro trabajar con ficheros concretos frente a proyectos,
+  eso diferencia el trabajo frente a \cursiva{CVS}, que trabaja con base en cambios de
+  fichero, pero mejora el trabajo con afectaciones de código que concurren en
+  operaciones similares en varios archivos.
+\item Los renombrados se trabajan basándose en similitudes entre ficheros,
+  aparte de nombres de ficheros, pero no se hacen marcas explícitas de cambios
+  de nombre con base en supuestos nombres únicos de nodos de sistema de
+  ficheros, lo que evita posibles, y posiblemente desastrosas, coincidencias de
+  ficheros diferentes en un único nombre.
+\item Realmacenamiento periódico en paquetes (ficheros). Esto es relativamente
+  eficiente para escritura de cambios y relativamente ineficiente para lectura
+  si el reempaquetado (con base en diferencias) no ocurre cada cierto tiempo.
+\end{itemize}
+
+A continuación nos dispondremos a visualizar algunas estadísticas de nuestro
+sistema software a través de la aplicación \cursiva{GitStats} \cite{prog:gitstats} y
+el análisis de estadísticas de código incluido dentro de \cursiva{Ruby On
+  Rails}.
+
+En la figura \ref{fig:estadisticas_codigo} podemos ver las estadísticas de
+código clasificadas según extensión y ordenados por el número de líneas que
+conforman la totalidad del proyecto.
+
+\figura{gitstats.png}{scale=0.5}{Estadísticas del repositorio}{fig:estadisticas_codigo}{H}

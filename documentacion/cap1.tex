@@ -1,231 +1,205 @@
-% -*-cap1.tex-*-
-% Este fichero es parte de la plantilla LaTeX para
-% la realización de Proyectos Final de Carrera, protejido
-% bajo los términos de la licencia GFDL.
-% Para más información, la licencia completa viene incluida en el
-% fichero fdl-1.3.tex
+% -*-cap1.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex
 
-% Copyright (C) 2009 Pablo Recio Quijano 
+% Copyright (C) 2009 Pablo Recio Quijano
 
 \section{Introducción}
 
-Este documento describe el proceso que hemos seguido para la
-realización del proyecto.  Comenzamos con la recopilación de
-requisitos obteniendo al tinal un documento de Especifacación de
-Requisitos del Software, realizada a través de las sucesivas
-entrevistas con los tutores del
-proyecto de fin de carrera.\\
+Este documento describe el proceso que hemos seguido para la realización del
+proyecto.  Comenzamos con la recopilación de requisitos obteniendo al tinal un
+documento de Especifacación de Requisitos del Software, realizada a través de
+las sucesivas entrevistas con los tutores del proyecto de fin de carrera.
 
-Posteriormente seleccionamos la tecnología más adecuada para llevar a
-cabo el proyecto. A continuación pasamos a desarrollar los componentes
-del software que añadiremos al sistema para que cumpla con los
-requisitos
-que hemos recopilado previamente.\\
+Posteriormente seleccionamos la tecnología más adecuada para llevar a cabo el
+proyecto. A continuación pasamos a desarrollar los componentes del software que
+añadiremos al sistema para que cumpla con los requisitos que hemos recopilado
+previamente.
 
-Para finalizar, seguiremos un desarollo software ágil, por el cual
-vamos desarollando partes del sistema de forma que sean totalmente
-funcionales una vez terminadas hasta conformar el proyecto según las
-especificaciones que se han recogido.
+Para finalizar, seguiremos un desarollo software ágil, por el cual vamos
+desarollando partes del sistema de forma que sean totalmente funcionales una vez
+terminadas hasta conformar el proyecto según las especificaciones que se han
+recogido.
 
 \section{Objetivos}
 
 Los objetivos de este proyecto son por una parte poner en práctica los
-conocimientos adquiridos a lo largo de la formación académica recibida
-en la titulación de \cursiva{Ingeniería Técnica en Informática de
-  Gestión} y a la vez aprender a desarrollar bajo una novedosa
-tecnología web basada en un \programa{framework} basado en el patrón
-Modelo-Vista-Controlador (\sigla{MVC}) denominado \programa{Ruby On
-  Rails} (\sigla{MVC}).\\
+conocimientos adquiridos a lo largo de la formación académica recibida en la
+titulación de \cursiva{Ingeniería Técnica en Informática de Gestión} y a la vez
+aprender a desarrollar bajo una novedosa tecnología web basada en un
+\programa{framework} basado en el patrón Modelo-Vista-Controlador (\sigla{MVC})
+denominado \programa{Ruby On Rails} (\sigla{MVC}).
 
-Este \programa{framework}, a su vez, basa su simplicidad en el uso de
-un lenguaje de \programa{script} llamado \programa{Ruby} que tiene
-características propias de lenguajes funcionales; además, es uno de
-los exponentes de una perspectiva de desarrollo en auge que se engloba
-dentro de las denominadas metodologías ágiles.\\
+Este \programa{framework}, a su vez, basa su simplicidad en el uso de un
+lenguaje de \programa{script} llamado \programa{Ruby} que tiene características
+propias de lenguajes funcionales; además, es uno de los exponentes de una
+perspectiva de desarrollo en auge que se engloba dentro de las denominadas
+metodologías ágiles.
 
-El resultado de este proyecto es el desarrollo de una aplicación
-informática \programa{web} de código abierto para realizar la
-simulación virtual de la \cursiva{gestión computerizada} de un club de
-fútbol, la simulación de los partidos que se jueguen, además de la
-interacción con otros usuarios. En definitiva: un videojuego
-multijugador con interfaz web.\\
+El resultado de este proyecto es el desarrollo de una aplicación informática
+\programa{web} de código abierto para realizar la simulación virtual de la
+\cursiva{gestión computerizada} de un club de fútbol, la simulación de los
+partidos que se jueguen, además de la interacción con otros usuarios. En
+definitiva: un videojuego multijugador con interfaz web.
 
 Pasamos a enumerar los objetivos de forma esquemática:
 
 \begin{itemize}
-\item \negrita{Gestión de usuarios:} todas las herramientas necesarias
-  para identificar a cada usuario de nuestra aplicación web de forma
-  unívoca.
-\item \negrita{Gestión de clubes: } todas las herramientas necesarias
-  para gestionar precios de entrada, venta, compra, entrenamiento de
-  futbolistas y tipos de entrenamientos.
-\item \negrita{Gestión de campeonatos: } todas las herramientas
-  necesarias para que el administrador pueda controlar el calendario
-  de competición, y la creación es de nuevas ligas en función de los
-  usuarios que se vayan registrando en la web.
-\item \negrita{Simulación de partidos: } desarrollaremos un simulador
-  que mediante diferentes ponderaciones sea capaz de simular la
-  realidad de un partido de fútbol 11.
+\item \negrita{Gestión de usuarios:} todas las herramientas necesarias para
+  identificar a cada usuario de nuestra aplicación web de forma unívoca.
+\item \negrita{Gestión de clubes: } todas las herramientas necesarias para
+  gestionar precios de entrada, venta, compra, entrenamiento de futbolistas y
+  tipos de entrenamientos.
+\item \negrita{Gestión de campeonatos: } todas las herramientas necesarias para
+  que el administrador pueda controlar el calendario de competición, y la
+  creación es de nuevas ligas en función de los usuarios que se vayan
+  registrando en la web.
+\item \negrita{Simulación de partidos: } desarrollaremos un simulador que
+  mediante diferentes ponderaciones sea capaz de simular la realidad de un
+  partido de fútbol 11.
 \end{itemize}
 
 \section{Alcance}
-Se desea informatizar toda la gestión y simulación de un entorno de
-competición de fútbol 11 de forma que acabemos obteniendo un
-videojuego multijugador interactivo con interfaz web.
+Se desea informatizar toda la gestión y simulación de un entorno de competición
+de fútbol 11 de forma que acabemos obteniendo un videojuego multijugador
+interactivo con interfaz web.
 
 \subsection{Identificación del producto mediante un nombre}
-El producto realizado se llama ``Football Simulator''.\\
+El producto realizado se llama ``Football Simulator''.
 
 A lo largo de toda la memoria nos referiremos a él como
 \negrita{\cursiva{Simulador de fútbol online}}.
 
 \subsection{Funcionalidades del producto}
-El producto que deseamos obtener tal y como hemos mencionado
-anteriormente es capaz de simular la gestión, interacción y desarrollo
-de una competición de liga de fútbol 11, proporcionando
-funcionalidades de interacción entre usuarios y del administrador para
-controlar el comportamiento de la competición.\\
+El producto que deseamos obtener tal y como hemos mencionado anteriormente es
+capaz de simular la gestión, interacción y desarrollo de una competición de liga
+de fútbol 11, proporcionando funcionalidades de interacción entre usuarios y del
+administrador para controlar el comportamiento de la competición.
 
-Por otra parte, nuestro producto también es capaz de simular mediante
-diversas ponderaciones los resultados de un partido de fútbol.\\
+Por otra parte, nuestro producto también es capaz de simular mediante diversas
+ponderaciones los resultados de un partido de fútbol.
 
-Para disfrutar de las funcionalidades de nuestro producto es necesario
-el registro y participación de varios usuarios en él, además de la
-interacción de un administrador que llevará a cabo acciones de
-control, supervisión y seguimiento del desarrollo de la competición.
+Para disfrutar de las funcionalidades de nuestro producto es necesario el
+registro y participación de varios usuarios en él, además de la interacción de
+un administrador que llevará a cabo acciones de control, supervisión y
+seguimiento del desarrollo de la competición.
 
 \subsection{Aplicaciones del software: beneficios, objetivos y metas}
 
-Con este producto podemos obtener diversas ventajas ya descritas
-anteriormente, entre ellas cabe destacar la gestión de los equipos de
-fútbol y la interacción de usuarios.\\
+Con este producto podemos obtener diversas ventajas ya descritas anteriormente,
+entre ellas cabe destacar la gestión de los equipos de fútbol y la interacción
+de usuarios.
 
-El principal objetivo de la utilización del producto es divertir y
-entretener al usuario, mediante la inmersión en un entorno virtual de
-gestión de clubes con diversos usuarios que compiten entre sí para
-alcanzar la posición más alta en clasificación y división que puedan.\\
+El principal objetivo de la utilización del producto es divertir y entretener al
+usuario, mediante la inmersión en un entorno virtual de gestión de clubes con
+diversos usuarios que compiten entre sí para alcanzar la posición más alta en
+clasificación y división que puedan.
 
-Al fin y al cabo lo que se desea es formar la comunidad más grande
-posible y para ello es necesario hacer que el usuario desee acceder
-asiduamente a nuestra aplicación.\\
+Al fin y al cabo lo que se desea es formar la comunidad más grande posible y
+para ello es necesario hacer que el usuario desee acceder asiduamente a nuestra
+aplicación.
 
-La mayor ventaja es que al ser una aplicación web, cualquier usuario
-puede registrarse sin ningún tipo de restricción.
+La mayor ventaja es que al ser una aplicación web, cualquier usuario puede
+registrarse sin ningún tipo de restricción.
 
 \section{Definiciones, acrónimos y abreviaturas}
 
 \begin{itemize}
-  \item \negrita{Framework: } Estructura conceptual y tecnológica de
-    soporte definida, normalmente con artefactos o módulos de sofware
-    concretos, con base en la cual otro proyecto software puede ser
-    organizado y desarrollado.
-  \item \negrita{Patrón Modelo Vista Controlador (MVC): } Es un estilo de
-    arquitectura software que separa los datos de una aplicación, la
-    interfaz de usuario y la lógica de control en tres componentes
-    distintos.
-  \item \negrita{COC (Convenction over Configuration): } En español
-    significa \cursiva{``Convención sobre configuración''}, quiere
-    decir que toda pieza de código tiene su lugar y todas ellas
-    interactúan según un camino estándar.
-  \item \negrita{DRY (Don't Repeat Yourself): } En español significa
-    \cursiva{``No te repitas''}. Se refiera a que es innecesario repetir
-    código si éste está bien diseñado y refactorizado.
-  \item \negrita{Programación Orientada a Objetos (POO): } . Es un
-    paradigma de la programación que se basa en la utilización de
-    clases de objetos.
-  \item \negrita{Simulador de Fútbol Online:} es el nombre utilizado
-    comúnmente durante todo el documento para hacer referencia al
-    nombre del proyecto.
-  \item \negrita{Ruby: } Lenguaje de programación orientado a objetos
-    de script con características propias de lenguajes funcionales.
-  \item \negrita{Gema: } 
-  \item \negrita{Ruby On Rails (RoR): } Framework de desarrollo rápido
-    de aplicaciones web basado en el lenguaje de programación
-    \programa{Ruby}.
-  \item \negrita{GIT: } Sistema de control de la configuración
-    distribuido.
-  \item \negrita{Integrated Development Environment (IDE): } En
-    español significa \cursiva{``Entorno integrado de
-      desarrollo''}. Es un programa informático compuesto por un
-    conjunto de herramientas y módulos de programación que ayudan al
-    desarrollo de productos software.
-  \item \negrita{NetBeans: } IDE con funcionalidades que ayudan al
-    desarrollo de aplicaciones \programa{Ruby on Rails}
-  \item \negrita{Sistema de Gestión de Base de Datos (SGBD)}:
-  \item \negrita{Oracle: } Es un sistema de Gestión de Base de Datos
-    privativo.
-  \item \negrita{MySQL: } Sistema de gestión de base de datos de
-    software libre.
-  \item \negrita{SQLite2: } Sistema de gestión de base de datos de
-    software libre.
-  \item \negrita{SQLite3: } Sistema de gestión de base de datos de
-    software libre.
-  \item \negrita{Postgre: } Sistema de gestión de base de datos de
-    software libre.
-  \item \negrita{Cascade Style Sheet (CSS):} En español significa
-    \cursiva{``Hojas de estilo en cascada''}.
-  \item \negrita{Hypertext Markup Language (HTML))} En español
-    significa \cursiva{``Lenguaje de marcado de hipertexto''}.
-  \item \negrita{JavaScript: } Lenguaje de script que se ejecuta en el
-    lado cliente.
-  \item \negrita{JQuery: } Librería de desarrollo rápido JavaScript.
-  \item \negrita{Algoritmo criptográfico: } En computación y
-    criptografía un algoritmo criptográfico es un algoritmo que
-    modifica los datos de un documento con el objeto de alcanzar
-    algunas características de seguridad como autenticación,
-    integridad y confidencialidad.
-  \item \negrita{Algoritmo MD5: } En criptografía, MD5 (abreviatura de
-    Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es
-    un \cursiva{algoritmo criptográfico} de 128 bits ampliamente
-    usado.
-  \item \negrita{Log:} Archivo de texto plano que nos indica las
-    todas las  acciones que se realizan en nuestra aplicación con la
-    finalidad de conseguir auditar el uso de la misma.
+\item \negrita{Framework: } Estructura conceptual y tecnológica de soporte
+  definida, normalmente con artefactos o módulos de sofware concretos, con base
+  en la cual otro proyecto software puede ser organizado y desarrollado.
+\item \negrita{Patrón Modelo Vista Controlador (MVC): } Es un estilo de
+  arquitectura software que separa los datos de una aplicación, la interfaz de
+  usuario y la lógica de control en tres componentes distintos.
+\item \negrita{COC (Convenction over Configuration): } En español significa
+  \cursiva{``Convención sobre configuración''}, quiere decir que toda pieza de
+  código tiene su lugar y todas ellas interactúan según un camino estándar.
+\item \negrita{DRY (Don't Repeat Yourself): } En español significa \cursiva{``No
+    te repitas''}. Se refiera a que es innecesario repetir código si éste está
+  bien diseñado y refactorizado.
+\item \negrita{Programación Orientada a Objetos (POO): } . Es un paradigma de la
+  programación que se basa en la utilización de clases de objetos.
+\item \negrita{Simulador de Fútbol Online:} es el nombre utilizado comúnmente
+  durante todo el documento para hacer referencia al nombre del proyecto.
+\item \negrita{Ruby: } Lenguaje de programación orientado a objetos de script
+  con características propias de lenguajes funcionales.
+\item \negrita{Gema: }
+\item \negrita{Ruby On Rails (RoR): } Framework de desarrollo rápido de
+  aplicaciones web basado en el lenguaje de programación \programa{Ruby}.
+\item \negrita{GIT: } Sistema de control de la configuración distribuido.
+\item \negrita{Integrated Development Environment (IDE): } En español significa
+  \cursiva{``Entorno integrado de desarrollo''}. Es un programa informático
+  compuesto por un conjunto de herramientas y módulos de programación que ayudan
+  al desarrollo de productos software.
+\item \negrita{NetBeans: } IDE con funcionalidades que ayudan al desarrollo de
+  aplicaciones \programa{Ruby on Rails}
+\item \negrita{Sistema de Gestión de Base de Datos (SGBD)}:
+\item \negrita{Oracle: } Es un sistema de Gestión de Base de Datos privativo.
+\item \negrita{MySQL: } Sistema de gestión de base de datos de software libre.
+\item \negrita{SQLite2: } Sistema de gestión de base de datos de software libre.
+\item \negrita{SQLite3: } Sistema de gestión de base de datos de software libre.
+\item \negrita{Postgre: } Sistema de gestión de base de datos de software libre.
+\item \negrita{Cascade Style Sheet (CSS):} En español significa \cursiva{``Hojas
+    de estilo en cascada''}.
+\item \negrita{Hypertext Markup Language (HTML))} En español significa
+  \cursiva{``Lenguaje de marcado de hipertexto''}.
+\item \negrita{JavaScript: } Lenguaje de script que se ejecuta en el lado
+  cliente.
+\item \negrita{JQuery: } Librería de desarrollo rápido JavaScript.
+\item \negrita{Algoritmo criptográfico: } En computación y criptografía un
+  algoritmo criptográfico es un algoritmo que modifica los datos de un documento
+  con el objeto de alcanzar algunas características de seguridad como
+  autenticación, integridad y confidencialidad.
+\item \negrita{Algoritmo MD5: } En criptografía, MD5 (abreviatura de
+  Message-Digest Algorithm 5, Algoritmo de Resumen del Mensaje 5) es un
+  \cursiva{algoritmo criptográfico} de 128 bits ampliamente usado.
+\item \negrita{Log:} Archivo de texto plano que nos indica las todas las
+  acciones que se realizan en nuestra aplicación con la finalidad de conseguir
+  auditar el uso de la misma.
 
 
 \end{itemize}
 
 \section{Visión General}
 Esta memoria sigue las pautas descritas en el documento de referencia
-\cursiva{``Recomendaciones para la documentación del Proyecto de fin
-  de Carrera''} realizada por varios profesores del departamento de
-lenguajes y sistemas informáticos.
+\cursiva{``Recomendaciones para la documentación del Proyecto de fin de
+  Carrera''} realizada por varios profesores del departamento de lenguajes y
+sistemas informáticos.
 
 Las partes que componen el documento son:
 
 \begin{enumerate}
-  \item \negrita{Introducción: } Visión general. Objetivos, alcance y
-    estructura.
-  \item \negrita{Planificación: } Planificación temporal del
-    desarrollo del proyecto y porcentaje de esfuerzo dedicado a las
-    diversas tareas y fases que lo forman.
-  \item \negrita{Descripción general del proyecto: } Ampliación de la
-    visión global del proyecto. Perspectiva, funciones y
-    restricciones.
-  \item \negrita{Análisis: } Identificación de las metas globales,
-    perspectivas del cliente y recogida de información necesaria para
-    llevar a cabo el proyecto.
-  \item \negrita{Diseño: } Aplicamos diferentes técnicas y
-    procedimientos para obtener un producto con el suficiente detalle
-    que permita su realización física.
-  \item \negrita{Codificación: } Aspectos más relevantes de la
-    implementación de la aplicación software.
-  \item \negrita{Pruebas: } Todo lo concerniente a las pruebas para
-    que la aplicación logre su cometido sin fallos.
-  \item \negrita{Resumen: } Breve resumen de lo más destacable del
-    proyecto realizado.
-  \item \negrita{Conclusiones: } Valoración global, posibles mejoras y
-    ampliaciones del proyecto.
-  \item \negrita{Bibliografía: } Libros y referencias físicas y
-    electrónicas consultadas para la elaboración del proyecto.
-  \item \negrita{Apéndices: }
-    \begin{itemize}
-      \item \negrita{Manual de usuario: } Manual del funcionamiento de la
-        aplicación destinado a los usuarios de la misma.
-      \item \negrita{Manual de instalación y puesta en
-        funcionamiento: } Instrucciones para realizar la instalación de
-        la aplicación, así como su puesta en funcionamiento.
-      \item \negrita{Licencia: } Texto de la licencia adoptada para la
-        divulgación del proyecto.
-    \end{itemize}
+\item \negrita{Introducción: } Visión general. Objetivos, alcance y estructura.
+\item \negrita{Planificación: } Planificación temporal del desarrollo del
+  proyecto y porcentaje de esfuerzo dedicado a las diversas tareas y fases que
+  lo forman.
+\item \negrita{Descripción general del proyecto: } Ampliación de la visión
+  global del proyecto. Perspectiva, funciones y restricciones.
+\item \negrita{Análisis: } Identificación de las metas globales, perspectivas
+  del cliente y recogida de información necesaria para llevar a cabo el
+  proyecto.
+\item \negrita{Diseño: } Aplicamos diferentes técnicas y procedimientos para
+  obtener un producto con el suficiente detalle que permita su realización
+  física.
+\item \negrita{Codificación: } Aspectos más relevantes de la implementación de
+  la aplicación software.
+\item \negrita{Pruebas: } Todo lo concerniente a las pruebas para que la
+  aplicación logre su cometido sin fallos.
+\item \negrita{Resumen: } Breve resumen de lo más destacable del proyecto
+  realizado.
+\item \negrita{Conclusiones: } Valoración global, posibles mejoras y
+  ampliaciones del proyecto.
+\item \negrita{Bibliografía: } Libros y referencias físicas y electrónicas
+  consultadas para la elaboración del proyecto.
+\item \negrita{Apéndices: }
+  \begin{itemize}
+  \item \negrita{Manual de usuario: } Manual del funcionamiento de la aplicación
+    destinado a los usuarios de la misma.
+  \item \negrita{Manual de instalación y puesta en funcionamiento: }
+    Instrucciones para realizar la instalación de la aplicación, así como su
+    puesta en funcionamiento.
+  \item \negrita{Licencia: } Texto de la licencia adoptada para la divulgación
+    del proyecto.
+  \end{itemize}
 \end{enumerate}

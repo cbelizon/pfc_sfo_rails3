@@ -8,18 +8,18 @@ proyecto.
 
 \section{Metodología de desarrollo}
 Hemos decidido seguir una metodología de desarrollo que se adapte lo
-suficientemente bien al framework en torno al cual desarrollaremos
-nuestra aplicación.\\
+suficientemente bien al framework en torno al cual desarrollaremos nuestra
+aplicación.
 
-Hemos decidido usar la metodología de desarrollo \cursiva{Xtreme
-  Programming (XP)}\\
+Hemos decidido usar la metodología de desarrollo \cursiva{Xtreme Programming
+  (XP)}
 
 La metodología será seguida dentro de unos límites y adaptada a nuestra
 necesidades, debido entre otras cosas a que somos nosotros mismos los que hemos
 decidido qué funcionalidades y qué problemas queremos resolver con nuestra
 aplicación; además, no hay que olvidar que no tenemos ningún equipo que
 coordinar ya que sólo será una persona quién se encargue de realizar todas y
-cada una de las funcionalidades.\\
+cada una de las funcionalidades.
 
 La programación extrema, o \cursiva{Xtreme Programming} es una de las llamadas
 \cursiva{Metodologías Ágiles} de desarrollo de software más populares hoy en
@@ -27,7 +27,7 @@ día. Inicialmente fue descrita por \cursiva{Kent Beck} cuando trabajaba en la
 \cursiva{Chrysler Corporation}. En la \cursiva{XP} se da por supuesto que no se
 debe prever todo antes de empezar a codificar, que es imposible capturar todos
 los requisitos del sistema, ni saber qué es todo lo que debe hacer y por tanto
-es imposible hacer un diseño correcto desde el principio.\\
+es imposible hacer un diseño correcto desde el principio.
 
 La idea principal de esta metodología consiste en trabajar estrechamente con el
 cliente, diseñando pequeñas versiones frecuentemente. El objetivo de estas
@@ -41,7 +41,7 @@ funcional de lo que el cliente ha solicitado, ésta se le muestra al cliente par
 que la testee y haga peticiones de las modificaciones que crea convenientes. De
 esta manera se evita perder tiempo desarrollando una aplicación que no sea la
 que el cliente esperaba. Este ciclo se repetirá tantas veces como el cliente
-necesite para sentirse satisfecho con la aplicación.\\
+necesite para sentirse satisfecho con la aplicación.
 
 La \cursiva{Xtreme Programming} agrupa trece prácticas básicas que se deben
 cumplir para asegurar el éxito del proyecto, ellas son:
@@ -82,8 +82,8 @@ requerimentos
 
 \section{Propósito}
 El propósito del siguiente apartado es definir cuáles son los requisitos que
-debe tener nuestro portal web que simula la gestión de
-un club de fútbol en un entorno multijugador y simular partidos.\\
+debe tener nuestro portal web que simula la gestión de un club de fútbol en un
+entorno multijugador y simular partidos.
 
 Esta especificación de requisitos está destinada a ser leída por los usuarios o
 cualquier sujeto que tenga interés en saber cómo funciona el producto.
@@ -92,8 +92,7 @@ cualquier sujeto que tenga interés en saber cómo funciona el producto.
 El producto que vamos a describir puede clasificarse como un videojuego
 multijugador online integrado en un servidor web en la cual los usuarios del
 portal se dedicarán a gestionar un club de fútbol en la parcela económica y
-deportiva, y dispondrá de un simulador de los
-partidos entre clubes.\\
+deportiva, y dispondrá de un simulador de los partidos entre clubes.
 
 El producto ha de ofrecer una interfaz lo bastante sencilla para que cualquier
 usuario pueda gestionar las distintas facetas en escasos minutos. Dado que la
@@ -131,8 +130,7 @@ los estándares web \sigla{XHTML 1.1 Strict} y \sigla{CSS 2.0.}
 
 \section{Características del usuario}
 A continuación vamos a ver a qué tipo de usuarios está dirigido el producto y
-cómo afectan éstos a las funciones que debe realizar
-nuestro producto.\\
+cómo afectan éstos a las funciones que debe realizar nuestro producto.
 
 El producto está dirigido a todo usuario que sepa manejar un navegador web y que
 esté interesado en la simulación de la gestión de un club de fútbol, así como
@@ -140,8 +138,8 @@ conocer las reglas y premisas básicas de negocio del deporte.
 \section{Obligaciones generales}
 Uno de los aspectos que influirá determinantemente en el éxito del producto será
 la eficiencia en las peticiones y el diseño de una intertaz amigable y sencilla
-para poder gestionar los diferentes
-parámetros del club de una forma rápida y precisa.\\
+para poder gestionar los diferentes parámetros del club de una forma rápida y
+precisa.
 
 De cara al diseño de la interfaz web, uno de los mayores desafíos con los que
 nos encontraremos será el conseguir que el diseño de la interfaz sea operativa
@@ -151,8 +149,8 @@ populares no soportan actualmente con suficiente solvencia los estándares
 \section{Asunciones y Dependencias}
 El presente producto depende enteramente de que el usuario disponga de una
 conexión red al servidor a través de un navegador web (probablemente
-\sigla{internet}), por tanto es importante respetar los
-estándares pertinente que estipula la \sigla{w3c}.\\
+\sigla{internet}), por tanto es importante respetar los estándares pertinente
+que estipula la \sigla{w3c}.
 
 \section{Especificación de los requisitos del sistema}
 \subsection{Requisitos de interfaces externas}
@@ -182,28 +180,26 @@ Podemos dividir los requisitos de interfaz de usuario según tres roles:
 
 \subsection{Requisitos de rendimiento}
 Este aspecto es fundamental en el análisis del sistema, se ha de tener en cuenta
-que la aplicación es de tipo servidor y que a ella estarán
-conectados concurrentemente un número de usuarios elevado.\\
+que la aplicación es de tipo servidor y que a ella estarán conectados
+concurrentemente un número de usuarios elevado.
 
 Se ha considerado también el rendimiento que nos ofrece el diseño web
 realizado. Para que nuestra página web sea compatible con la mayoría de
 dispositivos y se ejecute lo suficientemente fluida hemos decidido no usar la
 tecnología propietaria \cursiva{Flash}, usando para la renderización de efectos
-la librería \cursiva{JQuery} en combinación
-con hojas de estilo \cursiva{CSS}.\\
+la librería \cursiva{JQuery} en combinación con hojas de estilo \cursiva{CSS}.
 
 El rendimiento de la aplicación podrá ser menor en la primera instanciación de
 la aplicación debido a que no se habrá cacheado ningún contenido.
 
 \subsection{Requisitos de Información}
 La \cursiva{base de datos} es uno de los componentes fundamentales de la
-aplicación. En ella se van a almacenar todos los datos registrados
-por la aplicación.\\
+aplicación. En ella se van a almacenar todos los datos registrados por la
+aplicación.
 
 La aplicación sólo hará uso de una conexión al \cursiva{SGBD} escogido por el
 \cursiva{superusuario} en la configuración de instalación de la aplicación, cuyo
-nombre también podrá ser escogido por el citado
-\cursiva{superusuario}.\\
+nombre también podrá ser escogido por el citado \cursiva{superusuario}.
 
 Dicha \cursiva{BD} estará formada por las siguientes tablas:
 
@@ -235,15 +231,14 @@ Dicha \cursiva{BD} estará formada por las siguientes tablas:
   hacia los usuarios.
 \end{itemize}
 
-Toda la información sobre la \cursiva{base de datos} será ampliada en
-su sección correspondiente.\\
+Toda la información sobre la \cursiva{base de datos} será ampliada en su sección
+correspondiente.
 
 La tabla \cursiva{User} contiene los datos de los usuarios que interactúan con
 la aplicación, en ella se almacenará la contraseña de cada uno de ellos; es por
 ello que será necesario un \cursiva{algoritmo criptográfico} denominado
 \cursiva{MD5}. De esta forma conseguimos proteger la contraseña de los usuarios
-frente a un
-posible ataque al servidor dónde esté la \cursiva{base de datos}.\\
+frente a un posible ataque al servidor dónde esté la \cursiva{base de datos}.
 
 Es necesario que el \cursiva{superusuario} conozca el \cursiva{SGBD} que será
 utilizado con nuestra aplicación, además de disponer de un usuario y contraseña
@@ -251,7 +246,7 @@ para la correcta creación de las tablas.
 
 \subsection{Restricciones de diseño}
 
-No existe ninguna restricción considerable en el diseño del sistema.\\
+No existe ninguna restricción considerable en el diseño del sistema.
 
 Todo el diseño del sistema se debe de regir con la especificación
 realizada.\\
@@ -267,8 +262,8 @@ El sistema ha de cumplir las siguientes propiedades:
 \item \negrita{Fiabilidad}: Este sistema, como todo software de calidad, debe
   ser fiable. Al estar tratando de una aplicación web que ha de tener un elevado
   acceso concurrente a los datos, hemos de cerciorarnos que las operaciones no
-  dejen el sistema en un
-  estado inconsistente por una posible caída del servidor.\\
+  dejen el sistema en un estado inconsistente por una posible caída del
+  servidor.
 
   Por ello el sistema se encarga de generar un \cursiva{log} con todas las
   operaciones que ocurren en nuestra aplicación.
@@ -322,8 +317,8 @@ El sistema ha de cumplir las siguientes propiedades:
 \section{Descripción de Requisitos Funcionales}
 
 \subsection{Configurar el sitio}
-El administrador podrá navegar por la página de configuración web y la
-usará para cambiar el comportamiento de la misma.\\
+El administrador podrá navegar por la página de configuración web y la usará
+para cambiar el comportamiento de la misma.
 
 Esta función se realizará raras veces.
 \subsection{Crear una cuenta de usuario}
@@ -331,8 +326,7 @@ Para que un usuario cualquiera sea capaz de poder usar nuestro producto ha de
 tener una cuenta registrada en el servidor que lo distinga unívocamente de
 cualquier otro usuario; para ello se le pedirá introducir un nombre de usuario,
 y una dirección de e-mail. Una vez registrado el sistema enviará un e-mail de
-confirmación de
-registro dando la bienvenida a nuestro sistema.\\
+confirmación de registro dando la bienvenida a nuestro sistema.
 
 Esta función es condición necesaria para que puedan realizarse todos y cada uno
 de los requisitos que se expresan en los apartados siguientes y se realizará una
@@ -341,13 +335,12 @@ de los requisitos que se expresan en los apartados siguientes y se realizará un
 \subsection{Acceder a la cuenta de usuario}
 Para que cualquier usuario registrado sea capaz de usar nuestro producto
 deberemos de proporcionarle un método de acceso e identificación mediante el
-nombre de cuenta y contraseña que han sido
-albergados en nuestro servidor.\\
+nombre de cuenta y contraseña que han sido albergados en nuestro servidor.
 
 Esta operación se realizará muy a menudo y tantas veces como el usuario desee.
 \subsection{Abandonar la cuenta de usuario}
-Cualquier usuario que haya iniciado sesión en nuestra aplicación
-deberá ser capaz de abandonar de forma segura la misma.\\
+Cualquier usuario que haya iniciado sesión en nuestra aplicación deberá ser
+capaz de abandonar de forma segura la misma.
 
 Esta operación se realizará muy a menudo y tantas veces como un usuario que haya
 iniciado sesión desee.
@@ -407,58 +400,54 @@ estén abiertos.
 
 \subsection{Renovación de futbolistas}
 El sistema actualizará los sueldos que reciben los futbolistas al término de
-cada temporada, según la ponderación de los atributos
-cualitativos que tengan.\\
+cada temporada, según la ponderación de los atributos cualitativos que tengan.
 
 Esta operación se realizará una vez por temporada y afectará a todos los
 futbolistas del sistema.
 \subsection{Venta de entradas}
 El usuario podrá estipular el precio de venta de las entradas en los partidos
-que se disputen en su estadio siendo ésta la forma principal
-de obtención de ingresos para la gestión económica del club.\\
+que se disputen en su estadio siendo ésta la forma principal de obtención de
+ingresos para la gestión económica del club.
 
 Esta función será realizada tantas veces como desee el usuario.
 
 \subsection{Planificación de alineaciones}
 El usuario podrá escoger cuál será la alineación que presentará para el próximo
 partido que vaya a disputar su equipo, pasando ésta a ser la alineación por
-defecto hasta que el usuario decida volver a
-cambiarla.\\
+defecto hasta que el usuario decida volver a cambiarla.
 
 Esta operación se realizará a menudo.
 \subsection{Planificación de tácticas}
 El usuario podrá escoger entre diversas tácticas de juego para afrontar los
 distintos partidos. Esta acción repercutirá directamente en el estilo de juego y
-por tanto en la simulación resultado del
-partido que dispute.\\
+por tanto en la simulación resultado del partido que dispute.
 
 Esta operación se realizará tantas veces como el usuario desee.
 \subsection{Planificación de entrenamientos}
 El usuario podrá personalizar los atributos a entrenar de los futbolistas
-integrantes de su equipo. De esta forma el club adquirirá
-valor deportivo y económico.\\
+integrantes de su equipo. De esta forma el club adquirirá valor deportivo y
+económico.
 
 Esta función se realizará a menudo.
 
 \subsection{Asignar club}
 Una vez que un usuario haya sido registrado en el servidor mediante una cuenta
-de usuario el sistema le asignará un nuevo club cuando
-todas las ligas hayan concluido y el administrador así desee.\\
+de usuario el sistema le asignará un nuevo club cuando todas las ligas hayan
+concluido y el administrador así desee.
 
 Esta operación se realizará una vez por temporada y por cada nuevo usuario
 registrado en el sistema.
 
 \subsection{Simular jornadas}
 El sistema debe emitir comentarios durante el transcurso del partido para que
-cualquier usuario sea capaz de conocer la evolución del mismo.\\
+cualquier usuario sea capaz de conocer la evolución del mismo.
 
 Esta función se realizará a menudo, una vez por jornada.
 
 \subsection{Comenzar jornadas}
 El sistema debe simular la disputa de un partido en base a la ponderación de los
 atributos cualitativos de los futbolistas alineados, tácticas empleadas y
-variables aleatorias confrontadas con las del equipo
-rival.\\
+variables aleatorias confrontadas con las del equipo rival.
 
 Esta función se realizará a menudo, una vez por jornada.
 
@@ -477,21 +466,20 @@ Esta función se realizará a menudo a lo largo de la competición.
 El sistema debe ser capaz de gestionar varias ligas organizadas de forma
 jerárquica según el número de usuarios que estén registrados en nuestro
 servidor. De esta forma conseguiremos que el usuario desee mejorar la posición
-de su club, lo que repercutirá directamente en la
-capacidad deportiva y económica del mismo.\\
+de su club, lo que repercutirá directamente en la capacidad deportiva y
+económica del mismo.
 
 Esta función se realizará una vez por temporada y una vez por jornada.
 
 \subsection{Composición de calendarios}
 El sistema deberá de crear un calendario de partidos por cada liga que está
-albergada en el servidor. Los calendarios se crearán una vez por
-temporada y será accesible a todos los usuarios.\\
+albergada en el servidor. Los calendarios se crearán una vez por temporada y
+será accesible a todos los usuarios.
 
 Esta función se realizará una vez por creación de liga.
 \subsection{Gestiones de lesiones y sanciones}
 El sistema debe ser capaz de llevar a cabo una política realista de imposición
-de sanciones a los futbolistas, así como simular lesiones
-más o menos duraderas.\\
+de sanciones a los futbolistas, así como simular lesiones más o menos duraderas.
 
 Esta función se realizará a menudo.
 
@@ -499,12 +487,12 @@ Esta función se realizará a menudo.
 \subsection{Caso de uso crear cuenta de usuario}
 \negrita{Descripción: } Crea una cuenta de usuario para poder
 participar y acceder a las acciones provistas por nuestra aplicación.\\
-\negrita{Actores: } Usuario no registrado, usuario registrado,
-sistema. \\
+\negrita{Actores: } Usuario no registrado, usuario registrado,\\
+sistema.
 \negrita{Precondición: } Ninguna. \\
 \negrita{Postcondición: } Se da de alta un nuevo usuario en el
 sistema. \\
-\negrita{Escenario principal:}
+\negrita{Escenario principal:}\\
 \begin{enumerate}
 \item Un usuario no registrado desea registrarse.
 \item El usuario introduce el nombre de usuario, la contraseña asociada al

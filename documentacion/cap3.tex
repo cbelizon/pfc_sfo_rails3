@@ -10,26 +10,25 @@ mejorado y actualizado por su propio creador o terceras personas ajenas a éste.
 
 \subsection{Interfaces de usuario}
 La interfaz de usuario se basa en una página web dinámica que lleva asociada
-varias opciones para poder usar las herramientas
-proporcionadas.\\
+varias opciones para poder usar las herramientas proporcionadas.
 
 Para el uso de la aplicación, la página principal dispone de varios menús, entre
-ellos la de selección de idiomas y un \cursiva{hipervínculo} al
-subsistema de registro e inicio de sesión.\\
+ellos la de selección de idiomas y un \cursiva{hipervínculo} al subsistema de
+registro e inicio de sesión.
 
 Todo el diseño de la aplicación respeta los estándares \cursiva{HTML 4.0} y
 \cursiva{CSS 2.0 } así como el uso de la librería de \cursiva{JavaScript JQuery}
-lo que nos proporciona una gran
-compatibilidad con cualquier navegador web del mercado.\\
+lo que nos proporciona una gran compatibilidad con cualquier navegador web del
+mercado.
 
 Al usar \cursiva{hojas de estilo CSS} la apariencia de nuestra aplicación puede
-ser fácilmente modificada para adaptarla a nuevas
-tendencias de diseño de forma sencilla y eficiente.\\
+ser fácilmente modificada para adaptarla a nuevas tendencias de diseño de forma
+sencilla y eficiente.
 
 Siempre que se termine cualquier operación, ya sea exitosa o no, el sistema nos
 informará a través de un sistema de notificación embebido dentro del navegador
-muy parecido al sistema usado en \cursiva{Mac OS
-  X } y últimas versiones de la \cursiva{distribución Linux Ubuntu}.\\
+muy parecido al sistema usado en \cursiva{Mac OS X } y últimas versiones de la
+\cursiva{distribución Linux Ubuntu}.
 
 Como mejora para un uso mucho más cómodo y rápido por parte de cualquier
 usuario, la aplicación dispone de un menú estático para acceder a cualquier tipo
@@ -38,20 +37,18 @@ o sea el administrador.
 
 \subsection{Interfaces software}
 El producto interactúa con el sistema operativo en el lado del servidor en dónde
-está instalado y con el navegador usado en el lado
-del cliente.\\
+está instalado y con el navegador usado en el lado del cliente.
 
 De hecho, el producto es totalmente multiplataforma tanto en el lado servidor
 como en el lado cliente, gracias a que el \cursiva{framework RoR} está diseñado
 para ser instalado en entornos \cursiva{Windows, Linux y Mac OS X}; mientras que
 en el lado cliente disponemos de varios navegadores web cualquiera que sea el
-sistema operativo en el que se
-ejecute.\\
+sistema operativo en el que se ejecute.
 
 Debemos destacar que el mencionado \cursiva{framework} tiene una gran comunidad
 que lo sustenta, que da como resultado la disponibilidad de una gran cantidad de
-documentación y un buen soporte de la plataforma,
-repercutiendo directamente en la calidad del software que desarrollemos.\\
+documentación y un buen soporte de la plataforma, repercutiendo directamente en
+la calidad del software que desarrollemos.
 
 Hemos de indicar que \cursiva{RoR} es agnóstico en cuanto al \cursiva{SGBD} que
 utilicemos, con lo que el producto podrá ser desplegado con cualquiera de los
@@ -86,8 +83,7 @@ entorno que simule ser real a través de \cursiva{Internet}.  Para ello ha sido
 necesario crear una aplicación informática encargada de poder registrar a
 cualquier usuario que acceda a nuestra web y proporcionarles las herramientas
 necesarias para gestionar su propio club; además de simular los partidos que en
-una competición de fútbol
-se desarrollan.\\
+una competición de fútbol se desarrollan.
 
 Las características más importantes de esta aplicación se describen a
 continuación:
@@ -115,8 +111,8 @@ esta memoria, en especial en el \cursiva{Manual de usuario}.
 
 \section{Características de los usuarios}
 
-Para el correcto manejo de la aplicación \cursiva{Simulador de fútbol
-  online} existen dos perfiles distintos de manejo.\\
+Para el correcto manejo de la aplicación \cursiva{Simulador de fútbol online}
+existen dos perfiles distintos de manejo.
 
 Podríamos dividir los perfiles en:
 
@@ -136,46 +132,44 @@ Podríamos dividir los perfiles en:
 \end{itemize}
 
 \section{Restricciones generales}
+\label{sec:restricciones_generales}
 El proyecto se ha desarrollado bajo la metodología \cursiva{Rational Unified
   Process (RUP)}, proceso de desarrollo orientado a objetos, al estar basado
-todo el proyecto en un entorno de desarrollo bajo el paradigma
-de programación orientada a objetos.\\
+todo el proyecto en un entorno de desarrollo bajo el paradigma de programación
+orientada a objetos.
 
 El lenguaje de programación que usaremos será \cursiva{Ruby}, que es libre así
-como el \cursiva{framework} sobre el que apoyaremos nuestra
-aplicación web \cursiva{RoR}.\\
+como el \cursiva{framework} sobre el que apoyaremos nuestra aplicación web
+\cursiva{RoR}.
 
 No se deben tener en cuenta restricciones en el uso de memoria principal por
-parte de la aplicación tanto en el lado servidor como en
-el cliente.\\
+parte de la aplicación tanto en el lado servidor como en el cliente.
 
 Se deben tener en cuenta restricciones a la hora de crear las vistas de nuestra
-aplicación web para que éstas sean lo mas livianas posibles
-para ahorrar el mayor ancho de banda posible.\\
+aplicación web para que éstas sean lo mas livianas posibles para ahorrar el
+mayor ancho de banda posible.
 
 Para el desarrollo de todo el proyecto deberemos usar un \cursiva{IDE} que se
 base en la filosofía de \cursiva{software libre}, en este caso
-\cursiva{NetBeans}.\\
+\cursiva{NetBeans}.
 
 El producto habrá de funcionar en cualquier sistema operativo que tenga
 disponibilidad para tener instalado un intérprete de \cursiva{Ruby} en el lado
 servidor y en cualquier navegador del mercado compatible con los estándares web
 para \cursiva{HTML 4.0}, \cursiva{CSS 2.0}, y la librería \cursiva{JQuery}. Esto
-hará que
-nuestro software tenga un mayor público objetivo de desarrolladores.\\
+hará que nuestro software tenga un mayor público objetivo de desarrolladores.
 
 Como sistema gestor de bases de datos se podrá utilizar cualquiera que tenga una
-\cursiva{gema} que sea capaz de conectar \cursiva{RoR} con
-el \cursiva{SGBD} escogido.\\
+\cursiva{gema} que sea capaz de conectar \cursiva{RoR} con el \cursiva{SGBD}
+escogido.
 
 Es necesario tener en cuenta que nuestra aplicación puede correr en cualquier
 \cursiva{pc} pero es conveniente que éste tenga la capacidad suficiente para
 atender varias peticiones a la vez, además de tener la configuración necesaria
-para que peticiones que lleguen desde
-\cursiva{internet} puedan ser atendidas.\\
+para que peticiones que lleguen desde \cursiva{internet} puedan ser atendidas.
 
-Para toda la creación y generación de la documentación presente hemos
-utilizado LaTeX\\
+Para toda la creación y generación de la documentación presente hemos utilizado
+LaTeX.
 
 Como controlador de la configuración hemos optado por usar \cursiva{GIT}, un
 sistema de control de versiones distribuido que es el usado oficialmente por el
@@ -244,22 +238,19 @@ aspectos:
 \section{Requisitos para futuras versiones}
 Para futuras versiones del producto, podrían introducirse funciones avanzadas
 para los usuarios como selección de escudo del equipo, personalización de
-dorsales, avisos por sms, mercados de agentes
-libres, cantera y ojeadores.\\
+dorsales, avisos por sms, mercados de agentes libres, cantera y ojeadores.
 
 Podría introducirse nuevas plantillas de diseño para personalizar la vista de
-diversas formas para que el usuario escoja la que más le
-guste.\\
+diversas formas para que el usuario escoja la que más le guste.
 
 También sería interesante establecer un apartado de estadísticas para poder
 llevar un seguimiento del historial en tiempo de la evolución de los equipos
 tanto en el plano técnico como en el económico, este apartado también sería
-aplicable a los futbolistas que integran los
-clubes.\\
+aplicable a los futbolistas que integran los clubes.
 
 Podría añadirse un sistema de foros y chat para una interacción entre usuarios
-que no se limite en exclusiva a las funcionalidades
-específicas de nuestro sistema.\\
+que no se limite en exclusiva a las funcionalidades específicas de nuestro
+sistema.
 
 Como restricción a futuras versiones o proyectos que estén basados en nuestra
 aplicación se aplicarán las referentes a las propias especificadas en el
