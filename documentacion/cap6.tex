@@ -87,23 +87,26 @@ funcionalidades \cite{wiki:GIT}:
 
 \begin{itemize}
 \item Fuerte apoyo al desarrollo no-lineal, por ende rapidez en la gestión de
-  ramas y mezclado de diferentes versiones. \cursiva{Git} incluye herramientas específicas
-  para navegar y visualizar un historial de desarrollo no-lineal. Una presunción
-  fundamental en \cursiva{Git} es que un cambio será fusionado mucho más frecuentemente de
-  lo que se escribe originalmente, conforme se pasa entre varios programadores
-  que lo revisan.
+  ramas y mezclado de diferentes versiones. \cursiva{Git} incluye herramientas
+  específicas para navegar y visualizar un historial de desarrollo
+  no-lineal. Una presunción fundamental en \cursiva{Git} es que un cambio será
+  fusionado mucho más frecuentemente de lo que se escribe originalmente,
+  conforme se pasa entre varios programadores que lo revisan.
 \item Gestión distribuida. Al igual que \cursiva{Darcs}, \cursiva{BitKeeper},
   \cursiva{Mercurial}, \cursiva{SVK}, \cursiva{Bazaar} y \cursiva{Monotone},
   \cursiva{Git} le da a cada programador una copia local del historial del
   desarrollo entero, y los cambios se propagan entre los repositorios
   locales. Los cambios se importan como ramas adicionales y pueden ser
   fusionados en la misma manera que se hace con la rama local.
-\item Los almacenes de información pueden publicarse por \cursiva{HTTP}, \cursiva{FTP}, \cursiva{rsync} o
-  mediante un protocolo nativo, ya sea a través de una conexión \cursiva{TCP/IP} simple o
-  a través de cifrado \cursiva{SSH}. \cursiva{Git} también puede emular servidores \cursiva{CVS}, lo que
-  habilita el uso de clientes \cursiva{CVS} pre-existentes y modulos \cursiva{IDE} para \cursiva{CVS}
-  pre-existentes en el acceso de repositorios \cursiva{Git}.
-\item Los repositorios \cursiva{Subversion} y \cursiva{svk} se pueden usar directamente con \cursiva{git-svn}.
+\item Los almacenes de información pueden publicarse por \cursiva{HTTP},
+  \cursiva{FTP}, \cursiva{rsync} o mediante un protocolo nativo, ya sea a través
+  de una conexión \cursiva{TCP/IP} simple o a través de cifrado
+  \cursiva{SSH}. \cursiva{Git} también puede emular servidores \cursiva{CVS}, lo
+  que habilita el uso de clientes \cursiva{CVS} pre-existentes y modulos
+  \cursiva{IDE} para \cursiva{CVS} pre-existentes en el acceso de repositorios
+  \cursiva{Git}.
+\item Los repositorios \cursiva{Subversion} y \cursiva{svk} se pueden usar
+  directamente con \cursiva{git-svn}.
 \item Gestión eficiente de proyectos grandes, dada la rapidez de gestión de
   diferencias entre archivos, entre otras mejoras de optimización de velocidad
   de ejecución.
@@ -112,9 +115,9 @@ funcionalidades \cite{wiki:GIT}:
   (denominado autenticación criptográfica de historial). Esto existía en
   \cursiva{Monotone}.
 \item Resulta algo más caro trabajar con ficheros concretos frente a proyectos,
-  eso diferencia el trabajo frente a \cursiva{CVS}, que trabaja con base en cambios de
-  fichero, pero mejora el trabajo con afectaciones de código que concurren en
-  operaciones similares en varios archivos.
+  eso diferencia el trabajo frente a \cursiva{CVS}, que trabaja con base en
+  cambios de fichero, pero mejora el trabajo con afectaciones de código que
+  concurren en operaciones similares en varios archivos.
 \item Los renombrados se trabajan basándose en similitudes entre ficheros,
   aparte de nombres de ficheros, pero no se hacen marcas explícitas de cambios
   de nombre con base en supuestos nombres únicos de nodos de sistema de
@@ -126,12 +129,71 @@ funcionalidades \cite{wiki:GIT}:
 \end{itemize}
 
 A continuación nos dispondremos a visualizar algunas estadísticas de nuestro
-sistema software a través de la aplicación \cursiva{GitStats} \cite{prog:gitstats} y
-el análisis de estadísticas de código incluido dentro de \cursiva{Ruby On
-  Rails}.
+sistema software a través de la aplicación \cursiva{GitStats}
+\cite{prog:gitstats} y el análisis de estadísticas de código incluido dentro de
+\cursiva{Ruby On Rails}.
 
 En la figura \ref{fig:estadisticas_codigo} podemos ver las estadísticas de
 código clasificadas según extensión y ordenados por el número de líneas que
 conforman la totalidad del proyecto.
 
-\figura{gitstats.png}{scale=0.5}{Estadísticas del repositorio}{fig:estadisticas_codigo}{H}
+\figura{gitstats.png}{scale=0.5}{Estadísticas del
+  repositorio}{fig:estadisticas_codigo}{H}
+
+En la figura \ref{fig:estadisticas_rails} podemos ver un análisis del código
+fuente según la estructura de un proyecto realizado en \cursiva{Ruby On Rails}.
+
+\figura{stats.png}{scale=0.5}{Estadísticas del código fuente
+  Rails}{fig:estadisticas_rails}{H}
+
+A continuación pasamos a describir los términos que aparecen en la figura
+\ref{fig:estadisticas_rails} para una mejor interpretación de la misma:
+
+\begin{itemize}
+\item Lines: Son las líneas de código totales de cada una de las categorías.
+\item LOC: Son las líneas de código reales no autogeneradas por el framework.
+\item Classes: Son el número de clases pertenecientes a cada una de las
+  categorías.
+\item Methods: El número de métodos correspondientes a cada una de las
+  categorías.
+\item M/C: Media de métodos por clase.
+\item LOC/M: Media de número de líneas por método.
+\end{itemize}
+
+\section{Herramientas de desarrollo}
+\subsection{Codificación}
+Para la creación y edición de los ficheros fuente del proyecto hemos utilizado
+el editor de texto gratuito \cursiva{SublimeText2} \cite{prog:sublimetext2}, el
+cual es lo bastante extensible para ser utilizado como un completo \cursiva{IDE}
+de desarrollo para \cursiva{Ruby On Rails}.
+
+Haremos intensivo uso de sus características avanzadas de editor de texto y de
+autocomplección de código, así como de la característica de inserción rápida de
+texto a través de los llamados \cursiva{snippets} \cite{prog:snippets}.
+
+Otra característica avanzada de este editor de texto extensible es su
+integración con \cursiva{GIT} y cualquier tecnología a través del uso de
+plugins. Además de ser multiplataforma lo cual es idóneo para la depuración de
+código \cursiva{CSS} en distintas plataformas.
+
+\subsection{Depuración}
+Para la depuración del código fuente usamos de forma extensiva el navegador web
+\cursiva{Firefox} \cite{prog:firefox} el cuál nos proporciona la extensión
+\cursiva{Firebug} \cite{prog:firebug}.
+
+\cursiva{Firebug} es una extensión de cursiva{Firefox} creada y diseñada
+especialmente para desarrolladores y programadores web. Es un paquete de
+utilidades con el que se puede analizar (revisar velocidad de carga, estructura
+\cursiva{DOM}), editar, monitorizar y depurar el código fuente, \cursiva{CSS},
+\cursiva{HTML} y \cursiva{JavaScript} de una página web de manera instantánea e
+inline.
+
+
+\cursiva{Firebug} no es un simple inspector como \cursiva{Dom Inspector}, además edita y
+permite guardar los cambios, un paso por delante del conocido \cursiva{Web
+  Developer}. Su atractiva e intuitiva interfaz, con solapas específicas para el
+análisis de cada tipo de elemento (consola, \cursiva{HTML}, \cursiva{CSS},
+\cursiva{Script}, \cursiva{DOM} y red), permite al usuario un manejo fácil y
+rápido. \cursiva{Firebug} está encapsulado en forma de plug-in o complemento de
+\cursiva{Mozilla}, es \cursiva{Open Source}, libre y de distribución gratuita \cite{wiki:firebug}.
+
