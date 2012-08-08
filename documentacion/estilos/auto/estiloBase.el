@@ -11,6 +11,7 @@
      "supertabular"
      "multirow"
      "array"
+     "mathcomp"
      "amsmath"
      "amsthm"
      "amssymb"

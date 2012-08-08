@@ -32,7 +32,8 @@ pruebas de nuestro sistema software, a saber:
     desarrollo software una vez que han sido aprobadas las pruebas unitarias. Se
     refieren a la prueba de todos los elementos unitarios que componen un
     proceso realizadas en conjunto. De esta forma conseguimos verificar que las
-    partes de un sistema software funcionan de forma conjunta. \cite{test:integracion}
+    partes de un sistema software funcionan de forma
+    conjunta. \cite{test:integracion}
   \item Pruebas funcionales: Son pruebas basadas en la ejecución, revisión y
     retroalimentación de las funcionalidades previamente diseñadas para el
     software \cite{test:funcionales}.
@@ -96,11 +97,11 @@ hecho uso del \cursiva{framework CSS} \cursiva{Twitter Bootstrap}
 Las características de este \cursiva{framework CSS} son varias, entre ellas:
 
 \begin{itemize}
-\item \negrita{Multiplataforma}: Compatible con los navegadores web más actuales, ya sean
-  móviles, tablets o de escritorio, inclusive para \cursiva{Internet Explorer
-    7}.
-\item \negrita{Tabla de 12 columnas}: Trae predefinida una plantilla de 12 columnas que
-  puede ser modificada.
+\item \negrita{Multiplataforma}: Compatible con los navegadores web más
+  actuales, ya sean móviles, tablets o de escritorio, inclusive para
+  \cursiva{Internet Explorer 7}.
+\item \negrita{Tabla de 12 columnas}: Trae predefinida una plantilla de 12
+  columnas que puede ser modificada.
 \item \negrita{Diseño Responsivo}: Los componentes de la página web se escalan
   según el tamaño del navegador y la resolución a la que son visualizados los
   mismos.
@@ -122,9 +123,8 @@ En las figuras \ref{fig:bootstrap1} y \ref{fig:bootstrap2} podemos ver la
 característica de diseño responsivo con la plantilla original de
 \cursiva{Twitter Bootstrap}
 
-\newpage
-\figura{full_bootstrap.png}{scale=0.35,angle=270}{Twitter bootstrap maximizado
-  en Firefox}{fig:bootstrap1}{H}
+\newpage \figura{full_bootstrap.png}{scale=0.35,angle=270}{Twitter bootstrap
+  maximizado en Firefox}{fig:bootstrap1}{H}
 
 
 \figura{compact_bootstrap.png}{scale=0.5}{Twitter bootstrap minimizado en
@@ -153,7 +153,8 @@ Los usuarios que han realizado los casos de prueba son los siguientes:
   del panorama futbolístico.
 \item[Sujeto 2] Mujer, 20 años, estudios universitarios de la rama de
   letras. Nivel de informática usuario, alto. Conocimientos en ofimática,
-  navegación web, redes sociales y dispositivos móviles, bajo nivel del panorama futbolístico.
+  navegación web, redes sociales y dispositivos móviles, bajo nivel del panorama
+  futbolístico.
 \item[Sujeto 3] Hombre, 25 años, estudios no universitarios. Nivel de
   informática usuario, alto. Conocimientos en ofimática, navegación web, redes
   sociales, desarrollo web. Conocimiento del panorama futbolístico, medio.
@@ -168,7 +169,8 @@ Los usuarios que han realizado los casos de prueba son los siguientes:
 Los objetivos que han de pasar los usuarios son:
 
 \begin{description}
-\item[Objetivo 1] Ser capaz de registrarse, iniciar sesión y salir de la cuenta de usuario.
+\item[Objetivo 1] Ser capaz de registrarse, iniciar sesión y salir de la cuenta
+  de usuario.
 \item[Objetivo 2] Ser capaz de crear su propia alineación para el siguiente
   partido y la táctica que desea utilizar.
 \item[Objetivo 3] Ser capaz de estipular el precio de las entradas para el
@@ -189,4 +191,35 @@ contemplaron las siguientes variables:
   bajo Windows 7.
 \item Se les proporciona un enlace web a la aplicación web alojada en un
   servidor remoto \cite{prog:pfc_sfo}
+\item No se les dio ninguna indicación de cómo navegar a través de la página
+  web.
 \end{itemize}
+
+Los resultados de las pruebas realizadas según los objetivos propuestos se
+pueden observar en la tabla \ref{tab:pruebas}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{ | c | c | c | c | c | c | c |}
+      \hline
+      & Objetivo 1 & Objetivo 2 & Objetivo 3 & Objetivo 4 &  Objetivo 5 & Objetivo
+      6\\ \hline
+      Sujeto 1 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &
+      \checkmark \\ \hline
+      Sujeto 2 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &
+      \checkmark \\ \hline
+      Sujeto 3 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &
+      \checkmark \\ \hline
+      Sujeto 4 & \checkmark & \checkmark & \checkmark & \checkmark & \checkmark &
+      \checkmark \\ \hline
+      Sujeto 5 & \checkmark & \checkmark &  X & X  & X & X \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Pruebas pasadas por los usuarios}
+  \label{tab:pruebas}
+\end{table}
+
+Como podemos observar el único usuario con problemas para terminar de pasar las
+pruebas fue el Sujeto 5, no es de extrañar puesto que sus conocimientos
+informáticos son básicos y tiene poca intuición al haber usado muy poco
+aplicaciones web interactivas.
