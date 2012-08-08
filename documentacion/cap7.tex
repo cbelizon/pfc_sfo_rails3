@@ -1,0 +1,192 @@
+% -*-cap7.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex
+
+% Copyright (C) 2009 Pablo Recio Quijano
+
+La fase de pruebas es una de las partes más importantes del desarrollo software
+\cite{test:myers}. El objetivo de las pruebas software es la verificación de que
+el proyecto cumple con los requisitos especificados inicialmente cuando se
+comenzó el desarrollo. Según la metodología clásica de desarrollo software
+existen diferentes enfoques a la hora de realizar las pruebas de software,
+siendo todos ellos complementarios entre sí.
+
+En este capítulo vamos a describir las pruebas que hemos que realizado en
+nuestro software para asegurar la corrección del mismo.
+
+\section{Tipos de Pruebas}
+Este proyecto es una mezcla entre un videojuego online y una aplicación de
+gestión. Por ello deberemos de hacer varios enfoques a la hora de hacer las
+pruebas de nuestro sistema software, a saber:
+
+\begin{itemize}
+\item \negrita{Pruebas clásicas:} Aquí deberíamos englobar las pruebas que se
+  aplican a cualquier tipo de desarrollo software:
+  \begin{itemize}
+  \item Pruebas unitarias: Son aquellas que nos permiten probar el correcto
+    funcionamiento de un módulo de código. De esta forma conseguimos saber que
+    cada uno de los módulos que integrar el sistema software funcionan
+    correctamente por separado. \cite{test:unitaria}
+  \item Pruebas de integración: Son aquellas que se realizan en el ámbito del
+    desarrollo software una vez que han sido aprobadas las pruebas unitarias. Se
+    refieren a la prueba de todos los elementos unitarios que componen un
+    proceso realizadas en conjunto. De esta forma conseguimos verificar que las
+    partes de un sistema software funcionan de forma conjunta. \cite{test:integracion}
+  \item Pruebas funcionales: Son pruebas basadas en la ejecución, revisión y
+    retroalimentación de las funcionalidades previamente diseñadas para el
+    software \cite{test:funcionales}.
+  \end{itemize}
+\item \negrita{Pruebas de usabilidad}: Son aquellas pruebas que se encargan de
+  medir cómo de bien puede una persona usar un sistema hecho por el hombre, como
+  en nuestro caso es la página web. Consisten en seleccionar un grupo de
+  usuarios y solicitarles que lleven a cabo las tareas para las cuales fue
+  diseñada la aplicación, mientras que el equipo de desarrollo toma nota para
+  evaluar la respuesta del usuario \cite{test:usability}.
+\end{itemize}
+
+El primer grupo de pruebas pueden realizarse de forma automatizada, sin embargo,
+para la realización de las pruebas del segundo grupo será necesario la
+intervención de un grupo de usuarios que interactúen con la aplicación y que
+contesten un cuestionario para recopilar la información necesaria para la mejora
+de la aplicación.
+
+\section{Pruebas unitarias}
+Durante la fase de codificación \ref{cap:codificacion} se fueron realizando al
+unísono las pruebas unitarias de cada componente software de forma no
+automatizada, evitando de esta forma en la medida de lo posible que en la fase
+de integración aparecieran errores referentes a la codificación.
+
+\cursiva{Ruby On Rails} proporciona un completo \cursiva{framework} para el
+desarrollo de pruebas unitarias, de hecho, por cada modelo de nuestro sistema
+software, dentro del directorio \texttt{test/unit} se crea un fichero homónimo
+para la realización de pruebas unitarias. En nuestro caso, y debido a la
+necesidad de cumplir con el calendario de entrega del proyecto, no hemos hecho
+uso del mismo.
+
+Una herramienta muy útil a la hora de desarrollar nuestro software y evitar
+errores en el código ha sido el uso del programa \cursiva{SublimeText2} con el
+plugin \cursiva{IntelLinter}. Este plugin es una herramienta que analiza las
+librerías y archivos del proyecto software y detecta un conjunto de errores
+sintácticos a través del análisis del código fuente.
+
+\section{Pruebas de integración}
+Según se iban desarrollando las diferentes funcionalidades del proyecto y estos
+iban cumpliendo los requisitos software recopilados en el capítulo
+\ref{cap:analisis} a través de las pruebas unitarias de cada uno de de los
+módulos que íbamos completando comprobamos que la integración de los mismos no
+repercutían en el software haciendo que se incumpliera alguno de los requisitos
+recolectados en la fase de análisis (Capítulo \ref{cap:analisis}).
+
+
+\section{Pruebas funcionales}
+Una vez que habíamos comprobado que la integración de los módulos no remitía
+ningún tipo de error ni comportaba ningún tipo de comportamiento extraño en los
+módulos ya testeados con sus pruebas unitarias nos dispusimos a comprobar que el
+software desarrollado cumplía con los requisitos funcionales recopilados en la
+fase de análisis en el capítulo \ref{cap:analisis}.
+
+\section{Pruebas de usabilidad}
+Para este proyecto se ha puesto especial énfasis en que la usabilidad de la web
+sea sencilla para cualquier tipo de usuario y para que además se visualice de
+forma correcta en la mayoría de navegadores web del mercado. Para ello se ha
+hecho uso del \cursiva{framework CSS} \cursiva{Twitter Bootstrap}
+\cite{prog:twitter_bootstrap}.
+
+Las características de este \cursiva{framework CSS} son varias, entre ellas:
+
+\begin{itemize}
+\item \negrita{Multiplataforma}: Compatible con los navegadores web más actuales, ya sean
+  móviles, tablets o de escritorio, inclusive para \cursiva{Internet Explorer
+    7}.
+\item \negrita{Tabla de 12 columnas}: Trae predefinida una plantilla de 12 columnas que
+  puede ser modificada.
+\item \negrita{Diseño Responsivo}: Los componentes de la página web se escalan
+  según el tamaño del navegador y la resolución a la que son visualizados los
+  mismos.
+\item \negrita{Guía de estilos documentada}: Es de los poco \cursiva{frameworks
+    CSS} que poseen una guía de estilos bien documentada por sus creadores para
+  la modificación de la plantilla.
+\item \negrita{Plugins jQuery personalizados}: De esta forma cubrimos las
+  necesidades más habituales en el desarrollo de una página web. Alertas,
+  ventanas modales, popups, pestañas, etc...
+\item \negrita{Desarollado con LESS/SASS:} Aunque \cursiva{Twitter Bottstrap}
+  fue desarrollado para su perfecta integración con \cursiva{LESS}, dado que
+  \cursiva{Rails} es compatible de forma nativa con \cursiva{SASS} las
+  características de la definición de reglas se han migrado a este último. De
+  esta forma podemos aprovechar las cualidades de anidado, \cursiva{mixins},
+  declaración de variables, etc...
+\end{itemize}
+
+En las figuras \ref{fig:bootstrap1} y \ref{fig:bootstrap2} podemos ver la
+característica de diseño responsivo con la plantilla original de
+\cursiva{Twitter Bootstrap}
+
+\newpage
+\figura{full_bootstrap.png}{scale=0.35,angle=270}{Twitter bootstrap maximizado
+  en Firefox}{fig:bootstrap1}{H}
+
+
+\figura{compact_bootstrap.png}{scale=0.5}{Twitter bootstrap minimizado en
+  Firefox}{fig:bootstrap2}{H}
+
+\subsection{Casos de pruebas con usuarios reales}
+Dado que la aplicación es web, se prevé que a ella accedan un gran número de
+usuarios. Dado que el deporte al que está orientado el software es el fútbol, se
+prevé que la edad de los posibles usuarios sea de cualquier rango de edades,
+desde infantes hasta personas adultas.
+
+Por ello hemos seleccionado un conjunto de sujetos de prueba que abarquen
+diversas edades y sexo para conseguir una información lo suficientemente
+representativa y variada para perfeccionar nuestro sistema.
+
+Gracias a estas pruebas hemos conseguido valiosa información para ir haciendo
+modificaciones al producto para hacerlo más completo y entretenido para el
+usuario.
+
+Los usuarios que han realizado los casos de prueba son los siguientes:
+
+\begin{description}
+\item[Sujeto 1] Hombre, 15 años, bachillerato de la rama de ciencias
+  sociales. Nivel de informática usuario alto. Conocimientos en ofimática y
+  navegación web, mucha experiencia en videojuegos y redes sociales, alto nivel
+  del panorama futbolístico.
+\item[Sujeto 2] Mujer, 20 años, estudios universitarios de la rama de
+  letras. Nivel de informática usuario, alto. Conocimientos en ofimática,
+  navegación web, redes sociales y dispositivos móviles, bajo nivel del panorama futbolístico.
+\item[Sujeto 3] Hombre, 25 años, estudios no universitarios. Nivel de
+  informática usuario, alto. Conocimientos en ofimática, navegación web, redes
+  sociales, desarrollo web. Conocimiento del panorama futbolístico, medio.
+\item[Sujeto 4] Hombre, 35 años, estudios universitarios de la rama de
+  ciencias. Alto conocimiento en ofimática, desarrollo software, navegación
+  web. Conocimiento alto del panorama futbolístico.
+\item[Sujeto 5] Hombre, 55 años, estudios universitarios de la rama de
+  ciencias. Conocimiento medio de ofimática, bajo nivel de conocimiento en
+  navegación web. Alto conocimiento del panorama futbolístico.
+\end{description}
+
+Los objetivos que han de pasar los usuarios son:
+
+\begin{description}
+\item[Objetivo 1] Ser capaz de registrarse, iniciar sesión y salir de la cuenta de usuario.
+\item[Objetivo 2] Ser capaz de crear su propia alineación para el siguiente
+  partido y la táctica que desea utilizar.
+\item[Objetivo 3] Ser capaz de estipular el precio de las entradas para el
+  siguiente partido disputado en su estadio.
+\item[Objetivo 4] Ser capaz de poner a entrenar a cualesquiera de los jugadores
+  de su equipo desee y el entrenamiento que así fije.
+\item[Objetivo 5] Ser capaz de emitir, cancelar, recibir, aceptar y rechazar una
+  oferta por uno de sus jugadores.
+\item[Objetivo 6] Ser capaz de visualizar las jornadas siguientes de la
+  temporada actual en curso.
+\end{description}
+
+Para realizar estos casos de prueba por parte de los sujetos del estudio se
+contemplaron las siguientes variables:
+
+\begin{itemize}
+\item Todas las pruebas se realizaron bajo el navegador web Firefox 14 instalado
+  bajo Windows 7.
+\item Se les proporciona un enlace web a la aplicación web alojada en un
+  servidor remoto \cite{prog:pfc_sfo}
+\end{itemize}
