@@ -135,6 +135,19 @@ cómo afectan éstos a las funciones que debe realizar nuestro producto.
 El producto está dirigido a todo usuario que sepa manejar un navegador web y que
 esté interesado en la simulación de la gestión de un club de fútbol, así como
 conocer las reglas y premisas básicas de negocio del deporte.
+
+Identificamos dos roles bien diferenciados en nuestro sistema:
+
+\begin{enumerate}
+\item \negrita{Usuario Jugador}: Se refiere a una persona que se registra en el
+  portal web y que participará en la gestión de un club al que se le
+  asignará. Este usuario podrá conectarse al sistema e interactuar con el mismo
+  a través de la interfaz web.
+\item \negrita{Usuario Administrador}: Es un tipo de usuario que será capaz de
+  modificar el comportamiento del sistema a través del menú de administración de
+  nuestra aplicación para llevar a cabo las acciones de gestión de la
+  competición de nuestro sistema.
+\end{enumerate}
 \section{Obligaciones generales}
 Uno de los aspectos que influirá determinantemente en el éxito del producto será
 la eficiencia en las peticiones y el diseño de una intertaz amigable y sencilla
@@ -178,6 +191,17 @@ Podemos dividir los requisitos de interfaz de usuario según tres roles:
   tenga el propio sistema operativo dónde esté instalado la aplicación.
 \end{itemize}
 
+\subsubsection{Interfaces con el hardware}
+Las copias de seguridad del sistema se realizarán de forma periódica cada día,
+semana y mes de forma incremental y utilizando la herramienta
+\cursiva{rsync}. Dichas copias de seguridad se almacenarán en otro servidor
+dedicado exclusivamente al almacenaje de las copias.
+
+\subsubsection{Interfaces con el software}
+La aplicación web correrá en el lado del servidor en un sistema \cursiva{Linux} con \cursiva{Ubuntu
+Server 12.04}. Mientras que en el lado cliente podrá ejecutarse en cualquier
+sistema que disponga de un navegador web que cumpla los estándares 2.0 \cursiva{WCC}
+
 \subsection{Requisitos de rendimiento}
 Este aspecto es fundamental en el análisis del sistema, se ha de tener en cuenta
 que la aplicación es de tipo servidor y que a ella estarán conectados
@@ -201,35 +225,36 @@ La aplicación sólo hará uso de una conexión al \cursiva{SGBD} escogido por e
 \cursiva{superusuario} en la configuración de instalación de la aplicación, cuyo
 nombre también podrá ser escogido por el citado \cursiva{superusuario}.
 
-Dicha \cursiva{BD} estará formada por las siguientes tablas:
+El sistema almacenará en forma de tablas la siguiente información relativa a las
+siguientes entidades:
 
-\begin{itemize}
-\item User Tabla donde se almacenan los datos de cada uno de los usuarios que
+\begin{description}
+\item[User] Se almacenan los datos de cada uno de los usuarios que
   interactúan con la aplicación.
-\item Club Tabla donde se almacenan los datos de los clubes que participan en
+\item[Club] Se almacenan los datos de los clubes que participan en
   las ligas.
-\item League Tabla donde se almacenan los datos de las ligas que existen en el
+\item[League] Se almacenan los datos de las ligas que existen en el
   sistema.
-\item Season Tabla donde se almacenan los datos de las temporadas
+\item[Season] Se almacenan los datos de las temporadas
   correspondientes a cada liga del sistema.
-\item Round Tabla donde se almacenan los datos de las jornadas de cada
+\item[Round] Se almacenan los datos de las jornadas de cada
   temporada.
-\item MatchGeneral Tabla dónde se almacenan los partidos que se han de jugar
+\item[MatchGeneral] Se almacenan los partidos que se han de jugar
   cada jornada.
-\item MatchDetail Tabla dónde se almacenan las acciones que tienen lugar en cada
+\item[MatchDetail] Se almacenan las acciones que tienen lugar en cada
   partido.
-\item LineUp Tabla dónde se almacenan las alineaciones de cada equipo y partido.
-\item ClubFinancesRound Tabla donde se almacenan los datos de finanzas
+\item[LineUp] Se almacenan las alineaciones de cada equipo y partido.
+\item[ClubFinancesRound] Se almacenan los datos de finanzas
   correspondientes a cada jornada y club.
-\item Player Tabla donde se almacenan los datos de los jugadores de fútbol de
+\item[Player] Se almacenan los datos de los jugadores de fútbol de
   los clubes.
-\item Offer Tabla donde se almacenan los datos de las ofertas que se realizan
+\item[Offer] Se almacenan los datos de las ofertas que se realizan
   los usuarios de la aplicación sobre los jugadores de fútbol.
-\item Training Tabla donde se almacenan los datos de los entrenamientos de los
+\item[Training] Se almacenan los datos de los entrenamientos de los
   jugadores de fútbol.
-\item AdminMessages Tabla donde se almacenan los mensajes de administración
+\item[AdminMessages] Se almacenan los mensajes de administración
   hacia los usuarios.
-\end{itemize}
+\end{description}
 
 Toda la información sobre la \cursiva{base de datos} será ampliada en su sección
 correspondiente.

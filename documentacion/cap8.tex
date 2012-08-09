@@ -1,0 +1,284 @@
+% -*-cap7.tex-*- Este fichero es parte de la plantilla LaTeX para la realización
+% de Proyectos Final de Carrera, protejido bajo los términos de la licencia
+% GFDL.  Para más información, la licencia completa viene incluida en el fichero
+% fdl-1.3.tex
+
+% Copyright (C) 2009 Pablo Recio Quijano
+
+En este proyecto desarrollaremos un sistema web de gestión de clubes de fútbol orientado al disfrute
+del usuario como de si un videojuego se tratara. Este sistema nos ha permitido
+conocer los entresijos del desarrollo software web mediante el uso del
+\cursiva{framework} de desarollo rápido de aplicaciones web \cursiva{Ruby On
+  Rails}.
+
+\section{Introducción y objetivos del proyecto}
+Este proyecto se inició para completar la formación académica de la titulación
+de Ingeniería Técnica en Informática de Gestión de la Escuela Superior de
+Ingeniería de Cádiz de la Universidad de Cádiz. Gracias a ella, pudimos aprender
+cómo desarrollar un producto totalmente funcional usando para ello el uso de un
+framework basado en el patrón \cursiva{Modelo-Vista-Controlador} \cursiva{Ruby
+  On Rails}. 
+
+Además, comprendimos la dificultad que conlleva el desarrollo de un sistema
+software, desde la misma etapa de conceptualización del sistema.
+
+El objetivo del proyecto es proporcionar un videojuego web basado en la gestión
+de clubes de fútbol que se adapte a las condiciones de licencia del software
+libre que sea capaz de competir en un futuro con las alternativas actualmente
+existentes en el mercado actual.
+
+Al concluir el desarrollo, la aplicación ha de ser capaz de desempeñar todas las
+funcionalidades descritas en el capítulo \ref{cap:analisis}.
+
+\section{Análisis del sistema}
+Para conocer los requisitos funcionales del sistema a desarrollar nos reunimos
+varias veces con nuestro tutor de proyecto en las primeras semanas de desarrollo
+del sistema.
+
+De dichas reuniones, fuimos capaces de llegar a numerosas conclusiones sobre
+cuáles serían los límites y funcionalidades que habríamos de desarrollar en el
+proyecto, para poder crear la Especificación de Requerimentos (SRS)
+\cite{doc:requisitos}
+
+\subsection{Características de los usuarios}
+El producto está dirigido a todo usuario que sepa manejar un navegador web y que
+esté interesado en la simulación de la gestión de un club de fútbol, así como
+conocer las reglas y premisas básicas de negocio del deporte.
+
+Identificamos dos roles bien diferenciados en nuestro sistema:
+
+\begin{enumerate}
+\item \negrita{Usuario Jugador}: Se refiere a una persona que se registra en el
+  portal web y que participará en la gestión de un club al que se le
+  asignará. Este usuario podrá conectarse al sistema e interactuar con el mismo
+  a través de la interfaz web.
+\item \negrita{Usuario Administrador}: Es un tipo de usuario que será capaz de
+  modificar el comportamiento del sistema a través del menú de administración de
+  nuestra aplicación para llevar a cabo las acciones de gestión de la
+  competición de nuestro sistema.
+\end{enumerate}
+
+\subsection{Requisitos de rendimiento}
+Este aspecto es fundamental en el análisis del sistema, se ha de tener en cuenta
+que la aplicación es de tipo servidor y que a ella estarán conectados
+concurrentemente un número de usuarios elevado.
+
+Se ha considerado también el rendimiento que nos ofrece el diseño web
+realizado. Para que nuestra página web sea compatible con la mayoría de
+dispositivos y se ejecute lo suficientemente fluida hemos decidido no usar la
+tecnología propietaria \cursiva{Flash}, usando para la renderización de efectos
+la librería \cursiva{JQuery} en combinación con hojas de estilo \cursiva{CSS}.
+
+El rendimiento de la aplicación podrá ser menor en la primera instanciación de
+la aplicación debido a que no se habrá cacheado ningún contenido.
+
+\subsection{Requisitos de interfaces externas}
+\subsubsection{Interfaces de usuario}
+Podemos dividir los requisitos de interfaz de usuario según tres roles:
+
+\begin{itemize}
+\item \negrita{Usuario Jugador y Usuario Administrador: }
+  \begin{itemize}
+  \item Interfaz atractiva para los usuarios: Es fundamental para la buena
+    aceptación de nuestra aplicación el crear una interfaz lo suficientemente
+    clara, dinámica y estética para que el usuario sienta una inmersión en la
+    experiencia de juego. Una interfaz no atractiva sólo traerá problemas de
+    rechazo y disconformidad por parte del usuario.\\\\
+    Para que la interfaz sea sencilla de modificar y tratándose de una
+    aplicación web usaremos \cursiva{hojas de estilo CSS}, así todo el apartado
+    de diseño gráfico podrá ser modificado posteriormente sin que por ello
+    afecte al contenido ni la estructura del documento \cursiva{HTML}.
+  \item Una característica de nuestra aplicación es que el sistema de avisos
+    está embebido dentro de la página web y es muy parecido al sistema de
+    notificación de los sistemas operativos \cursiva{Mac OS X} y de la \cursiva
+    {distribución Linux Ubuntu}.
+  \end{itemize}
+\item \negrita{Superusuario: } En este caso la interfaz corresponderá a la que
+  tenga el propio sistema operativo dónde esté instalado la aplicación.
+\end{itemize}
+\subsubsection{Interfaz con el hardware}
+Las copias de seguridad del sistema se realizarán de forma periódica cada día, semana y mes de for-
+ma incremental y utilizando la herramienta rsync. Dichas copias de seguridad se almacenarán en otro
+servidor dedicado exclusivamente al almacenaje de las copias.
+
+\subsubsection{Interfaz con el software}
+La aplicación web correrá en el lado del servidor en un sistema \cursiva{Linux}
+con \cursiva{Ubuntu Server 12.04}. Mientras que en el lado cliente podrá
+ejecutarse en cualquier sistema que disponga de un navegador web que cumpla los
+estándares 2.0 WCC.
+
+\subsection{Requisitos de rendimiento}
+Este aspecto es fundamental en el análisis del sistema, se ha de tener en cuenta que la aplicación es de
+tipo servidor y que a ella estarán conectados concurrentemente un número de
+usuarios elevado.
+
+Se ha considerado también el rendimiento que nos ofrece el diseño web realizado. Para que nuestra
+página web sea compatible con la mayoría de dispositivos y se ejecute lo suficientemente fluida hemos
+decidido no usar la tecnología propietaria \cursiva{Flash}, usando para la renderización de efectos la librería
+\cursiva{JQuery} en combinación con hojas de estilo \cursiva{CSS}.
+
+El rendimiento de la aplicación podrá ser menor en la primera instanciación de la aplicación debido a
+que no se habrá cacheado ningún contenido.
+
+\subsection{Requisitos de Información}
+El sistema almacenará en forma de tablas la siguiente información relativa a las
+siguientes entidades:
+
+\begin{description}
+\item[User] Se almacenan los datos de cada uno de los usuarios que
+  interactúan con la aplicación.
+\item[Club] Se almacenan los datos de los clubes que participan en
+  las ligas.
+\item[League] Se almacenan los datos de las ligas que existen en el
+  sistema.
+\item[Season] Se almacenan los datos de las temporadas
+  correspondientes a cada liga del sistema.
+\item[Round] Se almacenan los datos de las jornadas de cada
+  temporada.
+\item[MatchGeneral] Se almacenan los partidos que se han de jugar
+  cada jornada.
+\item[MatchDetail] Se almacenan las acciones que tienen lugar en cada
+  partido.
+\item[LineUp] Se almacenan las alineaciones de cada equipo y partido.
+\item[ClubFinancesRound] Se almacenan los datos de finanzas
+  correspondientes a cada jornada y club.
+\item[Player] Se almacenan los datos de los jugadores de fútbol de
+  los clubes.
+\item[Offer] Se almacenan los datos de las ofertas que se realizan
+  los usuarios de la aplicación sobre los jugadores de fútbol.
+\item[Training] Se almacenan los datos de los entrenamientos de los
+  jugadores de fútbol.
+\item[AdminMessages] Se almacenan los mensajes de administración
+  hacia los usuarios.
+\end{description}
+
+\section{Diseño del sistema}
+Para el diseño del sistema tuvimos que tomar algunas decisiones básicas, sobre
+todo orientadas a qué tecnologías emplear.
+
+Entre ellas destacamos el uso de la tecnología de Software Libre \cursiva{Ruby
+  On Rails}, basado en el lenguaje de \cursiva{script} \cursiva{Ruby}. Dicho
+\cursiva{framework} nos proporciona todas las herramientas necesarias para el
+desarrollo del sistema incluyendo el de la interfaz cliente.
+
+\subsection{Arquitectura}
+La arquitectura que emplearemos es la que mejor se ajusta a las aplicaciones
+cliente/servidor, aplicando el patrón \cursiva{Modelo-Vista-Controlador} que nos
+proporciona de base \cursiva{Rails} \cite{agilerails}.
+
+El patrón \cursiva{Modelo-Vista-Controlador} divide el software en tres capas
+bien diferenciadas que se adaptan muy bien a la tecnología
+Cliente-Servidor. Dichas capas son:
+
+\begin{itemize}
+\item \negrita{Modelo}: Esta capa es la relativa a la representación de la
+  información con la que el proyecto interactuará. Está compuesto por las clases
+  necesarias para el acceso, modificación, búsqueda y demás operaciones con los
+  datos.
+\item \negrita{Vista}: En esta capa agruparemos todas las clases necesarias para
+  la representación de la interfaz con la que nuestros usuarios interactuarán.
+\item \negrita{Controlador}: Será la capa que nos permita gestionar las
+  peticiones que lleguen a nuestro servidor.
+\end{itemize}
+
+Los modelos usan el motor de persistencia \cursiva{ActiveRecord} integrado en
+\cursiva{Rails} y pasado en el patrón de mismo nombre \cursiva{Active Record}
+\cite{pattern:activerecord}. Esta clase es la que en última instancia ejecuta
+las órdenes de escritura y lectura en lenguaje \cursiva{SQL} en el
+\cursiva{SGBD} que el administrador haya decidido usar, en nuestro caso
+\cursiva{SQLite3}.
+
+La vista son los ficheros con extensión \texttt{.erb} basados en el sistema de
+plantillas \cursiva{eRuby}.
+
+\subsection{Diagrama de componentes}
+Podemos ver el diagrama de componentes en la figura \ref{diag:componentes}.
+
+\figura{mvc-rails.png}{scale=0.50}{Diagrama de componentes}{diag:componentes}{H}
+
+El framework \cursiva{Ruby on Rails} hace especial hincapié en tres conceptos
+muy básicos que caracterizan toda su estructura, que son:
+
+\begin{itemize}
+\item \negrita{Convention over Configuration (COC)}: Convención frente a
+  configuración.
+\item \negrita{Don't Repeat Yourself (DRY)}: No te repitas
+\item \negrita{Keep It Simple (KIS)}: Mantenlo simple.
+\end{itemize}
+
+Gracias a ello seguiremos la estructura de directorios en árbol para nuestro
+código fuente que genera \cursiva{Rails} para una aplicación vacía.
+\subsection{Entorno de ejecución}
+En la figura \ref{fig:entornoejecucion} podemos ver el diagrama de despliegue de
+la aplicación puesta en marcha en cualquiera de los entornos, ya sea este de
+desarrollo, test o producción.
+
+El sistema (servidor) interactuará con uno o más clientes web (navegadores). El
+servidor, a su vez estará formado por un servidor de aplicaciones web, en
+nuestro caso \cursiva{Webrick}, y el sistema de gestión de base de datos será
+\cursiva{SQLite3}.
+
+Gracias a esta sencilla configuración no tendremos que configurar ninguna cuenta
+ni servicio en nuestro servidor web.
+\subsection{Diagramas de clases conceptuales}
+A continuación mostramos algunos de los modelos de clases conceptuales en
+notación \cursiva{UML} \cite{uml:distilled_standard}
+
+\clearpage
+
+\figura{models_complete.png}{scale=0.25}{Diagrama de Clases UML de la capa
+  modelo}{diag:clases_modelo}{H}
+
+\newpage
+
+\figura{controllers_complete.png}{scale=0.22,angle=270}{Diagrama de Clases UML
+  de la capa controlador}{diag:clases_controlador}{H}
+\clearpage
+\section{Implementación}
+Para la implementación del software hemos utilizado los siguientes lenguajes:
+
+\begin{itemize}
+\item Ruby.
+\item HTML.
+\item CoffeScript \cite{lang:coffescript}.
+\item SASS \cite{lang:sass}.
+\end{itemize}
+
+Y las aplicaciones utilizadas para codificar a de una forma sencilla y
+productiva:
+
+\begin{itemize}
+\item El editor de texto extensible \cursiva{SublimeText2} \cite{prog:sublimetext2}.
+\item El depurador de \cursiva{Firefox} \cite{prog:firefox} \cursiva{Firebug}.
+  \cite{prog:firebug}.
+\item El controlador de versiones \cursiva{GIT} \cite{wiki:GIT}.
+\item El \cursiva{framework CSS} \cursiva{TwitterBootstrap}.
+  \cite{prog:twitter_bootstrap}.
+\end{itemize}
+
+\section{Pruebas y validación}
+En la fase de análisis comprobamos la validez de nuestros requisitos
+identificando de forma correcta cuáles serían las funcionalidades, restricciones
+y el ámbito de desarrollo y ejecución de nuestra aplicación; además de comprobar
+que dichos requisitos no se contradicen ni acoplan.
+
+Posteriormente validamos que la especificación de requisitos era correcta con
+nuestro tutor de proyecto de fin de carrera.
+
+Las pruebas efectuadas sobre el entorno de desarrollo han sido de tipo manual en
+todo momento debido a la necesidad de cumplir con el calendario de entrega de
+las aplicación.
+
+\section{Conclusiones y trabajo futuro}
+Este proyecto ha servido para poder completar la formación académica recibida en
+la Escuela Superior de Ingeniería orientada a la finalización de la titulación
+de Ingeniería Técnica en Informática de Gestión de la Universidad de Cádiz.
+
+El desarrollo de este sistema software nos ha permitido conocer en profundidad
+cómo se realiza el desarrollo de una aplicación a través de la utilización de un
+\cursiva{framework} y las dificultades y retos que esto conlleva.
+
+Este sistema es altamente ampliable debido a la naturaleza de videojuego del
+mismo. Una de las características a mejorar y ampliar sería la de la creación de
+un sistema de simulación de partidos basadas en tecnologías avanzadas de
+inteligencia artificial, lo cual llevaría asociada una plena experiencia de usuario.
