@@ -1,12 +1,14 @@
 (TeX-add-style-hook "estiloBase"
  (lambda ()
     (TeX-run-style-hooks
+     "hyperref"
      "tikz"
      "graphicx"
      "fullpage"
      "float"
      "eurosym"
      "caption"
+     "appendix"
      "listings"
      "supertabular"
      "multirow"
@@ -19,7 +21,6 @@
      "fncychap"
      "Sonny"
      "geometry"
-     "hyperref"
      "color"
      "babel"
      "spanish"
