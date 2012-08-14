@@ -31,8 +31,9 @@
      aboveskip=0.5cm,
      framextopmargin=3pt,
      framexbottommargin=3pt,
-     framexleftmargin=0.4cm,
-     framexrightmargin=-3cm,
+     framexleftmargin=1cm,
+     % framexrightmargin=-3cm,
+     framexrightmargin=0cm,
      framesep=0pt,
      rulesep=.4pt,
      backgroundcolor=\color{gray97},
@@ -90,7 +91,7 @@
   {language=SQL
   }
 
-%estilo para C++
+%estilo para Ruby
 \lstdefinestyle{Ruby}
    {language=Ruby,
      %

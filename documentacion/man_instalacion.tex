@@ -1,0 +1,124 @@
+% -*-man_instalacion.tex-*- Este fichero es parte de la plantilla LaTeX para la
+% realización de Proyectos Final de Carrera, protejido bajo los términos de la
+% licencia GFDL.  Para más información, la licencia completa viene incluida en
+% el fichero fdl-1.3.tex
+
+% Copyright (C) 2009 Pablo Recio Quijano
+
+\section{Asunciones previas}
+Supondremos que el sistema dónde vamos a instalar la aplicación es una
+distribución \cursiva{Ubuntu 12.04} y que el \cursiva{SGBD} que utilizaremos
+será \cursiva{SQLite3}.
+
+\section{Instalación}
+\subsection{Preparación del sistema}
+Para configurar el sistema vamos a instalar un gestor de versiones de
+\cursiva{Ruby} llamado \cursiva{RVM} \cite{prog:rvm}, gracias a este gestor, el
+sistema podrá tener diferentes versiones de interpretes \cursiva{Ruby}.
+
+Para ello primero instalemos los siguientes paquetes:
+
+\begin{lstlisting}[style=consola]
+  sudo aptitude install build-essential git-core curl
+\end{lstlisting}
+
+Posteriormente nos descargaremos la versión más reciente de \cursiva{RVM}
+
+\begin{lstlisting}[style=consola]
+  curl -L https://get.rvm.io | bash -s stable
+\end{lstlisting}
+
+Esto descargará un \cursiva{script} en \cursiva{bash} que será ejecutado
+automáticamente, clonando el repositorio alojado en \cursiva{GitHub}.
+
+Para que \cursiva{RVM} sea reconocido sin problemas por nuestra terminal
+ejecutaremos el siguiente comando:
+
+\begin{lstlisting}[style=consola]
+  echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load
+  RVM function' && ~/.bash_profile
+\end{lstlisting}
+
+Por último habremos de instalar unos últimos paquetes paras asegurarnos cumplir
+con las dependencias necesarias para instalar \cursiva{Ruby 1.9.2}. Para ello
+ejecutaremos el siguiente comando:
+
+\begin{lstlisting}[style=consola]
+  sudo aptitude install build-essential bison openssl libreadline6
+  libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev
+  libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
+  ncurses-dev
+\end{lstlisting}
+
+Ya tenemos todas las dependencias necesarias instaladas, ahora sólo
+necesitaremos instalar la versión de \cursiva{Rails} en el sistema, para ello
+ejecutaremos el siguiente comando:
+
+\begin{lstlisting}[style=consola]
+  rvm install 1.9.2
+\end{lstlisting}
+
+Una vez se termine de instalar modificaremos nuestro fichero personal de
+\texttt{.bashrc} añadiendo al final del fichero la siguiente línea:
+
+\begin{lstlisting}[style=consola]
+  source \$HOME/.rvm/scripts/rvm
+\end{lstlisting}
+
+Ahora ejecutaremos la siguiente línea para actualizar el sistema de gemas de
+\cursiva{Ruby}
+
+\begin{lstlisting}[style=consola]
+  gem update --system
+\end{lstlisting}
+
+Ya tenemos el sistema preparado para instalar en nuestro sistema
+\cursiva{Simulator Football Online}.
+
+\section{Instalación de Simulator Football Online}
+
+Lo primero que tendremos que hacer será bajarnos la última versión del
+repositorio de nuestra aplicación, para ello ejecutaremos el siguiente comando:
+
+\begin{lstlisting}[style=consola]
+  git clone git://github.com/paliyoes/pfc_sfo_rails3.git pfc_sfo
+\end{lstlisting}
+
+Una vez descargado deberemos ejecutar el siguiente comando dentro del directorio
+\texttt{pfc\_sfo} de nuestro sistema:
+
+\begin{lstlisting}[style=consola]
+  mkdir doc log tmp
+\end{lstlisting}
+
+A continuación tendremos que instalar todas las dependencias de nuestro
+proyecto, para ello ejecutaremos el siguiente comando:
+
+\begin{lstlisting}[style=consola]
+  bundle install
+\end{lstlisting}
+
+En caso de no estar instalada la gema bundle, aprovecharemos para instalarla y
+volver a ejecutar el comando anterior.
+
+\begin{lstlisting}[style=consola]
+  gem install bundle
+\end{lstlisting}
+
+Ahora deberemos preparar la base de datos para que pueda correr en el servidor
+nuestra aplicación, para ello ejecutaremos los siguientes comandos:
+
+\begin{lstlisting}[style=consola]
+  rake db:create 
+  rake db:migrate
+\end{lstlisting}
+
+Una vez terminado de ejecutar ambos comandos, podremos ejecutar un servidor con
+nuestra aplicacion a través del comando:
+
+\begin{lstlisting}[style=consola]
+  rails s
+\end{lstlisting}
+
+Para acceder a la aplicación sólo tendremos que ir a nuestro navegador favorito
+y acceder a la ruta \url{http://localhost:3000}
