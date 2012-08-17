@@ -74,25 +74,30 @@ para simplificar se ha extraído en un sólo bloque.
 \end{itemize}
 \clearpage
 
-\figura{diagrama_gantt.png}{angle=270,scale=0.42}{Diagrama de Gantt}{fig:gantt}{H}
+\figura{diagrama_gantt.png}{angle=270,scale=0.42}{Diagrama de
+  Gantt}{fig:gantt}{H}
 
 \section{Presupuesto}
 
 Para realizar una estimación del montante económico del proyecto realizado será
 necesario calcular y dirimir todos los recursos que han sido necesarios para
-llevarlo a cabo. En dicho presupuesto no se incluirán los materiales de oficina
-como serían escritorio, folios, ordenador, impresora, y demás recursos
-ofimáticos.
+llevarlo a cabo.
 
-Sabiendo que excluiremos todos los gastos que podríamos considerar como
-indirectos, sólo tendremos que fijarnos en el gasto que supondría el coste de
-mantener a un \cursiva{Analista-programador y Diseñador de página Web} en la
-empresa. Para ello consultaremos las tablas salariales de dicha categoría
-profesional en el \cursiva{XVI CONVENIO COLECTIVO ESTATAL DE EMPRESAS
-  CONSULTORAS, DE PLANIFICACIÓN, ORGANIZACIÓN DE EMPRESA Y CONTABLE, EMPRESAS DE
-  SERVICIOS DE INFORMÁTICA Y DE ESTUDIOS DE MERCADO Y DE LA OPINIÓN PÚBLICA} tal
-y como vemos en la tabla \ref{tab:salario}. Para el cálculo del pago de la
-Seguridad Social aplicaremos un 33\% del coste del salario bruto del trabajador.
+En dicho presupuesto se incluirán los materiales de oficina como serían
+escritorio, folios, ordenador, impresora, y demás recursos ofimáticos. Dichos
+costes los estimaremos en un 10\% del gasto final de nuestra aplicación.
+
+Sabiendo que incluiremos todos los gastos que podríamos considerar como
+indirectos, para calcular el coste de mantener a un trabajador, tendremos que
+fijarnos en el gasto que supondría el coste de mantener a un
+\cursiva{Analista-programador y Diseñador de página Web} en la empresa.
+
+Para ello consultaremos las tablas salariales de dicha categoría profesional en
+el \cursiva{XVI CONVENIO COLECTIVO ESTATAL DE EMPRESAS CONSULTORAS, DE
+  PLANIFICACIÓN, ORGANIZACIÓN DE EMPRESA Y CONTABLE, EMPRESAS DE SERVICIOS DE
+  INFORMÁTICA Y DE ESTUDIOS DE MERCADO Y DE LA OPINIÓN PÚBLICA} tal y como vemos
+en la tabla \ref{tab:salario}. Para el cálculo del pago de la Seguridad Social
+aplicaremos un 33\% del coste del salario bruto del trabajador.
 
 \begin{table}[H]
   \begin{center}
@@ -112,8 +117,8 @@ Seguridad Social aplicaremos un 33\% del coste del salario bruto del trabajador.
 
 Teniendo en cuenta que el proyecto lo hemos realizado en solitario y nos ha
 llevado un total de 192 jornadas laborales, lo que equivaldría a 7 meses y 3
-semanas naturales, tendremos que el coste total del proyecto es el referido en
-la tabla \ref{tab:coste}
+semanas naturales, tendremos que el coste total del proyecto sin incluir los
+costes indirectos es el referido en la tabla \ref{tab:coste}
 
 \begin{table}[H]
   \begin{center}
@@ -128,6 +133,25 @@ la tabla \ref{tab:coste}
       \hline
     \end{tabular}
   \end{center}
-  \caption{Coste total del proyecto realizado}
+  \caption{Coste total sin gastos indirectos del proyecto realizado}
   \label{tab:coste}
+\end{table}
+
+Si le añadimos el 10\% que representan los costes indirectos de la realización
+de nuestro proyecto, tendremos que el coste final real es el referido en la
+tabla \ref{tab:coste_indirectos}
+
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+      Descripción & Coste \\ \hline
+      Coste total & 15.158,56 \euro\\ \hline
+      Costes indirectos & 1.515,85 \euro \\ \hline
+      Total &  16.674,41 \euro\\
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{Coste total del proyecto realizado}
+  \label{tab:coste_indirectos}
 \end{table}

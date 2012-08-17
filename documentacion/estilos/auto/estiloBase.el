@@ -2,6 +2,7 @@
  (lambda ()
     (TeX-run-style-hooks
      "hyperref"
+     "pdfpages"
      "tikz"
      "graphicx"
      "fullpage"
