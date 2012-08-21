@@ -14,7 +14,9 @@
           <th><%= t('.round_state') %></th>
         </tr>
       </thead>
-      <%= render :partial => "season", :locals => {:season => @last_season} %>
+      <% if defined?(@last_season) %>
+        <%= render :partial => "season", :locals => {:season => @last_season} %>
+      <% end %>
     </table>
     <br />
     <% if League.finished_seasons? and League.all.length >= 1 %>

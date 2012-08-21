@@ -122,6 +122,7 @@ en:
     trainings:
       header: "Trainings"
       training: "Training ability"
+      train_it: "Train it!"
     offers:
       header: "Offer"
       pending: "Pending"
@@ -180,6 +181,8 @@ en:
     tactic: "Tactic"
     goals: "Goals"
     average: "Average:"
+    offer: "Offer"
+    training: "Training"
   home:
     index:
       leagues: "Leagues"

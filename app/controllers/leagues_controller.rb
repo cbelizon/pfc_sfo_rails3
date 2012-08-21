@@ -6,7 +6,9 @@ class LeaguesController < ApplicationController
   #Show all seasons of all leagues of the game
   def index
     @leagues = League.all
-    @last_season = League.first.seasons.last
+    if !League.first.nil?
+      @last_season = League.first.seasons.last
+    end
 
     respond_to do |format|
       format.html #index.html.erb

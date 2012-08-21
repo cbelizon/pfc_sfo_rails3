@@ -1,3 +1,8 @@
+<% if @seasons.first.in_play_round? %>
+<div class="in-play">
+  <%= image_tag("in_play.gif") %>
+</div>
+<% end %>
 <% @seasons.each do |season| %>
   <div class="row">
     <div class="span12">

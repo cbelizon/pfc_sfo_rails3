@@ -15,6 +15,7 @@
       <th><%= t('players.goals')%></th>
       <th><%= t('players.pay') %></th>
       <th><%= t('players.clause') %></th>
+      <th><%= t('players.offer') %></th>
     </tr>
   </thead>
   <tbody>
@@ -34,12 +35,18 @@
       <td><span class="badge badge-success"><%=h player.goals %></span></td>
       <td><span class="badge badge-success"><%=h number_to_currency(player.pay) %></span></td>
       <td><span class="badge badge-success"><%=h number_to_currency(player.clause) %></span></td>
+      <td>
       <% unless current_user.nil? or current_user.admin? or
        @club_user == @club or @club_user.nil? %>
-       <td><%= link_to t('clubs.offers.make_offer'),
-       make_offer_club_path(:club_id => player.club.id, :player_id => player.id),
-       :method => :post %>
-       <% end %></td>
+        <% if @club_user.offers_as_buyer.pending.where('player_id', player.id).first == nil or @club_user.offers_as_buyer.pending.where('player_id', player.id).first.player_id != player.id %>
+          <%= link_to t('clubs.offers.make_offer'),
+          make_offer_club_path(:club_id => player.club.id, :player_id => player.id),
+          :method => :post %>
+        <% else %>
+          <%= link_to t('clubs.sent_offers.header'), sent_offers_club_path(@club_user) %>
+        <% end %>
+       <% end %>
+      </td>
      </tr>
      <% end %>
    </tbody>

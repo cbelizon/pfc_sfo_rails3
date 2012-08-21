@@ -29,7 +29,7 @@ h1 {
 	}
 }
 
-table.league-control td, .team table td {
+table.league-control td, .team table td, .trainings table td, .in-play {
 	text-align: center;
 
 	&.selected {
@@ -55,3 +55,10 @@ fieldset {
 		margin-top: 10px;
 	}
 }
+
+.match_generals-show .table-commentaries {
+	th {
+		text-align: left;
+	}
+}
+

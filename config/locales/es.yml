@@ -172,6 +172,7 @@ es:
     trainings:
       header: "Entrenamientos"
       training: "Entrenar"
+      train_it: "¡Entrénalo!"
     offers:
       header: "Oferta"
       pending: "Pendiente"
@@ -230,6 +231,8 @@ es:
     tactic: "Táctica"
     goals: "Goles"
     average: "Media:"
+    offer: "Oferta"
+    training: "Entrenamiento"
   home:
     index:
       leagues: "Ligas"

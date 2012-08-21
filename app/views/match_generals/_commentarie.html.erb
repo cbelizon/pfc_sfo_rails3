@@ -3,7 +3,10 @@
   <td>
     <%= commentarie.minute %>
   </td>
-  <td>
+  <td class="action">
+  	<% if commentarie.action == "action.goal" %>
+  		<%= image_tag('goal.png') %>
+  	<% end %>
     <%= commentarie.player.complete_name %>
     <%= t('action.from') %>
     <%= commentarie.club.name %>

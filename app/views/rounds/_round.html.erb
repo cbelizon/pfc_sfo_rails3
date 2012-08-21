@@ -17,7 +17,7 @@
         <tr>
           <td><%= link_to h(m.local.name), team_club_path(m.local)  %></td>
           <% if m.finished? || m.in_play? %>
-          <td class="stat"><%= "#{m.local_goals_live} - #{m.guest_goals_live}"%></td>
+          <td class="stat"><%= link_to("#{m.local_goals_live} - #{m.guest_goals_live}", match_general_path(m.id))%></td>
           <% else %>
           <td class="stat">&nbsp; - &nbsp;</td>
           <% end %>

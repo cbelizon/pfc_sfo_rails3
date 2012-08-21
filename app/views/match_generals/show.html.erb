@@ -1,79 +1,87 @@
-<div id="separator_container">
-  <div class="separator">
-    <%= h [@match_general.local.name, @match_general.guest.name].join(" vs ") %>
-  </div>
+<% if @match_general.in_play? %>
+<div class="in-play">
+  <%= image_tag("in_play.gif") %>
 </div>
-<div class="main">
-  <div class="match">
-    <div class="main_box_white">
-      <% if @match_general.in_play? %>
-        <div class="blink">
-           <h1><%= t('defaults.in_game') %></h1> 
-        </div>
-      <% end %>
-        <table>
-      <tr>
-        <th>
-          <%=  t('.local')%>
-        </th>
+<% end %>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>
+        <%=  t('.local')%>
+      </th>
         <th>
           <%= t('.guest') %>
         </th>
-      </tr>
-      <tr>
-        <th>
-          <%=h(@match_general.local.name) %>
-        </th>
-        <th>
-          <%=  h(@match_general.guest.name) %>
-        </th>
-      </tr>
-      <tr>
-        <th>
-          <% if @match_general.finished? or @match_general.in_play? %><%= h(@match_general.local_goals_live) %><% end %>
-        </th>
-        <th>
-          <% if @match_general.finished? or @match_general.in_play? %><%= h(@match_general.guest_goals_live) %><% end %>
-        </th>
-      </tr>
-      </table>
-      <table>
-      <tr>
-        <th>
-          <%= t('.minute')%>
-        </th>
-        <th>
-          <%=t('.commentarie')%>
-        </th>
-      </tr>
-      <% if @match_general.finished?  %>
-      <tr>
-        <td><%= MatchGeneral::MINUTES%> </td>
-        <td><%= t('action.end_match') %> </td>
-      </tr>
+    </tr>
+    <tr>
+      <th>
+      <%=h(@match_general.local.name) %></th>
+      <th>
+      <%=  h(@match_general.guest.name) %></th>
+    </tr>
+    <tr>
+      <th>
+      <% if @match_general.finished? or @match_general.in_play? %>
+      <%= h(@match_general.local_goals_live) %>
       <% end %>
-      <tr>
-          <%= render :partial => 'commentarie', :collection => @match_general.
-            details.second_time.reverse %>
-      </tr>
-      <% if @match_general.minute >=  MatchGeneral::PARTS_TIME %>
-      <tr>
-        <td><%=  MatchGeneral::PARTS_TIME %></td>
-        <td><%= t('action.half_time') %></td>
-      </tr>
-      <% end %>
-      <tr>
-          <%= render :partial => 'commentarie', :collection => @match_general.
-            details.first_time.reverse %>
-      </tr>
-      <% if @match_general.in_play? or @match_general.finished? %>
-      <tr>
-        <td>0</td>
-        <td><%= t('action.start_match') %></td>
-      </tr>
-      <% end %>
-    </table>
-      <h1> <%= t('spectators') %>: <%= @match_general.spectators %></h1>
-    </div>
-  </div>
-</div>
+      </th>
+      <th>
+      <% if @match_general.finished? or @match_general.in_play? %>
+         <%= h(@match_general.guest_goals_live) %>
+       <% end %>
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table class="table table-striped table-commentaries">
+  <thead>
+    <tr>
+      <th>
+      <%= t('.minute')%>
+      </th>
+      <th class="action">
+      <%=t('.commentarie')%>
+    </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% if @match_general.finished?  %>
+  <tr>
+    <td>
+    <%= MatchGeneral::MINUTES%>
+    </td>
+    <td class="action">
+    <%= image_tag('whistle.png') %>
+    <%= t('action.end_match') %>
+    </td>
+  </tr>
+  <% end %>
+  <%= render :partial =>
+  'commentarie', :collection => @match_general.
+  details.second_time.reverse %>
+  <% if @match_general.minute >=
+  MatchGeneral::PARTS_TIME %>
+  <tr>
+    <td>
+    <%=  MatchGeneral::PARTS_TIME %>
+    </td>
+    <td class="action">
+    <%= t('action.half_time') %>
+    </td>
+  </tr>
+  <% end %>
+  <%= render :partial =>
+     'commentarie', :collection => @match_general.
+     details.first_time.reverse %>
+  <% if @match_general.in_play? or @match_general.finished? %>
+  <tr>
+    <td>0</td>
+    <td class="action">
+    <%= image_tag('whistle.png') %>
+    <%= t('action.start_match') %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
