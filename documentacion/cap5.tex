@@ -247,7 +247,7 @@ requisitos que hemos obtenido en el Capítulo \ref{cap:analisis}.
 En las siguientes secciones podremos observar los diagramas de secuencias del
 sistema software que hemos desarrollado.
 
-\subsection{Diagrama de secuencia de crear cuenta de usuario}
+\subsection*{Diagrama de secuencia de crear cuenta de usuario}
 
 En la figura \ref{diagrama-secuencia-crear-cuenta-usuario} podemos observar como
 se construye un nuevo usuario dentro del sistema con los datos proporcionados
@@ -257,7 +257,7 @@ por el usuario web.
   secuencia de crear cuenta de
   usuario}{diagrama-secuencia-crear-cuenta-usuario}{H}
 
-\subsection{Diagrama de secuencia de acceder a cuenta de usuario}
+\subsection*{Diagrama de secuencia de acceder a cuenta de usuario}
 
 En la figura \ref{diagrama-secuencia-acceder-cuenta-usuario} podemos observar
 como se consigue acreditar las credenciales (usuario y contraseña) para iniciar
@@ -267,7 +267,7 @@ sesión.
   secuencia de acceder a cuenta de
   usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H}
 
-\subsection{Diagrama de secuencia de abandonar cuenta de usuario}
+\subsection*{Diagrama de secuencia de abandonar cuenta de usuario}
 
 En la figura \ref{diagrama-secuencia-abandonar-cuenta-usuario} podemos observar
 cómo se destruye la sesión iniciada por un usuario.
@@ -276,7 +276,7 @@ cómo se destruye la sesión iniciada por un usuario.
   secuencia de abandonar cuenta de
   usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H}
 
-\subsection{Diagrama de secuencia de abrir equipos}
+\subsection*{Diagrama de secuencia de abrir equipos}
 
 En la figura \ref{diagrama-secuencia-abrir-equipos} cómo se establece el estado
 de las temporadas para permitir operaciones por parte de los usuarios en los
@@ -285,7 +285,7 @@ equipos que poseen.
 \figura{diagramas_secuencia/abrir_equipos.png}{scale=0.35}{Diagrama de secuencia
   de abrir equipos}{diagrama-secuencia-abrir-equipos}{H}
 
-\subsection{Diagrama de secuencia de cerrar equipos}
+\subsection*{Diagrama de secuencia de cerrar equipos}
 En la figura \ref{diagrama-secuencia-abrir-equipos} podemos observar cómo se
 establece el estado de las temporadas para impedir que los usuarios puedan
 realizar operaciones con sus equipos.
@@ -295,7 +295,7 @@ ruta \cursiva{/leagues/close\_teams} y la llamada al modelo con el método
 \cursiva{close}.
 
 
-\subsection{Diagrama de secuencia de notificación de registro por e-mail}
+\subsection*{Diagrama de secuencia de notificación de registro por e-mail}
 En la figura \ref{diagrama-secuencia-notificacion-registro} se observa cómo se
 envía un correo al usuario una vez se ha registrado en la aplicación web.
 
@@ -304,7 +304,7 @@ envía un correo al usuario una vez se ha registrado en la aplicación web.
   e-mail}{diagrama-secuencia-notificacion-registro}{H}
 
 
-\subsection{Diagrama de secuencia de listar ofertas emitidas}
+\subsection*{Diagrama de secuencia de listar ofertas emitidas}
 En la figura \ref{diagrama-secuencia-listar-ofertas-emitidas} observamos cómo se
 establece el filtro de búsqueda para mostrar el listado de ofertas emitidas.
 
@@ -312,7 +312,7 @@ establece el filtro de búsqueda para mostrar el listado de ofertas emitidas.
   secuencia de listar ofertas
   emitidas}{diagrama-secuencia-listar-ofertas-emitidas}{H}
 
-\subsection{Diagrama de secuencia de listar ofertas recibidas}
+\subsection*{Diagrama de secuencia de listar ofertas recibidas}
 En la figura \ref{diagrama-secuencia-listar-ofertas-emitidas} observamos cómo se
 establece el filtro de búsqueda para mostrar el listado de ofertas recibidas.
 
@@ -320,7 +320,7 @@ Este diagrama es igual al \ref{diagrama-secuencia-listar-ofertas-emitidas} pero
 con la ruta \cursiva{/clubs/*/received\_offers} y la llamada al modelo club con
 el método \cursiva{offers\_as\_seller}.
 
-\subsection{Diagrama de secuencia de emitir oferta por futbolista}
+\subsection*{Diagrama de secuencia de emitir oferta por futbolista}
 En la figura \ref{diagrama-secuencia-emitir-oferta-futbolista} se observa cómo
 se crea una nueva instancia de oferta y se relaciona con los usuarios y el
 futbolista involucrado en la misma.
@@ -329,7 +329,7 @@ futbolista involucrado en la misma.
   de secuencia de emitir oferta por
   futbolista}{diagrama-secuencia-emitir-oferta-futbolista}{H}
 
-\subsection{Diagrama de secuencia de cancelar oferta emitida por futbolista}
+\subsection*{Diagrama de secuencia de cancelar oferta emitida por futbolista}
 En la figura \ref{diagrama-secuencia-cancelar-oferta-emitida-futbolista} se
 observa cómo se recupera la instancia de la oferta emitida y se modifica su
 estado para cancelarla.
@@ -338,7 +338,7 @@ estado para cancelarla.
   de secuencia de cancelar oferta emitida por
   futbolista}{diagrama-secuencia-cancelar-oferta-emitida-futbolista}{H}
 
-\subsection{Diagrama de secuencia de rechazar oferta recibida por futbolista}
+\subsection*{Diagrama de secuencia de rechazar oferta recibida por futbolista}
 En la figura \ref{diagrama-secuencia-rechazar-oferta-recibida-futbolista} se
 observa cómo se recupera la instancia de la oferta recibida y se modifica su
 estado para rechazar la misma.
@@ -347,7 +347,7 @@ estado para rechazar la misma.
   de secuencia de rechazar oferta recibida por
   futbolista}{diagrama-secuencia-rechazar-oferta-recibida-futbolista}{H}
 
-\subsection{Diagrama de secuencia de aceptar oferta recibida por futbolista}
+\subsection*{Diagrama de secuencia de aceptar oferta recibida por futbolista}
 En la figura \ref{diagrama-secuencia-aceptar-oferta-recibida-futbolista} se
 observa cómo se recupera la instancia de la oferta recibida y se actualizan los
 modelos de datos involucrados (futbolista, club y usuarios) para llevar a cabo
@@ -357,7 +357,7 @@ la transferencia del futbolista entre los clubes.
   de secuencia de aceptar oferta recibida por
   futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H}
 
-\subsection{Diagrama de secuencia de renovación de futbolistas}
+\subsection*{Diagrama de secuencia de renovación de futbolistas}
 En la figura \ref{diagrama-secuencia-renovacion-futbolistas} se describe cómo se
 renuevan automáticamente los futbolistas para las siguientes temporadas
 actualizando sus atributos.
@@ -368,7 +368,7 @@ actualizando sus atributos.
 
 El proceso de renovación está integrado en start.
 
-\subsection{Diagrama de secuencia de fijar precio de venta de entradas}
+\subsection*{Diagrama de secuencia de fijar precio de venta de entradas}
 En la figura \ref{diagrama-secuencia-fijar-precio-venta-entradas} se describe
 cómo se modifica el atributo del precio de venta de entradas.
 
@@ -376,7 +376,7 @@ cómo se modifica el atributo del precio de venta de entradas.
   de secuencia de fijar precio de venta de
   entradas}{diagrama-secuencia-fijar-precio-venta-entradas}{H}
 
-\subsection{Diagrama de secuencia de planificación de alineaciones}
+\subsection*{Diagrama de secuencia de planificación de alineaciones}
 En la figura \ref{diagrama-secuencia-planificacion-alineaciones} se describe
 cómo se cambian las alineaciones para el próximo partido a través de la
 modificación del atributo de posición.
@@ -385,7 +385,7 @@ modificación del atributo de posición.
   de secuencia de emitir planificación de
   alineaciones}{diagrama-secuencia-planificacion-alineaciones}{H}
 
-\subsection{Diagrama de secuencia de planificación de tácticas}
+\subsection*{Diagrama de secuencia de planificación de tácticas}
 En la figura \ref{diagrama-secuencia-planificacion-tacticas} se muestra cómo se
 cambia la táctica usada para el próximo partido a través de la modificación del
 atributo de táctica del club.
@@ -394,7 +394,7 @@ atributo de táctica del club.
   secuencia de planificación de tácticas
 }{diagrama-secuencia-planificacion-tacticas}{H}
 
-\subsection{Diagrama de secuencia de planificación de entrenamientos}
+\subsection*{Diagrama de secuencia de planificación de entrenamientos}
 En la figura \ref{diagrama-secuencia-planificacion-entrenamientos} se muestra
 cómo se crean nuevas instancias para la planificación de los entrenamientos de
 los futbolistas asociados a un club.
@@ -403,14 +403,14 @@ los futbolistas asociados a un club.
   de secuencia de planificación de entrenamientos
 }{diagrama-secuencia-planificacion-entrenamientos}{H}
 
-\subsection{Diagrama de secuencia de asignar club}
+\subsection*{Diagrama de secuencia de asignar club}
 En la figura \ref{diagrama-secuencia-asignar-club} se observa cómo se crea una
 nueva instancia de un club para todo usuario que no tenga club asignado.
 
 \figura{diagramas_secuencia/asignar_club.png}{scale=0.35}{Diagrama de secuencia
   de secuencia de asignar club }{diagrama-secuencia-asignar-club}{H}
 
-\subsection{Diagrama de secuencia de simular jornadas}
+\subsection*{Diagrama de secuencia de simular jornadas}
 En la figura \ref{diagrama-secuencia-simular-jornadas} se observa cómo se crean
 nuevas instancias de detalles de partidos por cada uno de los partidos no
 jugados y pertenecientes a la jornada actual del sistema.
@@ -420,7 +420,7 @@ jugados y pertenecientes a la jornada actual del sistema.
   angle=270}{Diagrama de secuencia de simular
   jornadas}{diagrama-secuencia-simular-jornadas}{H}
 
-\subsection{Diagrama de secuencia de comenzar jornadas}
+\subsection*{Diagrama de secuencia de comenzar jornadas}
 En la figura \ref{diagrama-secuencia-comenzar-jornadas} se observa cómo se
 actualiza el atributo correspondiente de todos los partidos actuales para
 estipular que el partido ha comenzado a la fecha actual del sistema.
@@ -431,7 +431,7 @@ estipular que el partido ha comenzado a la fecha actual del sistema.
   jornadas}{diagrama-secuencia-comenzar-jornadas}{H}
 
 
-\subsection{Diagrama de secuencia de pasar a siguiente jornada}
+\subsection*{Diagrama de secuencia de pasar a siguiente jornada}
 En la figura \ref{diagrama-secuencia-pasar-siguiente-jornada} se detalla cómo se
 actualizan los modelos de datos de temporada, jornada, jugador, entrenamiento,
 finanzas y club para avanzar en la competición.  \clearpage
@@ -440,7 +440,7 @@ finanzas y club para avanzar en la competición.  \clearpage
   angle=270}{Diagrama de secuencia de pasar a siguiente
   jornada}{diagrama-secuencia-pasar-siguiente-jornada}{H}
 
-\subsection{Diagrama de secuencia de promoción y descenso de clubes}
+\subsection*{Diagrama de secuencia de promoción y descenso de clubes}
 En la figura \ref{diagrama-secuencia-promocion-descenso-clubes} se observa cómo
 se crean nuevas instancias de nuevas temporadas y se modifican los estados de
 las temporadas actuales para simular el avance en la competición y el progreso y
@@ -452,7 +452,7 @@ descenso jerárquico en las divisiones del juego.
 
 \clearpage
 
-\subsection{Diagrama de secuencia de composición de calendarios}
+\subsection*{Diagrama de secuencia de composición de calendarios}
 En la figura \ref{diagrama-secuencia-composicion-calendarios} se observa cómo se
 crean nuevas instancias de las jornadas que estarán relacionadas con los clubes
 en los que se coincida en las mismas divisiones.
