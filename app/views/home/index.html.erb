@@ -1,3 +1,15 @@
+<% if !current_user %>
+<div class="marketing">
+  <h1><%= t('welcome')%></h1>
+  <p class="marketing-byline"><%= t('marketing_phrase') %></p>
+  <div class="row">
+    <div class="offset4 span4">
+      <%= image_tag('logo.png') %>
+    </div>
+  </div>
+  <hr class="soften">
+</div>
+<% end %>
 <% if @in_play %>
 <div class="in-play">
   <%= image_tag("in_play.gif") %>

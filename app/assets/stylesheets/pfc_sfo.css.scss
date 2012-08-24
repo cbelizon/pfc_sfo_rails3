@@ -13,8 +13,26 @@ body {
 	@include box-shadow(0 0 1px 1px $grayLighter);
 }
 
-.locked {
+.locked, {
 	text-align: center;
+}
+
+.marketing {
+	text-align: center;
+	h1 {
+		font-size: 60px;
+		font-weight: 200;
+		letter-spacing: -1px;
+		line-height: 1;
+		margin: 60px 0 10px;
+	}
+	.marketing-byline {
+		color: #999999;
+		font-size: 20px;
+		font-weight: 300;
+		line-height: 25px;
+		margin-bottom: 40px;
+	}
 }
 
 .ajax-loader {

@@ -14,6 +14,8 @@ es:
   welcome_email: "Bienvenido a SFO"
   select_tactic: "Seleccionar táctica"
   none: "Ninguna"
+  welcome: "Bienvenidos a Simulator Football Online"
+  marketing_phrase: "¿Quieres ser el manager de un club de fútbol? No busques más."
   date:
     formats:
       default: "%d %m %Y"

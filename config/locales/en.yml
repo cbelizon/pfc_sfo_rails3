@@ -17,6 +17,8 @@ en:
   welcome_email: "Welcome to SFO"
   select_tactic: "Select Tactic"
   none: "None"
+  welcome: "Welcome to Simulator Football Online"
+  marketing_phrase: "Do you want to be a football club manager? Don't look further."
   activerecord:
     errors:
       template:
