@@ -31,6 +31,7 @@ gem 'test-unit', '~> 1.2.3'
 gem 'yajl-ruby'
 gem 'html5shiv-rails'
 gem 'twitter-bootstrap-markup-rails', '0.3.0'
+gem 'hoe', '~> 1.5.1' #heroku
 
 group :development do
 	gem 'eventmachine', '~> 1.0.0.beta.4.1'
