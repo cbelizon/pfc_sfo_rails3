@@ -2,6 +2,9 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
+  select_language: "Seleccionar lenguaje"
+  spanish: "Español"
+  english: "Inglés"
   register: "Regístrate"
   login: "Inicia sesión"
   logout: "Cerrar sesión"
@@ -195,6 +198,7 @@ es:
       ticket_price: "Precio del ticket"
       set_price: "Fijar precio"
       last_round: "Último balance"
+      capacity: "Localidades"
       pays:
         header: "Pagos"
         maintenance: "Mantenimiento del estadio"

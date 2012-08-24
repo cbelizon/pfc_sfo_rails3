@@ -37,25 +37,32 @@
             <%= link_to_admin_leagues %>
             <%= link_to_admin_no_club_users %>
             <%= link_to_admin_all_users %>
-            <%= link_to_admin_messages %>
           </ul>
         </div>
         <% end %>
         <div class="nav-collapse">
           <ul class="nav nav-sign-in pull-right">
+            <%= select_language %>
             <%= sign_in %>
           </ul>
-        </div>
         </div>
       </div>
     </div>
   </div>
-  <%= render "shared/flash_errors", :errors => flash[:error] %>
-  <%= render "shared/flash_notice", :notice => flash[:notice] %>
-  <div class="container content <%= "#{params[:controller]}-#{params[:action]}" %>">
-    <%= yield %>
-  </div>
-  <%= javascript_include_tag "application" %>
+</div>
+
+<% if !League.open_teams? %>
+<div class="container locked">
+  <%= image_tag('locked_teams.png') %>
+</div>
+<% end %>
+
+<%= render "shared/flash_errors", :errors => flash[:error] %>
+<%= render "shared/flash_notice", :notice => flash[:notice] %>
+<div class="container content <%= "#{params[:controller]}-#{params[:action]}" %>">
+  <%= yield %>
+</div>
+<%= javascript_include_tag "application" %>
 </body>
 <!-- TODO: ADD bottom-bar -->
 </html>

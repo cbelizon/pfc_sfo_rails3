@@ -1,2 +1,13 @@
-<h3>Balance</h3>
-Balance: <%= number_to_currency(finances.balance, :precision => 2) %>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th><%= t('.balance') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= number_to_currency(finances.balance, :precision => 2) %>
+			</td>
+		</tr>
+	</tbody>
+</table>

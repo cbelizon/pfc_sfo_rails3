@@ -1,6 +1,8 @@
 <div class="header-section">
   <h1><%= t('.header') %></h1>
 </div>
+<% if User.all.count > 4  %>
+<% if defined?@last_season %>
 <div class="row">
   <div class="span12">
     <table class="table table-striped league-control">
@@ -14,10 +16,9 @@
           <th><%= t('.round_state') %></th>
         </tr>
       </thead>
-      <% if defined?(@last_season) %>
         <%= render :partial => "season", :locals => {:season => @last_season} %>
-      <% end %>
     </table>
+    <% end %>
     <br />
     <% if League.finished_seasons? and League.all.length >= 1 %>
     <%= link_to t('.promotion'), promotion_leagues_path, :method => :post, :class => 'btn btn-primary' %>
@@ -55,3 +56,6 @@
     <% end %>
   </div>
 </div>
+<% else %>
+<%= t('none') %>
+<% end %>

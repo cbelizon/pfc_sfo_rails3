@@ -22,6 +22,21 @@ module ApplicationHelper
     end
     content_tag(:li, dropdown_menu, :class => 'dropdown')
   end
+
+  def select_language
+    dropdown_menu = content_tag(:a, :class => 'dropdown-toggle', 'data-toggle' => 'dropdown', :href => '#') do
+      icon = content_tag(:i, '', :class => 'icon-white icon-flag')
+      icon += ' ' + t('select_language').html_safe
+      icon + ' ' + content_tag(:b, '', :class => 'caret')
+    end
+
+    dropdown_menu << content_tag(:ul, :class => 'dropdown-menu') do
+      content_tag(:li, link_to(t('spanish'), request.path + '?locale=es')) +
+      content_tag(:li, link_to(t('english'), request.path + '?locale=en'))
+    end
+
+    content_tag(:li, dropdown_menu, :class => 'dropdown')
+  end
   #only returns something if the user is an admin
   def for_admin
     current_user.admin? ? yield : nil unless current_user.nil?

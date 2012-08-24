@@ -4,6 +4,9 @@
 en:
   "yes": "Yes"
   "no": "No"
+  select_language: "Select language"
+  spanish: "Spanish"
+  english: "English"
   register: "Register"
   logout: "Logout"
   login: "Login"
@@ -145,6 +148,7 @@ en:
       ticket_price: "Ticket price"
       set_price: "Set price"
       last_round: "Last balance"
+      capacity: "Capacity"
       pays:
         header: "Pays"
         maintenance: "Stadium maintenance"

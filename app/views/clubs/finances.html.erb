@@ -1,22 +1,46 @@
-<div id="separator_container">
-  <div class="separator">
-    <%= t('.header').pluralize %>
-    <span style="float: right;"><%= cash(@club.cash) %></span>
-  </div>
+<div class="row">
+	<div class="span8"><h1><%= @club.name %></h1></div>
+	<div class="span4 pull-right cash"><h1><%= cash(@club.cash) %></h1></div>
 </div>
-<div class="main">
-<div class="main_box_white finances">
-<% if @last_finances %>
-<%= render :partial => 'finances', :locals => {:finances => @last_finances} %>
-<% end  %>
-</div>
-<div class="main_box_white finances">
-<h2><%= t('.tickets_price') %></h2>
-<%= form_for @club, :url => ticket_price_club_path(@club),
-  :html => {:method => :put} do |f| %>
-    <%= f.label(:ticket_price, t('.ticket_price')) %>
-    <%= f.text_field(:ticket_price) %>
-  <%= f.submit t('.set_price') %>
-<% end %>
-</div>
+<div class="finances">
+	<% if @last_finances %>
+	<%= render :partial => 'finances', :locals => {:finances => @last_finances} %>
+	<% end  %>
+	<% if League.open_teams? %>
+	<h2><%= t('.tickets_price') %></h2>
+	<%= form_for @club, :url => ticket_price_club_path(@club),
+	:html => {:method => :put} do |f| %>
+	<%= f.label(:ticket_price, t('.ticket_price')) %>
+	<%= f.text_field(:ticket_price) %>
+	<%= f.submit t('.set_price') %>
+	<% end %>
+	<% else %>
+	<table class="table table-striped table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th>
+					<%= t('.tickets_price') %>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><%= number_to_currency(@club.ticket_price, :precision => 2) %></td>
+			</tr>
+		</tbody>
+	</table>
+	<% end %>
+<table class="table table-striped table-bordered table-condensed">
+	<thead>
+		<tr>
+			<th><%= t('clubs.finances.capacity') %>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= @club.stadium_capacity %></td>
+		</tr>
+	</tbody>
+</table>
 </div>
