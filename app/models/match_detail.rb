@@ -37,8 +37,7 @@ class MatchDetail < ActiveRecord::Base
   scope :first_time, :conditions => {:minute =>
       (0..MatchGeneral::PARTS_TIME)}, :order => "minute asc"
   scope :second_time, :conditions => {:minute =>
-      (MatchGeneral::PARTS_TIME +
-        MatchGeneral::HALF_TIME..MatchGeneral::MINUTES)}, :order => "minute asc"
+      (MatchGeneral::PARTS_TIME..MatchGeneral::MINUTES)}, :order => "minute asc"
   attr_accessible :club, :player, :action, :minute
 
   def <=>(other)
