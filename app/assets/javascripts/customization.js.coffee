@@ -4,8 +4,8 @@ $ ->
 	return false
 #Autoreload match
 $ ->
-	exist = $(".in-play").html()
-	if exist != null
+	exist = $(".in-play").length > 0
+	if exist
 		setInterval("location.reload(true)", 60000);
 
 
