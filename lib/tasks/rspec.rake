@@ -38,7 +38,7 @@ task :noop do
 end
 
 task :default => :spec
-task :stats => "spec:statsetup"
+#task :stats => "spec:statsetup"
 
 desc "Run all specs in spec directory (excluding plugin specs)"
 Spec::Rake::SpecTask.new(:spec => spec_prereq) do |t|
@@ -92,21 +92,21 @@ namespace :spec do
   end
 
   # Setup specs for stats
-  task :statsetup do
-    require 'code_statistics'
-    ::STATS_DIRECTORIES << %w(Model\ specs spec/models) if File.exist?('spec/models')
-    ::STATS_DIRECTORIES << %w(View\ specs spec/views) if File.exist?('spec/views')
-    ::STATS_DIRECTORIES << %w(Controller\ specs spec/controllers) if File.exist?('spec/controllers')
-    ::STATS_DIRECTORIES << %w(Helper\ specs spec/helpers) if File.exist?('spec/helpers')
-    ::STATS_DIRECTORIES << %w(Library\ specs spec/lib) if File.exist?('spec/lib')
-    ::STATS_DIRECTORIES << %w(Routing\ specs spec/lib) if File.exist?('spec/routing')
-    ::CodeStatistics::TEST_TYPES << "Model specs" if File.exist?('spec/models')
-    ::CodeStatistics::TEST_TYPES << "View specs" if File.exist?('spec/views')
-    ::CodeStatistics::TEST_TYPES << "Controller specs" if File.exist?('spec/controllers')
-    ::CodeStatistics::TEST_TYPES << "Helper specs" if File.exist?('spec/helpers')
-    ::CodeStatistics::TEST_TYPES << "Library specs" if File.exist?('spec/lib')
-    ::CodeStatistics::TEST_TYPES << "Routing specs" if File.exist?('spec/routing')
-  end
+  # task :statsetup do
+  #   require 'code_statistics'
+  #   ::STATS_DIRECTORIES << %w(Model\ specs spec/models) if File.exist?('spec/models')
+  #   ::STATS_DIRECTORIES << %w(View\ specs spec/views) if File.exist?('spec/views')
+  #   ::STATS_DIRECTORIES << %w(Controller\ specs spec/controllers) if File.exist?('spec/controllers')
+  #   ::STATS_DIRECTORIES << %w(Helper\ specs spec/helpers) if File.exist?('spec/helpers')
+  #   ::STATS_DIRECTORIES << %w(Library\ specs spec/lib) if File.exist?('spec/lib')
+  #   ::STATS_DIRECTORIES << %w(Routing\ specs spec/lib) if File.exist?('spec/routing')
+  #   ::CodeStatistics::TEST_TYPES << "Model specs" if File.exist?('spec/models')
+  #   ::CodeStatistics::TEST_TYPES << "View specs" if File.exist?('spec/views')
+  #   ::CodeStatistics::TEST_TYPES << "Controller specs" if File.exist?('spec/controllers')
+  #   ::CodeStatistics::TEST_TYPES << "Helper specs" if File.exist?('spec/helpers')
+  #   ::CodeStatistics::TEST_TYPES << "Library specs" if File.exist?('spec/lib')
+  #   ::CodeStatistics::TEST_TYPES << "Routing specs" if File.exist?('spec/routing')
+  # end
 
   namespace :db do
     namespace :fixtures do
