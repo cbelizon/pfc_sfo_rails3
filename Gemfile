@@ -8,10 +8,6 @@ gem 'rails', '3.2.3'
 gem 'sqlite3', :group => [:development, :test]
 
 
-gem 'coffee-rails'
-gem 'sass-rails'
-gem 'bootstrap-sass'
-gem 'uglifier'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -21,6 +17,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'coffee-rails'
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'uglifier'
 gem 'authlogic'
 gem 'faker'
 gem 'populator'
