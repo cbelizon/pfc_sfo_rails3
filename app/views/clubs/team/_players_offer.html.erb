@@ -38,7 +38,7 @@
       <% if League.open_teams? %>
       <td>
         <% unless current_user.nil? or current_user.admin? or @club_user == @club or @club_user.nil? %>
-        <% if @club_user.offers_as_buyer.pending.where('player_id', player.id).first == nil or @club_user.offers_as_buyer.pending.where(:player_id => player.id).first.player_id != player.id %>
+        <% if @club_user.offers_as_buyer.pending.where(:player_id => player.id).first == nil or @club_user.offers_as_buyer.pending.where(:player_id =>  player.id).first.player_id != player.id %>
         <%= link_to t('clubs.offers.make_offer'),
         make_offer_club_path(:club_id => player.club.id, :player_id => player.id),
         :method => :post %>
