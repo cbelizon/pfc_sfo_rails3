@@ -191,7 +191,7 @@ class Player < ActiveRecord::Base
   end
 
   def new_pay!
-    self.update_attribute(:pay, (self.quality * 10 ))
+    self.update_attribute(:pay, (self.quality * 75 ))
   end
 end
 
