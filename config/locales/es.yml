@@ -16,6 +16,9 @@ es:
   none: "Ninguna"
   welcome: "Bienvenidos a Simulator Football Online"
   marketing_phrase: "¿Quieres ser el manager de un club de fútbol? No busques más."
+  buyer_cash: "¡No tienes suficiente dinero!"
+  buyer_maximum: "¡Tienes el máximo de jugadores en plantilla!"
+  seller_minimum: "¡Tienes el mínimo de jugadores en plantilla!"
   date:
     formats:
       default: "%d %m %Y"

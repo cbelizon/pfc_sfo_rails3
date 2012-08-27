@@ -19,6 +19,9 @@ en:
   none: "None"
   welcome: "Welcome to Simulator Football Online"
   marketing_phrase: "Do you want to be a football club manager? Don't look further."
+  buyer_cash: "The buyer have not enough cash."
+  buyer_maximum: "The buyer has the maximum players in the team"
+  seller_minimum: "You have the minimum players in the team"
   activerecord:
     errors:
       template:

@@ -28,21 +28,21 @@ class Offer < ActiveRecord::Base
   #Add error not enough cash
   def buyer_must_have_cash
     if self.buyer.cash < self.player.clause
-      self.errors.add_to_base('The buyer have not enough cash')
+      self.errors[:base] << I18n.t('.buyer_cash')
     end
   end
 
   #Add error max player overpassed
   def buyer_must_be_under_max_players
     if self.buyer.maximum_players?
-      self.errors.add_to_base('The buyer has the maximum players in the team')
+      self.errors[:base] << I18n.t('.buyer_maximum')
     end
   end
 
   #Add error minimum players needed
   def seller_must_be_over_min_players
     if self.seller.minimum_players?
-      self.errors.add_to_base('You have the minimum players in the team')
+      self.errors[:base] << I18n.t('.seller_minimum')
     end
   end
 

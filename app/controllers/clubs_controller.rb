@@ -33,7 +33,7 @@ class ClubsController < ApplicationController
       end
     else
       respond_to do |format|
-        flash[:error] = "#{club.errors.full_messages}"
+        flash[:error] = club.errors.full_messages.join('. ')
         format.html {redirect_to team_club_path}
       end
     end
@@ -87,7 +87,7 @@ class ClubsController < ApplicationController
       end
     else
       respond_to do |format|
-        flash[:error] = "#{club.errors.full_messages}"
+        flash[:error] = club.errors.full_messages.join('. ')
         format.html {redirect_to(finances_club_path)}
       end
     end
@@ -128,7 +128,7 @@ class ClubsController < ApplicationController
       end
     else
       respond_to do |format|
-        flash[:error] = "#{offer.errors.full_messages}"
+        flash[:error] = offer.errors.full_messages.join(". ")
         format.html {redirect_to(team_club_path(params[:id]))}
       end
     end
