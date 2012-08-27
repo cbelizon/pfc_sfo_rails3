@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def no_club
+    params[:per_page] ||= WillPaginate.per_page
     @users = User.search(params[:search]).no_club.paginate(:page => params[:page], :per_page => params[:per_page])
 
     respond_to do |format|
