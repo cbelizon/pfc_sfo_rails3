@@ -131,11 +131,6 @@ class Season < ActiveRecord::Base
       #set to next round
       self.round_actual = self.get_next_round unless self.last_round?
     end
-    Player.all.each do |player|
-        player.new_clause!
-        player.new_pay!
-        player.save!
-    end
     self.save!
   end
 
@@ -190,8 +185,12 @@ class Season < ActiveRecord::Base
     self.season_state == NOT_STARTED
   end
 
-  #create the rounds calendar for the season and update clause and pay for players
   def start!
+     Player.all.each do |player|
+        player.new_clause!
+        player.new_pay!
+        player.save!
+    end
     self.rounds = make_rounds(self.clubs)
     self.season_state = IN_PROGRESS
     self.round_actual = self.first_round
