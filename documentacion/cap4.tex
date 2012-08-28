@@ -3,8 +3,8 @@
 % GFDL.  Para más información, la licencia completa viene incluida en el fichero
 % fdl-1.3.tex Copyright (C) 2009 Pablo Recio Quijano
 
-En este capítulo vamos tratar de recopilar los requisitos funcionales de nuestro
-proyecto.
+En este capítulo vamos tratar de recopilar los requisitos funcionales, de
+interfaces, de rendimiento, de información y diseño  de nuestro proyecto. 
 
 \section{Metodología de desarrollo}
 Hemos decidido seguir una metodología de desarrollo que se adapte lo
@@ -34,9 +34,7 @@ cliente, diseñando pequeñas versiones frecuentemente. El objetivo de estas
 versiones no es otro que conseguir que la aplicación funcione de la forma más
 simple y eficiente posible con el mínimo código. Cuando el cliente le transmite
 al programador lo que necesita, éste puede hacer una estimación aproximada del
-tiempo que le llevará codificarlo, aunque lógicamente dicha planificación deberá
-revisarse y modificarse continuamente a lo largo del desarrollo del proyecto, es
-decir, se va iterando. Cada vez que el desarrollador consigue una versión
+tiempo que le llevará codificarlo. Cada vez que el desarrollador consigue una versión
 funcional de lo que el cliente ha solicitado, ésta se le muestra al cliente para
 que la testee y haga peticiones de las modificaciones que crea convenientes. De
 esta manera se evita perder tiempo desarrollando una aplicación que no sea la
@@ -166,7 +164,12 @@ conexión red al servidor a través de un navegador web (probablemente
 que estipula la \sigla{w3c}.
 
 \section{Especificación de los requisitos del sistema}
+En esta sección trataremos de especificar todos los requisitos de nuestro
+sistema software y conforme a ello elaboraremos un documento de especificación
+de requerimentos.
 \subsection{Requisitos de interfaces externas}
+Tenemos que describir de forma detallada los requisitos de conexión a otros
+sistemas hardware o software con los que vamos a interactuar.
 \subsubsection{Requisitos de interfaces de usuario}
 Podemos dividir los requisitos de interfaz de usuario según tres roles:
 
@@ -200,7 +203,7 @@ dedicado exclusivamente al almacenaje de las copias.
 \subsubsection{Interfaces con el software}
 La aplicación web correrá en el lado del servidor en un sistema \cursiva{Linux} con \cursiva{Ubuntu
 Server 12.04}. Mientras que en el lado cliente podrá ejecutarse en cualquier
-sistema que disponga de un navegador web que cumpla los estándares 2.0 \cursiva{WCC}
+sistema que disponga de un navegador web que cumpla los estándares 2.0 \cursiva{W3C}.
 
 \subsection{Requisitos de rendimiento}
 Este aspecto es fundamental en el análisis del sistema, se ha de tener en cuenta
@@ -345,7 +348,9 @@ El sistema ha de cumplir las siguientes propiedades:
 El administrador podrá navegar por la página de configuración web y la usará
 para cambiar el comportamiento de la misma.
 
-Esta función se realizará raras veces.
+Esta función se realizará raras veces, entendiendo por estas, las ocasiones en
+las que el administrador, quiera ejecutar la simulación de los partidos, el
+pasar a la siguiente jornada, la creación de nuevas ligas y la promoción de clubes.
 \subsection*{Crear una cuenta de usuario}
 Para que un usuario cualquiera sea capaz de poder usar nuestro producto ha de
 tener una cuenta registrada en el servidor que lo distinga unívocamente de
@@ -362,34 +367,43 @@ Para que cualquier usuario registrado sea capaz de usar nuestro producto
 deberemos de proporcionarle un método de acceso e identificación mediante el
 nombre de cuenta y contraseña que han sido albergados en nuestro servidor.
 
-Esta operación se realizará muy a menudo y tantas veces como el usuario desee.
+Esta operación se realizará muy a menudo y tantas veces como el usuario desee
+teniendo como resultado que el usuario estará logueado en nuestro servidor.
 \subsection*{Abandonar la cuenta de usuario}
 Cualquier usuario que haya iniciado sesión en nuestra aplicación deberá ser
 capaz de abandonar de forma segura la misma.
 
 Esta operación se realizará muy a menudo y tantas veces como un usuario que haya
-iniciado sesión desee.
-
+iniciado sesión desee dando como resultado que el usuario deja de estar logueado
+en nuestro servidor.
 \subsection*{Abrir equipos}
 El administrador será capaz de decidir cuándo los usuarios del sistema podrán
-modificar sus alineaciones o tácticas, así como la posibilidad de interactuar
+modificar sus alineaciones o tácticas y entrenamientos, así como la posibilidad de interactuar
 con los sistemas de finanzas y ofertas de jugadores.
 
-Esta función será realizada muy a menudo.
-
+Esta función será realizada muy a menudo debido a que se habrá de cambiar de
+jornada de forma periódica para simular el curso normal del calendario de un
+campeonato liguero. El resultado de esta acción será la posibilidad de modificar
+alineaciones, tácticas, entrenamientos y realizar ofertas por futbolistas entre usuarios.
 \subsection*{Cerrar equipos}
 El administrador será capaz de decidir cuándo los usuarios del sistema no podrán
-modificar sus alineaciones o tácticas, así como la posibilidad de interactuar
+modificar sus alineaciones, tácticas y entrenamientos, así como la posibilidad de interactuar
 con los sistemas de finanzas y ofertas de jugadores.
 
-Esta función será realizada muy a menudo.
+Esta función será realizada muy a menudo debido a que se habrá de cambiar de
+jornada de forma periódica para simular el curso normal del calendario de un
+campeonato liguero. El resultado de esta acción será la posibilidad de modificar
+alineaciones, tácticas, entrenamientos y realizar ofertas por futbolistas entre
+usuarios y será posible por parte del administrador el simular y avanzar en el
+calendario liguero.
 
 \subsection*{Listar ofertas}
 El usuario podrá en cualquier momento visionar el listado de ofertas pendientes,
 aceptadas o rechazadas que tenga en su historial.
 
-Esta operación podrá ser realizada en cualquier momento.
-
+Esta operación podrá ser realizada en cualquier momento y llevará como resultado
+que el usuario será capaz de ver el historia de ofertas por los futbolistas de
+su club o las emitidas por él mismo.
 \subsection*{Emitir oferta por futbolista}
 El usuario podrá en cualquier momento hacer una oferta por un futbolista en el
 que esté interesado, interactuando de este modo con otros usuarios a través de
@@ -400,60 +414,77 @@ pujo, sino que será el propio sistema el que estipulará el precio del futbolis
 en base a la calidad que éste disponga.
 
 Esta operación podrá ser realizada en cualquier momento en el que los equipos
-estén abiertos.
+estén abiertos y tendrá como resultado la emisión de una oferta económica a un
+jugador de un club ajeno que será recibida por el usuario que lo posee.
 
 \subsection*{Aceptar oferta por futbolista}
 El usuario podrá en cualquier momento aceptar una oferta de un futbolista de su
 propiedad emitida por otro usuario.
 
 Esta operación podrá ser realizada en cualquier momento en el que los equipos
-estén abiertos.
+estén abiertos y tendrá como resultado que la transacción del jugador entre los
+clubes sea llevada a cabo con la consecuente actualización de la economía y
+plantillas de ambos clubes.
 
 \subsection*{Rechazar oferta por futbolista}
 El usuario podrá en cualquier momento rechazar una oferta de un futbolista de su
 propiedad emitida por otro usuario.
 
 Esta operación podrá ser realizada en cualquier momento en el que los equipos
-estén abiertos.
+estén abiertos y tendrá como resultado que el club que emitió la oferta tendrá
+una confirmación de rechazo por la misma.
 
 \subsection*{Cancelar oferta por futbolista}
 Un usuario que esté arrepentido de una oferta realizada por un futbolista podrá
 cancelarla en cualquier momento.
 
 Esta operación podrá ser realizada en cualquier momento en el que los equipos
-estén abiertos.
+estén abiertos y tendrá como resultado que la oferta que se emitió por un
+futbolista en concreto será revocada.
 
 \subsection*{Renovación de futbolistas}
 El sistema actualizará los sueldos que reciben los futbolistas al término de
 cada temporada, según la ponderación de los atributos cualitativos que tengan.
 
 Esta operación se realizará una vez por temporada y afectará a todos los
-futbolistas del sistema.
+futbolistas del sistema con ello se actualizarán los pagos y clausulas de los jugadores.
 \subsection*{Venta de entradas}
 El usuario podrá estipular el precio de venta de las entradas en los partidos
 que se disputen en su estadio siendo ésta la forma principal de obtención de
 ingresos para la gestión económica del club.
 
-Esta función será realizada tantas veces como desee el usuario.
+Esta función será realizada tantas veces como desee el usuario, siempre y cuando
+los equipos estén abiertos y tendrá como
+resultado el cambio en el precio de los tickets, lo cual afectará al
+comportamiento de asistencia al estadio y la recaudación por los partidos
+jugados en casa.
 
 \subsection*{Planificación de alineaciones}
 El usuario podrá escoger cuál será la alineación que presentará para el próximo
 partido que vaya a disputar su equipo, pasando ésta a ser la alineación por
 defecto hasta que el usuario decida volver a cambiarla.
 
-Esta operación se realizará a menudo.
+Esta operación se realizará a menudo, siempre y cuando los equipos estén abiertos y tendrá como resultado que los jugadores
+puedan ser alineados de la forma que el usuario crea conveniente para afrontar
+el siguiente partido.
 \subsection*{Planificación de tácticas}
 El usuario podrá escoger entre diversas tácticas de juego para afrontar los
 distintos partidos. Esta acción repercutirá directamente en el estilo de juego y
 por tanto en la simulación resultado del partido que dispute.
 
-Esta operación se realizará tantas veces como el usuario desee.
+Esta operación se realizará tantas veces como el usuario desee, siempre y cuando
+los equipos estén abiertos y tendrá como
+resultado que los jugadores se dispongan de una forma diferente en el terreno de
+juego, afectando de forma directa a la ponderación de los atributos para el
+cálculo de calidades.
 \subsection*{Planificación de entrenamientos}
 El usuario podrá personalizar los atributos a entrenar de los futbolistas
 integrantes de su equipo. De esta forma el club adquirirá valor deportivo y
 económico.
 
-Esta función se realizará a menudo.
+Esta función se realizará a menudo y siempre y cuando los equipos estén
+abiertos, teniendo como resultado que se incremente de forma consistente el
+atributo que el usuario ha decidido mejorar en el jugador.
 
 \subsection*{Asignar club}
 Una vez que un usuario haya sido registrado en el servidor mediante una cuenta
@@ -461,20 +492,26 @@ de usuario el sistema le asignará un nuevo club cuando todas las ligas hayan
 concluido y el administrador así desee.
 
 Esta operación se realizará una vez por temporada y por cada nuevo usuario
-registrado en el sistema.
+registrado en el sistema con los equipos cerrados, siempre y cuando que así lo desee el administrador,
+teniendo como objetivo el crear nuevas ligas que disputen una competición
+jerárquica en la que el usuario tenga el reto de ir ascendiendo.
 
 \subsection*{Simular jornadas}
-El sistema debe emitir comentarios durante el transcurso del partido para que
-cualquier usuario sea capaz de conocer la evolución del mismo.
-
-Esta función se realizará a menudo, una vez por jornada.
-
-\subsection*{Comenzar jornadas}
 El sistema debe simular la disputa de un partido en base a la ponderación de los
 atributos cualitativos de los futbolistas alineados, tácticas empleadas y
 variables aleatorias confrontadas con las del equipo rival.
 
-Esta función se realizará a menudo, una vez por jornada.
+Esta función se realizará a menudo, una vez por jornada y siempre y cuando los
+equipos estén cerrados. De esta forma generamos todos los comentarios y acciones
+que se llevarán a cabo en el partido disputado de cada jornada.
+
+\subsection*{Comenzar jornadas}
+El sistema debe emitir comentarios durante el transcurso del partido para que
+cualquier usuario sea capaz de conocer la evolución del mismo.
+
+Esta función se realizará a menudo, una vez por jornada y con los equipos
+cerrados. De esta forma se irán comentando los partidos de forma que parezcan
+que se están simulando en tiempo real.
 
 \subsection*{Pasar a siguiente jornada}
 El sistema debe ser capaz de gestionar el calendario creado de cada
@@ -485,7 +522,9 @@ Además, en esta acción se actualizarán los entrenamientos y traspasos aceptad
 por futbolistas entre usuarios, así como restar los gastos de la plantilla y
 mantenimiento del estadio.
 
-Esta función se realizará a menudo a lo largo de la competición.
+Esta función se realizará a menudo a lo largo de la competición y con los
+equipos cerrados. De esta forma se actualizan los traspasos, calidades de
+jugadores y las clasificaciones de las ligas de forma ordenada y coherente.
 
 \subsection*{Promoción y descenso de clubes}
 El sistema debe ser capaz de gestionar varias ligas organizadas de forma
@@ -494,15 +533,20 @@ servidor. De esta forma conseguiremos que el usuario desee mejorar la posición
 de su club, lo que repercutirá directamente en la capacidad deportiva y
 económica del mismo.
 
-Esta función se realizará una vez por temporada y una vez por jornada.
+Esta función se realizará una vez por temporada y una vez por jornada, teniendo
+que estar los equipos cerrados. Una vez realizada la acción los tres últimos
+equipos de una liga descenderán a la inmediatamente inferior, y los tres
+primeros ascenderán a la inmediatamente inferior.
 
 \subsection*{Composición de calendarios}
 El sistema deberá de crear un calendario de partidos por cada liga que está
 albergada en el servidor. Los calendarios se crearán una vez por temporada y
 será accesible a todos los usuarios.
 
-Esta función se realizará una vez por creación de liga.
-\subsection{Gestiones de lesiones y sanciones}
+Esta función se realizará una vez por creación de liga, con los equipos cerrados y tendrá como objetivo el
+crear un calendario de jornadas por cada liga en la que se enfrentarán todos los
+equipos contra todos los equipos dos veces, una como visitante y otra como local.
+\subsection*{Gestiones de lesiones y sanciones}
 El sistema debe ser capaz de llevar a cabo una política realista de imposición
 de sanciones a los futbolistas, así como simular lesiones más o menos duraderas.
 
@@ -935,8 +979,9 @@ liga albergada en nuestro sistema.\\
 \clearpage
 \section{Diagramas de Casos de Uso}
 
-\figura{casos_uso/funciones_principales.png}{scale=0.35}{Diagrama de casos de
+\figura{casos_uso/funciones_principales.png}{scale=0.52}{Diagrama de casos de
   uso de las funciones principales}{casos-uso-funciones-generales}{H}
+\clearpage
 
 \negrita{Descripción:}
 \begin{enumerate}
@@ -947,7 +992,7 @@ liga albergada en nuestro sistema.\\
   \item Acceder a la cuenta de usuario
   \item Abandonar la cuenta de usuario
   \item Notificación de registro por e-mail
-    \figura{casos_uso/gestion_usuarios.png}{scale=0.35}{Diagrama de casos de uso
+    \figura{casos_uso/gestion_usuarios.png}{scale=0.38}{Diagrama de casos de uso
       para la gestión de usuarios}{casos-uso-gestion-usuarios}{H}
   \end{itemize}
 \item{Gestión económica}
@@ -960,16 +1005,18 @@ liga albergada en nuestro sistema.\\
   \item Cancelar oferta emitida por futbolista
   \item Renovación de futbolistas
   \item Fijar precio de venta de entradas
-    \figura{casos_uso/gestion_economica.png}{scale=0.35}{Diagrama de casos de
+    \figura{casos_uso/gestion_economica.png}{scale=0.52}{Diagrama de casos de
       uso para la gestión económica}{casos-uso-gestion-economica}{H}
   \end{itemize}
+\newpage
 \item{Gestión deportiva}
   \begin{itemize}
   \item Planificación de alineaciones
   \item Planificación de tácticas
   \item Planificación de entrenamientos
-    \figura{casos_uso/gestion_deportiva.png}{scale=0.35}{Diagrama de casos de
+    \figura{casos_uso/gestion_deportiva.png}{scale=0.70}{Diagrama de casos de
       uso para la gestión deportiva}{casos-uso-gestion-deportiva}{H}
+    \clearpage
   \end{itemize}
 \item{Gestión de campeonatos}
   \begin{itemize}
@@ -979,7 +1026,7 @@ liga albergada en nuestro sistema.\\
   \item Pasar a siguiente jornada
   \item Promoción y descenso de clubes
   \item Composición de calendarios
-    \figura{casos_uso/gestion_campeonatos.png}{scale=0.35}{Diagrama de casos de
+    \figura{casos_uso/gestion_campeonatos.png}{scale=0.55}{Diagrama de casos de
       uso para la gestión de campeonatos}{casos-uso-gestion-campeonatos}{H}
   \end{itemize}
 \end{enumerate}

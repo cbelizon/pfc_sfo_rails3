@@ -72,9 +72,9 @@ que podemos realizar entre otras son:
 \end{itemize}
 
 El conjunto de ficheros de migración crearán el archivo \texttt{schema.rb} que
-tiene una definición completa de las tablas que albergan nuestra base de datos:
+tiene una definición completa de las tablas que albergan nuestra base de datos,
+que podrá consultarse en el anexo \ref{cap:schema}
 
-\lstinputlisting[style=Ruby]{codigo/schema.rb}
 
 \section{Controlador de versiones}
 Para controlar los diversos cambios que realizamos sobre el producto o la
@@ -133,28 +133,71 @@ sistema software a través de la aplicación \cursiva{GitStats}
 \cite{prog:gitstats} y el análisis de estadísticas de código incluido dentro de
 \cursiva{Ruby On Rails}.
 
-En la figura \ref{fig:estadisticas_codigo} podemos ver las estadísticas de
+
+
+En la tabla \ref{tab:estadisticas_codigo} podemos ver las estadísticas de
 código clasificadas según extensión y ordenados por el número de líneas que
 conforman la totalidad del proyecto.
 
-\figura{gitstats.png}{scale=0.5}{Estadísticas del
-  repositorio}{fig:estadisticas_codigo}{H}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{| c | c | c | c |}
+      \hline
+      \negrita{Extensión} & \negrita{Ficheros(\%)} & \negrita{Líneas} & \negrita{Líneas / fichero} \\ \hline
+      pdf & 1 (0,27\%) & 13.850 & 13.850 \\ \hline
+      png & 41 (11,23\%) & 7.573 & 184 \\ \hline
+      rb & 129 (45,54\%) & 5.129 & 39 \\ \hline
+      tex & 14 (3,84\%) & 3.662 & 261 \\ \hline
+      yml & 20 (5,48\%) & 1.282 & 64 \\ \hline
+      erb & 46 (12,60\%) & 1.089 & 23 \\ \hline
+      dia & 29 (7,95\%) & 285 & 9 \\ \hline
+      rake & 3 (0,82\%) & 259 & 86 \\ \hline
+      sty & 3 (0,82\%) & 251 & 83 \\ \hline
+      jpg & 1 (0,27\%) & 176 & 176 \\ \hline
+      lock & 1 (0,27\%) & 158 & 158 \\ \hline
+      scss & 6 (1,64\%) & 88 & 14 \\  \hline
+      html & 3 (0,82\%) & 77 & 25 \\ \hline
+      coffee & 2 (0,55\%) & 76 & 38 \\ \hline
+      bib & 1 (0,27\%) & 41 & 41 \\ \hline
+      gif & 1 (0,27\%) & 9 & 9 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Estadísticas del repositorio}
+  \label{tab:estadisticas_codigo}
+\end{table}
 
-En la figura \ref{fig:estadisticas_rails} podemos ver un análisis del código
+En la tabla \ref{tab:estadisticas_rails} podemos ver un análisis del código
 fuente según la estructura de un proyecto realizado en \cursiva{Ruby On Rails}.
 
-\figura{stats.png}{scale=0.5}{Estadísticas del código fuente
-  Rails}{fig:estadisticas_rails}{H}
+\begin{table}[H]
+  \begin{center}
+    \begin{tabular}{| c | c | c | c | c | c | c |}
+      \hline
+      \negrita{Nombre} & \negrita{Líneas} & \negrita{LOC} & \negrita{Clases} &
+      \negrita{Métodos} & \negrita{M/C} & \negrita{LOC/M} \\ \hline
+      Controladores & 642 & 519 & 10 & 56 & 5 & 7 \\ \hline
+      Helpers & 274 & 241 & 0 & 27 & 0 & 6 \\ \hline
+      Modelos & 1.897 & 1285 & 16 & 165 & 10 & 5 \\ \hline
+      Librerías & 188 & 174 & 0 & 9 & 0 & 17 \\ \hline
+      Test de integración & 0 & 0 & 0 & 0 & 0 & 0 \\ \hline
+      Test funcionales & 346 & 273 & 11 & 0 & 0 & 0 \\ \hline
+      Test unitarios & 388 & 121 & 25 & 1 & 0 & 119 \\ \hline
+      Total & 3.735 & 2.613 & 62 & 258 & 4 & 8 \\ \hline
+    \end{tabular}
+  \end{center}
+  \caption{Estadísticas del código fuente Rails}
+  \label{tab:estadisticas_rails}
+\end{table}
 
 A continuación pasamos a describir los términos que aparecen en la figura
-\ref{fig:estadisticas_rails} para una mejor interpretación de la misma:
+\ref{tab:estadisticas_rails} para una mejor interpretación de la misma:
 
 \begin{itemize}
-\item Lines: Son las líneas de código totales de cada una de las categorías.
+\item Líneas: Son las líneas de código totales de cada una de las categorías.
 \item LOC: Son las líneas de código reales no autogeneradas por el framework.
-\item Classes: Son el número de clases pertenecientes a cada una de las
+\item Clases: Son el número de clases pertenecientes a cada una de las
   categorías.
-\item Methods: El número de métodos correspondientes a cada una de las
+\item Métodos: El número de métodos correspondientes a cada una de las
   categorías.
 \item M/C: Media de métodos por clase.
 \item LOC/M: Media de número de líneas por método.
@@ -181,7 +224,7 @@ Para la depuración del código fuente usamos de forma extensiva el navegador we
 \cursiva{Firefox} \cite{prog:firefox} el cuál nos proporciona la extensión
 \cursiva{Firebug} \cite{prog:firebug}.
 
-\cursiva{Firebug} es una extensión de cursiva{Firefox} creada y diseñada
+\cursiva{Firebug} es una extensión de \cursiva{Firefox} creada y diseñada
 especialmente para desarrolladores y programadores web. Es un paquete de
 utilidades con el que se puede analizar (revisar velocidad de carga, estructura
 \cursiva{DOM}), editar, monitorizar y depurar el código fuente, \cursiva{CSS},

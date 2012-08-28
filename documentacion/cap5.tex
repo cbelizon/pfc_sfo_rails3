@@ -253,9 +253,10 @@ En la figura \ref{diagrama-secuencia-crear-cuenta-usuario} podemos observar como
 se construye un nuevo usuario dentro del sistema con los datos proporcionados
 por el usuario web.
 
-\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.42}{Diagrama de
   secuencia de crear cuenta de
   usuario}{diagrama-secuencia-crear-cuenta-usuario}{H}
+\newpage
 
 \subsection*{Diagrama de secuencia de acceder a cuenta de usuario}
 
@@ -263,18 +264,20 @@ En la figura \ref{diagrama-secuencia-acceder-cuenta-usuario} podemos observar
 como se consigue acreditar las credenciales (usuario y contraseña) para iniciar
 sesión.
 
-\figura{diagramas_secuencia/acceder_cuenta_usuario.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/acceder_cuenta_usuario.png}{scale=0.49}{Diagrama de
   secuencia de acceder a cuenta de
   usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H}
+\newpage
 
 \subsection*{Diagrama de secuencia de abandonar cuenta de usuario}
 
 En la figura \ref{diagrama-secuencia-abandonar-cuenta-usuario} podemos observar
 cómo se destruye la sesión iniciada por un usuario.
 
-\figura{diagramas_secuencia/abandona_cuenta_usuario.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/abandona_cuenta_usuario.png}{scale=0.59}{Diagrama de
   secuencia de abandonar cuenta de
   usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H}
+\newpage
 
 \subsection*{Diagrama de secuencia de abrir equipos}
 
@@ -282,7 +285,7 @@ En la figura \ref{diagrama-secuencia-abrir-equipos} cómo se establece el estado
 de las temporadas para permitir operaciones por parte de los usuarios en los
 equipos que poseen.
 
-\figura{diagramas_secuencia/abrir_equipos.png}{scale=0.35}{Diagrama de secuencia
+\figura{diagramas_secuencia/abrir_equipos.png}{scale=0.78}{Diagrama de secuencia
   de abrir equipos}{diagrama-secuencia-abrir-equipos}{H}
 
 \subsection*{Diagrama de secuencia de cerrar equipos}
@@ -299,7 +302,7 @@ ruta \cursiva{/leagues/close\_teams} y la llamada al modelo con el método
 En la figura \ref{diagrama-secuencia-notificacion-registro} se observa cómo se
 envía un correo al usuario una vez se ha registrado en la aplicación web.
 
-\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.43}{Diagrama de
   secuencia de notificación de registro por
   e-mail}{diagrama-secuencia-notificacion-registro}{H}
 
@@ -308,7 +311,7 @@ envía un correo al usuario una vez se ha registrado en la aplicación web.
 En la figura \ref{diagrama-secuencia-listar-ofertas-emitidas} observamos cómo se
 establece el filtro de búsqueda para mostrar el listado de ofertas emitidas.
 
-\figura{diagramas_secuencia/listar_ofertas_emitidas.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/listar_ofertas_emitidas.png}{scale=0.52}{Diagrama de
   secuencia de listar ofertas
   emitidas}{diagrama-secuencia-listar-ofertas-emitidas}{H}
 
@@ -325,7 +328,7 @@ En la figura \ref{diagrama-secuencia-emitir-oferta-futbolista} se observa cómo
 se crea una nueva instancia de oferta y se relaciona con los usuarios y el
 futbolista involucrado en la misma.
 
-\figura{diagramas_secuencia/emitir_oferta_futbolista.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/emitir_oferta_futbolista.png}{scale=0.45}{Diagrama
   de secuencia de emitir oferta por
   futbolista}{diagrama-secuencia-emitir-oferta-futbolista}{H}
 
@@ -334,7 +337,7 @@ En la figura \ref{diagrama-secuencia-cancelar-oferta-emitida-futbolista} se
 observa cómo se recupera la instancia de la oferta emitida y se modifica su
 estado para cancelarla.
 
-\figura{diagramas_secuencia/cancelar_oferta_emitida_futbolista.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/cancelar_oferta_emitida_futbolista.png}{scale=0.68}{Diagrama
   de secuencia de cancelar oferta emitida por
   futbolista}{diagrama-secuencia-cancelar-oferta-emitida-futbolista}{H}
 
@@ -343,9 +346,11 @@ En la figura \ref{diagrama-secuencia-rechazar-oferta-recibida-futbolista} se
 observa cómo se recupera la instancia de la oferta recibida y se modifica su
 estado para rechazar la misma.
 
-\figura{diagramas_secuencia/rechazar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/rechazar_oferta_recibida_futbolista.png}{scale=0.68}{Diagrama
   de secuencia de rechazar oferta recibida por
   futbolista}{diagrama-secuencia-rechazar-oferta-recibida-futbolista}{H}
+
+\newpage
 
 \subsection*{Diagrama de secuencia de aceptar oferta recibida por futbolista}
 En la figura \ref{diagrama-secuencia-aceptar-oferta-recibida-futbolista} se
@@ -353,26 +358,28 @@ observa cómo se recupera la instancia de la oferta recibida y se actualizan los
 modelos de datos involucrados (futbolista, club y usuarios) para llevar a cabo
 la transferencia del futbolista entre los clubes.
 
-\figura{diagramas_secuencia/aceptar_oferta_recibida_futbolista.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/aceptar_oferta_recibida_futbolista.png}{scale=0.65}{Diagrama
   de secuencia de aceptar oferta recibida por
   futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H}
+\newpage
 
 \subsection*{Diagrama de secuencia de renovación de futbolistas}
 En la figura \ref{diagrama-secuencia-renovacion-futbolistas} se describe cómo se
 renuevan automáticamente los futbolistas para las siguientes temporadas
 actualizando sus atributos.
 
-\figura{diagramas_secuencia/renovacion_futbolistas.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/renovacion_futbolistas.png}{scale=0.63}{Diagrama de
   secuencia de renovación de
   futbolistas}{diagrama-secuencia-renovacion-futbolistas}{H}
 
 El proceso de renovación está integrado en start.
+\newpage
 
 \subsection*{Diagrama de secuencia de fijar precio de venta de entradas}
 En la figura \ref{diagrama-secuencia-fijar-precio-venta-entradas} se describe
 cómo se modifica el atributo del precio de venta de entradas.
 
-\figura{diagramas_secuencia/fijar_precio_venta_entradas.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/fijar_precio_venta_entradas.png}{scale=0.54}{Diagrama
   de secuencia de fijar precio de venta de
   entradas}{diagrama-secuencia-fijar-precio-venta-entradas}{H}
 
@@ -381,7 +388,7 @@ En la figura \ref{diagrama-secuencia-planificacion-alineaciones} se describe
 cómo se cambian las alineaciones para el próximo partido a través de la
 modificación del atributo de posición.
 
-\figura{diagramas_secuencia/planificacion_alineaciones.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/planificacion_alineaciones.png}{scale=0.52}{Diagrama
   de secuencia de emitir planificación de
   alineaciones}{diagrama-secuencia-planificacion-alineaciones}{H}
 
@@ -390,7 +397,7 @@ En la figura \ref{diagrama-secuencia-planificacion-tacticas} se muestra cómo se
 cambia la táctica usada para el próximo partido a través de la modificación del
 atributo de táctica del club.
 
-\figura{diagramas_secuencia/planificacion_tacticas.png}{scale=0.35}{Diagrama de
+\figura{diagramas_secuencia/planificacion_tacticas.png}{scale=0.70}{Diagrama de
   secuencia de planificación de tácticas
 }{diagrama-secuencia-planificacion-tacticas}{H}
 
@@ -399,7 +406,7 @@ En la figura \ref{diagrama-secuencia-planificacion-entrenamientos} se muestra
 cómo se crean nuevas instancias para la planificación de los entrenamientos de
 los futbolistas asociados a un club.
 
-\figura{diagramas_secuencia/planificacion_entrenamientos.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/planificacion_entrenamientos.png}{scale=0.45}{Diagrama
   de secuencia de planificación de entrenamientos
 }{diagrama-secuencia-planificacion-entrenamientos}{H}
 
@@ -407,16 +414,15 @@ los futbolistas asociados a un club.
 En la figura \ref{diagrama-secuencia-asignar-club} se observa cómo se crea una
 nueva instancia de un club para todo usuario que no tenga club asignado.
 
-\figura{diagramas_secuencia/asignar_club.png}{scale=0.35}{Diagrama de secuencia
+\figura{diagramas_secuencia/asignar_club.png}{scale=0.45}{Diagrama de secuencia
   de secuencia de asignar club }{diagrama-secuencia-asignar-club}{H}
 
 \subsection*{Diagrama de secuencia de simular jornadas}
 En la figura \ref{diagrama-secuencia-simular-jornadas} se observa cómo se crean
 nuevas instancias de detalles de partidos por cada uno de los partidos no
 jugados y pertenecientes a la jornada actual del sistema.
-\clearpage
 
-\figura{diagramas_secuencia/simular_jornadas.png}{scale=0.32,
+\figura{diagramas_secuencia/simular_jornadas.png}{scale=0.35,
   angle=270}{Diagrama de secuencia de simular
   jornadas}{diagrama-secuencia-simular-jornadas}{H}
 
@@ -424,9 +430,9 @@ jugados y pertenecientes a la jornada actual del sistema.
 En la figura \ref{diagrama-secuencia-comenzar-jornadas} se observa cómo se
 actualiza el atributo correspondiente de todos los partidos actuales para
 estipular que el partido ha comenzado a la fecha actual del sistema.
-\clearpage
+\newpage
 
-\figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.43,
+\figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.49,
   angle=270}{Diagrama de secuencia de comenzar
   jornadas}{diagrama-secuencia-comenzar-jornadas}{H}
 
@@ -434,9 +440,10 @@ estipular que el partido ha comenzado a la fecha actual del sistema.
 \subsection*{Diagrama de secuencia de pasar a siguiente jornada}
 En la figura \ref{diagrama-secuencia-pasar-siguiente-jornada} se detalla cómo se
 actualizan los modelos de datos de temporada, jornada, jugador, entrenamiento,
-finanzas y club para avanzar en la competición.  \clearpage
+finanzas y club para avanzar en la competición.
+\newpage
  
-\figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.27,
+\figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.29,
   angle=270}{Diagrama de secuencia de pasar a siguiente
   jornada}{diagrama-secuencia-pasar-siguiente-jornada}{H}
 
@@ -446,18 +453,17 @@ se crean nuevas instancias de nuevas temporadas y se modifican los estados de
 las temporadas actuales para simular el avance en la competición y el progreso y
 descenso jerárquico en las divisiones del juego.
 
-\figura{diagramas_secuencia/promocion_descenso_clubes.png}{scale=0.35}{Diagrama
+\figura{diagramas_secuencia/promocion_descenso_clubes.png}{scale=0.38}{Diagrama
   de secuencia de promocion y descenso de
   clubes}{diagrama-secuencia-promocion-descenso-clubes}{H}
 
-\clearpage
 
 \subsection*{Diagrama de secuencia de composición de calendarios}
 En la figura \ref{diagrama-secuencia-composicion-calendarios} se observa cómo se
 crean nuevas instancias de las jornadas que estarán relacionadas con los clubes
 en los que se coincida en las mismas divisiones.
-\clearpage
+\newpage
 
-\figura{diagramas_secuencia/crear_calendario.png}{scale=0.32,
+\figura{diagramas_secuencia/crear_calendario.png}{scale=0.36,
   angle=270}{Diagrama de secuencia de composición de
   calendarios}{diagrama-secuencia-composicion-calendarios}{H}
