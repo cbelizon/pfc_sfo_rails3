@@ -50,6 +50,10 @@ class Club < ActiveRecord::Base
     return total / MIN_PLAYERS
   end
 
+  def starters_average_tactic
+    tactic
+  end
+
   #Returns the suppliers players
   def suppliers
     self.players.supplier

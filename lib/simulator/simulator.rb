@@ -1,5 +1,5 @@
 module Simulator
-  NUM_PLAYS = 45
+  NUM_PLAYS = 88
 
   def self.simulate_match(local, guest, actions, available_minutes)
     @actions = actions
@@ -9,14 +9,16 @@ module Simulator
     num_plays_guest = num_plays(avg_guest, avg_local, NUM_PLAYS)
 
     details = []
+    local_players = local.starters
+    guest_players = guest.starters
     1.upto(num_plays_local) do
-      details << simulate_play(local, available_minutes);
+      details << simulate_play(local, available_minutes, local_players);
     end
 
     1.upto(num_plays_guest) do
-      details << simulate_play(guest, available_minutes);
+      details << simulate_play(guest, available_minutes, guest_players);
     end
-    
+
     return details
   end
 
@@ -31,9 +33,9 @@ module Simulator
   end
 
   private
-  def self.simulate_play(club, available_minutes)
+  def self.simulate_play(club, available_minutes, starters)
     action = @actions[rand(@actions.length)]
-    players = club.starters.to_a
+    players = starters.to_a
     player = players[rand(players.length)]
     minute = available_minutes.delete_at(rand(available_minutes.length))
     MatchDetail.new({
@@ -46,7 +48,7 @@ module Simulator
 
   def self.num_plays(local, guest, num_plays)
     total = local + guest;
-    multiplier_local = local / Float(total);
+    multiplier_local = (local + 1)/ Float(total);
     return Integer(num_plays * multiplier_local);
   end
 end
