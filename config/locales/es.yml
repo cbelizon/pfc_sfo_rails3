@@ -19,6 +19,8 @@ es:
   buyer_cash: "¡No tienes suficiente dinero!"
   buyer_maximum: "¡Tienes el máximo de jugadores en plantilla!"
   seller_minimum: "¡Tienes el mínimo de jugadores en plantilla!"
+  minute: "Minuto %{minute}'"
+  reload: "segundos para recargar"
   date:
     formats:
       default: "%d %m %Y"
@@ -327,6 +329,7 @@ es:
       player: "Jugador"
       local: "Local"
       guest: "Visitante"
+      spectators: "Espectadores: %{spectators}"
   rounds:
     round: "Jornada"
     number: "Nº"

@@ -22,6 +22,8 @@ en:
   buyer_cash: "The buyer have not enough cash."
   buyer_maximum: "The buyer has the maximum players in the team"
   seller_minimum: "You have the minimum players in the team"
+  minute: "Minute %{minute}'"
+  reload: "seconds to reload"
   activerecord:
     errors:
       template:
@@ -276,6 +278,7 @@ en:
       player: "Player"
       local: "Local"
       guest: "Guest"
+      spectators: "Spectators: %{spectators}"
   rounds:
     round: "Round"
     number: "Nº"

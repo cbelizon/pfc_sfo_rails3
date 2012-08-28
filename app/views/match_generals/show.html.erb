@@ -1,9 +1,13 @@
 <% if @match_general.in_play? %>
 <div class="in-play">
   <%= image_tag("in_play.gif") %>
+  <div class="countdown">
+    <span class="seconds"></span>
+    <span><%= t('reload') %></span>
+  </div>
 </div>
 <% end %>
-<table class="table table-striped table-bordered">
+<table class="match-information table table-striped table-bordered">
   <thead>
     <tr>
       <th>
@@ -31,6 +35,20 @@
        <% end %>
       </th>
     </tr>
+    <% if @match_general.in_play? || @match_general.finished? %>
+    <tr>
+      <th colspan="2">
+        <%= t('.spectators', :spectators => number_with_delimiter(@match_general.spectators, :delimiter => '.')) %>
+      </th>
+    </tr>
+    <% end %>
+    <% if @match_general.in_play? %>
+    <tr>
+      <th colspan="2">
+          <%= t('minute', :minute =>  @match_general.minute.to_i.to_s) %>
+        </th>
+    </tr>
+    <% end %>
   </thead>
 </table>
 

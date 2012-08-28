@@ -10,9 +10,13 @@
   <hr class="soften">
 </div>
 <% end %>
-<% if @in_play %>
+<% if League.in_play? %>
 <div class="in-play">
   <%= image_tag("in_play.gif") %>
+  <div class="countdown">
+    <span class="seconds"></span>
+    <span><%= t('reload') %></span>
+  </div>
 </div>
 <% end %>
 <% @seasons.each do |season| %>

@@ -9,7 +9,6 @@ class LeaguesController < ApplicationController
     if !League.first.nil?
       @last_season = League.first.seasons.last
     end
-
     respond_to do |format|
       format.html #index.html.erb
     end

@@ -42,6 +42,15 @@ class League < ActiveRecord::Base
     Season.current_seasons
   end
 
+  def self.in_play?
+    if !League.current_seasons.first.nil?
+      return League.current_seasons.first.in_play_round?
+    else
+      return false
+    end
+  end
+
+
   #Only for admins, create new leagues with the users without assigned club
   def self.create_with_users_with_no_club
     users = User.no_club

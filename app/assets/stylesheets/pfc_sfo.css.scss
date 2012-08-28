@@ -59,6 +59,19 @@ table.league-control td, .team table td, .trainings table td, .in-play {
 	}
 }
 
+.in-play {
+	img, .countdown {
+		cursor: pointer;
+	}
+
+
+}
+.countdown {
+	text-align: center;
+	font-weight: bold;
+	color: #047ed4;
+}
+
 fieldset {
 	legend {
 		text-align: center;
@@ -78,9 +91,12 @@ fieldset {
 	}
 }
 
-.match_generals-show .table-commentaries {
-	th {
+.match_generals-show  {
+	.table-commentaries th {
 		text-align: left;
+	}
+	.match-information {
+		margin-top: 20px;
 	}
 }
 
