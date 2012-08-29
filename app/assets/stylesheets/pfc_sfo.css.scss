@@ -105,12 +105,23 @@ fieldset {
 				float: left;
 			}
 			.full-name{
-				width: 265px;
+				width: auto;
 				float: left;
+				margin-left: 85px;
 			}
 		}
 		.goals {
 			.badge {
+				font-size: 40px;
+			}
+			th {
+				height: 60px;
+				padding-bottom: 13px;
+			}
+		}
+
+		.teams {
+			.label{
 				font-size: 40px;
 			}
 			th {

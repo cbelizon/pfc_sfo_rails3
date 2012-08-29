@@ -7,30 +7,15 @@
   </div>
 </div>
 <% end %>
-<table class="match-information table table-striped table-bordered">
+<table class="match-information table table-striped">
   <thead>
-    <tr>
+    <tr class="teams">
       <th>
-        <%=  t('.local')%>
-      </th>
-        <th>
-          <%= t('.guest') %>
-        </th>
+      <%= link_to h(@local.name), team_club_path(@local), :class => 'label label-success' %></th>
+      <th>
+      <%=  link_to h(@guest.name), team_club_path(@guest), :class => 'label label-success' %></th>
     </tr>
    <tr>
-      <th>
-        <%= render :partial => 'team_starters', :locals => {:players => @local.line_up_starters(@match_general)} %>
-      </th>
-      <th>
-        <%= render :partial => 'team_starters', :locals => {:players => @guest.line_up_starters(@match_general)} %>
-      </th>
-    </tr>
-    <tr>
-      <th>
-      <%= link_to h(@local.name), team_club_path(@local) %></th>
-      <th>
-      <%=  link_to h(@guest.name), team_club_path(@guest) %></th>
-    </tr>
     <tr class="goals">
       <th>
       <% if @finished || @in_play %>
@@ -41,6 +26,13 @@
       <% if @finished || @in_play %>
          <span class="badge badge-important"><%= h(@match_general.guest_goals_live) %></span>
        <% end %>
+      </th>
+    </tr>
+      <th>
+        <%= render :partial => 'team_starters', :locals => {:players => @local.line_up_starters(@match_general)} %>
+      </th>
+      <th>
+        <%= render :partial => 'team_starters', :locals => {:players => @guest.line_up_starters(@match_general)} %>
       </th>
     </tr>
     <% if @in_play || @finished %>
