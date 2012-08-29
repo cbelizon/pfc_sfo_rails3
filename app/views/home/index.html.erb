@@ -13,7 +13,7 @@
 <% if current_user && !current_user.club?  && !current_user.admin?%>
 <div class="marketing">
   <h1><%= t('no_team')%></h1>
-  <p class="marketing-byline"><%= t('take_it_easy')%>. <%=t('rounds_to_finish', :rounds => League.rounds_to_finish)  %>.</p>
+  <p class="marketing-byline"><%= t('take_it_easy')%>.</p>
   <div class="row">
     <div class="offset4 span4">
       <%= image_tag('logo.png') %>
