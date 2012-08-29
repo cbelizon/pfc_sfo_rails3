@@ -149,6 +149,10 @@ class League < ActiveRecord::Base
   def self.current_round
     Round.find(League.current_seasons.first.actual_round).number
   end
+
+  def self.rounds_to_finish
+    self.num_rounds - self.current_round
+  end
 end
 
 
