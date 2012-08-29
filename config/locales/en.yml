@@ -24,6 +24,8 @@ en:
   seller_minimum: "You have the minimum players in the team"
   minute: "Minute %{minute}'"
   reload: "seconds to reload"
+  no_team: "You currently have no assigned team"
+  take_it_easy:  "We will assign you a team as fast as we can"
   activerecord:
     errors:
       template:

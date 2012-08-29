@@ -21,6 +21,8 @@ es:
   seller_minimum: "¡Tienes el mínimo de jugadores en plantilla!"
   minute: "Minuto %{minute}'"
   reload: "segundos para recargar"
+  no_team: "Actualmente no tienes equipo asignado"
+  take_it_easy:  "Cuando terminen las ligas actuales te asignaremos un equipo"
   date:
     formats:
       default: "%d %m %Y"

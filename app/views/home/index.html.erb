@@ -10,6 +10,18 @@
   <hr class="soften">
 </div>
 <% end %>
+<% if current_user && !current_user.club?  && !current_user.admin?%>
+<div class="marketing">
+  <h1><%= t('no_team')%></h1>
+  <p class="marketing-byline"><%= t('take_it_easy') %></p>
+  <div class="row">
+    <div class="offset4 span4">
+      <%= image_tag('logo.png') %>
+    </div>
+  </div>
+  <hr class="soften">
+</div>
+<% end %>
 <% if League.in_play? %>
 <div class="in-play">
   <%= image_tag("in_play.gif") %>
