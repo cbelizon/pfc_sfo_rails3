@@ -1,4 +1,4 @@
-<% if commentarie.minute  <= commentarie.match.minute %>
+<% if commentarie.minute  <= @minute %>
 <tr>
   <td>
     <%= commentarie.minute %>
@@ -7,9 +7,9 @@
   	<% if commentarie.action == "action.goal" %>
   		<%= image_tag('goal.png') %>
   	<% end %>
-    <%= commentarie.player.complete_name %>
+    <%= commentarie.player_string %>
     <%= t('action.from') %>
-    <%= commentarie.club.name %>
+    <%= commentarie.club_string %>
     <%= t(commentarie.action) %>
   </td>
 </tr>

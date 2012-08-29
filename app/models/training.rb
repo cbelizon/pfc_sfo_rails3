@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: trainings
+#
+#  id          :integer          not null, primary key
+#  player_id   :integer          not null
+#  ability     :string(255)      not null
+#  improvement :integer
+#  round_count :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Training < ActiveRecord::Base
   belongs_to :player
   validate :only_one_ability_at_the_same_time
@@ -30,18 +43,4 @@ class Training < ActiveRecord::Base
     self
   end
 end
-
-
-# == Schema Information
-#
-# Table name: trainings
-#
-#  id          :integer         not null, primary key
-#  player_id   :integer         not null
-#  ability     :string(255)     not null
-#  improvement :integer
-#  round_count :integer
-#  created_at  :datetime
-#  updated_at  :datetime
-#
 

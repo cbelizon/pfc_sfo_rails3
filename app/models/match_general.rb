@@ -1,10 +1,26 @@
+# == Schema Information
+#
+# Table name: match_generals
+#
+#  id           :integer          not null, primary key
+#  local_id     :integer          not null
+#  guest_id     :integer          not null
+#  local_goals  :integer
+#  guest_goals  :integer
+#  round_id     :integer          not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  spectators   :integer          default(0)
+#  ticket_price :decimal(4, 2)    default(0.0)
+#
+
 class MatchGeneral < ActiveRecord::Base
   PT_WIN = 3
   PT_DEAL = 1
   MINUTES = 90
   PARTS_TIME = 45
   HALF_TIME = 15
-  TIME_MATCH =  60 * 90
+  TIME_MATCH = 0 #60 * 90
 
   belongs_to :round
   belongs_to :local, :class_name => 'Club'
@@ -206,21 +222,4 @@ class MatchGeneral < ActiveRecord::Base
     return minutes
   end
 end
-
-
-# == Schema Information
-#
-# Table name: match_generals
-#
-#  id           :integer         not null, primary key
-#  local_id     :integer         not null
-#  guest_id     :integer         not null
-#  local_goals  :integer
-#  guest_goals  :integer
-#  round_id     :integer         not null
-#  created_at   :datetime
-#  updated_at   :datetime
-#  spectators   :integer         default(0)
-#  ticket_price :decimal(4, 2)   default(0.0)
-#
 

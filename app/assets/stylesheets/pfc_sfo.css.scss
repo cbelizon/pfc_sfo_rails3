@@ -97,6 +97,27 @@ fieldset {
 	}
 	.match-information {
 		margin-top: 20px;
+		ul.match-starters {
+			list-style: none;
+			text-align: left;
+			.width-position {
+				width: 265px;
+				float: left;
+			}
+			.full-name{
+				width: 265px;
+				float: left;
+			}
+		}
+		.goals {
+			.badge {
+				font-size: 40px;
+			}
+			th {
+				height: 60px;
+				padding-bottom: 13px;
+			}
+		}
 	}
 }
 

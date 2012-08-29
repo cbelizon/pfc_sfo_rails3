@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: offers
+#
+#  id         :integer          not null, primary key
+#  club_id    :integer          not null
+#  player_id  :integer          not null
+#  buyer_id   :integer          not null
+#  state      :integer          default(0), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  pay        :decimal(16, 2)   default(0.0)
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
@@ -9,19 +23,4 @@ two:
   buyer: 1
   seller: 
   state: 1
-
-
-# == Schema Information
-#
-# Table name: offers
-#
-#  id         :integer         not null, primary key
-#  club_id    :integer         not null
-#  player_id  :integer         not null
-#  buyer_id   :integer         not null
-#  state      :integer         default(0)
-#  created_at :datetime
-#  updated_at :datetime
-#  pay        :decimal(16, 2)  default(0.0)
-#
 

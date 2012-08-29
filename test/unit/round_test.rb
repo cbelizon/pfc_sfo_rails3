@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: rounds
+#
+#  id               :integer          not null, primary key
+#  season_id        :integer          not null
+#  number           :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  state_simulation :boolean          default(FALSE)
+#  start_time       :datetime
+#
+
 require 'test_helper'
 
 class RoundTest < ActiveSupport::TestCase
@@ -6,18 +19,4 @@ class RoundTest < ActiveSupport::TestCase
     assert true
   end
 end
-
-
-# == Schema Information
-#
-# Table name: rounds
-#
-#  id               :integer         not null, primary key
-#  season_id        :integer         not null
-#  number           :integer         not null
-#  created_at       :datetime
-#  updated_at       :datetime
-#  state_simulation :boolean         default(FALSE)
-#  start_time       :datetime
-#
 

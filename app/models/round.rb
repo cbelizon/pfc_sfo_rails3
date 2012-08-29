@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: rounds
+#
+#  id               :integer          not null, primary key
+#  season_id        :integer          not null
+#  number           :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  state_simulation :boolean          default(FALSE)
+#  start_time       :datetime
+#
+
 class Round < ActiveRecord::Base
   DIV_TO_MIN = 60
   belongs_to :season
@@ -116,18 +129,4 @@ class Round < ActiveRecord::Base
     self == self.season.last_round
   end
 end
-
-
-# == Schema Information
-#
-# Table name: rounds
-#
-#  id               :integer         not null, primary key
-#  season_id        :integer         not null
-#  number           :integer         not null
-#  created_at       :datetime
-#  updated_at       :datetime
-#  state_simulation :boolean         default(FALSE)
-#  start_time       :datetime
-#
 

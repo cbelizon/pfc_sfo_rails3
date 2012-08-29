@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  name       :string(20)       not null
+#  surname    :string(30)       not null
+#  quality    :integer          not null
+#  club_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  pay        :decimal(8, 2)
+#  clause     :decimal(8, 2)
+#  speed      :integer          default(0), not null
+#  resistance :integer          default(0), not null
+#  dribbling  :integer          default(0), not null
+#  kick       :integer          default(0), not null
+#  pass       :integer          default(0), not null
+#  recovery   :integer          default(0), not null
+#  goalkeeper :integer          default(0), not null
+#  position   :integer
+#
+
 class Player < ActiveRecord::Base
   PLAYER_QUALITIES = 7
   MAX_QUALITY = 100
@@ -186,6 +209,21 @@ class Player < ActiveRecord::Base
     end
   end
 
+  #calculate the average for tactic
+  def average_qualities_tactic
+    if self.position < 12
+      tactic_team = TACTICS[self.club.tactic]
+      acum = 0
+      PLAYER_ATTRIBUTES.each do |attribute|
+        acum += (self[attribute] * tactic_team['players']["pos#{self.position}"][attribute]).to_i
+      end
+
+      return acum
+    else
+      return self.quality
+    end
+  end
+
   def new_clause!
     self.update_attribute(:clause, (self.quality * 1000))
   end
@@ -194,28 +232,4 @@ class Player < ActiveRecord::Base
     self.update_attribute(:pay, (self.quality * 75 ))
   end
 end
-
-
-# == Schema Information
-#
-# Table name: players
-#
-#  id         :integer         not null, primary key
-#  name       :string(20)      not null
-#  surname    :string(30)      not null
-#  quality    :integer         not null
-#  club_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  pay        :decimal(8, 2)
-#  clause     :decimal(8, 2)
-#  speed      :integer         default(0), not null
-#  resistance :integer         default(0), not null
-#  dribbling  :integer         default(0), not null
-#  kick       :integer         default(0), not null
-#  pass       :integer         default(0), not null
-#  recovery   :integer         default(0), not null
-#  goalkeeper :integer         default(0), not null
-#  position   :integer
-#
 

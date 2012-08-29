@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: leagues
+#
+#  id          :integer          not null, primary key
+#  category    :integer          default(1), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  state_teams :integer          default(0)
+#
+
 require 'test_helper'
 
 class LeagueTest < ActiveSupport::TestCase
@@ -6,16 +17,4 @@ class LeagueTest < ActiveSupport::TestCase
     assert true
   end
 end
-
-
-# == Schema Information
-#
-# Table name: leagues
-#
-#  id          :integer         not null, primary key
-#  category    :integer         default(1), not null
-#  created_at  :datetime
-#  updated_at  :datetime
-#  state_teams :integer         default(0)
-#
 

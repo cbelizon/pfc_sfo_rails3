@@ -194,6 +194,7 @@ en:
     average: "Average:"
     offer: "Offer"
     training: "Training"
+    quality_tactic: "Tactic quality"
   home:
     index:
       leagues: "Leagues"

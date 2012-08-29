@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: match_details
+#
+#  id               :integer          not null, primary key
+#  player_id        :integer          not null
+#  club_id          :integer          not null
+#  match_general_id :integer          not null
+#  action           :string(255)      not null
+#  minute           :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  club_string      :string(255)
+#  player_string    :string(255)
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
@@ -13,19 +29,4 @@ two:
   match_general_id: 1
   match_action_id: 1
   minute: 1
-
-
-# == Schema Information
-#
-# Table name: match_details
-#
-#  id               :integer         not null, primary key
-#  player_id        :integer         not null
-#  club_id          :integer         not null
-#  match_general_id :integer         not null
-#  action           :string(255)     not null
-#  minute           :integer         not null
-#  created_at       :datetime
-#  updated_at       :datetime
-#
 

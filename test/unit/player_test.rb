@@ -1,3 +1,26 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  name       :string(20)       not null
+#  surname    :string(30)       not null
+#  quality    :integer          not null
+#  club_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  pay        :decimal(8, 2)
+#  clause     :decimal(8, 2)
+#  speed      :integer          default(0), not null
+#  resistance :integer          default(0), not null
+#  dribbling  :integer          default(0), not null
+#  kick       :integer          default(0), not null
+#  pass       :integer          default(0), not null
+#  recovery   :integer          default(0), not null
+#  goalkeeper :integer          default(0), not null
+#  position   :integer
+#
+
 require 'test_helper'
 
 class PlayerTest < ActiveSupport::TestCase
@@ -6,28 +29,4 @@ class PlayerTest < ActiveSupport::TestCase
     assert true
   end
 end
-
-
-# == Schema Information
-#
-# Table name: players
-#
-#  id         :integer         not null, primary key
-#  name       :string(20)      not null
-#  surname    :string(30)      not null
-#  quality    :integer         not null
-#  club_id    :integer
-#  created_at :datetime
-#  updated_at :datetime
-#  pay        :decimal(8, 2)
-#  clause     :decimal(8, 2)
-#  speed      :integer         default(0), not null
-#  resistance :integer         default(0), not null
-#  dribbling  :integer         default(0), not null
-#  kick       :integer         default(0), not null
-#  pass       :integer         default(0), not null
-#  recovery   :integer         default(0), not null
-#  goalkeeper :integer         default(0), not null
-#  position   :integer
-#
 

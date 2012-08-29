@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: clubs
+#
+#  id               :integer          not null, primary key
+#  name             :string(30)       not null
+#  stadium_name     :string(40)       not null
+#  stadium_capacity :integer          not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  user_id          :integer
+#  cash             :decimal(16, 2)   default(0.0)
+#  ticket_price     :decimal(4, 2)    default(0.0)
+#  tactic           :string(255)      default("4-4-2"), not null
+#
+
 class Club < ActiveRecord::Base
   require 'faker'
   validates_presence_of :name, :stadium_name, :stadium_capacity, :tactic
@@ -51,7 +67,8 @@ class Club < ActiveRecord::Base
   end
 
   def starters_average_tactic
-    tactic
+    total = self.players.starter.inject(0) {|result, element| result + element.average_qualities_tactic}
+    return total / MIN_PLAYERS
   end
 
   #Returns the suppliers players
@@ -278,6 +295,14 @@ class Club < ActiveRecord::Base
     self.offers_as_buyer.pending
   end
 
+  #return line up of match
+  def line_up_starters(match)
+    players = LineUp.where(:club_id => self.id, :match_general_id => match, :position => (1..11)).map do |lu|
+      lu.player
+    end
+    return players
+  end
+
   private
 
   #find matchs on the round and season passed
@@ -309,21 +334,4 @@ class Club < ActiveRecord::Base
     end
   end
 end
-
-
-# == Schema Information
-#
-# Table name: clubs
-#
-#  id               :integer         not null, primary key
-#  name             :string(30)      not null
-#  stadium_name     :string(40)      not null
-#  stadium_capacity :integer         not null
-#  created_at       :datetime
-#  updated_at       :datetime
-#  user_id          :integer
-#  cash             :decimal(16, 2)  default(0.0)
-#  ticket_price     :decimal(4, 2)   default(0.0)
-#  tactic           :string(255)     default("4-4-2"), not null
-#
 

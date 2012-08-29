@@ -1,4 +1,4 @@
-<% if @match_general.in_play? %>
+<% if @in_play %>
 <div class="in-play">
   <%= image_tag("in_play.gif") %>
   <div class="countdown">
@@ -17,32 +17,40 @@
           <%= t('.guest') %>
         </th>
     </tr>
-    <tr>
+   <tr>
       <th>
-      <%=h(@match_general.local.name) %></th>
+        <%= render :partial => 'team_starters', :locals => {:players => @local.line_up_starters(@match_general)} %>
+      </th>
       <th>
-      <%=  h(@match_general.guest.name) %></th>
+        <%= render :partial => 'team_starters', :locals => {:players => @guest.line_up_starters(@match_general)} %>
+      </th>
     </tr>
     <tr>
       <th>
-      <% if @match_general.finished? or @match_general.in_play? %>
-      <%= h(@match_general.local_goals_live) %>
+      <%= link_to h(@local.name), team_club_path(@local) %> | <%= @local.starters_average_tactic %></th>
+      <th>
+      <%=  link_to h(@guest.name), team_club_path(@guest) %> | <%= @guest.starters_average_tactic %></th>
+    </tr>
+    <tr class="goals">
+      <th>
+      <% if @finished || @in_play %>
+      <span class="badge badge-important"><%= h(@match_general.local_goals_live) %></span>
       <% end %>
       </th>
       <th>
-      <% if @match_general.finished? or @match_general.in_play? %>
-         <%= h(@match_general.guest_goals_live) %>
+      <% if @finished || @in_play %>
+         <span class="badge badge-important"><%= h(@match_general.guest_goals_live) %></span>
        <% end %>
       </th>
     </tr>
-    <% if @match_general.in_play? || @match_general.finished? %>
+    <% if @in_play || @finished %>
     <tr>
       <th colspan="2">
         <%= t('.spectators', :spectators => number_with_delimiter(@match_general.spectators, :delimiter => '.')) %>
       </th>
     </tr>
     <% end %>
-    <% if @match_general.in_play? %>
+    <% if @in_play %>
     <tr>
       <th colspan="2">
           <%= t('minute', :minute =>  @match_general.minute.to_i.to_s) %>
@@ -64,7 +72,7 @@
     </tr>
   </thead>
   <tbody>
-  <% if @match_general.finished?  %>
+  <% if @finished  %>
   <tr>
     <td>
     <%= MatchGeneral::MINUTES%>
@@ -76,9 +84,8 @@
   </tr>
   <% end %>
   <%= render :partial =>
-  'commentarie', :collection => @match_general.
-  details.second_time.reverse %>
-  <% if @match_general.minute >=
+  'commentarie', :collection => @second_time %>
+  <% if @minute >=
   MatchGeneral::PARTS_TIME %>
   <tr>
     <td>
@@ -91,9 +98,8 @@
   </tr>
   <% end %>
   <%= render :partial =>
-     'commentarie', :collection => @match_general.
-     details.first_time.reverse %>
-  <% if @match_general.in_play? or @match_general.finished? %>
+     'commentarie', :collection => @first_time %>
+  <% if @in_play || @finished %>
   <tr>
     <td>0</td>
     <td class="action">

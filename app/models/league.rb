@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: leagues
+#
+#  id          :integer          not null, primary key
+#  category    :integer          default(1), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  state_teams :integer          default(0)
+#
+
 class League < ActiveRecord::Base
   has_many :seasons, :dependent => :destroy
   validates_numericality_of :category

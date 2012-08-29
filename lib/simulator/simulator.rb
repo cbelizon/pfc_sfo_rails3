@@ -3,8 +3,8 @@ module Simulator
 
   def self.simulate_match(local, guest, actions, available_minutes)
     @actions = actions
-    avg_local = local.starters_average
-    avg_guest = guest.starters_average
+    avg_local = local.starters_average_tactic
+    avg_guest = guest.starters_average_tactic
     num_plays_local = num_plays(avg_local, avg_guest, NUM_PLAYS)  #Adjusting the num of plays in terms of global quality
     num_plays_guest = num_plays(avg_guest, avg_local, NUM_PLAYS)
 
@@ -36,7 +36,7 @@ module Simulator
   def self.simulate_play(club, available_minutes, starters)
     action = @actions[rand(@actions.length)]
     players = starters.to_a
-    player = players[rand(players.length)]
+    player = players[rand(players.length - 1) + 1]
     minute = available_minutes.delete_at(rand(available_minutes.length))
     MatchDetail.new({
         :player => player,
@@ -47,7 +47,7 @@ module Simulator
   end
 
   def self.num_plays(local, guest, num_plays)
-    total = local + guest;
+    total = local + guest + 2;
     multiplier_local = (local + 1)/ Float(total);
     return Integer(num_plays * multiplier_local);
   end

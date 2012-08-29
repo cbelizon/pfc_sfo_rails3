@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: seasons
+#
+#  id           :integer          not null, primary key
+#  league_id    :integer          not null
+#  date         :integer          not null
+#  actual_round :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  season_state :integer          default(0), not null
+#
+
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 Primera2009:
@@ -9,18 +22,4 @@ Segunda2009:
   league: second_division
   date: 2009
   actual_round: 0
-
-
-# == Schema Information
-#
-# Table name: seasons
-#
-#  id           :integer         not null, primary key
-#  league_id    :integer         not null
-#  date         :integer         not null
-#  actual_round :integer
-#  created_at   :datetime
-#  updated_at   :datetime
-#  season_state :integer         default(0), not null
-#
 

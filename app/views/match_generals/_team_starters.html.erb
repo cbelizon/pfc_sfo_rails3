@@ -1,0 +1,8 @@
+<ul class="match-starters">
+  <% players.each do |player| %>
+  <li>
+    <div class="width-position"><span class="badge badge-info"><%=h player.tactic_position %></span></div>
+    <div class="full-name"><span class="badge badge-success"><%=h player.complete_name %></span></div>
+  </li>
+  <% end %>
+</ul>

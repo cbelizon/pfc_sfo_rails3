@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: offers
+#
+#  id         :integer          not null, primary key
+#  club_id    :integer          not null
+#  player_id  :integer          not null
+#  buyer_id   :integer          not null
+#  state      :integer          default(0), not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  pay        :decimal(16, 2)   default(0.0)
+#
+
 class Offer < ActiveRecord::Base
   PENDING = 0
   ACCEPTED = 1
@@ -95,19 +109,4 @@ class Offer < ActiveRecord::Base
     self.state == TRANSFERED
   end
 end
-
-
-# == Schema Information
-#
-# Table name: offers
-#
-#  id         :integer         not null, primary key
-#  club_id    :integer         not null
-#  player_id  :integer         not null
-#  buyer_id   :integer         not null
-#  state      :integer         default(0)
-#  created_at :datetime
-#  updated_at :datetime
-#  pay        :decimal(16, 2)  default(0.0)
-#
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100825101857) do
+ActiveRecord::Schema.define(:version => 20120829100702) do
 
   create_table "admin_messages", :force => true do |t|
     t.string   "text_msg_es", :null => false
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20100825101857) do
     t.integer  "minute",           :null => false
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.string   "club_string"
+    t.string   "player_string"
   end
 
   create_table "match_generals", :force => true do |t|
