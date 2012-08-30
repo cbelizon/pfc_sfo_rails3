@@ -201,7 +201,7 @@ class ClubsController < ApplicationController
       end
     else
       respond_to do |format|
-        flash[:error] = training.errors.full_messages
+        flash[:error] = training.errors.full_messages.join(". ")
         format.html {redirect_to trainings_club_path(@club)}
         format.js
       end

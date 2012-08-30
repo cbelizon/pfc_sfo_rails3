@@ -24,6 +24,10 @@ es:
   no_team: "Actualmente no tienes equipo asignado"
   take_it_easy:  "Cuando terminen las ligas actuales te asignaremos un equipo"
   rounds_to_finish: "Faltan %{rounds} jornadas para que obtengas un equipo"
+  training:
+    errors:
+      already_training: "El jugador está entrenando actulamente otra habilidad"
+      red_numbers: "No puedes entrenar jugadores, estás en números rojos"
   date:
     formats:
       default: "%d %m %Y"

@@ -16,6 +16,12 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
 
+  def transactions_filter
+    ActiveRecord::Base.transaction do
+      yield
+    end
+  end
+
   private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -36,16 +42,16 @@ class ApplicationController < ActionController::Base
 
   #return false if you're not logged in
   def require_user
-      unless current_user
-        store_location
-        flash[:notice] = t('defaults.require_user')
-        redirect_to new_user_session_url
-        return false
-      end
+    unless current_user
+      store_location
+      flash[:notice] = t('defaults.require_user')
+      redirect_to new_user_session_url
+      return false
+    end
   end
 
    #return false if you're not an admin logged in
-  def require_admin
+   def require_admin
     unless current_user && current_user.admin?
       store_location
       flash[:notice] = t("defaults.require_admin")
@@ -56,7 +62,7 @@ class ApplicationController < ActionController::Base
 
   #save the action who we are
   def store_location
-      session[:return_to] = request.fullpath
+    session[:return_to] = request.fullpath
   end
 
   #Keep the previous location

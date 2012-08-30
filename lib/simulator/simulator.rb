@@ -1,5 +1,7 @@
 module Simulator
+  require 'random/online'
   NUM_PLAYS = 88
+  RANDOM = 15
 
   def self.simulate_match(local, guest, actions, available_minutes)
     @actions = actions
@@ -23,20 +25,23 @@ module Simulator
   end
 
   def self.simulate_spectators(local, guest)
-    local_quality = local.players.inject(0) {|acum, player| acum += player.quality}
-    guest_quality = guest.players.inject(0){|acum, player| acum += player.quality}
-    qualities = guest_quality + local_quality
-    ponderation = qualities / local.ticket_price
-    ponderation = 100 if ponderation > 100
-    ponderation = ponderation / 100
-    return local.stadium_capacity * ponderation
+    generator = RealRand::RandomOrg.new
+    local_quality = local.starters_average
+    guest_quality = guest.starters_average
+    qualities = guest_quality + local_quality + generator.randnum(1, 0, RANDOM).join().to_i
+    ponderation = qualities * 10 / Float(local.ticket_price)
+    ponderation = 100 if ponderation >= 100
+    ponderation = ponderation / 100.0
+    people = local.stadium_capacity * ponderation + generator.randnum(1, 0, 99).join().to_i
+    people = local.stadium_capacity if people >  local.stadium_capacity
+    return people
   end
 
   private
   def self.simulate_play(club, available_minutes, starters)
     action = @actions[rand(@actions.length)]
     players = starters.to_a
-    player = players[rand(players.length - 1) + 1]
+    player = players[rand(players.length - 1) + 1] #Evitamos que el portero pueda meter gol
     minute = available_minutes.delete_at(rand(available_minutes.length))
     MatchDetail.new({
         :player => player,

@@ -13,7 +13,7 @@
 
 class Training < ActiveRecord::Base
   belongs_to :player
-  validate :only_one_ability_at_the_same_time
+  validate :only_one_ability_at_the_same_time, :no_red_numbers
   validates_presence_of :ability
   validates_numericality_of :improvement, :only => :integer, :greater_than => 0
   validates_numericality_of :round_count, :only => :integer,
@@ -26,8 +26,15 @@ class Training < ActiveRecord::Base
   #Add error player already training
   def only_one_ability_at_the_same_time
     unless self.player.trainings.not_finished.count == 0
-      self.errors.add_to_base("The player already training")
+      self.errors[:base] = I18n.t('training.errors.already_training')
     end
+  end
+
+  #Add error if the club is in red numbers
+  def no_red_numbers
+      if self.player.club.cash <= 0
+        self.errors[:base] = I18n.t('training.errors.red_numbers')
+      end
   end
 
   #Returns true if the training has finished

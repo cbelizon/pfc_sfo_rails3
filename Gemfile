@@ -16,6 +16,7 @@ group :assets do
   # gem 'therubyracer', :platform => :ruby
 end
 
+gem 'realrand'
 gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'sass-rails'
