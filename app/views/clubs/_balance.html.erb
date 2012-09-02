@@ -1,0 +1,38 @@
+<table class="table-balance table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>
+        <%= t('concept_table') %>
+      </th>
+      <th>
+        <%= t('amount_table') %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% ClubFinancesRound::BENEFITS.each do |b| %>
+    <tr>
+      <td><span class="badge badge-info"><%= t(b)%></span></td>
+      <td><span class="badge badge-success"><%= number_to_currency(finance[b]) %></span></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tbody>
+    <% ClubFinancesRound::PAYS.each do |p| %>
+    <tr>
+      <td><span class="badge badge-info"><%= t(p)%></span></td>
+      <td><span class="badge badge-important"><%= number_to_currency(finance[p]) %></span></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tbody class="total">
+    <tr>
+      <th>Total</th>
+      <% if finance.balance > 0 %>
+      <td><span class="badge badge-success"><%= number_to_currency(finance.balance)%></span></td>
+      <% else %>
+      <td><span class="badge badge-important"><%= number_to_currency(finance.balance)%></span></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,28 @@
+<table class="table-pays-players table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th><%= t('players.name') %></th>
+      <th><%= t('players.surname') %></th>
+      <th><%= t('players.pay') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% players.each do |player| %>
+    <tr>
+      <td><span class="badge badge-info"><%= player.name %>
+      </span></td>
+      <td><span class="badge badge-info"><%= player.surname %>
+      </span></td>
+      <td><span class="badge badge-important"><%= number_to_currency(player.pay_week) %>
+      </span></td>
+    </tr>
+    <% end %>
+  </tbody>
+  <tbody class="total">
+    <tr>
+      <th colspan="2">Total</th>
+      <td><span class="badge badge-important"><%= number_to_currency(club.pays_players_week)%></span></td>
+    </tr>
+  </tbody>
+</table>
+

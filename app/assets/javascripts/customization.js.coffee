@@ -1,6 +1,12 @@
 $ ->
 	$(document).button()
 	$(document).alert()
+	$("#finances-tab a").click (e) ->
+		e.preventDefault();
+		$(this).tab('show');
+	$("#offers-tab a").click (e) ->
+		e.preventDefault();
+		$(this).tab('show');
 	return false
 #Autoreload match
 $ ->

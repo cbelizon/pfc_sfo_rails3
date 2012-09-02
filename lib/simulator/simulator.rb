@@ -1,5 +1,4 @@
 module Simulator
-  require 'random/online'
   NUM_PLAYS = 88
   RANDOM = 15
 
@@ -25,14 +24,13 @@ module Simulator
   end
 
   def self.simulate_spectators(local, guest)
-    generator = RealRand::RandomOrg.new
     local_quality = local.starters_average
     guest_quality = guest.starters_average
-    qualities = guest_quality + local_quality + generator.randnum(1, 0, RANDOM).join().to_i
+    qualities = guest_quality + local_quality + rand(RANDOM)
     ponderation = qualities * 10 / Float(local.ticket_price)
     ponderation = 100 if ponderation >= 100
     ponderation = ponderation / 100.0
-    people = local.stadium_capacity * ponderation + generator.randnum(1, 0, 99).join().to_i
+    people = local.stadium_capacity * ponderation + rand(99)
     people = local.stadium_capacity if people >  local.stadium_capacity
     return people
   end

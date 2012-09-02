@@ -3,28 +3,52 @@
 	<div class="span4 pull-right cash"><h1><%= cash(@club.cash) %></h1></div>
 </div>
 <div class="offers">
-	<h2><%= t('clubs.offers.pending').pluralize %> </h2>
-	<% if @offers.pending.count > 0 %>
-		<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :buyer} %>
-	<% else %>
-		<%= t('none') %>
-	<% end %>
-	<h2><%= t('clubs.offers.transfered').pluralize %></h2>
-	<% if @offers.transfered.count > 0 %>
-		<%= render :partial => 'offers', :locals => {:offers => @offers.transfered, :user => :buyer} %>
-	<% else %>
-		<%= t('none') %>
-	<% end %>
-	<h2><%= t('clubs.offers.accepted').pluralize %> </h2>
-	<% if @offers.accepted.count > 0 %>
-		<%= render :partial => 'offers', :locals => {:offers => @offers.accepted, :user => :buyer} %>
-	<% else %>
-		<%= t('none') %>
-	<% end %>
-	<h2><%= t('clubs.offers.rejected').pluralize %> </h2>
-	<% if @offers.rejected.count > 0 %>
-	<%= render :partial => 'offers', :locals => {:offers => @offers.rejected, :user => :buyer} %>
-	<% else %>
-		<%= t('none') %>
-	<% end %>
+	<ul class="nav nav-tabs" id="offers-tab">
+		<li class="active">
+			<a href="#pending"><%= t('clubs.offers.pending').pluralize %></a>
+		</li>
+		<li>
+			<a href="#transfered"><%= t('clubs.offers.transfered').pluralize%></a>
+		</li>
+		<li>
+			<a href="#accepted"><%= t('clubs.offers.accepted').pluralize %></a>
+		</li>
+		<li>
+			<a href="#rejected"><%= t('clubs.offers.rejected').pluralize %></a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="pending">
+			<div class="row">
+				<h2 class="span12"><%= t('clubs.offers.pending').pluralize%></h2>
+			</div>
+			<div class="offset span6">
+			<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :buyer} %>
+			</div>
+		</div>
+		<div class="tab-pane" id="transfered">
+			<div class="row">
+				<h2 class="span12"><%= t('clubs.offers.transfered').pluralize%></h2>
+			</div>
+			<div class="offset span6">
+			<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :buyer} %>
+			</div>
+		</div>
+		<div class="tab-pane" id="accepted">
+			<div class="row">
+				<h2 class="span12"><%= t('clubs.offers.accepted').pluralize%></h2>
+			</div>
+			<div class="offset span6">
+			<%= render :partial => 'offers', :locals => {:offers => @offers.accepted, :user => :buyer} %>
+			</div>
+		</div>
+		<div class="tab-pane" id="rejected">
+			<div class="row">
+				<h2 class="span12"><%= t('clubs.offers.rejected').pluralize%></h2>
+			</div>
+			<div class="offset span6">
+			<%= render :partial => 'offers', :locals => {:offers => @offers.rejected, :user => :buyer} %>
+			</div>
+		</div>
+	</div>
 </div>
