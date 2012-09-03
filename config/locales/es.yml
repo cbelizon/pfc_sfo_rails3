@@ -2,6 +2,15 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 es:
+  benefits_ticket: "Ingresos de venta de entradas"
+  benefits_transfers: "Ingresos de venta de futbolistas"
+  pays_transfers: "Pagos de compra de jugadores"
+  pays_maintenance: "Pago de mantenimiento del estadio"
+  pays_players: "Pago de sueldos de jugadores"
+  concept_table: "Concepto"
+  amount_table: "Cantidad"
+  registered: "¡Cuenta %{account} registrada!"
+  salaries: "Salarios"
   select_language: "Seleccionar lenguaje"
   spanish: "Español"
   english: "Inglés"
@@ -24,6 +33,11 @@ es:
   no_team: "Actualmente no tienes equipo asignado"
   take_it_easy:  "Cuando terminen las ligas actuales te asignaremos un equipo"
   rounds_to_finish: "Faltan %{rounds} jornadas para que obtengas un equipo"
+  stadium_maintenance: "Mantenimiento del estadio"
+  training:
+    errors:
+      already_training: "El jugador está entrenando actulamente otra habilidad"
+      red_numbers: "No puedes entrenar jugadores, estás en números rojos"
   date:
     formats:
       default: "%d %m %Y"
@@ -69,6 +83,10 @@ es:
               too_short: "demasiado corta."
             email:
               taken: "ya registrado."
+        club:
+          attributes:
+            ticket_price:
+              not_a_number: "El número insertado no es un precio"
   authlogic:
     error_messages:
       login_blank: "no puede estar en blanco"
@@ -200,27 +218,32 @@ es:
       header: "Ofertas emitidas"
     received_offers:
       header: "Ofertas recibidas"
+    change_price_ticket:
+      set_price: "Fijar precio"
+      insert_price: "Inserta el precio del tícket"
+    stadium_pay:
+      stadium_maintenance: "Mantenimiento del estadio"
     finances:
       header: "Finanza"
       total: "Total"
       cash: "Caja"
       tickets_price: "Precio de los tickets"
       ticket_price: "Precio del ticket"
-      set_price: "Fijar precio"
       last_round: "Último balance"
+      balance: "Balance"
       capacity: "Localidades"
+      set_price_ticket: "Fijar precio de entradas"
       pays:
         header: "Pagos"
-        maintenance: "Mantenimiento del estadio"
         players: "Pagos de los jugadores"
         transfers: "Transferencias de jugadores"
-        total: "Total"
+        total: "Pagos totales"
       benefits:
        header: "Ingresos"
        tickets: "Tickets"
        trademarks: "Merchandasing"
        transfers: "Transferencias de jugadores"
-       total: "Total"
+       total: "Ingresos totales"
     team:
       replace: "Reemplazar"
       header: "Plantilla"

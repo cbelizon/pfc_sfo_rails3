@@ -1,0 +1,20 @@
+<table class="table table-stadium-pay table-striped table-condensed">
+	<thead>
+		<tr>
+			<th><%= t('concept') %></th>
+			<th><%= t('amount') %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><span class="badge badge-info"><%= t('.stadium_maintenance') %></span></td>
+			<td><span class="badge badge-important"><%= number_to_currency club.pays_maintenance%></span></td>
+		</tr>
+	</tbody>
+	<tbody class="total">
+		<tr>
+			<th>Total</th>
+			<td><span class="badge badge-important"><%= number_to_currency club.pays_maintenance%></span></td>
+		</tr>
+	</tbody>
+</table>

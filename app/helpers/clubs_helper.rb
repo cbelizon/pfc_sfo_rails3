@@ -61,9 +61,14 @@ module ClubsHelper
   end
 
   def cash(number)
-    cash = t('clubs.finances.cash')
-    return "#{cash}: #{number_to_currency(number,
-    :precision => 2)}"
+    if (number < 0 )
+      html_class = 'label-important'
+    else
+      html_class = 'label-success'
+    end
+    name = content_tag :span, t('clubs.finances.cash') + ": "
+    cash = content_tag :span, number_to_currency(number), :class => "cash label #{html_class}"
+    return name + cash
   end
 
   def link_to_finances_club(club)

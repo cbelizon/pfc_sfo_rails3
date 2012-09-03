@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         UserMailer.welcome_email(@user).deliver
-        flash[:notice] = "Account #{@user.login} registered!"
+        flash[:notice] = t("registered", :account => @user.login)
         format.html { redirect_to :root}
       else
         format.html { render :action => "new" }

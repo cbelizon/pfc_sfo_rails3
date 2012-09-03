@@ -42,9 +42,9 @@ class Club < ActiveRecord::Base
   INIT_PLAYERS = 18
   MAX_PLAYERS = 25
   MIN_PLAYERS = 11
-  INIT_STADIUM = 10000
+  INIT_STADIUM = 90000
   INIT_TICKET_PRICE = 10
-  INIT_CASH = 20000
+  INIT_CASH = 500000
 
   def to_param
       "#{id}-#{name.downcase.gsub(/[^[:alnum:]]/,'-')}".gsub(/-{2,}/,'-')

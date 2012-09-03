@@ -1,0 +1,12 @@
+<%= form_for @club, :url => ticket_price_club_path(@club), :html => {:method => :put, :class => 'well'} do |f| %>
+<fieldset>
+	<legend><%=t('.set_price')%></legend>
+	<div class="control-group span3">
+		<%= f.label t('.insert_price'), :class => 'control-label' %>
+		<%= f.text_field :ticket_price, :placeholder => number_to_currency(f.object.ticket_price) ,:class => 'span3', :value => nil %>
+	</div>
+	<div class="control-group span1 offset1">
+		<%= f.submit t('.set_price'), :class => 'btn btn-primary' %>
+	</div>
+</fieldset>
+<% end %>

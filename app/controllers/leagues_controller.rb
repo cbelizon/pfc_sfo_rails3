@@ -1,6 +1,8 @@
 class LeaguesController < ApplicationController
   before_filter :require_admin
   after_filter :store_location
+  around_filter :transactions_filter, :only => [:new_leagues, :create_calendar,
+    :simulate_rounds, :next_rounds, :start_rounds, :promotion]
 
   #GET leagues
   #Show all seasons of all leagues of the game

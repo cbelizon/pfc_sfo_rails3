@@ -45,6 +45,11 @@ h1 {
 	margin-bottom: $h1Margin;
 }
 
+h2 {
+	margin-top: $h1Margin;
+	margin-bottom: $h1Margin;
+}
+
 .table {
 	th, .stat{
 		text-align: center;
@@ -120,6 +125,30 @@ fieldset {
 				padding-bottom: 13px;
 			}
 		}
+	}
+}
+
+.finances .table {
+	th {
+		text-align: left;
+	}
+	.total th {
+		text-align: right;
+	}
+
+}
+
+.cash {
+	 font-size: 30px;
+    line-height: 36px;
+}
+
+.round {
+	.fixed-club-width {
+		width: 150px;
+	}
+	.fixed-score-width {
+		width: 50px;
 	}
 }
 

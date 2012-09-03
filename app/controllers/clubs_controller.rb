@@ -10,6 +10,7 @@ class ClubsController < ApplicationController
   before_filter :require_open_teams, :only =>
   [:replace, :ticket_price, :make_offer,:accept_offer, :reject_offer,
   :train_ability, :cancel_offer, :tactic]
+  include ActionView::Helpers::NumberHelper
 
   # GET /clubs/1/team
   # GET /clubs/1/team.xml
@@ -68,7 +69,9 @@ class ClubsController < ApplicationController
 
   def finances
     @club = Club.find(params[:id])
-    @last_finances = @club.last_finances
+    @players = @club.players
+    @last_finance = @club.last_finances
+    @open_teams = League.open_teams?
 
     respond_to do |format|
       format.html
@@ -77,18 +80,17 @@ class ClubsController < ApplicationController
 
   def ticket_price
     club = Club.find(params[:id])
-
     club.ticket_price = params[:club][:ticket_price]
 
     if club.save
       respond_to do |format|
-        flash[:notice] = t('defaults.ticket_price_success') + " #{club.ticket_price}"
-        format.html {redirect_to(finances_club_path)}
+        flash[:notice] = t('defaults.ticket_price_success') + " #{number_to_currency(club.ticket_price)}"
+        format.html { redirect_to finances_club_path({:ticket_price => true}) }
       end
     else
       respond_to do |format|
         flash[:error] = club.errors.full_messages.join('. ')
-        format.html {redirect_to(finances_club_path)}
+        format.html {redirect_to finances_club_path({:ticket_price => true})}
       end
     end
   end
@@ -201,7 +203,7 @@ class ClubsController < ApplicationController
       end
     else
       respond_to do |format|
-        flash[:error] = training.errors.full_messages
+        flash[:error] = training.errors.full_messages.join(". ")
         format.html {redirect_to trainings_club_path(@club)}
         format.js
       end

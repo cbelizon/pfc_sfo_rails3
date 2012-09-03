@@ -195,8 +195,8 @@ class Player < ActiveRecord::Base
       player.quality += player[attribute]
     end
     player.quality  = player.quality / PLAYER_QUALITIES
-    player.clause = (player.quality * 1000).to_i
-    player.pay = (player.quality * 10).to_i
+    player.new_clause!
+    player.new_pay!
     return player
   end
 
@@ -225,11 +225,11 @@ class Player < ActiveRecord::Base
   end
 
   def new_clause!
-    self.update_attribute(:clause, (self.quality * 5000))
+    self.update_attribute(:clause, (self.quality * 40000))
   end
 
   def new_pay!
-    self.update_attribute(:pay, (self.quality * 750 ))
+    self.update_attribute(:pay, (self.quality * 2500 ))
   end
 end
 

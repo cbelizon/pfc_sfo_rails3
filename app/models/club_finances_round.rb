@@ -22,6 +22,8 @@ class ClubFinancesRound < ActiveRecord::Base
   belongs_to :club
   belongs_to :round
   attr_accessible :club, :round, :cash, :pays_players, :pays_maintenance, :pays_transfers, :benefits_ticket, :benefits_transfers
+  BENEFITS = ['benefits_ticket', 'benefits_transfers']
+  PAYS = ['pays_maintenance', 'pays_transfers', 'pays_players']
 
   #Returns all benefits
   def all_benefits

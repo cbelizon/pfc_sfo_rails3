@@ -2,8 +2,15 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  benefits_ticket: "Ticket incomes"
+  benefits_transfers: "Transfers incomes"
+  pays_transfers: "Buy pay transfers"
+  pays_maintenance: "Stadium maintenance pay"
+  pays_players: "Pay players salarium"
+  salaries: "Salaries"
   "yes": "Yes"
   "no": "No"
+  registered: "Account %{account} registered!"
   select_language: "Select language"
   spanish: "Spanish"
   english: "English"
@@ -27,6 +34,13 @@ en:
   no_team: "You currently have no assigned team"
   take_it_easy:  "We will assign you a team as fast as we can"
   rounds_to_finish: "%{rounds} rounds left to get a team"
+  stadium_maintenance: "Stadium maintenance"
+  concept: "Concept"
+  amount: "Amount"
+  training:
+    errors:
+      already_training: "The player is already training other ability"
+      red_numbers: "You can't train players, you are in red numbers"
   activerecord:
     errors:
       template:
@@ -150,27 +164,32 @@ en:
       header: "Sent Offers"
     received_offers:
       header: "Received Offers"
+    change_price_ticket:
+      set_price: "Set price"
+      insert_price: "Insert price ticket"
+    stadium_pay:
+      stadium_maintenance: "Stadium maintenance"
     finances:
+      set_price_ticket: "Fijar precio de entradas"
       header: "Finance"
       total: "Total"
       cash: "Cash"
       tickets_price: "Tickets price"
       ticket_price: "Ticket price"
-      set_price: "Set price"
       last_round: "Last balance"
+      balance: "Balance"
       capacity: "Capacity"
       pays:
         header: "Pays"
-        maintenance: "Stadium maintenance"
         players: "Players pays"
         transfers: "Players transfers"
-        total: "Total"
+        total: "Total Pays"
       benefits:
-       header: "Income"
+       header: "Incomes"
        tickets: "Tickets"
        trademarks: "Trademarks"
        transfers: "Players transfers"
-       total: "Total"
+       total: "Total Incomes"
     team:
       replace: "Replace"
       header: "Team"
