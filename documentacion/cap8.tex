@@ -73,6 +73,8 @@ El rendimiento de la aplicación podrá ser menor en la primera instanciación d
 la aplicación debido a que no se habrá cacheado ningún contenido.
 
 \subsection{Requisitos de interfaces externas}
+Aquí detallaremos los requisitos de conexión a otros
+sistemas hardware o software con los que vamos a interactuar.
 \subsubsection{Interfaces de usuario}
 Podemos dividir los requisitos de interfaz de usuario según tres roles:
 
@@ -211,6 +213,8 @@ código fuente que genera \cursiva{Rails} para una aplicación vacía.
 En la figura \ref{fig:entornoejecucion} podemos ver el diagrama de despliegue de
 la aplicación puesta en marcha en cualquiera de los entornos, ya sea este de
 desarrollo, test o producción.
+
+\figura{diagrama_despliegue.png}{scale=0.53}{Diagrama de estructura}{fig:entornoejecucion}{H}
 
 El sistema (servidor) interactuará con uno o más clientes web (navegadores). El
 servidor, a su vez estará formado por un servidor de aplicaciones web, en
