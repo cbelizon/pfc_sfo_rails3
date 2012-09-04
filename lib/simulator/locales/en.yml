@@ -12,6 +12,11 @@ en:
     spectacular_pass: "make a great dribble without looking, what a spectacle!"
     spectacular_dribbling: "make a great dribble, the defensive remains seated and cause a standing ovation"
     shoot: "shoot at goal but the goalkeeper catchs the ball"
+    wood: "makes an incredible shot and it hits the post!"
+    dangerous: "makes a dangerous play that just going by the goal line."
+    wrong_pass: "makes a bad pass that goes to the opponent."
+    offside: "enters offside and is indicated by the referee."
+    rob: "steals the ball to opponent cleanly."
     from: "from"
     goal: "make GOAL"
   symbol:

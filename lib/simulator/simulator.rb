@@ -13,11 +13,11 @@ module Simulator
     local_players = local.starters
     guest_players = guest.starters
     1.upto(num_plays_local) do
-      details << simulate_play(local, available_minutes, local_players);
+      details << simulate_play(local, guest, available_minutes, local_players);
     end
 
     1.upto(num_plays_guest) do
-      details << simulate_play(guest, available_minutes, guest_players);
+      details << simulate_play(guest, local, available_minutes, guest_players);
     end
 
     return details
@@ -36,17 +36,65 @@ module Simulator
   end
 
   private
-  def self.simulate_play(club, available_minutes, starters)
+  def self.simulate_play(attacker, defender, available_minutes, starters)
     action = @actions[rand(@actions.length)]
     players = starters.to_a
     player = players[rand(players.length - 1) + 1] #Evitamos que el portero pueda meter gol
     minute = available_minutes.delete_at(rand(available_minutes.length))
-    MatchDetail.new({
+    if action == MatchDetail::ACTION_GOAL
+      sum_attackers = 0
+      attacker.attackers.each do |a|
+        sum_attackers += a.average_qualities_tactic
+      end
+      sum_defenders = 0
+      defender.defenders.each do |d|
+        sum_defenders += d.average_qualities_tactic
+      end
+      dif = sum_defenders - sum_attackers
+      if dif > 0 #Si la defensa tiene más calidad que el ataque
+        random_sum = rand(Integer((dif + 1) * 1.5))
+        if (random_sum + sum_attackers) > sum_defenders
+          MatchDetail.new({
+          :player => player,
+          :club => attacker,
+          :action => action,
+          :minute => minute
+          })
+        else
+          MatchDetail.new({
+          :player => player,
+          :club => attacker,
+          :action => MatchDetail::ACTION_ROB,
+          :minute => minute
+          })
+        end
+      else #Si el ataque tiene más calidad que la defensa
+        dif = -dif
+        random_sum = rand(Integer((dif + 1) * 1.25))
+        if (random_sum + sum_defenders) > sum_attackers
+          MatchDetail.new({
+          :player => player,
+          :club => attacker,
+          :action => MatchDetail::ACTION_ROB,
+          :minute => minute
+          })
+        else
+          MatchDetail.new({
+          :player => player,
+          :club => attacker,
+          :action => action,
+          :minute => minute
+          })
+        end
+      end
+    else
+      MatchDetail.new({
         :player => player,
-        :club => club,
+        :club => attacker,
         :action => action,
         :minute => minute
       } )
+    end
   end
 
   def self.num_plays(local, guest, num_plays)

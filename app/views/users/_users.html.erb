@@ -1,4 +1,4 @@
-<% if users.count >0 %>
+<% if users.count > 0 %>
 <div class="pagination-container">
 	<div class="row pagination-search">
 		<div class="offset3 span6">
@@ -41,7 +41,7 @@
 							<% if user.login_count %>
 							<td><%= user.login_count %></td>
 							<% else %>
-							<%= 0 %>
+							<td><%= 0 %></td>
 							<% end %>
 							<% if user.last_login_at %>
 							<td><%= l user.last_login_at %></td>

@@ -44,7 +44,17 @@ class Classification
 
   #Call block once for each club on the classification.
   def each
-    sorted = @classification.sort {|a,b| b[1].points <=> a[1].points }
+    sorted = @classification.sort do |a,b|
+      if b[1].points == a[1].points
+        if (b[1].goals_favor - b[1].goals_against) == (a[1].goals_favor - a[1].goals_against)
+          b[1].goals_favor <=> a[1].goals_favor
+        else
+          b[1].goals_favor - b[1].goals_against <=> a[1].goals_favor - a[1].goals_against
+        end
+      else
+        b[1].points <=> a[1].points
+      end
+    end
     sorted.each { |e| yield e[1] }
   end
 

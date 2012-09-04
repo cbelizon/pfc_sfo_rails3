@@ -30,7 +30,7 @@
       <td><%= h(offer.seller.name) %></td>
     <% end %>
     <td><%= h(offer.player.complete_name) %> </td>
-    <td><%= h(offer.player.clause) %></td>
+    <td><%= number_to_currency(offer.player.clause) %></td>
     <% if offer.pending? and user == :seller %>
       <td><%= link_to t('defaults.accept').capitalize, accept_offer_club_path(:id => offer.seller,
           :offer => offer),

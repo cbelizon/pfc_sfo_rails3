@@ -17,14 +17,26 @@
 				</span></td>
 			<td><span class="badge badge-important"><%= number_to_currency(club.pays_maintenance) %>
 				</span></td>
+		<% if !finance.nil? && finance.pays_transfers > 0 %>
 		</tr>
+			<td><span class="badge badge-info"><%= t('pays_transfers') %>
+				</span></td>
+			<td><span class="badge badge-important"><%= number_to_currency(finance.pays_transfers) %>
+				</span></td>
+		</tr>
+		<% end %>
 	</tbody>
 	<tbody class="total">
 		<tr>
 			<th>Total
 			</th>
+			<% if !finance.nil?  %>
 			<td><span class="badge badge-important"><%= number_to_currency(club.pays_maintenance + club.pays_players_week) %>
 			</span></td>
+			<% else %>
+			<td><span class="badge badge-important"><%= number_to_currency(club.pays_maintenance + club.pays_players_week + finance.pays_transfers) %>
+			</span></td>
+			<% end %>
 		</tr>
 	</tbody>
 </table>
