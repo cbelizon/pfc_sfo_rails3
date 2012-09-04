@@ -186,27 +186,27 @@ código fuente que genera \cursiva{Rails} para una aplicación vacía.
   modelos de datos.
 \item \texttt{/pfc\_sfo/app/views/} ficheros fuente para las vistas de la
   aplicación, incluyendo como parte de las mismas las de los correos.
-\item \texttt{/pfc\_sfo/app/assets/} ficheros fuente que han de ejecutarse en
-  el navegador, archivos \cursiva{CSS}, \cursiva{JavasScript}, imágenes, etc...
+\item \texttt{/pfc\_sfo/app/assets/} ficheros fuente que han de ejecutarse en el
+  navegador, archivos \cursiva{CSS}, \cursiva{JavasScript}, imágenes, etc...
 \item \texttt{/pfc\_sfo/config/}, ficheros fuente de configuración de la
   aplicación web.
 \item \texttt{/pfc\_sfo/config/environments/} ficheros fuente de configuración
   de los distintos entornos, desarrollo, test y producción.
 \item \texttt{/pfc\_sfo/config/initializers/} ficheros de inicialización del
   servidor.
-\item \texttt{/pfc\_sfo/config/locales/} ficheros \cursiva{YAML} para los
-  textos de traducción en diferentes idiomas.
+\item \texttt{/pfc\_sfo/config/locales/} ficheros \cursiva{YAML} para los textos
+  de traducción en diferentes idiomas.
 \item \texttt{/pfc\_sfo/db/} ficheros autogenerados dónde se albergan la
   configuración de la Base de Datos.
-\item \texttt{/pfc\_sfo/db/migrate/} ficheros para la manipulación de las
-  tablas de la base de datos.
+\item \texttt{/pfc\_sfo/db/migrate/} ficheros para la manipulación de las tablas
+  de la base de datos.
 \item \texttt{/pfc\_sfo/lib/} ficheros para la extensión de la aplicación con
   otros subsistemas software.
 \item \texttt{/pfc\_sfo/log/} ficheros log del servidor.
 \item \texttt{/pfc\_sfo/public/} ficheros de acceso público a través del
   enrutador.
-\item \texttt{/pfc\_sfo/script/} scripts para la generación automática de
-  código y la automatización de procesos.
+\item \texttt{/pfc\_sfo/script/} scripts para la generación automática de código
+  y la automatización de procesos.
 \item \texttt{/pfc\_sfo/test/} ficheros para almacenar test automáticos.
 \end{itemize}
 
@@ -215,7 +215,8 @@ En la figura \ref{fig:entornoejecucion} podemos ver el diagrama de despliegue de
 la aplicación puesta en marcha en cualquiera de los entornos, ya sea este de
 desarrollo, test o producción.
 
-\figura{diagrama_despliegue.png}{scale=0.53}{Diagrama de estructura}{fig:entornoejecucion}{H}
+\figura{diagrama_despliegue.png}{scale=0.53}{Diagrama de
+  estructura}{fig:entornoejecucion}{H}
 
 El sistema (servidor) interactuará con uno o más clientes web (navegadores). El
 servidor, a su vez estará formado por un servidor de aplicaciones web, en
@@ -230,9 +231,11 @@ ni servicio en nuestro servidor web.
 En la figura \ref{diag:clases_modelo} podemos observar el diagrama de clases de
 la capa modelo de nuestra aplicación según la recolección de requisitos que
 hemos obtenido en el Capítulo \ref{cap:analisis} de esta memoria. Dichos
-diagramas serán realizados en notación \cursiva{UML} \cite{uml:distilled_standard}.
+diagramas serán realizados en notación \cursiva{UML}
+\cite{uml:distilled_standard}.
 
-\figura{models_complete.png}{scale=0.25}{Diagrama de clases UML de la capa modelo}{diag:clases_modelo}{H}
+\figura{models_complete.png}{scale=0.25}{Diagrama de clases UML de la capa
+  modelo}{diag:clases_modelo}{H}
 
 \clearpage
 
@@ -256,8 +259,7 @@ por el usuario web.
 
 \figura{diagramas_secuencia/crear_cuenta_usuario.png}{scale=0.42}{Diagrama de
   secuencia de crear cuenta de
-  usuario}{diagrama-secuencia-crear-cuenta-usuario}{H}
-\newpage
+  usuario}{diagrama-secuencia-crear-cuenta-usuario}{H} \newpage
 
 \subsection*{Diagrama de secuencia de acceder a cuenta de usuario}
 
@@ -267,8 +269,7 @@ sesión.
 
 \figura{diagramas_secuencia/acceder_cuenta_usuario.png}{scale=0.49}{Diagrama de
   secuencia de acceder a cuenta de
-  usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H}
-\newpage
+  usuario}{diagrama-secuencia-acceder-cuenta-usuario}{H} \newpage
 
 \subsection*{Diagrama de secuencia de abandonar cuenta de usuario}
 
@@ -277,8 +278,7 @@ cómo se destruye la sesión iniciada por un usuario.
 
 \figura{diagramas_secuencia/abandona_cuenta_usuario.png}{scale=0.59}{Diagrama de
   secuencia de abandonar cuenta de
-  usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H}
-\newpage
+  usuario}{diagrama-secuencia-abandonar-cuenta-usuario}{H} \newpage
 
 \subsection*{Diagrama de secuencia de abrir equipos}
 
@@ -361,8 +361,7 @@ la transferencia del futbolista entre los clubes.
 
 \figura{diagramas_secuencia/aceptar_oferta_recibida_futbolista.png}{scale=0.65}{Diagrama
   de secuencia de aceptar oferta recibida por
-  futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H}
-\newpage
+  futbolista}{diagrama-secuencia-aceptar-oferta-recibida-futbolista}{H} \newpage
 
 \subsection*{Diagrama de secuencia de renovación de futbolistas}
 En la figura \ref{diagrama-secuencia-renovacion-futbolistas} se describe cómo se
@@ -373,8 +372,7 @@ actualizando sus atributos.
   secuencia de renovación de
   futbolistas}{diagrama-secuencia-renovacion-futbolistas}{H}
 
-El proceso de renovación está integrado en start.
-\newpage
+El proceso de renovación está integrado en start.  \newpage
 
 \subsection*{Diagrama de secuencia de fijar precio de venta de entradas}
 En la figura \ref{diagrama-secuencia-fijar-precio-venta-entradas} se describe
@@ -430,8 +428,7 @@ jugados y pertenecientes a la jornada actual del sistema.
 \subsection*{Diagrama de secuencia de comenzar jornadas}
 En la figura \ref{diagrama-secuencia-comenzar-jornadas} se observa cómo se
 actualiza el atributo correspondiente de todos los partidos actuales para
-estipular que el partido ha comenzado a la fecha actual del sistema.
-\newpage
+estipular que el partido ha comenzado a la fecha actual del sistema.  \newpage
 
 \figura{diagramas_secuencia/comenzar_jornadas.png}{scale=0.49,
   angle=270}{Diagrama de secuencia de comenzar
@@ -441,8 +438,7 @@ estipular que el partido ha comenzado a la fecha actual del sistema.
 \subsection*{Diagrama de secuencia de pasar a siguiente jornada}
 En la figura \ref{diagrama-secuencia-pasar-siguiente-jornada} se detalla cómo se
 actualizan los modelos de datos de temporada, jornada, jugador, entrenamiento,
-finanzas y club para avanzar en la competición.
-\newpage
+finanzas y club para avanzar en la competición.  \newpage
  
 \figura{diagramas_secuencia/pasar_siguiente_jornada.png}{scale=0.29,
   angle=270}{Diagrama de secuencia de pasar a siguiente
@@ -462,19 +458,17 @@ descenso jerárquico en las divisiones del juego.
 \subsection*{Diagrama de secuencia de composición de calendarios}
 En la figura \ref{diagrama-secuencia-composicion-calendarios} se observa cómo se
 crean nuevas instancias de las jornadas que estarán relacionadas con los clubes
-en los que se coincida en las mismas divisiones.
-\newpage
+en los que se coincida en las mismas divisiones.  \newpage
 
 \figura{diagramas_secuencia/crear_calendario.png}{scale=0.36,
   angle=270}{Diagrama de secuencia de composición de
   calendarios}{diagrama-secuencia-composicion-calendarios}{H}
 
 \section{Sistema de simulación}
-Este apartado de la memoria requiere una especial mención; ya que es el
-sistema que hará que el usuario tenga la percepción de que los cambios y
-modificaciones a la táctica, alineación, entrenamientos y precio de entradas
-que realice en su equipo, tengan un reflejo directo en el desarrollo de los
-partidos que conforman la temporada que disputa.
+Este apartado de la memoria requiere una especial mención; ya que es el sistema
+que hará que el que los cambios y modificaciones a la táctica, alineación,
+entrenamientos y precio de entradas que realice en su equipo, tengan un reflejo
+directo en el desarrollo de los partidos que conforman la temporada que disputa.
 
 Para perfilar el sistema de simulación de nuestro proyecto de fin de carrera
 tuvimos varias reuniones con nuestros tutores y acotamos la forma de simular un
@@ -485,59 +479,87 @@ A continuación mostraremos la forma en que nuestro algoritmo arroja un resultad
 para el partido.
 
 \subsection{Número de jugadas}
-\subsubsection{Cálculo general}
 El sistema de simulación hará varios cálculos para conformar cuantas serán las
 jugadas de ataque de las que dispondrá cada uno de los clubes en base a la
 calidad ponderada de los atributos que los jugadores poseen en la táctica
 seleccionada por el usuario.
-
+\subsubsection{Cálculo general}
 Dicha forma de realizar la ponderación se estipulará en un fichero yml como el
-siguiente, perteneciente en este caso a la táctica de fútbol 4-4-2:
+siguiente, perteneciente en este caso a la táctica de fútbol 4-4-2 (es decir, el
+portero, 4 defensas, 4 centrocampistas, y 2 delanteros):
 
 \lstinputlisting[style=yml]{codigo/4-4-2.yml}
 
-En dicho fichero podemos ver la ponderación de cada atributo que damos a un jugador según la
-posición que éste ocupe en el sistema táctico, la cual hemos denominamos en el sistema
-como \cursiva{calidad táctica}.
+En dicho fichero podemos ver la ponderación de cada atributo que damos a un
+jugador según la posición que éste ocupe en el sistema táctico, la cual hemos
+denominamos en el sistema como \cursiva{calidad táctica}.
 
 Una vez tengamos calculada la \cursiva{calidad táctica} de todos los integrantes
 del once inicial en nuestro equipo nos dispondremos a sacar la media de dichas
 calidades y asignaremos un número de jugadas a cada equipo con un máximo de 88
-jugadas por partido.
+jugadas por partido con una variación aleatoria de un $\pm$20\%.
 
 Esto quiere decir que si se enfrentan dos equipos cuyos onces iniciales tienen
-la misma media, por ejemplo 50, cada equipo dispondrá de 44 jugadas de ataque,
-las cuales podrán ser contrarrestadas si con la táctica seleccionada se consigue
-robar jugadas de ataque o neutralizar las jugadas de gol.
+la misma media, por ejemplo 50, cada equipo dispondrá de 44$\pm$9 jugadas de
+ataque, las cuales podrán ser contrarrestadas si con la táctica seleccionada se
+consigue robar jugadas de ataque o neutralizar las jugadas de gol.
 
 \subsubsection{Jugada de ataque}
-Una vez que hemos calculado el número de jugadas de ataque del que disponemos,
-hemos de simular qué tipo de jugada va tener lugar en el desarrollo del
+Una vez que hemos calculado el número de jugadas de ataque del que dispone cada
+equipo, hemos de simular qué tipo de jugada va tener lugar en el desarrollo del
 partido. Para ello se hará uso de la posibilidad de emular la tirada de un dado
-a través de la generación de un número aleatorio para reflejar la aleatoriedad
-y la suerte que existe en la vida real a la hora de jugar un partido de fútbol.
+a través de la generación de un número aleatorio para reflejar la aleatoriedad y
+la suerte que existe en la vida real a la hora de jugar un partido de fútbol.
 
-En nuestro sistema hemos decidido que existan 15 tipos de jugadas de ataque, entre ellas, la que marca la
-diferencia a la hora de simular un partido, el gol.
+En nuestro sistema hemos decidido que existan 15 tipos de jugadas de ataque,
+entre ellas, la que marca la diferencia a la hora de simular un partido, el gol.
 
-Por tanto, podemos imaginar nuestro sistema de simulación como un dado de 15 caras en el
-cual existe una de ellas correspondiente a marcar gol, de esta forma tenemos un
-quinceavo de posibilidades por jugada de marcar. Así conseguimos que el usuario
-sienta que es importante  entrenar, posicionar e intentar la
-compra de jugadores que se adapten de forma correcta en la táctica seleccionada.
+En concreto todas las jugadas contempladas por el simulador, serán las siguientes:
+\begin{enumerate}
+\item El jugador que posee el balón marca gol.
+\item El jugador que posee el balón consigue dar un buen pase a otro compañero
+  de su equipo.
+\item El jugador que posee comete un error y pierde la pelota que va parar al equipo
+  contrario.
+\item El jugador que posee el balón lo despeja por sentirse presionado.
+\item El jugador que posee el balón lo manda fuera provocando lo silbidos de una
+  buena parte de su afición.
+\item El jugador del equipo que no posee el balón comete una falta.
+\item El jugador que posee el balón hace un regate que deja sentado al
+  adversario.
+\item El jugador que posee el balón hace un espectacular pase sin mirar.
+\item El jugador que posee el balón hace un regate que deja sentados a varios
+  adversarios.
+\item El jugador que posee el balón tira a puerta pero el portero del equipo
+  contrario lo para.
+\item El jugador que posee el balón tira un disparo al poste.
+\item El jugador que posee el balón realizar una jugada muy peligrosa, pero el
+  balón acaba saliendo por la línea de fondo.
+\item El jugador que posee el balón da un mal pase que va parar a un jugador del
+  otro equipo.
+\item El jugador que posee el balón da un pase a un compañero que se encuentra
+  en fuera de juego.
+\item El jugador del equipo que no posee el balón consigue robar el balón de
+  forma limpia
+\end{enumerate}
+
+Por tanto, podemos imaginar nuestro sistema de simulación como un dado de 15
+caras en el cual existe una de ellas correspondiente a marcar gol, de esta forma
+tenemos un quinceavo de posibilidades por jugada de marcar.
 
 \subsubsection{Neutralizar jugadas de gol}
 Una vez calculadas el número de jugadas, será posible resistir una posible
 jugada de gol dependiendo de la suma de \cursiva{calidades tácticas} de los
-jugadores situados en defensa para el equipo que sufre la jugada de gol, respecto a la suma de calidades \cursiva{tácticas} de los
-jugadores atacantes del equipo que está haciendo uso de la jugada de gol.
+jugadores situados en defensa para el equipo que sufre la jugada de gol,
+respecto a la suma de calidades \cursiva{tácticas} de los jugadores atacantes
+del equipo que está haciendo uso de la jugada de gol.
 
 De esta forma se consigue emular la dificultad que supondría el marcar un gol
-para un equipo que utiliza una táctica estándar 4-4-2 contra un equipo que utiliza una
-táctica 5-4-1, respetando aún así la calidad de dichos jugadores, ya que será
-necesario que los jugadores dispuestos en la táctica tengan una buena calidad
-para conseguir una buena suma y así disponer de más facilidad para neutralizar
-jugadas de gol.
+para un equipo que utiliza una táctica estándar 4-4-2 contra un equipo que
+utiliza una táctica 5-4-1, respetando aún así la calidad de dichos jugadores, ya
+que será necesario que los jugadores dispuestos en la táctica tengan una buena
+calidad para conseguir una buena suma y así disponer de más facilidad para
+neutralizar jugadas de gol.
 
 \subsubsection{Robar jugadas de ataque}
 De la misma forma que es posible neutralizar jugadas de gol, para contemplar el
@@ -550,7 +572,7 @@ centro del campo.
 \subsection{Número de espectadores}
 El sistema simulará el número de espectadores que acudieron al estadio en base a
 la posición que mantengan los equipos en la tabla clasificatoria, así como la
-calidad que posean los equipos que disputan el partido, todo ello ponderado
-en base al precio de venta de las entradas para emular la afluencia al estadio
-de forma realista.
+calidad que posean los equipos que disputan el partido, todo ello ponderado en
+base al precio de venta de las entradas para emular la afluencia al estadio de
+forma realista.
 
