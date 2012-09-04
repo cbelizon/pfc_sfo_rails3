@@ -1,0 +1,182 @@
+% -*-man_usuario.tex-*- Este fichero es parte de la plantilla LaTeX para la
+% realización de Proyectos Final de Carrera, protejido bajo los términos de la
+% licencia GFDL.  Para más información, la licencia completa viene incluida en
+% el fichero fdl-1.3.tex
+
+% Copyright (C) 2009 Pablo Recio Quijano
+
+En este capítulo veremos el funcionamiento de la aplicación desde la vista de
+administrador así como desde la vista de usuario final que accederá a la página
+web con el objetivo de disfrutar del videojuego desde un navegador web
+compatible con los estándares \cursiva{w2c}.
+
+Supondremos que el sistema está instalado en el mismo PC desde el que se
+accederá mediante un cliente web a través de la dirección
+\url{http//localhost:3000}
+
+En todas las páginas de la web existirá un menú principal desde dónde podremos
+acceder a todas las funcionalidades presentes en la aplicación web según el rol
+que tenga asignado el usuario.
+
+Para todos los roles estará presente la funcionalidad de poder cambiar el idioma
+de la interfaz web en cualquier momento, tal y como muestra la captura
+\ref{fig:idioma}
+
+\figura{man_usuario/menu_idioma.png}{scale=0.70}{Menú para usuarios no
+  registrados}{fig:idioma}{H}
+
+\section{Usuario Jugador}
+
+\subsection{Estructura del menú}
+
+\subsubsection{Usuario no registrado}
+Dispondremos de las funcionalidades para ir a la página de registro o a la de
+inicio de sesión tal y como muestra la captura \ref{fig:no_registrado}
+
+\figura{man_usuario/menu_no_registrado.png}{scale=0.37}{Menú para usuarios no
+  registrados}{fig:no_registrado}{H}
+\subsubsection{Usuario registrado sin club asignado}
+En este caso dispondremos de las funcionalidades para desconectarnos de la
+página web de forma segura, tal y como se observa en la captura
+\ref{fig:no_club}
+
+\figura{man_usuario/menu_no_club.png}{scale=0.38}{Menú para usuarios registrados
+  sin club asignado}{fig:no_club}{H}
+\subsubsection{Usuario registrado con club asignado}
+En este caso dispondremos de las siguientes funcionalidades que se pueden
+observar en la captura \ref{fig:con_club}:
+
+\figura{man_usuario/menu_con_club.png}{scale=0.382}{Menú para usuarios
+  registrados con club asignado}{fig:con_club}{H}
+
+\begin{description}
+\item [Mi Equipo] Aquí podremos visualizar la táctica y alineación que el
+  usuario desee utilizar para el siguiente partido. Explicaremos más
+  detalladamente esta pestaña en el apartado \ref{sec:mi_equipo}
+\item [Finanzas] En esta pestaña podremos visualizar cuál ha sido la actividad
+  financiera de nuestro equipo en la última jornada. Dentro de las actividades
+  que podremos consultar estarían la de visualizar los pagos, los ingresos y el
+  balance. Explicaremos más detalladamente esta pestaña en el apartado
+  \ref{sec:finanzas}.
+\item [Ofertas recibidas] En esta pestaña visualizaremos el histórico de ofertas
+  que hemos recibido por los futbolistas de nuestra plantilla, así como el
+  estado de las mismas. Explicaremos más detalladamente esta pestaña en el
+  apartado \ref{sec:ofertas}.
+\item [Ofertas emitidas] En esta pestaña visualizaremos el histórico de ofertas
+  que hemos emitido por futbolistas de otros equipos, así como el estado de las
+  mismas. Explicaremos más detalladamente esta pestaña en el apartado
+  \ref{sec:ofertas}.
+\item [Entrenamientos] En esta pestaña podemos visualizar cuál es el
+  entrenamiento que está siguiendo el jugador y también tendremos la posibilidad
+  de entrenar a cualquiera de ellos. Explicaremos más detalladamente esta
+  pestaña en el apartado \ref{sec:entrenamientos}
+\item [Cerrar Sesión] De esta forma podremos desconectarnos de forma segura de
+  nuestra aplicación web.
+\end{description}
+
+En todas las páginas podremos ver cuál es la Caja actual de nuestro equipo,
+estando ésta resaltada en verde en caso de ser un saldo positivo y en rojo si
+fuera negativo.
+
+\subsection{Mi equipo}
+\label{sec:mi_equipo}
+En esta página podremos ver la táctica y la alineación de nuestro equipo,
+también podremos cambiarla en caso de que los equipos se encuentre abiertos.
+\clearpage
+
+\figura{man_usuario/mi_equipo.png}{scale=0.50}{Página Mi
+  Equipo}{fig:con_club}{H}
+
+\subsection{Finanzas}
+\label{sec:finanzas}
+Esta página tiene disponibles cuatro pestañas que corresponden a las siguientes
+secciones:
+
+\begin{description}
+\item [Pagos] En esta pantalla se mostrarán todos los pagos que se realizan
+  jornada tras jornada, estos los conforman los pagos por transferencias de
+  jugadores, mantenimiento del estadio y sueldos de los jugadores.  \clearpage
+  \figura{man_usuario/finanzas_pagos.png}{scale=0.42}{Sección de
+    pagos}{fig:finanzas_pagos}{H}
+\item[Ingresos] En esta sección se muestran los ingresos que hemos percibido por
+  el traspaso de jugadores y por las entradas vendidas en el último partido en
+  caso de ser le equipo local.
+  \figura{man_usuario/finanzas_ingresos.png}{scale=0.42}{Sección de
+    ingresos}{fig:finanzas_ingresos}{H}
+\item[Balance] En esta sección se muestra el balance total entre pagos e
+  ingresos.  \figura{man_usuario/finanzas_balance.png}{scale=0.42}{Sección de
+    balance}{fig:finanzas_balance}{H}
+\item[Fijar precio de los tickets] En esta sección se pueda cambiar el precio de
+  la entrada del siguiente partido.
+  \figura{man_usuario/finanzas_tickets.png}{scale=0.38}{Sección de
+    tickets}{fig:finanzas_tickets}{H}
+\end{description}
+
+\subsection{Ofertas recibidas y emitidas}
+\label{sec:ofertas}
+En esta página se disponemos de cuatro pestañas correspondientes al estado de
+las ofertas, las cuales pueden ser:
+
+\begin{description}
+\item[Pendientes] En esta pantalla vemos las ofertas que aún no hemos decidido
+  aceptar o rechazar si somos los receptores de la oferta, o las que podemos
+  cancelar en caso de ser los emisores.
+  \figura{man_usuario/ofertas_pendientes.png}{scale=0.38}{Sección de ofertas
+    pendientes}{fig:ofertas_pendientes}{H}
+\item[Transferidas] En esta sección visualizaremos las transferencias realizadas
+  a lo largo del tiempo.
+  \figura{man_usuario/ofertas_transferidas.png}{scale=0.38}{Sección de ofertas
+    transferidas}{fig:ofertas_transferidas}{H}
+\item[Aceptadas] En esta pestaña podremos ver cuáles son las ofertas que hemos
+  aceptado en la jornada actual.
+  \figura{man_usuario/ofertas_aceptadas.png}{scale=0.38}{Sección de ofertas
+    aceptadas}{fig:ofertas_aceptadas}{H}
+\item[Rechazadas] En esta pestaña podremos ver cuáles son las ofertas rechazadas
+  a lo largo del tiempo.
+  \figura{man_usuario/ofertas_rechazadas.png}{scale=0.38}{Sección de ofertas
+    rechazadas}{fig:ofertas_rechazadas}{H}
+\end{description}
+
+\subsection{Entrenamientos}
+\label{sec:entrenamientos}
+En esta página podremos poner a entrenar nuestros jugadores, así como ver
+cuántas jornadas quedan para que alguno de nuestros jugadores que ya están
+entrenando terminen su entrenamiento actual, tal y como se puede observar en la
+captura \ref{fig:entrenamientos}
+
+\figura{man_usuario/entrenamientos.png}{scale=0.38}{Sección de
+  entrenamientos}{fig:entrenamientos}{H}
+
+\section{Usuario administrador}
+El usuario administrador tiene unas características especiales, las cuales
+veremos en las secciones englobadas en este apartado.
+\subsection{Estructura del menú}
+El menú del administrador está compuesto de las siguientes pestañas:
+
+\figura{man_usuario/menu_admin.png}{scale=0.38}{Estructura menú de
+  administración}{fig:menu_admin}{H}
+
+\begin{description}
+\item[Ligas] Aquí podremos controlar el estado de las ligas.
+\item[Usuarios sin club] En esta pestaña dispondremos de un paginador y buscador
+  para el listado de usuarios sin club.
+\item[Listado de Usuarios] En esta pestaña dispondremos de un paginador y buscador
+  para el listado de todos los usuarios registrados en el sistema.
+\end{description}
+
+\subsection{Control de Ligas}
+Desde aquí podemos controlar las ligas en disputa, pudiendo realizar las
+acciones de abrir y cerrar equipos, simular los partidos de la jornada en juego,
+pasar a la siguiente jornada, promocionar clubes y crear nuevas ligas.
+\figura{man_usuario/control_ligas.png}{scale=0.38}{Sección de control de
+  ligas}{fig:control_ligas}{H}
+
+\subsection{Usuarios sin club}
+Aquí podremos buscar, visualizar y paginar cuáles son los usuarios del sistema
+que no tienen un club asignado.
+\figura{man_usuario/usuarios_sin_club.png}{scale=0.38}{Sección de usuarios sin
+  club}{fig:usuarios_sin_club}{H}
+\subsection{Listado de Usuarios}
+Aquí podremos buscar, visualizar y paginar todos los usuarios registrados en el
+sistema.  \figura{man_usuario/usuarios_todos.png}{scale=0.38}{Sección de listado
+  de usuarios}{fig:usuarios_todos}{H}
