@@ -468,3 +468,89 @@ en los que se coincida en las mismas divisiones.
 \figura{diagramas_secuencia/crear_calendario.png}{scale=0.36,
   angle=270}{Diagrama de secuencia de composición de
   calendarios}{diagrama-secuencia-composicion-calendarios}{H}
+
+\section{Sistema de simulación}
+Este apartado de la memoria requiere una especial mención; ya que es el
+sistema que hará que el usuario tenga la percepción de que los cambios y
+modificaciones a la táctica, alineación, entrenamientos y precio de entradas
+que realice en su equipo, tengan un reflejo directo en el desarrollo de los
+partidos que conforman la temporada que disputa.
+
+Para perfilar el sistema de simulación de nuestro proyecto de fin de carrera
+tuvimos varias reuniones con nuestros tutores y acotamos la forma de simular un
+partido en base a la táctica y alineación que presentan los clubes que
+disputarán el partido.
+
+A continuación mostraremos la forma en que nuestro algoritmo arroja un resultado
+para el partido.
+
+\subsection{Número de jugadas}
+\subsubsection{Cálculo general}
+El sistema de simulación hará varios cálculos para conformar cuantas serán las
+jugadas de ataque de las que dispondrá cada uno de los clubes en base a la
+calidad ponderada de los atributos que los jugadores poseen en la táctica
+seleccionada por el usuario.
+
+Dicha forma de realizar la ponderación se estipulará en un fichero yml como el
+siguiente, perteneciente en este caso a la táctica de fútbol 4-4-2:
+
+\lstinputlisting[style=yml]{codigo/4-4-2.yml}
+
+En dicho fichero podemos ver la ponderación de cada atributo que damos a un jugador según la
+posición que éste ocupe en el sistema táctico, la cual hemos denominamos en el sistema
+como \cursiva{calidad táctica}.
+
+Una vez tengamos calculada la \cursiva{calidad táctica} de todos los integrantes
+del once inicial en nuestro equipo nos dispondremos a sacar la media de dichas
+calidades y asignaremos un número de jugadas a cada equipo con un máximo de 88
+jugadas por partido.
+
+Esto quiere decir que si se enfrentan dos equipos cuyos onces iniciales tienen
+la misma media, por ejemplo 50, cada equipo dispondrá de 44 jugadas de ataque,
+las cuales podrán ser contrarrestadas si con la táctica seleccionada se consigue
+robar jugadas de ataque o neutralizar las jugadas de gol.
+
+\subsubsection{Jugada de ataque}
+Una vez que hemos calculado el número de jugadas de ataque del que disponemos,
+hemos de simular qué tipo de jugada va tener lugar en el desarrollo del
+partido. Para ello se hará uso de la posibilidad de emular la tirada de un dado
+a través de la generación de un número aleatorio para reflejar la aleatoriedad
+y la suerte que existe en la vida real a la hora de jugar un partido de fútbol.
+
+En nuestro sistema hemos decidido que existan 15 tipos de jugadas de ataque, entre ellas, la que marca la
+diferencia a la hora de simular un partido, el gol.
+
+Por tanto, podemos imaginar nuestro sistema de simulación como un dado de 15 caras en el
+cual existe una de ellas correspondiente a marcar gol, de esta forma tenemos un
+quinceavo de posibilidades por jugada de marcar. Así conseguimos que el usuario
+sienta que es importante  entrenar, posicionar e intentar la
+compra de jugadores que se adapten de forma correcta en la táctica seleccionada.
+
+\subsubsection{Neutralizar jugadas de gol}
+Una vez calculadas el número de jugadas, será posible resistir una posible
+jugada de gol dependiendo de la suma de \cursiva{calidades tácticas} de los
+jugadores situados en defensa para el equipo que sufre la jugada de gol, respecto a la suma de calidades \cursiva{tácticas} de los
+jugadores atacantes del equipo que está haciendo uso de la jugada de gol.
+
+De esta forma se consigue emular la dificultad que supondría el marcar un gol
+para un equipo que utiliza una táctica estándar 4-4-2 contra un equipo que utiliza una
+táctica 5-4-1, respetando aún así la calidad de dichos jugadores, ya que será
+necesario que los jugadores dispuestos en la táctica tengan una buena calidad
+para conseguir una buena suma y así disponer de más facilidad para neutralizar
+jugadas de gol.
+
+\subsubsection{Robar jugadas de ataque}
+De la misma forma que es posible neutralizar jugadas de gol, para contemplar el
+beneficio de tener un centro del campo poblado, el sistema sumará las calidades
+de los jugadores dispuestos en el medio campo de ambos equipo y los ponderará de
+tal forma que se le roben algunas jugadas de ataque al equipo que presente una
+suma menor en las \cursiva{calidades tácticas} de los jugadores situados en el
+centro del campo.
+
+\subsection{Número de espectadores}
+El sistema simulará el número de espectadores que acudieron al estadio en base a
+la posición que mantengan los equipos en la tabla clasificatoria, así como la
+calidad que posean los equipos que disputan el partido, todo ello ponderado
+en base al precio de venta de las entradas para emular la afluencia al estadio
+de forma realista.
+

@@ -1,0 +1,105 @@
+name: 4-4-2
+defense: 4
+possesion: 4
+attack: 2
+image: tactics/4-4-2.png
+players:
+  pos1:
+    sym: GK
+    goalkeeper: 1
+    speed: 0
+    resistance: 0
+    recovery: 0
+    pass: 0
+    dribbling: 0
+    kick: 0
+  pos2:
+    sym: LL
+    goalkeeper: 0
+    speed: 0.30
+    resistance: 0.30
+    recovery: 0.20
+    pass: 0.10
+    dribbling: 0.10
+    kick: 0
+  pos3:
+    sym: LC
+    goalkeeper: 0
+    speed: 0.25
+    resistance: 0.25
+    recovery: 0.40
+    pass: 0.10
+    dribbling: 0
+    kick: 0
+  pos4:
+    sym: RC
+    goalkeeper: 0
+    speed: 0.25
+    resistance: 0.25
+    recovery: 0.40
+    pass: 0.10
+    dribbling: 0
+    kick: 0
+  pos5:
+    sym: RL
+    goalkeeper: 0
+    speed: 0.30
+    resistance: 0.30
+    recovery: 0.20
+    pass: 0.10
+    dribbling: 0.10
+    kick: 0
+  pos6:
+    sym: CM
+    goalkeeper: 0
+    speed: 0.20
+    resistance: 0.20
+    recovery: 0.30
+    pass: 0.20
+    dribbling: 0.10
+    kick: 0
+  pos7:
+    sym: ML
+    goalkeeper: 0
+    speed: 0.35
+    resistance: 0.15
+    recovery: 0.05
+    pass: 0.10
+    dribbling: 0.25
+    kick: 0.10
+  pos8:
+    sym: MR
+    goalkeeper: 0
+    speed: 0.35
+    resistance: 0.15
+    recovery: 0.05
+    pass: 0.10
+    dribbling: 0.25
+    kick: 0
+  pos9:
+    sym: MP
+    goalkeeper: 0
+    speed: 0.20
+    resistance: 0.20
+    recovery: 0
+    pass: 0.30
+    dribbling: 0.10
+    kick: 0.20
+  pos10:
+    sym: FL
+    goalkeeper: 0
+    speed: 0.25
+    resistance: 0.15
+    recovery: 0
+    pass: 0.15
+    dribbling: 0.20
+    kick: 0.25
+  pos11:
+    sym: FR
+    goalkeeper: 0
+    speed: 0.25
+    resistance: 0.15
+    recovery: 0
+    pass: 0.15
+    dribbling: 0.20
+    kick: 0.25
