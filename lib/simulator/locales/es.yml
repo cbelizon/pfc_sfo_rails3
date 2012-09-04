@@ -12,6 +12,11 @@ es:
     spectacular_pass: "hace un espectacular pase sin mirar ¡Qué espectáculo!"
     spectacular_dribbling: "hace un regate que deja sentado a varios defensas y provoca la ovación de una buena parte del público."
     shoot: "tira a puerta pero el portero para el disparo."
+    wood: "hace un tiro increíble ¡Y este da en la madera!"
+    dangerous: "realiza una jugada muy peligrosa que acaba yéndose por la línea de fondo."
+    wrong_pass: "realiza un mal pase que va parar al contrario."
+    offside: "entra en fuera de juego y es señalado por el línea."
+    rob: "roba el balón al adversario de forma limpia."
     from: "del"
     goal: "mete GOL"
   symbol:

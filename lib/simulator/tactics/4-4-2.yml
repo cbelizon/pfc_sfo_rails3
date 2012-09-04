@@ -1,7 +1,7 @@
 name: 4-4-2
-defense: 4
-possesion: 4
-attack: 2
+defenders: 4
+midfielders: 4
+attackers: 2
 image: tactics/4-4-2.png
 players:
   pos1:

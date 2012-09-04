@@ -1,0 +1,17 @@
+<table class="table-incomes table table-striped table-condensed">
+  <thead>
+    <tr>
+      <th>
+        <%= t('concept_table') %>
+      </th>
+      <th>
+        <%= t('amount_table') %>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="badge badge-info"><%= t('pays_transfers')%></span></td>
+      <td><span class="badge badge-important"><%= number_to_currency(finance) %></span></td>
+    </tr>
+</table>

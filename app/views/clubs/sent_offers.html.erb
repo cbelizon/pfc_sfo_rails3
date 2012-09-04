@@ -31,7 +31,7 @@
 				<h2 class="span12"><%= t('clubs.offers.transfered').pluralize%></h2>
 			</div>
 			<div class="offset span6">
-			<%= render :partial => 'offers', :locals => {:offers => @offers.pending, :user => :buyer} %>
+			<%= render :partial => 'offers', :locals => {:offers => @offers.transfered, :user => :buyer} %>
 			</div>
 		</div>
 		<div class="tab-pane" id="accepted">

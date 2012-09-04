@@ -33,6 +33,14 @@
 		<% else %>
 		<div class="tab-pane" id="pays">
 		<% end %>
+			<% if @last_finance != nil && @last_finance.pays_transfers > 0 %>
+			<div class="row">
+				<h2 class="span12"><%= t('pays_transfers') %></h2>
+			</div>
+			<div class="offset3 span6">
+				<%= render :partial => 'pays_transfers', :locals => {:finance => @last_finance.pays_transfers} %>
+			</div>
+			<% end %>
 			<div class="row">
 				<h2 class="span12"><%= t('.pays.players')%></h2>
 			</div>
@@ -49,7 +57,7 @@
 				<h2 class="span12"><%= t('.pays.total') %></h2>
 			</div>
 			<div class="offset3 span6">
-				<%= render :partial => 'total_pays', :locals => {:club => @club} %>
+				<%= render :partial => 'total_pays', :locals => {:club => @club, :finance => @last_finance} %>
 			</div>
 		</div>
 		<div class="tab-pane" id="incomes">

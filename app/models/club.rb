@@ -66,6 +66,34 @@ class Club < ActiveRecord::Base
     return total / MIN_PLAYERS
   end
 
+  def defenders
+    players_set = []
+    1.upto(TACTICS[self.tactic]['defenders']).each do |p|
+      players_set << self.starters[p]
+    end
+    return players_set
+  end
+
+  def midfielders
+    players_set = []
+    start_midfielders = TACTICS[self.tactic]['defenders'] + 1
+    final_midfielders = start_midfielders - 1 + TACTICS[self.tactic]['midfielders']
+    start_midfielders.upto(final_midfielders).each do |p|
+      players_set << self.starters[p]
+    end
+    return players_set
+  end
+
+  def attackers
+    players_set = []
+    start_attackers = TACTICS[self.tactic]['defenders'] + TACTICS[self.tactic]['midfielders'] + 1
+    final_attackers = start_attackers - 1 + TACTICS[self.tactic]['attackers']
+    start_attackers.upto(final_attackers) do |p|
+      players_set << self.starters[p]
+    end
+    return players_set
+  end
+
   def starters_average_tactic
     total = self.players.starter.inject(0) {|result, element| result + element.average_qualities_tactic}
     return total / MIN_PLAYERS

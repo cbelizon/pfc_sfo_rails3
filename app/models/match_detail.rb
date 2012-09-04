@@ -30,6 +30,8 @@ class MatchDetail < ActiveRecord::Base
   ACTION_WOOD = 'action.wood'
   ACTION_DANGEROUS = 'action.dangerous'
   ACTION_WRONG_PASS = 'action.wrong_pass'
+  ACTION_OFFSIDE = 'action.offside'
+  ACTION_ROB = 'action.rob'
 
   ACTIONS_PLAY = [
     ACTION_ERROR,
@@ -45,6 +47,8 @@ class MatchDetail < ActiveRecord::Base
     ACTION_WOOD,
     ACTION_DANGEROUS,
     ACTION_WRONG_PASS,
+    ACTION_OFFSIDE,
+    ACTION_ROB,
     ACTION_GOAL
   ]
   before_validation :save_attributes
