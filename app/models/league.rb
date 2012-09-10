@@ -14,7 +14,7 @@ class League < ActiveRecord::Base
   validates_numericality_of :category
   validates_presence_of :category
   validates_uniqueness_of :category
-  NUM_CLUBS = 10
+  NUM_CLUBS = 4
   NUM_PROMOTIONS = 2
   CLOSED = 0
   OPEN = 1

@@ -21,10 +21,10 @@ en:
   form_error: "The follow errors has been encountered"
   user: "User"
   rows_per_page: "Rows per page"
-  welcome_email: "Welcome to SFO"
+  welcome_email: "Welcome to OFS"
   select_tactic: "Select Tactic"
   none: "None"
-  welcome: "Welcome to Simulator Football Online"
+  welcome: "Welcome to Online Football Simulator"
   marketing_phrase: "Do you want to be a football club manager? Don't look further."
   buyer_cash: "The buyer have not enough cash."
   buyer_maximum: "The buyer has the maximum players in the team"
@@ -37,6 +37,8 @@ en:
   stadium_maintenance: "Stadium maintenance"
   concept: "Concept"
   amount: "Amount"
+  concept_table: "Concept"
+  amount_table: "Amount"
   training:
     errors:
       already_training: "The player is already training other ability"
@@ -51,12 +53,12 @@ en:
   search: "Search"
   searching: "Searching"
   mail:
-    welcome_subject: "Welcome to Simulator Football Online"
-    welcome: "You have successfully signed up to Simulator Football Online. To login to the site, just follow this link:"
+    welcome_subject: "Welcome to Online Football Simulator"
+    welcome: "You have successfully signed up to Online Football Simulator. To login to the site, just follow this link:"
     thanks: "Thanks for joining and have a great day!"
     username: "Your user name is: "
   defaults:
-    sitename: "SFO"
+    sitename: "OFS"
     of: "Of"
     or: "Or"
     yes: "Yes"
@@ -148,7 +150,7 @@ en:
       next_match: "Next Match"
     trainings:
       header: "Trainings"
-      training: "Training ability"
+      training: "Train ability"
       train_it: "Train it!"
     offers:
       header: "Offer"
@@ -170,7 +172,7 @@ en:
     stadium_pay:
       stadium_maintenance: "Stadium maintenance"
     finances:
-      set_price_ticket: "Fijar precio de entradas"
+      set_price_ticket: "Set ticket price"
       header: "Finance"
       total: "Total"
       cash: "Cash"
@@ -208,7 +210,7 @@ en:
     pay: "Pay"
     age: "Age"
     starters: "Starters"
-    suppliers: "Suppliers"
+    suppliers: "Bench"
     no_convocateds: "No convocateds"
     position: "Position"
     tactic: "Tactic"

@@ -23,7 +23,7 @@ es:
   welcome_email: "Bienvenido a SFO"
   select_tactic: "Seleccionar táctica"
   none: "Ninguna"
-  welcome: "Bienvenidos a Simulator Football Online"
+  welcome: "Bienvenidos a Simulador de Fútbol Online"
   marketing_phrase: "¿Quieres ser el manager de un club de fútbol? No busques más."
   buyer_cash: "¡No tienes suficiente dinero!"
   buyer_maximum: "¡Tienes el máximo de jugadores en plantilla!"
@@ -52,8 +52,8 @@ es:
   search: "Buscar"
   searching: "Buscando"
   mail:
-    welcome_subject: "Bienvenido a Simulator Football Online"
-    welcome: "Te has inscrito correctamente en Simulator Football Online. Para conectarte pulsa en el siguiente enlace: "
+    welcome_subject: "Bienvenido a Simulador de Fútbol Online"
+    welcome: "Te has inscrito correctamente en Simulador de Fútbol Online. Para conectarte pulsa en el siguiente enlace: "
     thanks: "¡Gracias por haberte unido!"
     username: "Tu nombre de usuario es: "
   activerecord:
