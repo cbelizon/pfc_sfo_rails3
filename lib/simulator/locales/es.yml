@@ -27,8 +27,12 @@ es:
     RL: Lateral Derecho
     CM: Medio Centro
     ML: Volante Izquierdo
+    MLL: Medio Izquierdo
     MR: Volante Derecho
+    MRR: Medio Derecho
+    MC: Medio Centro
     MP: Media Punta
     FL: Delantero Izquierdo
     FR: Delantero Derecho
     RE: Reserva
+    FD: Delantero Centro

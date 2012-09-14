@@ -20,7 +20,7 @@ class MatchGeneral < ActiveRecord::Base
   MINUTES = 90
   PARTS_TIME = 45
   HALF_TIME = 15
-  TIME_MATCH = 0
+  TIME_MATCH = 5 * 60
 
   belongs_to :round
   belongs_to :local, :class_name => 'Club'

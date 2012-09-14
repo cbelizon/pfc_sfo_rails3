@@ -27,8 +27,12 @@ en:
     RL: Right Lateral
     CM: Center Medium
     ML: Middle Left
+    MLL: Middle Left
     MR: Middle Right
+    MRR: Middle Right
+    MC: Middle Center
     MP: Middle Point
     FL: Forward Left
     FR: Forward Right
+    FD: Forward Center
     RE: Supplier

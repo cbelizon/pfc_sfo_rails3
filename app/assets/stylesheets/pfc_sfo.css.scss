@@ -13,7 +13,7 @@ body {
 	@include box-shadow(0 0 1px 1px $grayLighter);
 }
 
-@media all and (max-width: 540px) {
+@media all and (max-width: 1200px) {
 	body{
 		background: none;
 		background-color: white;
