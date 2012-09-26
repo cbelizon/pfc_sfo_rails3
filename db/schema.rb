@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829100702) do
+ActiveRecord::Schema.define(:version => 20120926113550) do
 
   create_table "admin_messages", :force => true do |t|
     t.string   "text_msg_es", :null => false
@@ -102,21 +102,21 @@ ActiveRecord::Schema.define(:version => 20120829100702) do
   end
 
   create_table "players", :force => true do |t|
-    t.string   "name",       :limit => 20,                                              :null => false
-    t.string   "surname",    :limit => 30,                                              :null => false
-    t.integer  "quality",                                                               :null => false
+    t.string   "name",       :limit => 20,                                               :null => false
+    t.string   "surname",    :limit => 30,                                               :null => false
+    t.integer  "quality",                                                                :null => false
     t.integer  "club_id"
-    t.datetime "created_at",                                                            :null => false
-    t.datetime "updated_at",                                                            :null => false
-    t.decimal  "pay",                      :precision => 8, :scale => 2
-    t.decimal  "clause",                   :precision => 8, :scale => 2
-    t.integer  "speed",                                                  :default => 0, :null => false
-    t.integer  "resistance",                                             :default => 0, :null => false
-    t.integer  "dribbling",                                              :default => 0, :null => false
-    t.integer  "kick",                                                   :default => 0, :null => false
-    t.integer  "pass",                                                   :default => 0, :null => false
-    t.integer  "recovery",                                               :default => 0, :null => false
-    t.integer  "goalkeeper",                                             :default => 0, :null => false
+    t.datetime "created_at",                                                             :null => false
+    t.datetime "updated_at",                                                             :null => false
+    t.decimal  "pay",                      :precision => 12, :scale => 2
+    t.decimal  "clause",                   :precision => 12, :scale => 2
+    t.integer  "speed",                                                   :default => 0, :null => false
+    t.integer  "resistance",                                              :default => 0, :null => false
+    t.integer  "dribbling",                                               :default => 0, :null => false
+    t.integer  "kick",                                                    :default => 0, :null => false
+    t.integer  "pass",                                                    :default => 0, :null => false
+    t.integer  "recovery",                                                :default => 0, :null => false
+    t.integer  "goalkeeper",                                              :default => 0, :null => false
     t.integer  "position"
   end
 
