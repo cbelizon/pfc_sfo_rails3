@@ -25,14 +25,23 @@ es:
     LC: Central Izquierdo
     RC: Central Derecho
     RL: Lateral Derecho
+    MCC: Líbero
+    CC: Central
     CM: Medio Centro
     ML: Volante Izquierdo
     MLL: Medio Izquierdo
     MR: Volante Derecho
     MRR: Medio Derecho
+    MCD: Medio Centro Derecho
+    MCI: Medio Centro Izquierdo
     MC: Medio Centro
     MP: Media Punta
+    ED: Extremo Derecho
+    EI: Extremo Izquierdo
     FL: Delantero Izquierdo
     FR: Delantero Derecho
+    DI: Delantero Izquierdo
     RE: Reserva
+    DD: Delantero Derecho
+    DC: Delantero Centro
     FD: Delantero Centro

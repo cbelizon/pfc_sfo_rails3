@@ -24,6 +24,8 @@ en:
     LL: Left Lateral
     LC: Left Central
     RC: Right Central
+    CC: Central
+    MCC: Liber
     RL: Right Lateral
     CM: Center Medium
     ML: Middle Left
@@ -31,8 +33,15 @@ en:
     MR: Middle Right
     MRR: Middle Right
     MC: Middle Center
+    MCD: Middle Right
+    MCI: Middle Left
     MP: Middle Point
+    ED: Right Extreme
+    EI: Left Extreme
     FL: Forward Left
     FR: Forward Right
     FD: Forward Center
+    DD: Right Forward
+    DI: Left Forward
+    DC: Center Forward
     RE: Supplier

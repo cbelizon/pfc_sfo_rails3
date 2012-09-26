@@ -13,11 +13,11 @@ module Simulator
     local_players = local.starters
     guest_players = guest.starters
     1.upto(num_plays_local) do
-      details << simulate_play(local, guest, available_minutes, local_players);
+      details << simulate_play(local, guest, available_minutes, local_players, guest_players);
     end
 
     1.upto(num_plays_guest) do
-      details << simulate_play(guest, local, available_minutes, guest_players);
+      details << simulate_play(guest, local, available_minutes, guest_players, local_players);
     end
 
     return details
@@ -36,11 +36,36 @@ module Simulator
   end
 
   private
-  def self.simulate_play(attacker, defender, available_minutes, starters)
+  def self.simulate_play(attacker, defender, available_minutes, starters_attacker, starters_defender)
     action = @actions[rand(@actions.length)]
-    players = starters.to_a
+    players = starters_attacker.to_a
     player = players[rand(players.length - 1) + 1] #Evitamos que el portero pueda meter gol
     minute = available_minutes.delete_at(rand(available_minutes.length))
+
+    #Robar jugada de ataque
+    sum_midfielders_attacker = 0
+    sum_midfielders_defenders = 0
+
+    attacker.midfielders.each do |a|
+      sum_midfielders_attacker += a.average_qualities_tactic
+    end
+
+    defender.midfielders.each do |d|
+      sum_midfielders_defenders += d.average_qualities_tactic
+    end
+
+    dif_midfielders = sum_midfielders_attacker + rand(sum_midfielders_attacker * 0.20) -
+      sum_midfielders_defenders - rand(sum_midfielders_defenders * 0.20)
+
+    if dif_midfielders < 0 && rand(10) > 7
+      temp = defender
+      defender = attacker
+      attacker = temp
+      players = starters_defender.to_a
+      player = players[rand(players.length - 1) + 1]
+    end
+
+    #Parar jugada de gol
     if action == MatchDetail::ACTION_GOAL
       sum_attackers = 0
       attacker.attackers.each do |a|
@@ -50,42 +75,21 @@ module Simulator
       defender.defenders.each do |d|
         sum_defenders += d.average_qualities_tactic
       end
-      dif = sum_defenders - sum_attackers
-      if dif > 0 #Si la defensa tiene más calidad que el ataque
-        random_sum = rand(Integer((dif + 1) * 1.5))
-        if (random_sum + sum_attackers) > sum_defenders
-          MatchDetail.new({
+      dif_attack = sum_defenders - sum_attackers - rand(Integer(sum_attackers * 1.5))
+      if dif_attack < 0
+        MatchDetail.new({
           :player => player,
           :club => attacker,
           :action => action,
           :minute => minute
-          })
-        else
-          MatchDetail.new({
+        })
+      else
+        MatchDetail.new({
           :player => player,
           :club => attacker,
-          :action => MatchDetail::ACTION_ROB,
+          :action => @actions[rand(@actions.length - 1)],
           :minute => minute
           })
-        end
-      else #Si el ataque tiene más calidad que la defensa
-        dif = -dif
-        random_sum = rand(Integer((dif + 1) * 1.25))
-        if (random_sum + sum_defenders) > sum_attackers
-          MatchDetail.new({
-          :player => player,
-          :club => attacker,
-          :action => MatchDetail::ACTION_ROB,
-          :minute => minute
-          })
-        else
-          MatchDetail.new({
-          :player => player,
-          :club => attacker,
-          :action => action,
-          :minute => minute
-          })
-        end
       end
     else
       MatchDetail.new({

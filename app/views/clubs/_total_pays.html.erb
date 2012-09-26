@@ -30,7 +30,7 @@
 		<tr>
 			<th>Total
 			</th>
-			<% if !finance.nil?  %>
+			<% if finance.nil?  %>
 			<td><span class="badge badge-important"><%= number_to_currency(club.pays_maintenance + club.pays_players_week) %>
 			</span></td>
 			<% else %>
