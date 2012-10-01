@@ -82,7 +82,7 @@ class Player < ActiveRecord::Base
   def create_training(ability)
     percentil = self[ability] / 10
     improvement = 1 + rand(9)
-    time = 1 + rand(percentil)
+    time = 1 + percentil + rand(2)
     Training.new({
         :ability => ability,
         :improvement => improvement,

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120926113550) do
+ActiveRecord::Schema.define(:version => 20121001163013) do
 
   create_table "admin_messages", :force => true do |t|
     t.string   "text_msg_es", :null => false
@@ -80,15 +80,15 @@ ActiveRecord::Schema.define(:version => 20120926113550) do
   end
 
   create_table "match_generals", :force => true do |t|
-    t.integer  "local_id",                                                    :null => false
-    t.integer  "guest_id",                                                    :null => false
+    t.integer  "local_id",                                                     :null => false
+    t.integer  "guest_id",                                                     :null => false
     t.integer  "local_goals"
     t.integer  "guest_goals"
-    t.integer  "round_id",                                                    :null => false
-    t.datetime "created_at",                                                  :null => false
-    t.datetime "updated_at",                                                  :null => false
-    t.integer  "spectators",                                 :default => 0
-    t.decimal  "ticket_price", :precision => 4, :scale => 2, :default => 0.0
+    t.integer  "round_id",                                                     :null => false
+    t.datetime "created_at",                                                   :null => false
+    t.datetime "updated_at",                                                   :null => false
+    t.integer  "spectators",                                  :default => 0
+    t.decimal  "ticket_price", :precision => 12, :scale => 2, :default => 0.0
   end
 
   create_table "offers", :force => true do |t|

@@ -322,6 +322,7 @@ class Season < ActiveRecord::Base
     num_rounds = clubs.length - 1
     num_matches = clubs.length / 2 - 1
     num_clubs = clubs.length
+    par = false
 
     for i in (1..num_rounds)
       matches_home = []
@@ -336,13 +337,23 @@ class Season < ActiveRecord::Base
           :guest => clubs[j]
         })
       end
+      home = i
+      guest = num_rounds + i
+      if par
+        home = num_rounds + i
+        guest = i
+        par = false
+      else
+        par = true
+      end
+
       rounds_home << Round.new({
-        :number => i,
+        :number => home,
         :match_generals => matches_home,
         :state_simulation => false
       })
       rounds_away << Round.new({
-        :number => num_rounds +  i,
+        :number => guest,
         :match_generals => matches_away,
         :state_simulation => false
       })

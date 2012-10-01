@@ -152,9 +152,15 @@ class Club < ActiveRecord::Base
 
   #Return the last finances for the club
   def last_finances
-    self.club_finances_rounds.find(:first, :conditions => {
+    return self.club_finances_rounds.find(:first, :conditions => {
         :round_id => self.current_season.get_previous_round
-      }) unless self.current_season.first_round?
+      }) unless self.current_season.first_round? || self.current_season.finished?
+
+    if self.current_season.finished?
+        return self.club_finances_rounds.find(:first, :conditions => {
+          :round_id => self.current_season.round_actual
+          })
+    end
   end
 
   #Returns the benefits of the tickets of last match
